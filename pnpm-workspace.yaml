@@ -1,0 +1,3 @@
+# Consente lo script di installazione del compilatore JavaScript.
+allowBuilds:
+  esbuild: true

@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "chapters": 2,
+  "demonstrations": 28,
+  "calculationSteps": 132,
+  "renderedSVG": 172,
+  "slideLinks": 28,
+  "legacyRoutes": 10,
+  "htmlEntrypoints": 5,
+  "externalRuntimeResources": 0,
+  "browserInteractionTested": false
+}

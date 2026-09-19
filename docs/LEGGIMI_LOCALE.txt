@@ -1,0 +1,43 @@
+QUANTUM E POST-QUANTUM COMPUTING — LABORATORIO INTERATTIVO
+Edizione Matrix 3.0 · Due capitoli · 28 dimostrazioni
+De Corato · Bruschi / Università degli Studi di Milano
+
+AVVIO
+Estrai tutto lo ZIP, quindi apri index.html con un browser aggiornato.
+Non occorrono installazioni o connessione. Mantieni i file nella stessa
+cartella: comprendono guide e presentazioni utilizzate dal laboratorio.
+
+CAPITOLI
+1. Dal determinismo al calcolo quantistico: 10 dimostrazioni.
+2. Geometria del calcolo quantistico: 18 dimostrazioni.
+I capitoli successivi sono indicati come «To be done».
+
+STRUMENTI
+I comandi sono descritti accanto alle regolazioni. I punti trascinabili
+hanno anche campi numerici; gli angoli ammettono valori negativi.
+Nel secondo capitolo tutti i passaggi sono visibili e si aggiornano con
+la configurazione. Puoi ingrandire la figura o esportare la dimostrazione.
+Le modifiche e le raccolte restano nella sessione: esporta prima di uscire.
+Non sono presenti quiz, sfide o punteggi.
+
+MATERIALI
+ISTRUZIONI_PER_NUOVI_MODULI.md: come riprendere ed estendere il progetto.
+Guida_corso.pdf: guida stampabile alle configurazioni iniziali.
+guida-corso.html: guida con figure e calcoli nel browser.
+GUIDA_DOCENTE_CORSO.md: percorso, convenzioni e risultati attesi.
+VERIFICHE.md: verifiche svolte e limiti del collaudo.
+COLLAUDO.md: procedura per il controllo interattivo.
+LICENZE_COMPONENTI.txt: licenze dei componenti inclusi.
+
+Le copie autonome contengono i materiali del solo capitolo selezionato.
+L'altro capitolo si apre online. La versione locale non si aggiorna da sola.
+I link delle presentazioni possono rimandare al sito; senza connessione
+si utilizza l'indice del laboratorio HTML. I riferimenti #page dipendono
+dal lettore PDF; il numero di pagina è riportato anche nel laboratorio.
+
+VERSIONE ONLINE
+https://quantum-lab-dal-moto-al-qubit.saren605078.chatgpt.site
+
+SORGENTI
+I pacchetti GitHub e sorgenti comprendono il generatore e le istruzioni
+complete in README.md. Il pacchetto locale è pronto per gli studenti.

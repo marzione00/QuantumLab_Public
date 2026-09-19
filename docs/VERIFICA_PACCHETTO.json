@@ -1,0 +1,163 @@
+{
+  "title": "Quantum e post-quantum computing Lab 01",
+  "node": "24.19.0",
+  "packageManager": "pnpm@11.19.0",
+  "checks": {
+    "typescript": "PASS",
+    "baseModels": 74,
+    "expanded": {
+      "result": "PASS",
+      "cases": 282,
+      "timings": [
+        {
+          "model": "free",
+          "n": 1000,
+          "milliseconds": 25,
+          "returnRms": 2.3711077490591926e-12
+        },
+        {
+          "model": "free",
+          "n": 5000,
+          "milliseconds": 85,
+          "returnRms": 2.269145417775256e-12
+        },
+        {
+          "model": "free",
+          "n": 10000,
+          "milliseconds": 147,
+          "returnRms": 2.256569225392041e-12
+        },
+        {
+          "model": "hard-disks",
+          "n": 1000,
+          "milliseconds": 36,
+          "collisions": 376,
+          "returnRms": 1.0026573780019657e-09
+        },
+        {
+          "model": "hard-disks",
+          "n": 5000,
+          "milliseconds": 191,
+          "collisions": 1954,
+          "returnRms": 1.348486156897834e-06
+        },
+        {
+          "model": "hard-disks",
+          "n": 10000,
+          "milliseconds": 468,
+          "collisions": 3882,
+          "returnRms": 7.449376636762192e-05
+        }
+      ],
+      "oneMillionScreenDraws": {
+        "total": 1000000,
+        "totalVariation": 0.00842787658499463
+      },
+      "scope": "Numerical models. Does not replace interactive browser testing."
+    },
+    "loschmidt": {
+      "status": "PASS",
+      "checks": 9,
+      "runs": [
+        {
+          "n": 1000,
+          "duration": 8,
+          "leftAtTurn": 0.455,
+          "exactReturnRms": 0,
+          "maxEnergyError": 0.00026694352059064563,
+          "milliseconds": 1835
+        },
+        {
+          "n": 5000,
+          "duration": 12,
+          "leftAtTurn": 0.4852,
+          "exactReturnRms": 0,
+          "maxEnergyError": 0.0010632469321028015,
+          "imperfectReturnLeft": 0.6876,
+          "imperfectReturnRms": 186.76952231030222,
+          "imperfectNearInitial": 0.0006,
+          "angularRms": 1.4453250044466175,
+          "milliseconds": 31034
+        },
+        {
+          "n": 10000,
+          "duration": 4,
+          "leftAtTurn": 0.5992,
+          "exactReturnRms": 0,
+          "maxEnergyError": 0.0015787308194470384,
+          "milliseconds": 18078
+        }
+      ],
+      "controller": "45 s per phase; pause before reversal; stable final state; reusable comparison",
+      "browser": "Interactive preview unavailable; numerical and state-machine checks only."
+    },
+    "quantum": {
+      "result": "PASS",
+      "checks": 9575,
+      "coverage": [
+        "signed input and phase readouts",
+        "X Y Z examples and double application",
+        "geometric paths and inverse phase",
+        "angle input and zero-delay invariance",
+        "quarter/half-wave plates and optical rotation",
+        "drag geometry and full-circuit propagation",
+        "arbitrary retarders against Jones vectors",
+        "independent block settings and bypass",
+        "decoherence against partial trace",
+        "slide sequences and order",
+        "concordance and anticorrelation",
+        "local marginals",
+        "marker angle and inverse",
+        "conditional groups",
+        "archive ambiguity and exact extrema",
+        "two causes and interventions"
+      ]
+    },
+    "static": {
+      "status": "PASS",
+      "laboratories": 10,
+      "pdfLinks": 15,
+      "locations": [
+        "GitHub Pages project",
+        "GitHub Pages root",
+        "file locale"
+      ],
+      "externalRuntimeResources": 0,
+      "browserInteractionTested": false
+    },
+    "workflowYaml": "PASS",
+    "lockfileManifestMatch": "PASS",
+    "revision": {
+      "status": "PASS",
+      "checks": 140,
+      "screenBins": 800,
+      "screenSamples": 6400,
+      "smallestFringeMm": 0.5,
+      "centralContrast": 0.9796007424460721,
+      "tested": [
+        "fase effettiva",
+        "trascinamento sui due emisferi",
+        "camera indipendente",
+        "R–F–R e bypass",
+        "risoluzione delle frange",
+        "correlazione e anticorrelazione",
+        "fase a 90°",
+        "ambiente",
+        "archivi generici",
+        "diagnosi",
+        "interazione del gas indipendente da N"
+      ]
+    },
+    "studentGuide": {
+      "pages": 12,
+      "outlineEntries": 10,
+      "hyperlinks": 20,
+      "embeddedFonts": true,
+      "visualReview": "PASS"
+    }
+  },
+  "githubDeployment": "Da eseguire nel repository del docente.",
+  "browserInteractions": "Non collaudate in questa sessione; checklist in docs/COLLAUDO.md.",
+  "version": "1.1.0",
+  "checkedOn": "2026-09-19"
+}

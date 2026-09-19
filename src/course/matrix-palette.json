@@ -1,0 +1,34 @@
+{
+  "screen": {
+    "bg": "#070e0b",
+    "panel": "#0c1510",
+    "surface": "#101b15",
+    "raised": "#17281e",
+    "line": "#294234",
+    "wire": "#648e74",
+    "text": "#e7f0e8",
+    "muted": "#a7bcae",
+    "green": "#71f6a2",
+    "blue": "#76d7ff",
+    "violet": "#bfacff",
+    "coral": "#ffaaa6",
+    "amber": "#ffd584",
+    "on-accent": "#07130c"
+  },
+  "print": {
+    "bg": "#ffffff",
+    "panel": "#ffffff",
+    "surface": "#f4f8f5",
+    "raised": "#e8f0e9",
+    "line": "#cad9cd",
+    "wire": "#657d6c",
+    "text": "#193127",
+    "muted": "#4c6557",
+    "green": "#086944",
+    "blue": "#075d96",
+    "violet": "#713ea4",
+    "coral": "#a52f42",
+    "amber": "#805000",
+    "on-accent": "#ffffff"
+  }
+}

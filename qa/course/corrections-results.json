@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "checks": 1985,
+  "coverage": [
+    "small Hermitian matrices",
+    "histogram positions and endpoint states",
+    "empty event notation",
+    "nontrivial row operations",
+    "tensor and spectral result figures",
+    "measurement angle and rotation axes",
+    "demonstration without quizzes",
+    "contrast"
+  ],
+  "serverRenderedStateVariants": 10,
+  "browserInteractionTested": false
+}

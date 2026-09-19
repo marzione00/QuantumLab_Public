@@ -1,0 +1,11 @@
+import {C} from './lab-common';
+export function PairConstruction({interact,swap}:{interact:boolean;swap:boolean}) {
+ return <section className="pair-construction"><h3>Il circuito che prepara la coppia</h3><div className="diagram-scroll"><svg viewBox="0 0 900 270" role="img" aria-label={'Preparazione 00, R sul primo qubit, scambio controllato '+(interact?'attivo':'escluso')+', X sul secondo '+(swap?'attivo':'escluso')}>
+ {[95,180].map((y,i)=><g key={y}><text x="35" y={y+6} fontSize="20" fill={C.blue}>{i+1}: 0</text><path d={'M100 '+y+'H845'} stroke={C.blue} strokeWidth="2"/><text x="820" y={y-15} textAnchor="end" fontSize="17" fill={C.gray}>alla misura {i+1}</text></g>)}
+ <rect x="165" y="68" width="70" height="54" rx="7" fill="var(--mq-surface)" stroke={C.red}/><text x="200" y="104" textAnchor="middle" fill={C.red} fontSize="26">R</text>
+ <g opacity={interact?1:.4}><line x1="430" y1="95" x2="430" y2="180" stroke={C.red} strokeWidth="3" strokeDasharray={interact?undefined:'5 4'}/><circle cx="430" cy="95" r="7" fill={C.red}/><circle cx="430" cy="180" r="22" fill="var(--mq-panel)" stroke={C.red} strokeWidth="2"/><path d="M408 180H452M430 158V202" stroke={C.red} strokeWidth="2"/></g>
+ <text x="430" y="36" textAnchor="middle" fontSize="18" fill={C.ink}>Scambio controllato</text><text x="430" y="60" textAnchor="middle" fontSize="16" fill={C.gray}>{interact?'applicato':'escluso'}</text>
+ <rect x="610" y="153" width="70" height="54" rx="7" fill={swap?'var(--mq-surface)':'var(--mq-panel)'} stroke={swap?C.red:C.gray} strokeDasharray={swap?undefined:'5 4'}/><text x="645" y="190" textAnchor="middle" fill={swap?C.red:C.gray} fontSize="26">X</text><text x="645" y="236" textAnchor="middle" fontSize="16" fill={C.gray}>{swap?'applicata':'esclusa'}</text>
+ <text x="200" y="248" textAnchor="middle" fontSize="18" fill={C.blue}>0 → + sul primo</text>
+ </svg></div><p>Si preparano due stati 0, corrispondenti a H. R porta il primo in +. Il collegamento verticale indica un’operazione congiunta: la componente 0 del primo conserva il secondo, la componente 1 ne scambia 0 e 1. L’operazione si applica all’intera preparazione e produce 00/11, cioè HH/VV, senza misure intermedie. X sul secondo trasforma queste alternative in 01/10, cioè HV/VH.</p></section>;
+}

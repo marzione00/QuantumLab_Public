@@ -1,0 +1,2 @@
+export function wilson(k:number,n:number,z=1.96){if(n<=0)return [0,1];const p=k/n,d=1+z*z/n,m=(p+z*z/(2*n))/d,h=z*Math.sqrt(p*(1-p)/n+z*z/(4*n*n))/d;return [Math.max(0,m-h),Math.min(1,m+h)];}
+export function csvDownload(name:string,rows:(string|number)[][]){const enc=(v:string|number)=>'"'+String(v).replace(/"/g,'""')+'"',data='\ufeff'+rows.map(row=>row.map(enc).join(';')).join('\n'),url=URL.createObjectURL(new Blob([data],{type:'text/csv;charset=utf-8'})),a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}

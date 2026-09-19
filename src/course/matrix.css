@@ -1,0 +1,138 @@
+@import "./matrix-palette.css";
+/* Matrix edition. Layout and educational content live in course.css and app/base.css. */
+:root{
+ color-scheme:dark;
+ --background:var(--mq-bg);--foreground:var(--mq-text);
+ --card:var(--mq-panel);--card-foreground:var(--mq-text);
+ --popover:var(--mq-raised);--popover-foreground:var(--mq-text);
+ --primary:var(--mq-green);--primary-foreground:var(--mq-on-accent);
+ --secondary:var(--mq-raised);--secondary-foreground:var(--mq-text);
+ --muted:var(--mq-surface);--muted-foreground:var(--mq-muted);
+ --accent:var(--mq-raised);--accent-foreground:var(--mq-green);
+ --destructive:var(--mq-coral);--border:var(--mq-line);--input:var(--mq-wire);--ring:var(--mq-green);
+}
+html,body{background:var(--mq-bg);color:var(--mq-text)}
+body{margin:0}
+::selection{background:var(--mq-green);color:var(--mq-on-accent)}
+.course-app{--ink:var(--mq-text);--muted:var(--mq-muted);--line:var(--mq-line);--paper:var(--mq-bg);--chapter:var(--mq-green);background:var(--mq-bg);color:var(--mq-text)}
+.course-app button,.course-app input,.course-app select{color:inherit}
+.course-app h1,.course-app h2,.course-app h3{font-weight:400;color:var(--mq-text)}
+.course-app .eyebrow,.circuit-eyebrow,.panel-heading,.figure-heading>span:first-child,.notebook-eyebrow{font-family:Consolas,'Liberation Mono',monospace;letter-spacing:.12em;color:var(--mq-green)}
+.course-app a{color:var(--mq-blue)}
+.course-app a:hover{text-decoration:underline;text-underline-offset:4px}
+.course-app :is(button,a,input,select,summary,[tabindex]):focus-visible{outline:2px solid var(--mq-green);outline-offset:4px}
+.course-app button:disabled{opacity:.48;cursor:default}
+.course-topbar{border-top:2px solid var(--mq-green);background:var(--mq-panel);gap:16px}
+.course-brand{font-size:15px;font-weight:400;letter-spacing:.02em}
+.course-brand small{font-size:11px;letter-spacing:.11em}
+.brand-q{display:grid;place-items:center;width:42px;height:44px;border:1px solid var(--mq-wire);border-radius:4px;flex-shrink:0;font:32px/1 Georgia,serif;color:var(--mq-green)}
+.matrix-edition{font:11px/1.4 Consolas,monospace;letter-spacing:.14em;color:var(--mq-green);white-space:nowrap;margin-left:auto}
+.matrix-edition::before{content:'';display:inline-block;width:6px;height:6px;margin-right:8px;border-radius:50%;background:var(--mq-green);box-shadow:0 0 12px color-mix(in srgb,var(--mq-green) 35%,transparent)}
+.course-sidebar{background:var(--mq-panel)}
+.sidebar-chapters>button{border-radius:6px;color:var(--mq-text)}
+.sidebar-chapters>button[aria-current],.chapter-theme-1 .sidebar-chapters>button[aria-current]{background:var(--mq-raised);border-color:var(--mq-wire)}
+.demo-navigation button[aria-current]{background:var(--mq-raised);box-shadow:inset 2px 0 var(--mq-green);color:var(--mq-green)}
+.demo-navigation button[aria-current]>span{color:var(--mq-green)}
+.course-topbar nav button{background:transparent;border:1px solid var(--mq-line);border-radius:5px;color:var(--mq-muted)}
+.course-topbar nav button:hover{background:var(--mq-raised);color:var(--mq-text)}
+.course-introduction{max-width:none;display:grid;grid-template-columns:1.1fr 1fr;align-items:center;gap:22px;padding:22px 0 32px;margin-bottom:20px}
+.matrix-hero-copy{min-width:0;position:relative;z-index:1}
+.course-introduction h1{font-size:clamp(40px,4.2vw,72px);line-height:1.05;letter-spacing:-.035em;margin:24px 0}
+.course-introduction h1 em{color:var(--mq-green);font-style:normal}
+.matrix-hero-copy>p{font:19px/1.8 Georgia,serif;max-width:52ch;color:var(--mq-muted)}
+.matrix-authors{font:12px/1.8 Arial,sans-serif!important;margin-top:22px!important}
+.matrix-cover-art{position:relative;min-width:0;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at center,color-mix(in srgb,var(--mq-green) 7%,transparent),transparent 70%)}
+.matrix-cover-art>svg{position:relative;z-index:1;display:block;width:100%;height:auto}
+.matrix-rain{position:absolute;inset:0;z-index:0;display:flex;justify-content:space-around;overflow:hidden;pointer-events:none;opacity:.17;mask-image:linear-gradient(transparent,#000 18%,#000 78%,transparent)}
+.matrix-rain>span{writing-mode:vertical-rl;text-orientation:upright;white-space:nowrap;font:11px/2 Consolas,monospace;letter-spacing:9px;color:var(--mq-green)}
+.matrix-rain>span:nth-child(3n){padding-top:42px;opacity:.5}.matrix-rain>span:nth-child(3n + 1){padding-top:22px}
+.chapter-card{border-radius:8px;background:linear-gradient(125deg,var(--mq-raised),var(--mq-panel));box-shadow:none;border-color:var(--mq-line)}
+.chapter-card:hover{border-color:var(--mq-wire)}
+.chapter-card .chapter-drawing{max-height:185px;padding:18px 22px 0}
+.chapter-card>div{padding:20px 25px 27px}
+.chapter-card button{border:1px solid var(--mq-wire);background:var(--mq-raised);color:var(--mq-green);border-radius:5px}
+.chapter-card button:hover{background:var(--mq-green);color:var(--mq-on-accent)}
+.chapter-cover{background:var(--mq-panel);border:1px solid var(--mq-line);border-radius:8px;padding:30px;gap:30px;overflow:hidden}
+.chapter-cover>div:first-child{position:relative;z-index:1}
+.chapter-cover .matrix-cover-art{align-self:center;width:100%}
+.chapter-cover .chapter-drawing{width:100%;height:auto}
+.future-card{border-radius:7px;border-color:var(--mq-line);background:var(--mq-panel)}
+.future-number{color:var(--mq-muted)}
+.todo-badge{border-color:var(--mq-wire);color:var(--mq-muted);background:var(--mq-surface)}
+.course-materials{background:var(--mq-panel);border:1px solid var(--mq-line);border-radius:8px}
+.course-materials a{display:inline-block;margin:8px 20px 0 0}
+.geo-controls,.notebook-controls,.control-panel{background:var(--mq-surface);border:1px solid var(--mq-line);border-top:2px solid var(--mq-green);border-radius:7px;box-shadow:none}
+.geo-stage,.notebook-apparatus,.experiment-surface{background:var(--mq-panel);border:1px solid var(--mq-line);border-radius:7px;box-shadow:none}
+.geo-stage-head,.notebook-step-nav,.figure-heading,.figure-toolbar,.circuit-heading{background:var(--mq-surface);border-color:var(--mq-line)}
+.stage,.geo-visual,.geo-plane,.geo-plots,.calculation-reference{background:var(--mq-panel)}
+.stage{background-image:none}
+svg text:not([fill]),svg tspan:not([fill]){fill:var(--mq-text)}
+svg text{paint-order:stroke;stroke:none}
+input,select,textarea{color-scheme:dark}
+.course-app :is(input[type=text],input[type=number],select){background:var(--mq-bg);color:var(--mq-text);border:1px solid var(--mq-wire);border-radius:5px;font-variant-numeric:tabular-nums}
+.course-app input[type=range]{accent-color:var(--mq-green)}
+.course-app [data-slot=slider-track]{background:var(--mq-line)}
+.course-app [data-slot=slider-range]{background:var(--mq-green)}
+.course-app [data-slot=slider-thumb]{background:var(--mq-bg);border-color:var(--mq-green);box-shadow:none}
+.course-app [data-slot=switch][data-state=checked]{background:var(--mq-green)}
+.course-app [data-slot=switch-thumb]{background:var(--mq-on-accent)}
+.course-app [data-slot=button][data-variant=default]{background:var(--mq-green);color:var(--mq-on-accent)}
+.course-app [data-slot=button][data-variant=outline]{background:var(--mq-surface);border-color:var(--mq-wire);color:var(--mq-text)}
+.course-app [data-slot=button]:hover:not(:disabled){filter:brightness(1.1)}
+[data-slot=select-content],[data-slot=popover-content]{background:var(--mq-raised);color:var(--mq-text);border-color:var(--mq-wire)}
+.course-app .lab-segments [data-state=active],.course-app .geo-presets button[aria-pressed=true],.course-app .notebook-step-nav button[aria-pressed=true],.course-app .experiment-presets button[aria-pressed=true]{background:var(--mq-green);border-color:var(--mq-green);color:var(--mq-on-accent)}
+.course-app .angle-sign{background:var(--mq-raised)!important;border-color:var(--mq-wire)!important;color:var(--mq-green)}
+.geo-field-top input,.angle-number input,.control-label output,.stat-number,.small-stat strong,.circuit-state-prob,.circuit-state-phase,.geo-stat strong,.matrix,.equation,.probability-row strong{font-family:Consolas,'Liberation Mono',monospace;font-variant-numeric:tabular-nums}
+.matrix{color:var(--mq-text)}
+.equation,.geo-step.selected .equation{background:var(--mq-surface);border-color:var(--mq-line);color:var(--mq-text)}
+.geo-step{background:var(--mq-panel);border-color:var(--mq-line);border-radius:6px}
+.geo-step.selected{background:var(--mq-surface);border-color:var(--mq-wire);box-shadow:inset 3px 0 var(--mq-green)}
+.geo-step h3>span{background:var(--mq-raised);color:var(--mq-green)}
+.step-index button[aria-pressed=true],.quantum-circuit button[aria-pressed=true]{background:var(--mq-green);color:var(--mq-on-accent);border-color:var(--mq-green)}
+.step-toolbar,.quantum-circuit{background:var(--mq-panel);border-color:var(--mq-line)}
+.circuit-node{border-color:var(--mq-wire);background:var(--mq-surface);border-radius:5px}
+.circuit-cell.selected .circuit-node{border-color:var(--mq-green);background:var(--mq-raised);box-shadow:0 0 0 2px color-mix(in srgb,var(--mq-green) 10%,transparent)}
+.circuit-block-button b{color:var(--mq-green)}
+.circuit-cell:not(:last-child):after{background:var(--mq-panel);color:var(--mq-green)}
+.circuit-state-phase{color:var(--mq-coral)}
+.circuit-state-name{color:var(--mq-text)}
+.bloch-point.compact.editable,.source-geometry,.environment-comparison>section{background:var(--mq-surface);border-color:var(--mq-line)}
+.bloch-point svg:focus-visible{background:var(--mq-raised)}
+.circuit-readout>div,.bar-track,.geo-track,.coherence-track{background:var(--mq-raised)}
+.circuit-readout i,.bar-fill.series-0{background:var(--mq-green)}
+.bar-fill.series-1{background:var(--mq-coral)}
+.bar-fill.series-2{background:var(--mq-blue)}
+.bar-fill.series-3{background:var(--mq-violet)}
+.probability-marker,.geo-track>i{background:var(--mq-text);border-color:var(--mq-panel)}
+.coherence-track>span{background:var(--mq-blue)}
+.geo-note,.observation,.learning-bridge,.notebook-conclusion,.coherence-indicator,.applied-setting{background:var(--mq-surface);border-color:var(--mq-green);color:var(--mq-text)}
+.geo-caption,.figure-explanation,.notebook-reading,.analysis-note{color:var(--mq-muted)}
+.geo-dialog,.figure-dialog{background:var(--mq-panel);color:var(--mq-text);border:1px solid var(--mq-wire);box-shadow:0 20px 80px #0009}
+.geo-dialog::backdrop,.figure-dialog::backdrop{background:#030906eb}
+.figure-dialog-heading{background:var(--mq-surface)}
+.geo-dialog svg,.figure-dialog svg{color:var(--mq-text)}
+.particle-figure canvas,.slit-canvas{background:var(--mq-panel)}
+.guide-book{background:var(--mq-bg)}
+.guide-cover h1{color:var(--mq-green)}
+@media(max-width:1100px){.course-introduction{grid-template-columns:1fr 1fr;gap:10px}.course-introduction h1{font-size:45px}.matrix-hero-copy>p{font-size:18px}.matrix-edition{display:none}.course-brand{font-size:14px}}
+@media(max-width:800px){.course-introduction{grid-template-columns:1fr}.matrix-cover-art{max-width:520px;margin:0 auto}.course-introduction h1{font-size:50px}.chapter-cover{padding:22px}.course-brand{font-size:13px}.course-topbar nav{gap:6px}.course-topbar nav button{font-size:12px;padding:8px}}
+@media(max-width:480px){.course-introduction h1{font-size:42px}.matrix-hero-copy>p{font-size:18px}.course-brand small{font-size:9px}.brand-q{width:34px;height:38px;font-size:28px}.course-topbar{gap:9px}.chapter-card>div{padding:18px}.chapter-cover{padding:20px 16px}.course-introduction{padding-top:8px}}
+@media(prefers-reduced-motion:reduce){.course-app *,[data-slot=select-content]{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+@media print{
+ :root{color-scheme:light}
+ input,select,textarea{color-scheme:light}
+ .matrix-rain,.matrix-edition{display:none}
+ .course-app,.guide-book,html,body{background:white;color:var(--mq-text)}
+ .course-topbar,.course-sidebar{display:none!important}
+ .course-main{margin:0;padding:0}
+ .matrix-cover-art{background:none}
+ .chapter-card,.chapter-cover{background:white;box-shadow:none}
+ .geo-controls,.notebook-controls,.control-panel{background:var(--mq-surface)}
+ .geo-stage,.stage,.geo-visual,.geo-plane{background:white}
+ .equation{white-space:normal}
+}
+.course-app .probability-actions button{background:var(--mq-blue);color:var(--mq-on-accent)}
+.course-app .probability-actions button:disabled{opacity:.48}
+.course-app .lab-segments [data-state=active]{background:var(--mq-green)!important;color:var(--mq-on-accent)!important}
+.course-app .event-mosaic button.selected{background:var(--mq-raised);border-color:var(--mq-violet);box-shadow:inset 0 0 0 1px var(--mq-violet)}
+.course-app .tensor-grid>button[aria-pressed=true]{outline-color:var(--mq-green)}

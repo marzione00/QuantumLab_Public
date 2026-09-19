@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "checks": 13607,
+  "randomHermitianCases": 250,
+  "binomialMaxN": 10000,
+  "reference": {
+    "eigenvalues": [
+      2,
+      -1
+    ],
+    "probabilities": [
+      0.8666666666666665,
+      0.13333333333333328
+    ],
+    "mean": 1.5999999999999999,
+    "variance": 1.04
+  },
+  "scope": "Verifiche numeriche indipendenti dei modelli; non certificano l’interazione nel browser."
+}

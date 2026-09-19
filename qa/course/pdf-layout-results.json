@@ -1,0 +1,29 @@
+[
+  {
+    "file": "Guida_corso.pdf",
+    "pages": 133,
+    "figures": 71,
+    "outsidePage": [],
+    "missingGlyphs": 0,
+    "demonstrations": 28,
+    "links": 56
+  },
+  {
+    "file": "Guida_capitolo_1.pdf",
+    "pages": 41,
+    "figures": 22,
+    "outsidePage": [],
+    "missingGlyphs": 0,
+    "demonstrations": 10,
+    "links": 20
+  },
+  {
+    "file": "Guida_capitolo_2.pdf",
+    "pages": 93,
+    "figures": 49,
+    "outsidePage": [],
+    "missingGlyphs": 0,
+    "demonstrations": 18,
+    "links": 36
+  }
+]

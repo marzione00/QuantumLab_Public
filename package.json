@@ -1,0 +1,40 @@
+{
+  "name": "quantum-e-post-quantum-computing-laboratorio",
+  "version": "3.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "packageManager": "pnpm@11.25.0",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node qa/verify-models.mjs && node qa/verify-expanded.mjs && node qa/verify-loschmidt.mjs && node qa/verify-quantum.mjs && node qa/verify-revision.mjs && node qa/course/verify-mathematics.mjs && node qa/course/verify-corrections.mjs",
+    "typecheck": "tsc --noEmit",
+    "check": "pnpm run typecheck && pnpm test && pnpm run build && pnpm run check:dist",
+    "check:dist": "node qa/course/verify-course.mjs && node qa/course/verify-theme.mjs",
+    "guides": "node scripts/render-course.mjs",
+    "guides:pdf": "python3 scripts/generate-course-pdf.py",
+    "generate:all": "node scripts/generate-all.mjs"
+  },
+  "dependencies": {
+    "class-variance-authority": "0.7.1",
+    "clsx": "2.1.1",
+    "lucide-react": "1.31.0",
+    "radix-ui": "1.6.7",
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "tailwind-merge": "3.6.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.12",
+    "@tailwindcss/postcss": "4.2.1",
+    "tailwindcss": "4.2.1",
+    "tw-animate-css": "1.4.0",
+    "typescript": "5.9.3",
+    "@types/node": "22.19.19",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3"
+  },
+  "description": "Due capitoli, 28 dimostrazioni interattive: simulazione e geometria del calcolo quantistico."
+}

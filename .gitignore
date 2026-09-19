@@ -1,0 +1,13 @@
+node_modules/
+dist/
+*.tsbuildinfo
+qa/rendered/
+qa/*-results.json
+.DS_Store
+Thumbs.db
+
+release/
+qa/guide-preview/
+
+qa/course/views.json
+qa/course/pdf/

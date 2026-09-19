@@ -1,0 +1,170 @@
+{
+  "c1-moto": {
+    "figures": 2,
+    "calculation_steps": 0,
+    "intro_characters": 296,
+    "notebook_explanations": 0
+  },
+  "c1-loschmidt": {
+    "figures": 1,
+    "calculation_steps": 0,
+    "intro_characters": 355,
+    "notebook_explanations": 0
+  },
+  "c1-onde": {
+    "figures": 3,
+    "calculation_steps": 0,
+    "intro_characters": 382,
+    "notebook_explanations": 0
+  },
+  "c1-fenditure": {
+    "figures": 2,
+    "calculation_steps": 0,
+    "intro_characters": 303,
+    "notebook_explanations": 0
+  },
+  "c1-polarizzazione": {
+    "figures": 2,
+    "calculation_steps": 0,
+    "intro_characters": 307,
+    "notebook_explanations": 0
+  },
+  "c1-calcolo": {
+    "figures": 8,
+    "calculation_steps": 0,
+    "intro_characters": 451,
+    "notebook_explanations": 9
+  },
+  "c1-coppie": {
+    "figures": 1,
+    "calculation_steps": 0,
+    "intro_characters": 245,
+    "notebook_explanations": 7
+  },
+  "c1-ambiente": {
+    "figures": 1,
+    "calculation_steps": 0,
+    "intro_characters": 417,
+    "notebook_explanations": 5
+  },
+  "c1-informazione": {
+    "figures": 1,
+    "calculation_steps": 0,
+    "intro_characters": 327,
+    "notebook_explanations": 4
+  },
+  "c1-sintesi": {
+    "figures": 1,
+    "calculation_steps": 0,
+    "intro_characters": 388,
+    "notebook_explanations": 8
+  },
+  "c2-complessi": {
+    "figures": 1,
+    "calculation_steps": 5,
+    "intro_characters": 246,
+    "notebook_explanations": 0
+  },
+  "c2-basi": {
+    "figures": 1,
+    "calculation_steps": 7,
+    "intro_characters": 301,
+    "notebook_explanations": 0
+  },
+  "c2-proiezioni": {
+    "figures": 1,
+    "calculation_steps": 7,
+    "intro_characters": 277,
+    "notebook_explanations": 0
+  },
+  "c2-matrici": {
+    "figures": 2,
+    "calculation_steps": 7,
+    "intro_characters": 247,
+    "notebook_explanations": 0
+  },
+  "c2-aggiunto": {
+    "figures": 4,
+    "calculation_steps": 7,
+    "intro_characters": 240,
+    "notebook_explanations": 0
+  },
+  "c2-spettro": {
+    "figures": 3,
+    "calculation_steps": 8,
+    "intro_characters": 244,
+    "notebook_explanations": 0
+  },
+  "c2-composizione": {
+    "figures": 3,
+    "calculation_steps": 7,
+    "intro_characters": 264,
+    "notebook_explanations": 0
+  },
+  "c2-tensore": {
+    "figures": 4,
+    "calculation_steps": 6,
+    "intro_characters": 473,
+    "notebook_explanations": 0
+  },
+  "c2-eventi": {
+    "figures": 1,
+    "calculation_steps": 5,
+    "intro_characters": 215,
+    "notebook_explanations": 0
+  },
+  "c2-momenti": {
+    "figures": 1,
+    "calculation_steps": 7,
+    "intro_characters": 273,
+    "notebook_explanations": 0
+  },
+  "c2-frequenze": {
+    "figures": 1,
+    "calculation_steps": 7,
+    "intro_characters": 258,
+    "notebook_explanations": 0
+  },
+  "c2-condizionamento": {
+    "figures": 2,
+    "calculation_steps": 7,
+    "intro_characters": 274,
+    "notebook_explanations": 0
+  },
+  "c2-stati": {
+    "figures": 3,
+    "calculation_steps": 8,
+    "intro_characters": 354,
+    "notebook_explanations": 0
+  },
+  "c2-unitarie": {
+    "figures": 7,
+    "calculation_steps": 7,
+    "intro_characters": 336,
+    "notebook_explanations": 0
+  },
+  "c2-born": {
+    "figures": 6,
+    "calculation_steps": 7,
+    "intro_characters": 230,
+    "notebook_explanations": 0
+  },
+  "c2-incompatibilita": {
+    "figures": 2,
+    "calculation_steps": 8,
+    "intro_characters": 303,
+    "notebook_explanations": 0
+  },
+  "c2-composti": {
+    "figures": 5,
+    "calculation_steps": 9,
+    "intro_characters": 297,
+    "notebook_explanations": 0
+  },
+  "c2-esperimento": {
+    "figures": 2,
+    "calculation_steps": 13,
+    "intro_characters": 274,
+    "notebook_explanations": 0
+  }
+}

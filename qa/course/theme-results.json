@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "checks": 5581,
+  "demonstrations": 28,
+  "coverOnlyDecoration": true,
+  "screenAndPrintPalette": true,
+  "canvasTokenResolution": true,
+  "instructionsCopied": true,
+  "browserInteractionTested": false
+}
