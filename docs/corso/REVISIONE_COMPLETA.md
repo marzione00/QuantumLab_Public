@@ -1,31 +1,35 @@
-# Revisione dei due capitoli · Matrix 3.0
+# Revisione completa · Matrix 4.1
 
-La revisione conserva le 28 dimostrazioni e la struttura del corso. I capitoli futuri restano indicati come «To be done».
+28 settembre 2026. Questa revisione attua le correzioni dell’audit sul laboratorio e sulle guide; le quattro presentazioni Seminario restano congelate. Il percorso conserva 81 sezioni e 146 esempi svolti nei moduli 2–4.
 
-## Correzioni scientifiche
+## Correzioni della versione 4.1
 
-La posizione delle frequenze sull’asse è stata riallineata ai conteggi effettivi, inclusi N=1 e gli esiti certi. Gli eventi vuoti sono rappresentati con ∅. Il calcolo degli autovettori utilizza grandezze rapportate alla separazione spettrale, evitando il blocco prodotto da matrici piccole. Le convenzioni della fase sono conservate e l’esempio conclusivo mantiene i risultati esatti delle slide.
+La risposta rettangolare del rivelatore integra il campo su un dominio esteso oltre la finestra. La larghezza richiesta viene conservata anche quando è inferiore al passo originario della griglia. Il confronto geometrico usa la medesima media; interfaccia e CSV riportano risoluzione richiesta e applicata, passo numerico, frazione catturata e numeri di Fresnel della singola fenditura e dell’intera apertura doppia. La relazione fra larghezza della fenditura e figura sullo schermo dichiara il regime fisico pertinente.
 
-## Geometria e svolgimenti
+Nel modulo 2 gli esempi di coordinate, matrici, autodirezioni, proiettori e funzioni di matrice perseguono obiettivi distinti. Dati e definizioni precedono il calcolo. I confronti comprendono aggiunto non hermitiano, spettro degenere, probabilità e frequenze, evento certo e ramo nullo, distribuzioni congiunte diverse con identiche marginali. La parametrizzazione di Bloch e l’esponenziale di matrice preparano l’evoluzione del modulo 3.
 
-Il prodotto tensoriale confronta nello stesso piano ogni componente prima e dopo A⊗B. La decomposizione spettrale mostra f(A)v e i suoi contributi. Nucleo e immagine sono evidenziati, anche per piani immagine non coincidenti con il piano xy. Le sfere mostrano assi di rotazione e angolo della misura; una costruzione separata collega il mezzo angolo alla probabilità. I confronti prima/dopo usano scale comuni.
+Nei moduli 3–4 sono sviluppati i raccordi fra K=X+Z e la sua evoluzione, riflessioni di Grover e autofasi, radici dell’unità e fattorizzazione binaria della QFT. QPE dichiara operatore, autostati, coefficienti della preparazione e ordine dei bit. Le promesse di Simon e Bernstein–Vazirani sono complete. Il test di Hadamard include una fase negativa e gli stati di Bell sono confrontati in più basi. La ricostruzione del logaritmo discreto segue le congruenze osservate. Shor distingue esito ammissibile, esito impossibile e analisi puramente aritmetica della frazione selezionata.
 
-Sono stati completati l’eliminazione nel cambio di base, la parametrizzazione del nucleo, la scelta e normalizzazione degli autovettori, i prodotti intermedi e i calcoli delle sequenze di misura in entrambi gli ordini. La vista ampia mantiene una figura aggiornata accanto allo svolgimento. Le etichette dei vettori evitano le sovrapposizioni più frequenti.
+Il piano di Grover segue ogni stato intermedio mediante prodotti interni con le direzioni collettive della preparazione, conservando i segni. Le traiettorie di Bloch seguono le porte e i loro angoli. Rette numeriche e griglie visualizzano baricentri, convergenti e distribuzioni congiunte. Le marginali finali di Deutsch, SWAP e Hadamard restano sempre visibili. Ripristino e accorciamento delle sequenze mantengono il cursore coerente. La tabella della ricerca con M ignoto conserva lo schema dei dati. La misura di Born mantiene uno stato condizionato definito per ogni ramo di probabilità positiva rappresentabile.
 
-## Prosa e materiali
+Le guide PDF tengono raccordi e titoli insieme al contenuto pertinente. Le formule si interrompono fra termini completi. Espansioni e tabelle estese sono raccolte in appendici F, T e R con identificatori, intestazioni ripetute e collegamenti di ritorno. Il generatore verifica la presenza nel PDF di tutte le righe e di tutte le espansioni trasferite.
 
-I testi spiegano le convenzioni locali, la fase globale, il ruolo degli angoli e l’effetto dei comandi. Le didascalie seguono la palette attuale. La dimostrazione 1.10 espone i modelli e i loro effetti senza chiedere previsioni da valutare. I collegamenti fra capitoli sono pertinenti alla scheda e ogni pagina citata delle slide ha un proprio rimando.
+## Struttura conservata dalla versione 4.0
 
-Le guide sono state rigenerate dai componenti del laboratorio. Il PDF conserva indici, esponenti, matrici, titoli delle figure e spiegazioni delle schede 1.06–1.10. Le barre delle probabilità sono disegnate anche nella guida. L’esportazione HTML conserva teoria, figure, interpretazione, passaggi e parametri; gli elementi grafici derivati da pulsanti rimangono leggibili.
+- Modulo 1 conservato; fenditure riscritte con propagazione di Fresnel, numero di Fresnel, finestra regolabile, risoluzione del rivelatore e confronto geometrico. Tre preset permettono di attraversare i regimi.
+- Modulo 2 riorganizzato in 32 sezioni e sei gruppi, con teoria preliminare, 65 esempi e passaggi visibili. I diciotto strumenti precedenti rimangono nelle esplorazioni. Completati casi di fase, prodotto interno complesso, misure incompatibili ed esperimento spettrale esatto.
+- Modulo 3 aggiunto: 14 sezioni e 30 esempi. Circuiti selezionabili, stati intermedi, prodotti matriciali, ancille, Deutsch completo, primo Grover e programma conclusivo.
+- Modulo 4 aggiunto: 25 sezioni e 51 esempi. Oracoli, ricerca, Fourier, stima di fase, aritmetica reversibile, RSA, autostati, frazioni continue, Shor per 15 e 21, logaritmo discreto.
+- Registro unico dei moduli, navigazione consecutiva, conservazione degli hash, guide HTML/PDF e quattro pacchetti autonomi.
+- Tema Matrix conservato; guida PDF nel modello definitivo ArsClassica 01 · Classica, con formule LaTeX e diagrammi TikZ vettoriali. Presentazioni Seminario congelate e rimandi aggiornati alla loro numerazione PDF.
+- Istruzioni per futuri LLM aggiornate con architettura, contratti scientifici, limiti delle implementazioni e procedura di rilascio.
 
-## Verifiche e limiti
+## Scelte didattiche
 
-Sono state eseguite le suite numeriche dei due capitoli, i controlli TypeScript e verifiche mirate delle configurazioni alternative. Le guide sono state controllate per glifi, impaginazione, figure e collegamenti. I pacchetti locali incorporano JavaScript e CSS e includono le due presentazioni.
+La lettura precede l'esplorazione. Figure e calcoli provengono dagli stessi dati. Il significato dello spazio rappresentato è dichiarato. Gli stati intermedi sono selezionabili senza misura implicita. I casi d'insuccesso sono parte dello svolgimento; il periodo di Shor non viene fornito al circuito.
 
-Il servizio di anteprima interattiva non era disponibile. Il comportamento reale di mouse, touch, finestre di dialogo e ridimensionamento del browser rimane da verificare attraverso la procedura COLLAUDO.md inclusa nei materiali. Il rendering sul server e i controlli numerici sono documentati separatamente da questo limite.
+Le tabelle complete sono raccolte in sezioni espandibili nell'interfaccia e nelle appendici della guida di consultazione. I costi delle piccole reti esplicite restano distinti dalle complessità degli algoritmi scalabili. Conteggio e stima di ampiezza esplicitano il ruolo di p noto nel modello spettrale illustrativo.
 
-## Edizione Matrix
+## Consegna e stato delle verifiche
 
-Il tema approvato è applicato alla copertina, alla navigazione, ai controlli, alle 28 dimostrazioni e alle finestre ingrandite. Le serie conservano colori distinti e le didascalie sono state aggiornate. La pioggia di codice rimane statica e decorativa sulle copertine. Il PDF utilizza la palette chiara per la stampa; gli HTML esportati incorporano gli stessi stili del corso.
-
-Sono inclusi un documento di continuità per futuri progetti Work/chat e una breve istruzione di ingresso per gli assistenti. I pacchetti sorgenti contengono il generatore del tema e i controlli della palette.
+Compilazione, prove numeriche, controlli strutturali, test DOM e controlli PDF sono documentati in VERIFICHE.md. L'impaginazione PDF è stata ispezionata su pagine campione. Il collaudo in un browser reale e la sperimentazione con studenti restano da eseguire. I materiali non sono stati pubblicati su un sito esterno.

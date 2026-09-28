@@ -1,0 +1,67 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G3.01}{Tradurre un circuito nella sequenza delle operazioni}{Guida esplicita}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Il circuito applica prima H e poi Z alla preparazione \(\ket\psi=(2,-1)^T/\sqrt5\). Scrivere il prodotto complessivo, gli stati intermedi e le probabilità finali. Confrontare con il circuito nell’ordine opposto.
+
+\ExTheory{\ExRef{c3-programma}{3.01}}{Nel circuito il tempo procede da sinistra a destra; sul vettore l’operatore più a destra agisce per primo. Si usano \(H=\frac1{\sqrt2}\begin{pmatrix}1&1\\1&-1\end{pmatrix}\) e \(Z=\operatorname{diag}(1,-1)\).}
+
+\ExPrediction{La prima H forma somma e differenza; Z cambia il segno della seconda componente. Prevedere quali probabilità possano cambiare nell’ultimo passaggio.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\node[left] at (-.3,0) {$ (2,-1)^T/\sqrt5 $};\draw[Ink] (-.3,0)--(3.0,0);\node[draw=Accent,fill=white,minimum height=9mm,minimum width=10mm] at (0.5,0) {$ H $};\node[draw=Accent,fill=white,minimum height=9mm,minimum width=10mm] at (2.0,0) {$ Z $};\node[right] at (3.0,0) {$\ket{\psi_f}$};
+\end{tikzpicture}}{L’operatore complessivo è ZH.}
+
+
+\begin{ExTasks}
+
+\item Controllare la preparazione.
+
+\item Calcolare H sul vettore iniziale.
+
+\item Applicare Z al risultato.
+
+\item Calcolare la matrice ZH e verificarne l’azione diretta.
+
+\item Invertire l’ordine e confrontare le distribuzioni.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Normalizzare i dati}
+
+\(\|\psi\|^2=(2^2+(-1)^2)/5=1\). Le probabilità iniziali sono \(4/5\) e \(1/5\).
+
+\ExStep{Prima porta}
+
+\ExEq{H\ket\psi&=\frac1{\sqrt{10}}\colv{2-1\\2+1}=\frac1{\sqrt{10}}\colv{1\\3}.}
+
+\ExStep{Seconda porta}
+
+\ExEq{ZH\ket\psi&=\frac1{\sqrt{10}}\colv{1\\-3},\\p_0&=1/10,\qquad p_1=9/10.}
+Z modifica la fase relativa, preservando in questo stadio i moduli.
+
+\ExStep{Verifica della composizione}
+
+\ExEq{ZH&=\frac1{\sqrt2}\begin{pmatrix}1&1\\-1&1\end{pmatrix},\\ZH\ket\psi&=\frac1{\sqrt{10}}\colv{2-1\\-2-1}=\frac1{\sqrt{10}}\colv{1\\-3}.}
+
+\ExStep{Cambiare l’ordine}
+
+\ExEq{Z\ket\psi&=\frac1{\sqrt5}\colv{2\\1},\\HZ\ket\psi&=\frac1{\sqrt{10}}\colv{2+1\\2-1}=\frac1{\sqrt{10}}\colv{3\\1}.}
+Le probabilità diventano \((9/10,1/10)\). Il controllo delle norme dà sempre \((1+9)/10=1\).
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-.6,0)--(2.2,0) node[right] {esito};\draw[exaxis] (-.6,0)--(-.6,3.6) node[above] {$p$};\node[left] at (-.6,3) {$ 1 $};\draw[Ink!15,dashed] (-.6,3)--(1.7000000000000002,3);\filldraw[fill=Accent!25,draw=Accent] (0.0,0) rectangle (0.65,0.30000000000000004);\node[below] at (0.325,0) {$ 0 $};\node[above] at (0.325,0.30000000000000004) {$ 0.1 $};\filldraw[fill=Accent!25,draw=Accent] (1.1,0) rectangle (1.75,2.7);\node[below] at (1.425,0) {$ 1 $};\node[above] at (1.425,2.7) {$ 0.9 $};
+\end{tikzpicture}}{Lettura del circuito H seguito da Z.}
+
+
+\ExInterpret{Il disegno del circuito, il prodotto matriciale e la sequenza degli stati devono esprimere lo stesso ordine. Le probabilità finali forniscono qui un controllo che distingue i due programmi.}
+
+\ExLab{Nella sezione 3.01 il caso «H su (2,-1)/\(\sqrt5\)» verifica il primo stato intermedio. L’esercizio aggiunge Z; confrontare il segno della seconda componente con la definizione della porta nella sezione 3.03. Il secondo programma si ricostruisce invertendo l’ordine dei due prodotti.}
+
+
+\end{minipage}

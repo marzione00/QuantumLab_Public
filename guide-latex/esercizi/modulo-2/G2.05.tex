@@ -1,0 +1,89 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G2.05}{Costruire una base con Gram–Schmidt}{Guida esplicita}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Nello spazio reale \(\mathbb R^2\), con prodotto interno euclideo, siano \(u=(1,1)^T\) e \(v=(2,0)^T\). Costruire una base ortonormale mediante Gram--Schmidt, ricostruire \(v\) nella nuova base e discutere che cosa accadrebbe sostituendo \(v\) con \(v^{\prime}=3u\).
+
+\ExTheory{\ExRef{c2-proiezioni}{2.06}}{La norma è \(\|u\|=\sqrt{\inner{u}{u}}\). Data una direzione unitaria \(e_1\), la proiezione di \(v\) è \(p=e_1\inner{e_1}{v}\). Il residuo \(w=v-p\) è ortogonale a \(e_1\). Se \(w\ne0\), \(e_2=w/\|w\|\) completa la base.}
+
+\ExPrediction{Tracciare la diagonale individuata da \(u\). La proiezione di \(v\) deve appartenere a tale retta; il segmento che unisce la proiezione a \(v\) deve esserle perpendicolare. Prevedere il segno della seconda componente del residuo.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-0.35,0)--(2.55,0) node[right] {$x_1$};\draw[exaxis] (0,-0.35)--(0,1.55) node[above] {$x_2$};\draw[->,Secondary,line width=1.1pt] (0,0)--(1,1) node[anchor=south west] {$ u $};\draw[->,Accent,line width=1.1pt] (0,0)--(2,0) node[anchor=south west] {$ v $};
+\end{tikzpicture}}{Piano delle coordinate reali. Le lunghezze e gli angoli sono quelli del prodotto interno euclideo.}
+
+
+\begin{ExTasks}
+
+\item Calcolare \(\inner{u}{u}\) e normalizzare \(u\).
+
+\item Eseguire il prodotto interno \(\inner{e_1}{v}\) e costruire \(p\).
+
+\item Sottrarre \(p\) da \(v\), componente per componente.
+
+\item Normalizzare il residuo e verificare i tre prodotti interni della base.
+
+\item Calcolare le coordinate di \(v\) nella base ottenuta e ricostruirlo.
+
+\item Ripetere la sottrazione per \(v^{\prime}=3u\) e spiegare il residuo nullo.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Normalizzare la prima direzione}
+
+Si ottiene
+\ExEq{\inner{u}{u}&=1\cdot1+1\cdot1=2,\quad\|u\|=\sqrt2,\\e_1&=\frac1{\sqrt2}\colv{1\\1}.}
+Le coordinate cambiano di un fattore comune; la retta generata dal vettore rimane la stessa.
+
+\ExStep{Calcolare la proiezione}
+
+Il coefficiente lungo \(e_1\) è uno scalare:
+\ExEq{\inner{e_1}{v}&=\frac1{\sqrt2}\cdot2+\frac1{\sqrt2}\cdot0
+=\frac2{\sqrt2}=\sqrt2,\\p&=\sqrt2\,e_1=\frac{\sqrt2}{\sqrt2}\colv{1\\1}=\colv{1\\1}.}
+La proiezione è il vettore \(p\); il numero \(\sqrt2\) ne misura la componente nella direzione unitaria.
+
+\ExStep{Isolare e normalizzare il residuo}
+
+Si sottraggono le componenti:
+\ExEq{w&=v-p=\colv{2-1\\0-1}=\colv{1\\-1},\\
+\|w\|^2&=1^2+(-1)^2=2,\qquad e_2=\frac1{\sqrt2}\colv{1\\-1}.}
+Il segno negativo della seconda coordinata porta dal punto \((1,1)\) al punto \((2,0)\).
+
+\ExStep{Verificare l’ortonormalità}
+
+I controlli sono distinti:
+\ExEq{\inner{e_1}{e_1}&=\tfrac12+\tfrac12=1,\\
+\inner{e_2}{e_2}&=\tfrac12+\tfrac12=1,\\
+\inner{e_1}{e_2}&=\tfrac12-\tfrac12=0.}
+La matrice \(E=(e_1\ e_2)\) soddisfa quindi \(E^TE=I\).
+
+\ExStep{Ricostruire il vettore}
+
+La seconda coordinata vale \(\inner{e_2}{v}=2/\sqrt2+0=\sqrt2\). Pertanto
+\ExEq{[v]_E&=\colv{\sqrt2\\\sqrt2},\\
+E[v]_E&=\frac1{\sqrt2}\begin{pmatrix}1&1\\1&-1\end{pmatrix}\colv{\sqrt2\\\sqrt2}
+=\colv{(\sqrt2+\sqrt2)/\sqrt2\\(\sqrt2-\sqrt2)/\sqrt2}=\colv{2\\0}.}
+Anche la norma si conserva: \(2^2+0^2=4\) e \((\sqrt2)^2+(\sqrt2)^2=4\).
+
+\ExStep{Riconoscere la dipendenza}
+
+Per \(v'=(3,3)^T\), il coefficiente è \(3/\sqrt2+3/\sqrt2=3\sqrt2\). Quindi
+\ExEq{p'&=3\sqrt2\,e_1=\colv{3\\3},\qquad w'=v'-p'=\colv{0\\0}.}
+La norma nulla impedisce la divisione. I due vettori descrivono una sola direzione: per una base del piano occorrerebbe scegliere un secondo vettore indipendente.
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-0.35,0)--(2.55,0) node[right] {$x_1$};\draw[exaxis] (0,-1.35)--(0,1.55) node[above] {$x_2$};\draw[->,Secondary,line width=1.1pt] (0,0)--(1,1) node[anchor=south west] {$ p $};\draw[->,Accent,line width=1.1pt] (0,0)--(2,0) node[anchor=south west] {$ v $};\draw[->,Ink,line width=1.1pt] (0,0)--(1,-1) node[anchor=north west] {$ w $};\draw[Secondary,dashed,->] (1,1)--(2,0);\draw[Ink!30,dashed] (-1.6,-1.6)--(2,2);
+\end{tikzpicture}}{La decomposizione è \(v=p+w\). Il residuo disegnato dall’origine è parallelo al segmento tratteggiato.}
+
+
+\ExInterpret{La proiezione separa la componente lungo la prima direzione; la sottrazione conserva la parte necessaria a generare la seconda. In uno spazio complesso il primo argomento del prodotto interno sarebbe coniugato. Il residuo nullo segnala una dipendenza dei dati.}
+
+\ExLab{Aprire lo strumento di esplorazione della sezione 2.06. Inserire \(u_1=1,u_2=1,v_1=2,v_2=0\) e confrontare proiezione e residuo con la figura. Sostituire poi \(v_1=v_2=3\): verificare che non venga costruita una seconda direzione normalizzata dal vettore nullo.}
+
+
+\end{minipage}

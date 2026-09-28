@@ -1,0 +1,72 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G3.09}{Preparare e misurare uno stato di Bell}{Consolidamento}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Preparare \(\ket{\Phi^+}=(\ket{00}+\ket{11})/\sqrt2\) da \(\ket{00}\). Calcolare le letture Z,Z, X,X e Z,X e gli stati condizionati del secondo qubit. Confrontare X,X con una miscela classica equiprobabile di 00 e 11.
+
+\ExTheory{\ExRef{c3-bell}{3.08}}{La preparazione usa H sul primo qubit e CNOT. Per misurare X si applica H prima della lettura Z. Una distribuzione congiunta si marginalizza sommando le probabilità sugli esiti del sistema ignorato.}
+
+\ExPrediction{La coppia di Bell dovrebbe mostrare accordo sia in Z,Z sia in X,X. Nelle basi incrociate Z,X le quattro coppie saranno invece equiprobabili.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[Ink] (0,1)--(5,1);\draw[Ink] (0,0)--(5,0);\node[left] at (0,1) {$\ket0$};\node[left] at (0,0) {$\ket0$};\node[draw=Accent,fill=white,minimum size=8mm] at (1.5,1) {$H$};\fill[Accent] (3.5,1) circle(2pt);\draw[Accent] (3.5,1)--(3.5,0);\draw[Accent,fill=white] (3.5,0) circle(.15);\draw[Accent] (3.35,0)--(3.65,0);\draw[Accent] (3.5,-.15)--(3.5,.15);
+\end{tikzpicture}}{Preparazione di Bell mediante una porta locale e un’interazione controllata.}
+
+
+\begin{ExTasks}
+
+\item Seguire le due porte di preparazione.
+
+\item Calcolare Z,Z e i due rami condizionati.
+
+\item Espandere \((H\otimes H)\ket{\Phi^+}\).
+
+\item Espandere \((I\otimes H)\ket{\Phi^+}\).
+
+\item Calcolare X,X per la miscela classica e confrontare.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Preparare la coppia}
+
+\ExEq{\ket{00}&\xrightarrow{H\otimes I}(\ket{00}+\ket{10})/\sqrt2\\
+&\xrightarrow{\mathrm{CNOT}}(\ket{00}+\ket{11})/\sqrt2.}
+
+\ExStep{Leggere Z,Z}
+
+Le probabilità sono \((1/2,0,0,1/2)\). Ogni marginale è uniforme. Condizionando ad A=0, il secondo qubit è \(\ket0\); condizionando ad A=1, è \(\ket1\). La normalizzazione divide ogni ramo per \(\sqrt{1/2}\).
+
+\ExStep{Leggere X,X}
+
+\ExEq{(H\otimes H)\ket{\Phi^+}
+&=\frac1{2\sqrt2}\bigl[(\ket{00}+\ket{01}+\ket{10}+\ket{11})\\
+&\qquad+(\ket{00}-\ket{01}-\ket{10}+\ket{11})\bigr]\\
+&=(\ket{00}+\ket{11})/\sqrt2.}
+Nella lettura X le etichette 0 e 1 indicano rispettivamente gli esiti \(+\) e \(-\). La probabilità di accordo è uno.
+
+\ExStep{Leggere Z,X}
+
+\ExEq{(I\otimes H)\ket{\Phi^+}
+&=\tfrac12(\ket{00}+\ket{01}+\ket{10}-\ket{11}).}
+Ciascun modulo quadro vale \(1/4\). Le marginali restano uniformi, mentre la probabilità di accordo è \(1/2\).
+
+\ExStep{Confrontare una miscela}
+
+La miscela prepara 00 oppure 11 con probabilità \(1/2\). Dopo H su entrambi i qubit, ciascuno dei due ingressi produce quattro probabilità \(1/4\), con segni delle ampiezze differenti. Mediando le preparazioni, ogni esito ha probabilità \((1/2)(1/4)+(1/2)(1/4)=1/4\). La miscela conserva l’accordo Z,Z ma non quello X,X.
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-.6,0)--(4.4,0) node[right] {esito};\draw[exaxis] (-.6,0)--(-.6,3.6) node[above] {$p$};\node[left] at (-.6,3) {$ 1 $};\draw[Ink!15,dashed] (-.6,3)--(3.9000000000000004,3);\filldraw[fill=Accent!25,draw=Accent] (0.0,0) rectangle (0.65,0.75);\node[below] at (0.325,0) {$ 00 $};\node[above] at (0.325,0.75) {$ 0.25 $};\filldraw[fill=Accent!25,draw=Accent] (1.1,0) rectangle (1.75,0.75);\node[below] at (1.425,0) {$ 01 $};\node[above] at (1.425,0.75) {$ 0.25 $};\filldraw[fill=Accent!25,draw=Accent] (2.2,0) rectangle (2.85,0.75);\node[below] at (2.5250000000000004,0) {$ 10 $};\node[above] at (2.5250000000000004,0.75) {$ 0.25 $};\filldraw[fill=Accent!25,draw=Accent] (3.3000000000000003,0) rectangle (3.95,0.75);\node[below] at (3.6250000000000004,0) {$ 11 $};\node[above] at (3.6250000000000004,0.75) {$ 0.25 $};
+\end{tikzpicture}}{Lettura Z,X: le basi differenti producono quattro esiti equiprobabili.}
+
+
+\ExInterpret{Le correlazioni dipendono dalle basi di misura e dalla coerenza della preparazione. Le statistiche locali restano uniformi nei tre confronti e non descrivono da sole la coppia.}
+
+\ExLab{Nella sezione 3.08 confrontare «Bell misurato in Z,Z» e «Bell misurato in X,X», poi il confronto separato Z,X. Seguire ogni Hadamard di lettura sullo stato congiunto; il confronto con la miscela va eseguito mediando probabilità di preparazioni distinte.}
+
+
+\end{minipage}

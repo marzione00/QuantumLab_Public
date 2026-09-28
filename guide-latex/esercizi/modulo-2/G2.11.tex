@@ -1,0 +1,71 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G2.11}{Dagli eventi a media e varianza}{Collegamento}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Una variabile X assume valori 0, 1, 2 con pesi rispettivamente 1, 2, 1. Normalizzare, calcolare media e varianza, raggruppare gli esiti per parità e condizionare all’evento \(X\geq1\). Confrontare con un campione di 40 prove avente conteggi 9, 22, 9.
+
+\ExTheory{\ExRef{c2-eventi}{2.16}; \ExRef{c2-distribuzioni}{2.17}; \ExRef{c2-momenti}{2.18}; \ExRef{c2-frequenze}{2.19}; \ExRef{c2-condizionamento}{2.20}}{Pesi non negativi \(w_j\) si normalizzano mediante \(p_j=w_j/\sum_kw_k\). I momenti sono \(\mathbb E[X]=\sum_jx_jp_j\) ed \(\mathbb E[X^2]=\sum_jx_j^2p_j\); la varianza è \(\mathbb E[X^2]-\mathbb E[X]^2\). Il condizionamento divide i pesi dell’evento per la sua probabilità.}
+
+\ExPrediction{La distribuzione è simmetrica attorno a 1. La media dovrebbe coincidere con il centro, mentre il condizionamento che esclude zero dovrebbe spostarla verso destra.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-.6,0)--(3.3000000000000003,0) node[right] {esito};\draw[exaxis] (-.6,0)--(-.6,3.6) node[above] {$w$};\node[left] at (-.6,3) {$ 2 $};\draw[Ink!15,dashed] (-.6,3)--(2.8000000000000003,3);\filldraw[fill=Accent!25,draw=Accent] (0.0,0) rectangle (0.65,1.5);\node[below] at (0.325,0) {$ 0 $};\node[above] at (0.325,1.5) {$ 1 $};\filldraw[fill=Accent!25,draw=Accent] (1.1,0) rectangle (1.75,3.0);\node[below] at (1.425,0) {$ 1 $};\node[above] at (1.425,3.0) {$ 2 $};\filldraw[fill=Accent!25,draw=Accent] (2.2,0) rectangle (2.85,1.5);\node[below] at (2.5250000000000004,0) {$ 2 $};\node[above] at (2.5250000000000004,1.5) {$ 1 $};
+\end{tikzpicture}}{Pesi iniziali: l’asse verticale indica \(w_j\), prima della normalizzazione.}
+
+
+\begin{ExTasks}
+
+\item Calcolare il peso totale e le probabilità.
+
+\item Calcolare separatamente primo e secondo momento.
+
+\item Ricavare la varianza.
+
+\item Raggruppare per parità e condizionare a \(X\geq1\).
+
+\item Calcolare le frequenze campionarie e distinguerle dalle probabilità.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Normalizzare}
+
+Il totale è \(W=1+2+1=4\), dunque \(p=(1/4,1/2,1/4)\). La somma \(1/4+1/2+1/4=1\) controlla la normalizzazione.
+
+\ExStep{Calcolare i momenti}
+
+\ExEq{\mathbb E[X]&=0\cdot\tfrac14+1\cdot\tfrac12+2\cdot\tfrac14=1,\\\mathbb E[X^2]&=0^2\cdot\tfrac14+1^2\cdot\tfrac12+2^2\cdot\tfrac14
+=\tfrac12+1=\tfrac32.}
+
+\ExStep{Calcolare la dispersione}
+
+\ExEq{\operatorname{Var}(X)&=\tfrac32-1^2=\tfrac12.}
+Il calcolo diretto conferma \((0-1)^2/4+(1-1)^2/2+(2-1)^2/4=1/2\).
+
+\ExStep{Raggruppare gli esiti}
+
+Gli esiti pari sono 0 e 2: \(P(\mathrm{pari})=1/4+1/4=1/2\). L’esito dispari è 1: \(P(\mathrm{dispari})=1/2\). Il raggruppamento somma probabilità di eventi disgiunti.
+
+\ExStep{Condizionare}
+
+\ExEq{P(X\geq1)&=1/2+1/4=3/4,\\P(1\mid X\geq1)&=(1/2)/(3/4)=2/3,\\P(2\mid X\geq1)&=(1/4)/(3/4)=1/3,\\\mathbb E[X\mid X\geq1]&=1\cdot2/3+2\cdot1/3=4/3.}
+
+\ExStep{Leggere un campione finito}
+
+I conteggi sommano \(9+22+9=40\). Le frequenze sono \(9/40=0{,}225\), \(22/40=0{,}55\), \(9/40=0{,}225\). I conteggi medi teorici erano \((10,20,10)\). La media empirica è \((0\cdot9+22+2\cdot9)/40=1\); la varianza con divisore 40 è \((9+9)/40=0{,}45\).
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-.6,0)--(3.3000000000000003,0) node[right] {esito};\draw[exaxis] (-.6,0)--(-.6,3.6) node[above] {$p$};\node[left] at (-.6,3) {$ 1 $};\draw[Ink!15,dashed] (-.6,3)--(2.8000000000000003,3);\filldraw[fill=Accent!25,draw=Accent] (0.0,0) rectangle (0.65,0.75);\node[below] at (0.325,0) {$ 0 $};\node[above] at (0.325,0.75) {$ 0.25 $};\filldraw[fill=Accent!25,draw=Accent] (1.1,0) rectangle (1.75,1.5);\node[below] at (1.425,0) {$ 1 $};\node[above] at (1.425,1.5) {$ 0.5 $};\filldraw[fill=Accent!25,draw=Accent] (2.2,0) rectangle (2.85,0.75);\node[below] at (2.5250000000000004,0) {$ 2 $};\node[above] at (2.5250000000000004,0.75) {$ 0.25 $};
+\end{tikzpicture}}{Probabilità normalizzate. La simmetria intorno a 1 determina la media.}
+
+
+\ExInterpret{Probabilità, frequenze e distribuzioni condizionate rispondono a domande diverse. Nel campione la media può coincidere con quella teorica mentre la dispersione differisce.}
+
+\ExLab{Nelle sezioni 2.16–2.20 ripercorrere normalizzazione, raggruppamento, momenti e condizionamento. Usare i dati dell’esercizio come tabella di controllo e confrontare un campione simulato con i conteggi medi, mantenendo distinti valore atteso e realizzazione osservata.}
+
+
+\end{minipage}

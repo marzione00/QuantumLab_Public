@@ -1,0 +1,32 @@
+import React from 'react';
+import * as M from '../math/core';
+import type {Gate,Snapshot} from '../algorithms/engine';
+import type {Diagram} from './types';
+import {K,Plane} from '../shared';
+
+export function NumberLine({diagram:d}:{diagram:Diagram}){
+ const values=d.values||[],lo=d.min??Math.min(0,...values,d.mean??Infinity),hi=d.max??Math.max(1,...values,d.mean??-Infinity),span=hi-lo||1,x=(v:number)=>70+560*(v-lo)/span,maxWeight=Math.max(1e-12,...d.weights||[1]);
+ const sorted=values.map((v,i)=>({v,i})).sort((a,b)=>a.v-b.v),levels:number[]=[],rowEnds:number[]=[],centers:number[]=[];
+ sorted.forEach(({v,i})=>{const width=Math.max(24,(d.labels?.[i]||M.f(v,6)).length*8.5),center=Math.max(12+width/2,Math.min(688-width/2,x(v))),left=center-width/2;let row=rowEnds.findIndex(end=>left>end+14);if(row<0)row=rowEnds.length;levels[i]=row;rowEnds[row]=center+width/2;centers[i]=center;});
+ return <figure className="book-numberline"><figcaption>{d.title}</figcaption><svg viewBox={`0 0 700 ${Math.max(290,230+rowEnds.length*30)}`} style={{minWidth:480}} role="img" aria-label={d.title}><line x1="55" x2="645" y1="145" y2="145" stroke={K.ink}/>{Array.from({length:5},(_,j)=>{const v=lo+j*span/4;return <g key={j}><line x1={x(v)} x2={x(v)} y1="140" y2="151" stroke={K.ink}/><text x={x(v)} y="171" textAnchor="middle" fill={K.ink} fontSize="13">{M.f(v,4)}</text></g>;})}{values.map((v,i)=><g key={i}>{d.weights&&<><line x1={x(v)} x2={x(v)} y1="145" y2={145-90*d.weights[i]/maxWeight} stroke={K.blue} strokeWidth="4"/><text x={x(v)} y={132-90*d.weights[i]/maxWeight} textAnchor="middle" fill={K.blue} fontSize="13">p={M.f(d.weights[i],4)}</text></>}<circle cx={x(v)} cy="145" r="5" fill={K.teal}/><line x1={x(v)} x2={x(v)} y1="175" y2={189+levels[i]*30} stroke={K.teal} strokeDasharray="2 3"/><text x={centers[i]} y={205+levels[i]*30} textAnchor="middle" fill={K.teal} fontSize="14">{d.labels?.[i]||M.f(v,6)}</text></g>)}{d.mean!==undefined&&<g><line x1={x(d.mean)} x2={x(d.mean)} y1="30" y2="145" stroke={K.coral} strokeDasharray="5 4"/><text x={x(d.mean)} y="24" textAnchor="middle" fill={K.coral} fontSize="14">μ ≈ {M.f(d.mean,4)}</text></g>}</svg><p className="plot-hint">La posizione orizzontale rappresenta il valore numerico.{d.weights?' L’altezza dei segmenti rappresenta la probabilità.':''}</p></figure>;
+}
+
+export function DiscreteGrid({diagram:d}:{diagram:Diagram}){
+ const matrix=!!d.rowLabels,cols=d.columnLabels?.length??((d.xMax??Math.max(1,...(d.points||[]).map(p=>p.x)))+1),rows=d.rowLabels?.length??((d.yMax??Math.max(1,...(d.points||[]).map(p=>p.y)))+1),cell=Math.min(70,520/Math.max(cols,rows)),width=170+cell*cols,height=115+cell*rows,px=(j:number)=>100+(j+.5)*cell,py=(j:number)=>45+(matrix?j+.5:rows-j-.5)*cell,max=Math.max(1e-12,...(d.values||[]).map(Math.abs));
+ return <figure className="book-grid"><figcaption>{d.title}</figcaption><svg viewBox={`0 0 ${width} ${height}`} style={{minWidth:cols>4?480:undefined}} role="img" aria-label={d.title}>{Array.from({length:rows},(_,r)=>Array.from({length:cols},(_,c)=>{const value=d.values?.[r*cols+c];return <g key={r+','+c}><rect x={px(c)-cell/2} y={py(r)-cell/2} width={cell} height={cell} fill={value===undefined?'none':K.blue} fillOpacity={value===undefined?1:.08+.4*Math.abs(value)/max} stroke="var(--mq-wire)"/>{value!==undefined&&<text x={px(c)} y={py(r)+5} textAnchor="middle" fill={K.ink} fontSize={Math.min(15,cell*.28)}>{M.f(value,4)}</text>}</g>;}))}{Array.from({length:cols},(_,c)=><text key={c} x={px(c)} y={65+rows*cell} textAnchor="middle" fill={K.ink} fontSize="14">{d.columnLabels?.[c]??c}</text>)}{Array.from({length:rows},(_,r)=><text key={r} x="86" y={py(r)+5} textAnchor="end" fill={K.ink} fontSize="14">{d.rowLabels?.[r]??r}</text>)}{d.points?.map((p,j)=><g key={j}><circle cx={px(p.x)} cy={py(p.y)} r={Math.max(3,Math.min(7,cell*.16))} fill={K.teal}/><title>{p.label+(p.value!==undefined?': '+M.f(p.value,6):'')}</title>{cell>=30&&p.label&&<text x={px(p.x)} y={py(p.y)-10} textAnchor="middle" fill={K.teal} fontSize="11">{p.label}</text>}</g>)}<text x={100+cols*cell/2} y={height-12} textAnchor="middle" fill={K.ink} fontSize="14">{d.xLabel||'Indice della colonna'}</text><text transform={`translate(20 ${45+rows*cell/2}) rotate(-90)`} textAnchor="middle" fill={K.ink} fontSize="14">{d.yLabel||'Indice della riga'}</text></svg><p className="plot-hint">Ogni cella corrisponde a una coppia di indici discreti.{d.values?' I valori sono riportati nelle celle.':''}</p></figure>;
+}
+
+export function CollectivePlane({state,collective,label}:{state:M.V;collective:{bad:M.V;good:M.V;initial:M.V};label:string}){
+ const project=(v:M.V):M.R2=>[M.dot(collective.bad,v)[0],M.dot(collective.good,v)[0]],current=project(state),initial=project(collective.initial),extent=1.22;
+ return <div className="book-collective" data-collective-bad={current[0]} data-collective-good={current[1]}><Plane title={'Piano collettivo · '+label} labels={['b','g']} extent={extent} circles={[{r:1,color:K.line}]} lines={[{a:[-extent,0],b:[extent,0],color:K.coral,dash:true},{a:[-extent*initial[0],-extent*initial[1]],b:[extent*initial[0],extent*initial[1]],color:K.blue,dash:true}]} arrows={[{v:initial,label:'|a⟩',color:K.blue,dash:true},{v:current,label:'corrente',color:K.teal}]}/><p className="plot-hint">Assi ortonormali |b⟩ e |g⟩. Coordinate correnti: ({M.f(current[0],6)}; {M.f(current[1],6)}). L’oracolo riflette rispetto all’asse b; D riflette rispetto alla retta della preparazione |a⟩. La circonferenza ha raggio uno.</p></div>;
+}
+
+export function blochTrajectory(gates:Gate[],snapshots:Snapshot[],active:number):{path:M.R3[];axis?:M.R3}{
+ const path:M.R3[]=[],standard:Record<string,M.R3>={X:[1,0,0],Y:[0,1,0],Z:[0,0,1],Rx:[1,0,0],Ry:[0,1,0],Rz:[0,0,1],P:[0,0,1],S:[0,0,1],T:[0,0,1],H:[Math.SQRT1_2,0,Math.SQRT1_2]};let axis:M.R3|undefined;
+ for(let i=0;i<Math.min(active,gates.length);i++){
+  const g=gates[i],a=standard[g.name];if(!a||g.controls?.length)continue;
+  const angle=M.rad(g.name==='S'?90:g.name==='T'?45:['P','Rx','Ry','Rz'].includes(g.name)?g.angle??0:180),v=M.bloch(snapshots[i].state),dot=a.reduce((s,t,j)=>s+t*v[j],0),cross:M.R3=[a[1]*v[2]-a[2]*v[1],a[2]*v[0]-a[0]*v[2],a[0]*v[1]-a[1]*v[0]],steps=Math.max(2,Math.ceil(Math.abs(angle)*18));
+  for(let k=0;k<=steps;k++){const t=angle*k/steps;path.push(v.map((x,j)=>x*Math.cos(t)+cross[j]*Math.sin(t)+a[j]*dot*(1-Math.cos(t))) as M.R3);}axis=a;
+ }
+ return{path,axis};
+}

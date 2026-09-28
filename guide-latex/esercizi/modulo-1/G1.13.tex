@@ -1,0 +1,67 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G1.13}{Seguire l'effetto di un'interazione con l'ambiente}{Collegamento}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Una coppia inizialmente concorde e coerente interagisce con un ambiente. Lo stato complessivo è \((\ket{00}\ket{e_0}+\ket{11}\ket{e_1})/\sqrt2\), dove le due tracce ambientali sono normalizzate e hanno sovrapposizione reale \(\gamma=\langle e_0|e_1\rangle\). Calcolare le probabilità nelle basi Z,Z e X,X per \(\gamma=1,1/2,0\).
+
+\ExTheory{\ExRef{c1-ambiente}{1.08}}{La base X è \(\ket\pm=(\ket0\pm\ket1)/\sqrt2\). Il quadrato della lunghezza della somma di due vettori ambientali unitari è \(\|e_0+e_1\|^2=2+2\gamma\); quello della differenza è \(2-2\gamma\). La sovrapposizione \(\gamma\) misura quanto le tracce siano distinguibili.}
+
+\ExPrediction{Se le tracce coincidono, i contributi possono interferire completamente. Se sono ortogonali, la norma della loro somma non contiene un termine incrociato. Prevedere quali correlazioni siano sensibili a questo cambiamento.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-0.35,0)--(1.55,0) node[right] {$x_1$};\draw[exaxis] (0,-0.35)--(0,1.416025) node[above] {$x_2$};\draw[->,Secondary,line width=1.1pt] (0,0)--(1,0) node[anchor=south west] {$ e_0 $};\draw[->,Accent,line width=1.1pt] (0,0)--(0.5,0.866025) node[anchor=south west] {$ e_1 $};
+\end{tikzpicture}}{Piano reale che rappresenta due tracce ambientali con \(\gamma=\cos60^\circ=1/2\). La proiezione distingue sovrapposizione e ortogonalità.}
+
+
+\begin{ExTasks}
+
+\item Calcolare le probabilità dei due rami in Z,Z.
+
+\item Espandere \(\ket{00}\) e \(\ket{11}\) nella base X,X.
+
+\item Raccogliere i vettori ambientali per ciascun esito.
+
+\item Calcolare le quattro probabilità in funzione di \(\gamma\).
+
+\item Valutare i tre casi e controllare le marginali.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Leggere nella base Z}
+
+I rami \(00\) e \(11\) hanno ampiezza di norma \(1/\sqrt2\). Pertanto \(P(00)=P(11)=1/2\) e \(P(01)=P(10)=0\), qualunque sia \(\gamma\).
+
+\ExStep{Cambiare base}
+
+Dalle inverse \(\ket0=(\ket+ +\ket-)/\sqrt2\) e \(\ket1=(\ket+ -\ket-)/\sqrt2\),
+\ExEq{\ket{00}&=\tfrac12(\ket{++}+\ket{+-}+\ket{-+}+\ket{--}),\\\ket{11}&=\tfrac12(\ket{++}-\ket{+-}-\ket{-+}+\ket{--}).}
+
+\ExStep{Raccogliere le ampiezze ambientali}
+
+Sostituendo nello stato complessivo, gli esiti \(++\) e \(--\) hanno vettore ambientale \((e_0+e_1)/(2\sqrt2)\); gli esiti \(+-\) e \(-+\) hanno \((e_0-e_1)/(2\sqrt2)\).
+
+\ExStep{Calcolare i moduli quadri}
+
+\ExEq{\|e_0\pm e_1\|^2&=\langle e_0|e_0\rangle+\langle e_1|e_1\rangle
+\pm\langle e_0|e_1\rangle\pm\langle e_1|e_0\rangle\\&=1+1\pm\gamma\pm\gamma=2\pm2\gamma,\\P(++)=P(--)&=(2+2\gamma)/8=(1+\gamma)/4,\\P(+-)=P(-+)&=(1-\gamma)/4.}
+
+\ExStep{Valutare e controllare}
+
+Per \(\gamma=1\) le probabilità sono \((1/2,0,0,1/2)\). Per \(\gamma=1/2\) sono \((3/8,1/8,1/8,3/8)\). Per \(\gamma=0\) sono tutte \(1/4\). In ogni caso una riga somma \((1+\gamma)/4+(1-\gamma)/4=1/2\); entrambe le marginali restano uniformi. La correlazione X,X è \(2(1+\gamma)/4-2(1-\gamma)/4=\gamma\).
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-.6,0)--(4.4,0) node[right] {esito};\draw[exaxis] (-.6,0)--(-.6,3.6) node[above] {$p$};\node[left] at (-.6,3) {$ 1 $};\draw[Ink!15,dashed] (-.6,3)--(3.9000000000000004,3);\filldraw[fill=Accent!25,draw=Accent] (0.0,0) rectangle (0.65,1.125);\node[below] at (0.325,0) {$ ++ $};\node[above] at (0.325,1.125) {$ 0.375 $};\filldraw[fill=Accent!25,draw=Accent] (1.1,0) rectangle (1.75,0.375);\node[below] at (1.425,0) {$ +- $};\node[above] at (1.425,0.375) {$ 0.125 $};\filldraw[fill=Accent!25,draw=Accent] (2.2,0) rectangle (2.85,0.375);\node[below] at (2.5250000000000004,0) {$ -+ $};\node[above] at (2.5250000000000004,0.375) {$ 0.125 $};\filldraw[fill=Accent!25,draw=Accent] (3.3000000000000003,0) rectangle (3.95,1.125);\node[below] at (3.6250000000000004,0) {$ -- $};\node[above] at (3.6250000000000004,1.125) {$ 0.375 $};
+\end{tikzpicture}}{Probabilità in X,X per sovrapposizione ambientale \(1/2\).}
+
+
+\ExInterpret{L’informazione trasferita all’ambiente modifica le correlazioni accessibili sulla coppia. La descrizione complessiva conserva le ampiezze; ignorare l’ambiente richiede sommare correttamente i suoi contributi ortogonali.}
+
+\ExLab{Nella sezione 1.08 confrontare «Coppia isolata», «Interazione parziale» e «Tracce distinguibili». Leggere il valore della sovrapposizione ambientale e sostituirlo nelle formule ottenute. Passare da H/V a \(+45^\circ/-45^\circ\), confrontando marginali e correlazioni.}
+
+
+\end{minipage}

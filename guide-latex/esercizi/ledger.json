@@ -1,0 +1,1397 @@
+[
+  {
+    "id": "G1.01",
+    "chapter": 1,
+    "number": 1,
+    "title": "Prevedere due moti dagli stessi dati di posizione",
+    "theory": [
+      {
+        "label": "c1-moto",
+        "section": "1.01",
+        "title": "Dati iniziali e previsione del moto"
+      }
+    ],
+    "after_section": 1,
+    "level": "Guida esplicita",
+    "source": "esercizi/modulo-1/G1.01.tex",
+    "sha256": "e152a0e0b8447a18e42842c3fa86f44dd28973ec34510ea70677336b358e13a5",
+    "steps": 5,
+    "figures": 2,
+    "tasks": 5,
+    "equation_blocks": 4
+  },
+  {
+    "id": "G1.02",
+    "chapter": 1,
+    "number": 2,
+    "title": "Propagare un'incertezza sulla velocità",
+    "theory": [
+      {
+        "label": "c1-moto",
+        "section": "1.01",
+        "title": "Dati iniziali e previsione del moto"
+      }
+    ],
+    "after_section": 1,
+    "level": "Guida esplicita",
+    "source": "esercizi/modulo-1/G1.02.tex",
+    "sha256": "a818a556fe06d053b0073390caafdccf8e7b43facf58577afc9666fa5366b920",
+    "steps": 5,
+    "figures": 2,
+    "tasks": 5,
+    "equation_blocks": 4
+  },
+  {
+    "id": "G1.03",
+    "chapter": 1,
+    "number": 3,
+    "title": "Invertire un moto e ritrovare la preparazione",
+    "theory": [
+      {
+        "label": "c1-loschmidt",
+        "section": "1.02",
+        "title": "Reversibilità e inversione di Loschmidt"
+      }
+    ],
+    "after_section": 2,
+    "level": "Guida esplicita",
+    "source": "esercizi/modulo-1/G1.03.tex",
+    "sha256": "0e859039be692551d3475f0702de11dbcbe3b8310e4841cd1dbefb79a2c3f21b",
+    "steps": 5,
+    "figures": 2,
+    "tasks": 5,
+    "equation_blocks": 4
+  },
+  {
+    "id": "G1.04",
+    "chapter": 1,
+    "number": 4,
+    "title": "Confrontare ritorno ideale e ritorno perturbato",
+    "theory": [
+      {
+        "label": "c1-loschmidt",
+        "section": "1.02",
+        "title": "Reversibilità e inversione di Loschmidt"
+      }
+    ],
+    "after_section": 2,
+    "level": "Guida esplicita",
+    "source": "esercizi/modulo-1/G1.04.tex",
+    "sha256": "08e55b3395aa3614ebb477831463f683d7acf652e9585aba312dc5ab4e46925f",
+    "steps": 5,
+    "figures": 2,
+    "tasks": 5,
+    "equation_blocks": 4
+  },
+  {
+    "id": "G1.05",
+    "chapter": 1,
+    "number": 5,
+    "title": "Sommare due onde con fase assegnata",
+    "theory": [
+      {
+        "label": "c1-onde",
+        "section": "1.03",
+        "title": "Sovrapposizione e fase relativa"
+      }
+    ],
+    "after_section": 3,
+    "level": "Guida esplicita",
+    "source": "esercizi/modulo-1/G1.05.tex",
+    "sha256": "db7b0afa7f7a6e1da4136a8e677809e13976e68c5f8c23e92a94928b536a1f77",
+    "steps": 5,
+    "figures": 2,
+    "tasks": 5,
+    "equation_blocks": 4
+  },
+  {
+    "id": "G1.06",
+    "chapter": 1,
+    "number": 6,
+    "title": "Dalle ampiezze all'intensità",
+    "theory": [
+      {
+        "label": "c1-onde",
+        "section": "1.03",
+        "title": "Sovrapposizione e fase relativa"
+      }
+    ],
+    "after_section": 3,
+    "level": "Consolidamento",
+    "source": "esercizi/modulo-1/G1.06.tex",
+    "sha256": "d7b2acf1e0bfd0c80c5eff999098217035c1f3fedc0f7cde962ff156d6a80288",
+    "steps": 5,
+    "figures": 2,
+    "tasks": 5,
+    "equation_blocks": 4
+  },
+  {
+    "id": "G1.07",
+    "chapter": 1,
+    "number": 7,
+    "title": "Localizzare i minimi per una fenditura stretta",
+    "theory": [
+      {
+        "label": "c1-fenditure",
+        "section": "1.04",
+        "title": "Dai singoli arrivi alla distribuzione"
+      }
+    ],
+    "after_section": 4,
+    "level": "Consolidamento",
+    "source": "esercizi/modulo-1/G1.07.tex",
+    "sha256": "0d9dfc6fd07e234faf29a035b3f100eb4babc51f8edf86875c94e7ffbc3c21a0",
+    "steps": 6,
+    "figures": 2,
+    "tasks": 5,
+    "equation_blocks": 5
+  },
+  {
+    "id": "G1.08",
+    "chapter": 1,
+    "number": 8,
+    "title": "Attraversare i regimi della diffrazione",
+    "theory": [
+      {
+        "label": "c1-fenditure",
+        "section": "1.04",
+        "title": "Dai singoli arrivi alla distribuzione"
+      }
+    ],
+    "after_section": 4,
+    "level": "Consolidamento",
+    "source": "esercizi/modulo-1/G1.08.tex",
+    "sha256": "222a137ae768eb307f81288afa575abb9c03c854a095aa675cf47b52733308b6",
+    "steps": 5,
+    "figures": 2,
+    "tasks": 5,
+    "equation_blocks": 4
+  },
+  {
+    "id": "G1.09",
+    "chapter": 1,
+    "number": 9,
+    "title": "Prevedere la trasmissione di un analizzatore",
+    "theory": [
+      {
+        "label": "c1-polarizzazione",
+        "section": "1.05",
+        "title": "Polarizzazione, misura e sfera di Bloch"
+      }
+    ],
+    "after_section": 5,
+    "level": "Consolidamento",
+    "source": "esercizi/modulo-1/G1.09.tex",
+    "sha256": "c089e32d4b98561a9b9d6fb94919b354db096b301ddfd301db18116ef8d1abc4",
+    "steps": 5,
+    "figures": 2,
+    "tasks": 5,
+    "equation_blocks": 2
+  },
+  {
+    "id": "G1.10",
+    "chapter": 1,
+    "number": 10,
+    "title": "Seguire una preparazione sulla sfera di Bloch",
+    "theory": [
+      {
+        "label": "c1-polarizzazione",
+        "section": "1.05",
+        "title": "Polarizzazione, misura e sfera di Bloch"
+      },
+      {
+        "label": "c1-calcolo",
+        "section": "1.06",
+        "title": "Operazioni su un qubit"
+      }
+    ],
+    "after_section": 6,
+    "level": "Consolidamento",
+    "source": "esercizi/modulo-1/G1.10.tex",
+    "sha256": "801df25dd6e658bb84428c2e2a9677b0c7b45f44ee4ce699255daa404a6aaaf7",
+    "steps": 5,
+    "figures": 2,
+    "tasks": 5,
+    "equation_blocks": 4
+  },
+  {
+    "id": "G1.11",
+    "chapter": 1,
+    "number": 11,
+    "title": "Preparare, introdurre una fase e ricombinare",
+    "theory": [
+      {
+        "label": "c1-calcolo",
+        "section": "1.06",
+        "title": "Operazioni su un qubit"
+      }
+    ],
+    "after_section": 6,
+    "level": "Collegamento",
+    "source": "esercizi/modulo-1/G1.11.tex",
+    "sha256": "b359a3c3210b62aa8dec220b1a780ea37504aa4e995313fb863199e236a066dc",
+    "steps": 6,
+    "figures": 2,
+    "tasks": 5,
+    "equation_blocks": 4
+  },
+  {
+    "id": "G1.12",
+    "chapter": 1,
+    "number": 12,
+    "title": "Ricavare marginali e correlazioni da una tabella congiunta",
+    "theory": [
+      {
+        "label": "c1-coppie",
+        "section": "1.07",
+        "title": "Statistiche locali e correlazioni"
+      }
+    ],
+    "after_section": 7,
+    "level": "Collegamento",
+    "source": "esercizi/modulo-1/G1.12.tex",
+    "sha256": "65789bb1903367029effbe6567d1ce07ffde9d952780aee8a8362062927e0a6c",
+    "steps": 5,
+    "figures": 2,
+    "tasks": 5,
+    "equation_blocks": 5
+  },
+  {
+    "id": "G1.13",
+    "chapter": 1,
+    "number": 13,
+    "title": "Seguire l'effetto di un'interazione con l'ambiente",
+    "theory": [
+      {
+        "label": "c1-ambiente",
+        "section": "1.08",
+        "title": "Una coppia entangled incontra l’ambiente"
+      }
+    ],
+    "after_section": 8,
+    "level": "Collegamento",
+    "source": "esercizi/modulo-1/G1.13.tex",
+    "sha256": "4cd275395000acbae047d340e4dda5f011d2c2dfe86c6be1bfa3a80b0e0fccc6",
+    "steps": 5,
+    "figures": 2,
+    "tasks": 5,
+    "equation_blocks": 2
+  },
+  {
+    "id": "G1.14",
+    "chapter": 1,
+    "number": 14,
+    "title": "Stabilire quali dati servano alla previsione successiva",
+    "theory": [
+      {
+        "label": "c1-informazione",
+        "section": "1.09",
+        "title": "Quali dati servono per continuare?"
+      }
+    ],
+    "after_section": 9,
+    "level": "Collegamento",
+    "source": "esercizi/modulo-1/G1.14.tex",
+    "sha256": "b7a74201f35499f8bd7a73c8222924300cdb127277d62a799966a3d0b4821d90",
+    "steps": 5,
+    "figures": 2,
+    "tasks": 5,
+    "equation_blocks": 3
+  },
+  {
+    "id": "G1.15",
+    "chapter": 1,
+    "number": 15,
+    "title": "Ricostruire un esperimento a partire dai suoi risultati",
+    "theory": [
+      {
+        "label": "c1-sintesi",
+        "section": "1.10",
+        "title": "Stessi conteggi, cause differenti"
+      }
+    ],
+    "after_section": 10,
+    "level": "Collegamento",
+    "source": "esercizi/modulo-1/G1.15.tex",
+    "sha256": "797578d80794a02a0ca6305274fc1d407e483f798559bb5fdedd5e2fdb6cd959",
+    "steps": 5,
+    "figures": 2,
+    "tasks": 5,
+    "equation_blocks": 1
+  },
+  {
+    "id": "G2.01",
+    "chapter": 2,
+    "number": 1,
+    "title": "Passare da componenti complesse a modulo e fase",
+    "theory": [
+      {
+        "label": "c2-complessi",
+        "section": "2.01",
+        "title": "Componenti, modulo e fase"
+      }
+    ],
+    "after_section": 1,
+    "level": "Guida esplicita",
+    "source": "esercizi/modulo-2/G2.01.tex",
+    "sha256": "7010edda83c6fb9c31e1836086840e07e159feb3d00ed161312bcea1b42eac89",
+    "steps": 5,
+    "figures": 2,
+    "tasks": 5,
+    "equation_blocks": 4
+  },
+  {
+    "id": "G2.02",
+    "chapter": 2,
+    "number": 2,
+    "title": "Sommare e moltiplicare due ampiezze",
+    "theory": [
+      {
+        "label": "c2-prodotto-complesso",
+        "section": "2.02",
+        "title": "Sommare e moltiplicare ampiezze"
+      }
+    ],
+    "after_section": 2,
+    "level": "Guida esplicita",
+    "source": "esercizi/modulo-2/G2.02.tex",
+    "sha256": "d2e0f170de7e50efabae6feb2c5efeafc45f55f7f1bd5b3fa596a38e487fb6ea",
+    "steps": 5,
+    "figures": 2,
+    "tasks": 5,
+    "equation_blocks": 5
+  },
+  {
+    "id": "G2.03",
+    "chapter": 2,
+    "number": 3,
+    "title": "Ricostruire un vettore e normalizzarlo",
+    "theory": [
+      {
+        "label": "c2-basi",
+        "section": "2.03",
+        "title": "Vettori, combinazioni e basi"
+      },
+      {
+        "label": "c2-norma",
+        "section": "2.04",
+        "title": "Lunghezza e normalizzazione"
+      }
+    ],
+    "after_section": 4,
+    "level": "Guida esplicita",
+    "source": "esercizi/modulo-2/G2.03.tex",
+    "sha256": "60e53f3ffd623575d3d6e21224d34a58fa541eda3fcc7c2e198464863c3a7923",
+    "steps": 5,
+    "figures": 2,
+    "tasks": 5,
+    "equation_blocks": 5
+  },
+  {
+    "id": "G2.04",
+    "chapter": 2,
+    "number": 4,
+    "title": "Calcolare prodotti interni e proiezioni",
+    "theory": [
+      {
+        "label": "c2-prodotto-interno",
+        "section": "2.05",
+        "title": "Prodotto interno e ortogonalità"
+      }
+    ],
+    "after_section": 5,
+    "level": "Guida esplicita",
+    "source": "esercizi/modulo-2/G2.04.tex",
+    "sha256": "364acb67b994841cf1942b2fc958c8f6f8db4d933adf64f8de833ebb7bba8aaf",
+    "steps": 5,
+    "figures": 2,
+    "tasks": 5,
+    "equation_blocks": 5
+  },
+  {
+    "id": "G2.05",
+    "chapter": 2,
+    "number": 5,
+    "title": "Costruire una base con Gram–Schmidt",
+    "theory": [
+      {
+        "label": "c2-proiezioni",
+        "section": "2.06",
+        "title": "Costruire direzioni ortonormali"
+      }
+    ],
+    "after_section": 6,
+    "level": "Guida esplicita",
+    "source": "esercizi/modulo-2/G2.05.tex",
+    "sha256": "9654dc12925c308e6e75536de629f0085e3128f49a5acbd2b04c15f7f8fe8da0",
+    "steps": 6,
+    "figures": 2,
+    "tasks": 6,
+    "equation_blocks": 6
+  },
+  {
+    "id": "G2.06",
+    "chapter": 2,
+    "number": 6,
+    "title": "Leggere una matrice attraverso le immagini della base",
+    "theory": [
+      {
+        "label": "c2-matrici",
+        "section": "2.07",
+        "title": "La matrice attraverso le sue colonne"
+      },
+      {
+        "label": "c2-nucleo",
+        "section": "2.08",
+        "title": "Informazione perduta: nucleo e immagine"
+      }
+    ],
+    "after_section": 8,
+    "level": "Consolidamento",
+    "source": "esercizi/modulo-2/G2.06.tex",
+    "sha256": "de3ea055492bc202711f765063d54601a21d87756320569f5e3c2f01d89da84f",
+    "steps": 5,
+    "figures": 2,
+    "tasks": 5,
+    "equation_blocks": 5
+  },
+  {
+    "id": "G2.07",
+    "chapter": 2,
+    "number": 7,
+    "title": "Confrontare due ordini di composizione",
+    "theory": [
+      {
+        "label": "c2-composizione",
+        "section": "2.09",
+        "title": "Seguire l’ordine delle operazioni"
+      }
+    ],
+    "after_section": 9,
+    "level": "Consolidamento",
+    "source": "esercizi/modulo-2/G2.07.tex",
+    "sha256": "fe9b245151eceb5a72cb30645c5aec8040bac9c96ff031d8efc626ee18456705",
+    "steps": 5,
+    "figures": 2,
+    "tasks": 5,
+    "equation_blocks": 5
+  },
+  {
+    "id": "G2.08",
+    "chapter": 2,
+    "number": 8,
+    "title": "Cambiare coordinate mantenendo lo stesso oggetto",
+    "theory": [
+      {
+        "label": "c2-cambio-base",
+        "section": "2.10",
+        "title": "Descrivere una trasformazione in un’altra base"
+      }
+    ],
+    "after_section": 10,
+    "level": "Consolidamento",
+    "source": "esercizi/modulo-2/G2.08.tex",
+    "sha256": "e164a32bbc4c6ecfb750bb2a3eaa73b1e2cffbca282ef56eda91e4e6644fa419",
+    "steps": 5,
+    "figures": 2,
+    "tasks": 5,
+    "equation_blocks": 4
+  },
+  {
+    "id": "G2.09",
+    "chapter": 2,
+    "number": 9,
+    "title": "Costruire l'aggiunto e verificare l'unitarietà",
+    "theory": [
+      {
+        "label": "c2-aggiunto",
+        "section": "2.11",
+        "title": "Aggiunto e conservazione della norma"
+      }
+    ],
+    "after_section": 11,
+    "level": "Consolidamento",
+    "source": "esercizi/modulo-2/G2.09.tex",
+    "sha256": "4145a66a38d86e24289092756416028dfc43ab26d7eb3ef1dcca64879366909d",
+    "steps": 5,
+    "figures": 2,
+    "tasks": 5,
+    "equation_blocks": 4
+  },
+  {
+    "id": "G2.10",
+    "chapter": 2,
+    "number": 10,
+    "title": "Ricavare autovalori, autovettori e proiettori",
+    "theory": [
+      {
+        "label": "c2-spettro",
+        "section": "2.12",
+        "title": "Riconoscere un’autodirezione"
+      },
+      {
+        "label": "c2-base-propria",
+        "section": "2.13",
+        "title": "Costruire una base di autovettori"
+      },
+      {
+        "label": "c2-proiettori",
+        "section": "2.14",
+        "title": "Separare e ricomporre le componenti"
+      },
+      {
+        "label": "c2-funzioni-matrice",
+        "section": "2.15",
+        "title": "Calcolare con la decomposizione spettrale"
+      }
+    ],
+    "after_section": 15,
+    "level": "Consolidamento",
+    "source": "esercizi/modulo-2/G2.10.tex",
+    "sha256": "0932847825534f609b93087a47fcb5178f27030be80c4156fb71099f2c695e38",
+    "steps": 8,
+    "figures": 2,
+    "tasks": 6,
+    "equation_blocks": 7
+  },
+  {
+    "id": "G2.11",
+    "chapter": 2,
+    "number": 11,
+    "title": "Dagli eventi a media e varianza",
+    "theory": [
+      {
+        "label": "c2-eventi",
+        "section": "2.16",
+        "title": "Dagli esiti agli eventi"
+      },
+      {
+        "label": "c2-distribuzioni",
+        "section": "2.17",
+        "title": "Normalizzare e raggruppare i pesi"
+      },
+      {
+        "label": "c2-momenti",
+        "section": "2.18",
+        "title": "Media e dispersione"
+      },
+      {
+        "label": "c2-frequenze",
+        "section": "2.19",
+        "title": "Ripetizioni, conteggi e frequenze"
+      },
+      {
+        "label": "c2-condizionamento",
+        "section": "2.20",
+        "title": "Selezionare un’informazione"
+      }
+    ],
+    "after_section": 20,
+    "level": "Collegamento",
+    "source": "esercizi/modulo-2/G2.11.tex",
+    "sha256": "b63bf94166f53ff4a1c0e019f9ff6c62abca267dcdb82ad93f00664b453f113a",
+    "steps": 6,
+    "figures": 2,
+    "tasks": 5,
+    "equation_blocks": 3
+  },
+  {
+    "id": "G2.12",
+    "chapter": 2,
+    "number": 12,
+    "title": "Preparare uno stato e renderne osservabile la fase",
+    "theory": [
+      {
+        "label": "c2-stati",
+        "section": "2.21",
+        "title": "Preparare un vettore di stato"
+      },
+      {
+        "label": "c2-bra",
+        "section": "2.22",
+        "title": "Dal ket al bra"
+      },
+      {
+        "label": "c2-fase",
+        "section": "2.23",
+        "title": "Fase relativa e interferenza"
+      },
+      {
+        "label": "c2-born",
+        "section": "2.24",
+        "title": "Calcolare una misura proiettiva"
+      },
+      {
+        "label": "c2-unitarie",
+        "section": "2.25",
+        "title": "Trasformare le ampiezze"
+      }
+    ],
+    "after_section": 25,
+    "level": "Collegamento",
+    "source": "esercizi/modulo-2/G2.12.tex",
+    "sha256": "bf1b50cbe0a201fa94daf6ed0a78f0e8f084520fdf4e6d8e9f13b6d474d4061f",
+    "steps": 6,
+    "figures": 2,
+    "tasks": 5,
+    "equation_blocks": 4
+  },
+  {
+    "id": "G2.13",
+    "chapter": 2,
+    "number": 13,
+    "title": "Svolgere integralmente una misura di un'osservabile",
+    "theory": [
+      {
+        "label": "c2-osservabili",
+        "section": "2.26",
+        "title": "Esiti, valore medio e varianza"
+      },
+      {
+        "label": "c2-incompatibilita",
+        "section": "2.27",
+        "title": "Due misure in successione"
+      },
+      {
+        "label": "c2-esperimento",
+        "section": "2.28",
+        "title": "Un esperimento completo"
+      }
+    ],
+    "after_section": 28,
+    "level": "Collegamento",
+    "source": "esercizi/modulo-2/G2.13.tex",
+    "sha256": "91a5ed7514ed9a25bd54b5a72119297e98b0b917eb100d117c7e46aea61d5c53",
+    "steps": 8,
+    "figures": 2,
+    "tasks": 6,
+    "equation_blocks": 6
+  },
+  {
+    "id": "G2.14",
+    "chapter": 2,
+    "number": 14,
+    "title": "Costruire uno stato composto e applicare una porta locale",
+    "theory": [
+      {
+        "label": "c2-tensore",
+        "section": "2.29",
+        "title": "Costruire le quattro ampiezze"
+      },
+      {
+        "label": "c2-porte-locali",
+        "section": "2.30",
+        "title": "Agire su un solo sistema"
+      }
+    ],
+    "after_section": 30,
+    "level": "Collegamento",
+    "source": "esercizi/modulo-2/G2.14.tex",
+    "sha256": "f4b635c7b0b4da30403ac784408ff88b523e7cad29d4c6fe3c5278727f18617c",
+    "steps": 6,
+    "figures": 2,
+    "tasks": 5,
+    "equation_blocks": 6
+  },
+  {
+    "id": "G2.15",
+    "chapter": 2,
+    "number": 15,
+    "title": "Distinguere stato prodotto ed entanglement",
+    "theory": [
+      {
+        "label": "c2-separabilita",
+        "section": "2.31",
+        "title": "Riconoscere uno stato prodotto"
+      },
+      {
+        "label": "c2-composti",
+        "section": "2.32",
+        "title": "Misure congiunte e correlazioni"
+      }
+    ],
+    "after_section": 32,
+    "level": "Collegamento",
+    "source": "esercizi/modulo-2/G2.15.tex",
+    "sha256": "463f525be1f842a16071fdcca48ee7a4673b52400c40ac188abfc33d08cb23b0",
+    "steps": 6,
+    "figures": 2,
+    "tasks": 5,
+    "equation_blocks": 2
+  },
+  {
+    "id": "G3.01",
+    "chapter": 3,
+    "number": 1,
+    "title": "Tradurre un circuito nella sequenza delle operazioni",
+    "theory": [
+      {
+        "label": "c3-programma",
+        "section": "3.01",
+        "title": "Leggere un circuito"
+      }
+    ],
+    "after_section": 1,
+    "level": "Guida esplicita",
+    "source": "esercizi/modulo-3/G3.01.tex",
+    "sha256": "399f121d9159beb2e4c1742915d9541099c2b4b424017e6be3c38cf0deea365c",
+    "steps": 5,
+    "figures": 2,
+    "tasks": 5,
+    "equation_blocks": 4
+  },
+  {
+    "id": "G3.02",
+    "chapter": 3,
+    "number": 2,
+    "title": "Costruire la versione reversibile di una piccola funzione",
+    "theory": [
+      {
+        "label": "c3-reversibilita",
+        "section": "3.02",
+        "title": "Conservare l’informazione"
+      }
+    ],
+    "after_section": 2,
+    "level": "Guida esplicita",
+    "source": "esercizi/modulo-3/G3.02.tex",
+    "sha256": "18bb5841ab597626bf2d742862a3b4b1919f583f095611e763d5118178894564",
+    "steps": 5,
+    "figures": 2,
+    "tasks": 5,
+    "equation_blocks": 3
+  },
+  {
+    "id": "G3.03",
+    "chapter": 3,
+    "number": 3,
+    "title": "Applicare X, Z e H agli stessi stati",
+    "theory": [
+      {
+        "label": "c3-porte",
+        "section": "3.03",
+        "title": "Operazioni su un qubit"
+      }
+    ],
+    "after_section": 3,
+    "level": "Guida esplicita",
+    "source": "esercizi/modulo-3/G3.03.tex",
+    "sha256": "55af63beb4059eaa44b862992f4f54760e6c87fc78c121aa28aa0670f4da46bc",
+    "steps": 5,
+    "figures": 2,
+    "tasks": 5,
+    "equation_blocks": 3
+  },
+  {
+    "id": "G3.04",
+    "chapter": 3,
+    "number": 4,
+    "title": "Preparare uno stato assegnato",
+    "theory": [
+      {
+        "label": "c3-preparazione",
+        "section": "3.04",
+        "title": "Preparare uno stato assegnato"
+      }
+    ],
+    "after_section": 4,
+    "level": "Guida esplicita",
+    "source": "esercizi/modulo-3/G3.04.tex",
+    "sha256": "12fe72ee1259949f42e1fde1d220d513e7593c0c514fcd4a98631a8ba481f96f",
+    "steps": 5,
+    "figures": 2,
+    "tasks": 5,
+    "equation_blocks": 4
+  },
+  {
+    "id": "G3.05",
+    "chapter": 3,
+    "number": 5,
+    "title": "Costruire e verificare l'inversa di un circuito",
+    "theory": [
+      {
+        "label": "c3-inversa",
+        "section": "3.05",
+        "title": "Comporre e invertire un programma"
+      }
+    ],
+    "after_section": 5,
+    "level": "Guida esplicita",
+    "source": "esercizi/modulo-3/G3.05.tex",
+    "sha256": "f888b50987cc86d41fa47d5dab54cef36ae74221c1c2e8f783b52aa1d81e9964",
+    "steps": 5,
+    "figures": 2,
+    "tasks": 5,
+    "equation_blocks": 5
+  },
+  {
+    "id": "G3.06",
+    "chapter": 3,
+    "number": 6,
+    "title": "Calcolare un interferometro con fase π/3",
+    "theory": [
+      {
+        "label": "c3-interferometro",
+        "section": "3.06",
+        "title": "Rendere osservabile una fase"
+      }
+    ],
+    "after_section": 6,
+    "level": "Consolidamento",
+    "source": "esercizi/modulo-3/G3.06.tex",
+    "sha256": "63e10790010031c536a3991158d4049cb02460bce7e8c61bd5fe1d29f9f4f6f3",
+    "steps": 6,
+    "figures": 2,
+    "tasks": 5,
+    "equation_blocks": 5
+  },
+  {
+    "id": "G3.07",
+    "chapter": 3,
+    "number": 7,
+    "title": "Applicare una porta al filo corretto",
+    "theory": [
+      {
+        "label": "c3-registro",
+        "section": "3.07",
+        "title": "Operare su un registro"
+      }
+    ],
+    "after_section": 7,
+    "level": "Consolidamento",
+    "source": "esercizi/modulo-3/G3.07.tex",
+    "sha256": "fdb492db6fa05942e9a96c3da3f0d23df9e7b1bd7f57e61ad07a5cbfd296ef56",
+    "steps": 5,
+    "figures": 2,
+    "tasks": 5,
+    "equation_blocks": 3
+  },
+  {
+    "id": "G3.08",
+    "chapter": 3,
+    "number": 8,
+    "title": "Seguire CNOT su base e sovrapposizione",
+    "theory": [
+      {
+        "label": "c3-registro",
+        "section": "3.07",
+        "title": "Operare su un registro"
+      }
+    ],
+    "after_section": 7,
+    "level": "Consolidamento",
+    "source": "esercizi/modulo-3/G3.08.tex",
+    "sha256": "c28e0cafeefd36519886dca5ade6063d4db4d62eb5c542633704ce3befbabc48",
+    "steps": 5,
+    "figures": 2,
+    "tasks": 5,
+    "equation_blocks": 4
+  },
+  {
+    "id": "G3.09",
+    "chapter": 3,
+    "number": 9,
+    "title": "Preparare e misurare uno stato di Bell",
+    "theory": [
+      {
+        "label": "c3-bell",
+        "section": "3.08",
+        "title": "Costruire e misurare entanglement"
+      }
+    ],
+    "after_section": 8,
+    "level": "Consolidamento",
+    "source": "esercizi/modulo-3/G3.09.tex",
+    "sha256": "cdcdade52fd02b14d613399b7cf0543d945d05826fdb668a285a4e0d593eb9fd",
+    "steps": 5,
+    "figures": 2,
+    "tasks": 5,
+    "equation_blocks": 3
+  },
+  {
+    "id": "G3.10",
+    "chapter": 3,
+    "number": 10,
+    "title": "Usare e ripulire un'ancilla",
+    "theory": [
+      {
+        "label": "c3-ausiliari",
+        "section": "3.09",
+        "title": "Calcolare, marcare e ripristinare"
+      }
+    ],
+    "after_section": 9,
+    "level": "Consolidamento",
+    "source": "esercizi/modulo-3/G3.10.tex",
+    "sha256": "91ca28d4552f5253e66d1551aa8ca0ca5de9015400702fed4ba9ffebabfa62a4",
+    "steps": 6,
+    "figures": 2,
+    "tasks": 5,
+    "equation_blocks": 6
+  },
+  {
+    "id": "G3.11",
+    "chapter": 3,
+    "number": 11,
+    "title": "Verificare una porta composta",
+    "theory": [
+      {
+        "label": "c3-sintesi",
+        "section": "3.10",
+        "title": "Costruire una porta composta"
+      }
+    ],
+    "after_section": 10,
+    "level": "Collegamento",
+    "source": "esercizi/modulo-3/G3.11.tex",
+    "sha256": "5f42772edbbd0cfacacc265bc71c41ee6bd0db523aca765023734982debae4f8",
+    "steps": 5,
+    "figures": 2,
+    "tasks": 5,
+    "equation_blocks": 4
+  },
+  {
+    "id": "G3.12",
+    "chapter": 3,
+    "number": 12,
+    "title": "Svolgere i quattro casi di Deutsch",
+    "theory": [
+      {
+        "label": "c3-deutsch",
+        "section": "3.11",
+        "title": "Deutsch e il ritorno di fase"
+      }
+    ],
+    "after_section": 11,
+    "level": "Collegamento",
+    "source": "esercizi/modulo-3/G3.12.tex",
+    "sha256": "95fb30ef9179ac6fd127e9881710b59df1178eeed45ee9d57792518555fe83a2",
+    "steps": 6,
+    "figures": 2,
+    "tasks": 5,
+    "equation_blocks": 5
+  },
+  {
+    "id": "G3.13",
+    "chapter": 3,
+    "number": 13,
+    "title": "Eseguire una ricerca fra quattro alternative",
+    "theory": [
+      {
+        "label": "c3-grover-primo",
+        "section": "3.12",
+        "title": "Una ricerca fra quattro alternative"
+      }
+    ],
+    "after_section": 12,
+    "level": "Collegamento",
+    "source": "esercizi/modulo-3/G3.13.tex",
+    "sha256": "7cfd20dd22c011172070840b1dff28cb7e950ad1c16ac0d25c4c42ce337cc11f",
+    "steps": 6,
+    "figures": 2,
+    "tasks": 5,
+    "equation_blocks": 3
+  },
+  {
+    "id": "G3.14",
+    "chapter": 3,
+    "number": 14,
+    "title": "Seguire un'evoluzione e la sua inversa",
+    "theory": [
+      {
+        "label": "c3-evoluzione",
+        "section": "3.13",
+        "title": "Simulare un’evoluzione"
+      }
+    ],
+    "after_section": 13,
+    "level": "Collegamento",
+    "source": "esercizi/modulo-3/G3.14.tex",
+    "sha256": "ef3fa7a142248b51f39c9bd277f67a3dc0011ac526221e32e2d813da0170fcde",
+    "steps": 6,
+    "figures": 2,
+    "tasks": 5,
+    "equation_blocks": 6
+  },
+  {
+    "id": "G3.15",
+    "chapter": 3,
+    "number": 15,
+    "title": "Verificare un programma completo",
+    "theory": [
+      {
+        "label": "c3-programma-completo",
+        "section": "3.14",
+        "title": "Verificare un programma completo"
+      }
+    ],
+    "after_section": 14,
+    "level": "Collegamento",
+    "source": "esercizi/modulo-3/G3.15.tex",
+    "sha256": "db871ac1b87991aa4e70d35f04b9c3cc1bc10d27c135a52ddd0db227ce13b54d",
+    "steps": 6,
+    "figures": 2,
+    "tasks": 6,
+    "equation_blocks": 5
+  },
+  {
+    "id": "G4.01",
+    "chapter": 4,
+    "number": 1,
+    "title": "Ricostruire l'interferenza in Deutsch–Jozsa e Bernstein–Vazirani",
+    "theory": [
+      {
+        "label": "c4-deutsch-jozsa",
+        "section": "4.01",
+        "title": "Deutsch–Jozsa"
+      },
+      {
+        "label": "c4-bernstein-vazirani",
+        "section": "4.02",
+        "title": "Bernstein–Vazirani"
+      }
+    ],
+    "after_section": 2,
+    "level": "Guida esplicita",
+    "source": "esercizi/modulo-4/G4.01.tex",
+    "sha256": "c13a3d44690641dc91d5fa48e13cde96b6fb8e0b51cb90d4c20dc8bb35332d86",
+    "steps": 6,
+    "figures": 2,
+    "tasks": 6,
+    "equation_blocks": 3
+  },
+  {
+    "id": "G4.02",
+    "chapter": 4,
+    "number": 2,
+    "title": "Recuperare il periodo binario di Simon",
+    "theory": [
+      {
+        "label": "c4-simon",
+        "section": "4.03",
+        "title": "Simon e le equazioni binarie"
+      }
+    ],
+    "after_section": 3,
+    "level": "Guida esplicita",
+    "source": "esercizi/modulo-4/G4.02.tex",
+    "sha256": "87ea60d49b01e2f81208f6fd708c5d200364420abc859f06c5fcb24ebdf66ed5",
+    "steps": 6,
+    "figures": 2,
+    "tasks": 5,
+    "equation_blocks": 1
+  },
+  {
+    "id": "G4.03",
+    "chapter": 4,
+    "number": 3,
+    "title": "Stimare una sovrapposizione mediante SWAP test",
+    "theory": [
+      {
+        "label": "c4-swap",
+        "section": "4.04",
+        "title": "SWAP test"
+      }
+    ],
+    "after_section": 4,
+    "level": "Guida esplicita",
+    "source": "esercizi/modulo-4/G4.03.tex",
+    "sha256": "f010b7fd0ef8a2ee01aaa313007575153ec29edb5ceceba88eb9db962652c56a",
+    "steps": 6,
+    "figures": 2,
+    "tasks": 5,
+    "equation_blocks": 6
+  },
+  {
+    "id": "G4.04",
+    "chapter": 4,
+    "number": 4,
+    "title": "Ricostruire Grover come due riflessioni",
+    "theory": [
+      {
+        "label": "c4-grover",
+        "section": "4.05",
+        "title": "Grover: iterazioni e sovrarotazione"
+      },
+      {
+        "label": "c4-amplificazione",
+        "section": "4.07",
+        "title": "Amplificare una preparazione assegnata"
+      }
+    ],
+    "after_section": 7,
+    "level": "Guida esplicita",
+    "source": "esercizi/modulo-4/G4.04.tex",
+    "sha256": "094c4268aa0ec3db5803b443390d07b8ab785f39ea8cde2338f1f0b81a494161",
+    "steps": 5,
+    "figures": 2,
+    "tasks": 4,
+    "equation_blocks": 4
+  },
+  {
+    "id": "G4.05",
+    "chapter": 4,
+    "number": 5,
+    "title": "Seguire una ricerca con budget e soglia variabile",
+    "theory": [
+      {
+        "label": "c4-ricerca-ignota",
+        "section": "4.06",
+        "title": "Ricerca con numero ignoto di soluzioni"
+      },
+      {
+        "label": "c4-minimo",
+        "section": "4.08",
+        "title": "Ricercare un minimo"
+      }
+    ],
+    "after_section": 8,
+    "level": "Guida esplicita",
+    "source": "esercizi/modulo-4/G4.05.tex",
+    "sha256": "8a0fd3453021dce1524f13308c987f53e1ca876c1f5e4bcfe6340c6c96ec77bb",
+    "steps": 6,
+    "figures": 2,
+    "tasks": 4,
+    "equation_blocks": 2
+  },
+  {
+    "id": "G4.06",
+    "chapter": 4,
+    "number": 6,
+    "title": "Costruire una Fourier a quattro livelli",
+    "theory": [
+      {
+        "label": "c4-fourier",
+        "section": "4.09",
+        "title": "Sommare le fasi di Fourier"
+      },
+      {
+        "label": "c4-qft",
+        "section": "4.10",
+        "title": "Costruire il circuito QFT"
+      }
+    ],
+    "after_section": 10,
+    "level": "Consolidamento",
+    "source": "esercizi/modulo-4/G4.06.tex",
+    "sha256": "c5b0231a7169ca037d69935342f79055187de5dc6954110ef6f58ccd23030c24",
+    "steps": 5,
+    "figures": 2,
+    "tasks": 4,
+    "equation_blocks": 5
+  },
+  {
+    "id": "G4.07",
+    "chapter": 4,
+    "number": 7,
+    "title": "Leggere un'autofase esatta",
+    "theory": [
+      {
+        "label": "c4-hadamard-test",
+        "section": "4.11",
+        "title": "Hadamard test"
+      },
+      {
+        "label": "c4-qpe-esatta",
+        "section": "4.12",
+        "title": "Stima di fase esatta"
+      }
+    ],
+    "after_section": 12,
+    "level": "Consolidamento",
+    "source": "esercizi/modulo-4/G4.07.tex",
+    "sha256": "5c5bbf6402553d50a84fd37af3f857a4861b2b138283812bfc0647a8387a3415",
+    "steps": 6,
+    "figures": 2,
+    "tasks": 4,
+    "equation_blocks": 6
+  },
+  {
+    "id": "G4.08",
+    "chapter": 4,
+    "number": 8,
+    "title": "Calcolare una fase non rappresentabile esattamente",
+    "theory": [
+      {
+        "label": "c4-qpe-approssimata",
+        "section": "4.13",
+        "title": "Stima di fase a precisione finita"
+      }
+    ],
+    "after_section": 13,
+    "level": "Consolidamento",
+    "source": "esercizi/modulo-4/G4.08.tex",
+    "sha256": "934bd073cef85ad710bf2ff56952f29b45de08b2afede8b3ff531e80a3014763",
+    "steps": 6,
+    "figures": 2,
+    "tasks": 4,
+    "equation_blocks": 5
+  },
+  {
+    "id": "G4.09",
+    "chapter": 4,
+    "number": 9,
+    "title": "Dalle autofasi di Grover al conteggio",
+    "theory": [
+      {
+        "label": "c4-conteggio",
+        "section": "4.14",
+        "title": "Conteggio quantistico"
+      },
+      {
+        "label": "c4-stima-ampiezze",
+        "section": "4.15",
+        "title": "Stimare una probabilità"
+      }
+    ],
+    "after_section": 15,
+    "level": "Consolidamento",
+    "source": "esercizi/modulo-4/G4.09.tex",
+    "sha256": "52abc1f37f266b3edf1edf6458b09773ff905fb17cb0829c54bd49ad316120b6",
+    "steps": 6,
+    "figures": 2,
+    "tasks": 4,
+    "equation_blocks": 4
+  },
+  {
+    "id": "G4.10",
+    "chapter": 4,
+    "number": 10,
+    "title": "Costruire RSA e recuperare la chiave dai fattori",
+    "theory": [
+      {
+        "label": "c4-aritmetica",
+        "section": "4.16",
+        "title": "Euclide, inversi e potenze modulari"
+      },
+      {
+        "label": "c4-rsa",
+        "section": "4.17",
+        "title": "RSA e recupero della chiave dai fattori"
+      },
+      {
+        "label": "c4-ordine-fattori",
+        "section": "4.18",
+        "title": "Dall’ordine ai fattori"
+      }
+    ],
+    "after_section": 18,
+    "level": "Consolidamento",
+    "source": "esercizi/modulo-4/G4.10.tex",
+    "sha256": "ad40a69467d39864efacd8699fa282f439c9c46ac9f41e5d54bca4068d9f82a8",
+    "steps": 7,
+    "figures": 2,
+    "tasks": 5,
+    "equation_blocks": 4
+  },
+  {
+    "id": "G4.11",
+    "chapter": 4,
+    "number": 11,
+    "title": "Verificare somma e moltiplicazione modulari reversibili",
+    "theory": [
+      {
+        "label": "c4-somma",
+        "section": "4.19",
+        "title": "Sommare conservando i riporti"
+      },
+      {
+        "label": "c4-moltiplicazione",
+        "section": "4.20",
+        "title": "Moltiplicare ed esponenziare modulo N"
+      }
+    ],
+    "after_section": 20,
+    "level": "Collegamento",
+    "source": "esercizi/modulo-4/G4.11.tex",
+    "sha256": "6d53b1d9e5eab4f3822bc569891af37da8df43c63a48d75e627a9ba8bf9a33de",
+    "steps": 6,
+    "figures": 2,
+    "tasks": 4,
+    "equation_blocks": 2
+  },
+  {
+    "id": "G4.12",
+    "chapter": 4,
+    "number": 12,
+    "title": "Costruire gli autostati di un'orbita modulare",
+    "theory": [
+      {
+        "label": "c4-autostati",
+        "section": "4.21",
+        "title": "Autostati della moltiplicazione modulare"
+      }
+    ],
+    "after_section": 21,
+    "level": "Collegamento",
+    "source": "esercizi/modulo-4/G4.12.tex",
+    "sha256": "97418aa8503d4d4b11abdbe269b2194fb9a4b2f2fd7d5ed4fbdf1a501d73b004",
+    "steps": 6,
+    "figures": 2,
+    "tasks": 5,
+    "equation_blocks": 5
+  },
+  {
+    "id": "G4.13",
+    "chapter": 4,
+    "number": 13,
+    "title": "Ricostruire e verificare un denominatore",
+    "theory": [
+      {
+        "label": "c4-frazioni-continue",
+        "section": "4.22",
+        "title": "Ricostruire un denominatore"
+      }
+    ],
+    "after_section": 22,
+    "level": "Collegamento",
+    "source": "esercizi/modulo-4/G4.13.tex",
+    "sha256": "bb352a5fe917caaee48dc1b4bbdc3b1e6fa7552593eb2bf4848c1d60e07ac696",
+    "steps": 5,
+    "figures": 2,
+    "tasks": 4,
+    "equation_blocks": 6
+  },
+  {
+    "id": "G4.14",
+    "chapter": 4,
+    "number": 14,
+    "title": "Svolgere Shor per N = 15",
+    "theory": [
+      {
+        "label": "c4-shor-15",
+        "section": "4.23",
+        "title": "Shor completo: fattorizzare 15"
+      }
+    ],
+    "after_section": 23,
+    "level": "Collegamento",
+    "source": "esercizi/modulo-4/G4.14.tex",
+    "sha256": "873930d110adc5f85944c0a8532b01fd6d16c32286dfbc04eedabf7488148ce7",
+    "steps": 7,
+    "figures": 2,
+    "tasks": 7,
+    "equation_blocks": 10
+  },
+  {
+    "id": "G4.15",
+    "chapter": 4,
+    "number": 15,
+    "title": "Svolgere Shor per N = 21",
+    "theory": [
+      {
+        "label": "c4-shor-21",
+        "section": "4.24",
+        "title": "Shor completo: fattorizzare 21"
+      }
+    ],
+    "after_section": 24,
+    "level": "Collegamento",
+    "source": "esercizi/modulo-4/G4.15.tex",
+    "sha256": "a7a53e27190fc7080e4adebd7dbf70cd68d512062d82abc78129437403c3f13b",
+    "steps": 9,
+    "figures": 2,
+    "tasks": 5,
+    "equation_blocks": 8
+  }
+]

@@ -1,0 +1,73 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G3.05}{Costruire e verificare l'inversa di un circuito}{Guida esplicita}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Il programma è \(U=P(\pi/3)H\). Costruire l’inversa e verificare l’andata e ritorno su \(\ket0\). Confrontare con l’operazione errata \(V=P(-\pi/3)H\), che mantiene l’ordine delle porte invece di invertirlo.
+
+\ExTheory{\ExRef{c3-inversa}{3.05}}{Per matrici unitarie \((AB)^{-1}=B^{-1}A^{-1}\). Si hanno \(H^{-1}=H\) e \(P(\varphi)^{-1}=P(-\varphi)\), poiché le fasi si moltiplicano dando uno.}
+
+\ExPrediction{Il ritorno deve annullare per prima l’ultima trasformazione eseguita. Sulla sfera occorre percorrere gli archi in ordine inverso, con orientazione inversa.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\node[left] at (-.3,0) {$ \ket{0} $};\draw[Ink] (-.3,0)--(6.0,0);\node[draw=Accent,fill=white,minimum height=9mm,minimum width=10mm] at (0.5,0) {$ H $};\node[draw=Accent,fill=white,minimum height=9mm,minimum width=10mm] at (2.0,0) {$ P(\pi/3) $};\node[draw=Accent,fill=white,minimum height=9mm,minimum width=10mm] at (3.5,0) {$ P(-\pi/3) $};\node[draw=Accent,fill=white,minimum height=9mm,minimum width=10mm] at (5.0,0) {$ H $};\node[right] at (6.0,0) {$\ket{\psi_f}$};
+\end{tikzpicture}}{Il blocco inverso percorre le trasformazioni in ordine opposto.}
+
+
+\begin{ExTasks}
+
+\item Calcolare lo stato dopo H e dopo P.
+
+\item Scrivere \(U^{-1}\) e l’ordine temporale delle porte.
+
+\item Applicare l’inversa passo per passo.
+
+\item Verificare \(U^{-1}U=I\).
+
+\item Applicare V e calcolare la probabilità di mancato ritorno.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Andata}
+
+\ExEq{\ket0&\xrightarrow{H}\frac{\ket0+\ket1}{\sqrt2}
+\xrightarrow{P(\pi/3)}\frac{\ket0+e^{i\pi/3}\ket1}{\sqrt2}.}
+
+\ExStep{Costruire il ritorno}
+
+\ExEq{U^{-1}&=(P(\pi/3)H)^{-1}=HP(-\pi/3).}
+Sul vettore agisce prima \(P(-\pi/3)\), poi H.
+
+\ExStep{Seguire i due passaggi inversi}
+
+\ExEq{P(-\pi/3)U\ket0&=\frac{\ket0+e^{-i\pi/3}e^{i\pi/3}\ket1}{\sqrt2}
+=\frac{\ket0+\ket1}{\sqrt2},\\H\frac{\ket0+\ket1}{\sqrt2}&=\frac12\colv{1+1\\1-1}=\ket0.}
+La ricombinazione riporta la preparazione al polo iniziale.
+
+\ExStep{Controllare tutta la matrice}
+
+\ExEq{U^{-1}U&=HP(-\pi/3)P(\pi/3)H=HIH=H^2,\\H^2&=\tfrac12\begin{pmatrix}1+1&1-1\\1-1&1+1\end{pmatrix}=I.}
+La verifica vale quindi per ogni ingresso.
+
+\ExStep{Esaminare l’ordine errato}
+
+Dopo H applicata al risultato dell’andata, le ampiezze sono \((3+i\sqrt3,1-i\sqrt3)^T/4\). La successiva fase negativa dà
+\ExEq{VU\ket0&=\frac14\colv{3+i\sqrt3\\(\frac12-i\frac{\sqrt3}{2})(1-i\sqrt3)}
+=\frac14\colv{3+i\sqrt3\\-1-i\sqrt3}.}
+Il secondo prodotto è \(1/2-i\sqrt3/2-i\sqrt3/2-3/2=-1-i\sqrt3\). Le probabilità sono \((9+3)/16=3/4\) e \((1+3)/16=1/4\): il ritorno fallisce con probabilità \(1/4\).
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\node[exbox] (n0) at (0.0,0.0) {$U\ket0$};\node[exbox] (n1) at (3.6,0.0) {$P(-\pi/3)$};\draw[exother] (n0)--(n1);\node[exbox] (n2) at (7.2,0.0) {$H\to\ket0$};\draw[exother] (n1)--(n2);
+\end{tikzpicture}}{Due controlli locali del ritorno: fase annullata e ricombinazione.}
+
+
+\ExInterpret{L’inversione richiede sia gli operatori inversi sia l’ordine corretto. Il prodotto identità verifica tutte le preparazioni; il confronto numerico espone l’effetto di un ordine errato.}
+
+\ExLab{Nella sezione 3.05 scegliere «H, P(60°), P(-60°), H» e seguire tutti gli stati. Confrontare il risultato con il prodotto identità; la variante errata si verifica mediante i prodotti riportati nell’esercizio.}
+
+
+\end{minipage}

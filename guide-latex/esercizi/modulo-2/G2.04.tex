@@ -1,0 +1,72 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G2.04}{Calcolare prodotti interni e proiezioni}{Guida esplicita}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Siano \(u=(1,i)^T/\sqrt2\) e \(v=(2,1)^T\). Calcolare la proiezione p di v sulla direzione u e il residuo w. Verificare ortogonalità e identità di Pitagora nel prodotto interno complesso.
+
+\ExTheory{\ExRef{c2-prodotto-interno}{2.05}}{Per u unitario, \(p=u\langle u|v\rangle\), \(w=v-p\). Il primo argomento del prodotto interno va coniugato. La relazione \(\langle u|w\rangle=0\) esprime ortogonalità nello spazio complesso.}
+
+\ExPrediction{Il coefficiente di proiezione sarà complesso perché u contiene i. La decomposizione finale separerà due vettori ortogonali; le loro norme potranno essere rappresentate come cateti di un triangolo reale.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-0.35,0)--(1.55,0) node[right] {$\operatorname{Re}$};\draw[exaxis] (0,-0.35)--(0,1.55) node[above] {$\operatorname{Im}$};\draw[->,Secondary,line width=1.1pt] (0,0)--(1,0) node[anchor=south west] {$ 1 $};\draw[->,Accent,line width=1.1pt] (0,0)--(0,1) node[anchor=south west] {$ i $};
+\end{tikzpicture}}{Le componenti non normalizzate di u sono 1 e i; il bra contiene il coniugato \(-i\).}
+
+
+\begin{ExTasks}
+
+\item Controllare la norma di u e costruire il bra.
+
+\item Svolgere il prodotto interno.
+
+\item Moltiplicare il coefficiente per entrambe le componenti di u.
+
+\item Sottrarre la proiezione da v e verificare l’ortogonalità.
+
+\item Calcolare le tre norme al quadrato e confrontarle.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Preparare il prodotto interno}
+
+\ExEq{u^\dagger&=(1,-i)/\sqrt2,\qquad u^\dagger u=(1+(-i)i)/2=1.}
+
+\ExStep{Calcolare il coefficiente}
+
+\ExEq{c=\langle u|v\rangle&=\frac{1\cdot2+(-i)\cdot1}{\sqrt2}
+=\frac{2-i}{\sqrt2}.}
+Il coniugio determina il segno della parte immaginaria.
+
+\ExStep{Costruire la proiezione}
+
+\ExEq{p=cu&=\frac12\colv{2-i\\i(2-i)}
+=\frac12\colv{2-i\\1+2i}
+=\colv{1-i/2\\1/2+i}.}
+Nel secondo elemento si è usato \(i(2-i)=2i-i^2=1+2i\).
+
+\ExStep{Calcolare e verificare il residuo}
+
+\ExEq{w&=\colv{2-(1-i/2)\\1-(1/2+i)}=\colv{1+i/2\\1/2-i},\\\langle u|w\rangle&=\frac{1+i/2-i(1/2-i)}{\sqrt2}
+=\frac{1+i/2-i/2-1}{\sqrt2}=0.}
+
+\ExStep{Confrontare le norme}
+
+\ExEq{\|p\|^2&=1+1/4+1/4+1=5/2,\\\|w\|^2&=1+1/4+1/4+1=5/2,\\\|v\|^2&=2^2+1^2=5=5/2+5/2.}
+Inoltre \(p+w=(2,1)^T\). I due controlli verificano sia la ricostruzione sia l’ortogonalità.
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-0.35,0)--(2.1311400000000003,0) node[right] {$\widehat p$};\draw[exaxis] (0,-0.35)--(0,2.1311400000000003) node[above] {$\widehat w$};\draw[->,Secondary,line width=1.1pt] (0,0)--(1.58114,0) node[anchor=south west] {$ p $};\draw[->,Ink,line width=1.1pt] (0,0)--(0,1.58114) node[anchor=south west] {$ w $};\draw[->,Accent,line width=1.1pt] (0,0)--(1.58114,1.58114) node[anchor=south west] {$ v $};
+\end{tikzpicture}}{Piano reale generato da \(p/\|p\|\) e \(w/\|w\|\) all’interno di \(\mathbb C^2\). Le coordinate di v sono le due norme \(\sqrt{5/2}\).}
+
+
+\ExInterpret{La perpendicolarità riguarda i vettori completi e il prodotto interno dichiarato. Le frecce che mostrano singole componenti nel piano complesso hanno un significato differente dal triangolo delle due parti ortogonali.}
+
+\ExLab{Nella sezione 2.05 confrontare il ruolo del coniugio nei prodotti interni degli esempi. Ricostruire i valori p e w nei piani delle componenti; verificare che omettere il coniugio nel coefficiente impedisca il controllo di ortogonalità.}
+
+
+\end{minipage}

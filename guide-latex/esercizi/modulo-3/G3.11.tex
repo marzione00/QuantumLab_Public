@@ -1,0 +1,74 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G3.11}{Verificare una porta composta}{Collegamento}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Dimostrare che \((I\otimes H)\,CZ\,(I\otimes H)\) realizza CNOT con primo qubit di controllo. Verificare l’intera base e la preparazione \((\ket{00}+i\ket{10})/\sqrt2\).
+
+\ExTheory{\ExRef{c3-sintesi}{3.10}}{La porta \(CZ=\operatorname{diag}(1,1,1,-1)\) applica Z al secondo qubit soltanto se il primo vale uno. L’identità \(HZH=X\) permette di convertire una fase controllata in un’inversione controllata.}
+
+\ExPrediction{Nel sottospazio con controllo zero le due H dovrebbero cancellarsi. Nel sottospazio con controllo uno la fase cambia la ricombinazione delle componenti del bersaglio.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\node[exbox] (n0) at (0.0,0.0) {$I\otimes H$};\node[exbox] (n1) at (3.6,0.0) {$CZ$};\draw[exother] (n0)--(n1);\node[exbox] (n2) at (7.2,0.0) {$I\otimes H$};\draw[exother] (n1)--(n2);
+\end{tikzpicture}}{Le tre operazioni compongono una sola porta logica controllata.}
+
+
+\begin{ExTasks}
+
+\item Calcolare ZH e poi HZH.
+
+\item Esaminare il sottospazio con controllo zero.
+
+\item Esaminare quello con controllo uno.
+
+\item Scrivere le quattro immagini di base e la matrice complessiva.
+
+\item Applicare la linearità alla preparazione assegnata.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Calcolare il prodotto sul bersaglio}
+
+\ExEq{ZH&=\tfrac1{\sqrt2}\begin{pmatrix}1&1\\-1&1\end{pmatrix},\\
+HZH&=\tfrac12\begin{pmatrix}1-1&1+1\\1+1&1-1\end{pmatrix}
+=\begin{pmatrix}0&1\\1&0\end{pmatrix}=X.}
+
+\ExStep{Controllo zero}
+
+CZ agisce come I sul bersaglio. Il prodotto è \(HIH=H^2=I\), quindi \(00\mapsto00\) e \(01\mapsto01\).
+
+\ExStep{Controllo uno}
+
+Il prodotto sul bersaglio è HZH=X. Quindi \(10\mapsto11\) e \(11\mapsto10\). Per esempio,
+\ExEq{\ket{10}&\mapsto(\ket{10}+\ket{11})/\sqrt2\\
+&\mapsto(\ket{10}-\ket{11})/\sqrt2\mapsto\ket{11}.}
+
+\ExStep{Ricomporre la matrice}
+
+\ExEq{(I\otimes H)CZ(I\otimes H)
+&=\begin{pmatrix}1&0&0&0\\0&1&0&0\\0&0&0&1\\0&0&1&0\end{pmatrix}.}
+La verifica sui quattro vettori di base determina l’azione su tutto lo spazio.
+
+\ExStep{Applicare la sovrapposizione}
+
+\ExEq{C\frac{\ket{00}+i\ket{10}}{\sqrt2}
+&=\frac{C\ket{00}+iC\ket{10}}{\sqrt2}
+=\frac{\ket{00}+i\ket{11}}{\sqrt2}.}
+La norma è uno e la fase relativa \(i\) resta nel risultato. Le probabilità sono \(1/2\) sui due rami, senza che sia stato misurato il controllo.
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\node[exbox] (n0) at (0.0,0.0) {controllo $0$: $H^2$};\node[exbox] (n1) at (3.6,0.0) {bersaglio invariato};\draw[exother] (n0)--(n1);\node[exbox] (n2) at (7.2,0.0) {controllo $1$: $HZH=X$};\draw[exother] (n1)--(n2);\node[exbox] (n3) at (0.0,-1.6) {bersaglio invertito};\draw[exother] (n2.south)--++(0,-.4)-|(n3.north);
+\end{tikzpicture}}{Decomposizione nei due sottospazi ortogonali del controllo.}
+
+
+\ExInterpret{L’identità di matrici certifica la decomposizione anche sulle sovrapposizioni. Verificare un solo ingresso avrebbe controllato soltanto una colonna della porta.}
+
+\ExLab{Nella sezione 3.10 confrontare «Decomposizione su |10\(\rangle\)» e «Decomposizione su una sovrapposizione». Seguire i tre stati intermedi e verificare che la fase del ramo inizialmente immaginario sia conservata.}
+
+
+\end{minipage}

@@ -1,0 +1,86 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G4.08}{Calcolare una fase non rappresentabile esattamente}{Consolidamento}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Stimare \(\phi=1/3\) con tre qubit, Q=8, partendo da un autostato. Calcolare la distribuzione completa, l’esito più probabile e il suo errore.
+
+\ExTheory{\ExRef{c4-qpe-approssimata}{4.13}}{Quando \(Q\phi\) non è intero, i fasori della trasformata inversa non si allineano perfettamente. L’ampiezza è \(A(c)=Q^{-1}\sum_{x=0}^{Q-1}e^{2\pi ix(\phi-c/Q)}\); occorre sommare le ampiezze prima di prendere il modulo quadro.}
+
+\ExPrediction{La fase cade fra 2/8 e 3/8, più vicina a 3/8. Si prevede un picco vicino a c=3, accompagnato da probabilità residue sugli altri esiti.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exother] (0.00000,0.00000)--(1.00000,0.00000);\draw[exother] (1.00000,0.00000)--(1.96593,-0.25882);\draw[exother] (1.96593,-0.25882)--(2.83195,-0.75882);\draw[exother] (2.83195,-0.75882)--(3.53906,-1.46593);\draw[exother] (3.53906,-1.46593)--(4.03906,-2.33195);\draw[exother] (4.03906,-2.33195)--(4.29788,-3.29788);\draw[exother] (4.29788,-3.29788)--(4.29788,-4.29788);\draw[exother] (4.29788,-4.29788)--(4.03906,-5.26380);
+\end{tikzpicture}}{Somma punta-coda degli otto fasori per c=3; l’ampiezza è il vettore risultante diviso per otto.}
+
+
+\begin{ExTasks}
+
+\item Ricavare la formula della somma finita.
+
+\item Semplificare il numeratore per Q=8 e fase 1/3.
+
+\item Calcolare tutti gli otto esiti.
+
+\item Quantificare l’errore della lettura più probabile.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Sommare i fasori}
+
+Pongo \(\delta_c=1/3-c/8=(8-3c)/24\), \(z=e^{2\pi i\delta_c}\). Nessun c intero fra 0 e 7 rende z=1. Dalla sottrazione
+\ExEq{S-zS&=(1+z+\cdots+z^7)-(z+\cdots+z^8)=1-z^8}
+si ricava \(S=(1-z^8)/(1-z)\) e \(A(c)=S/8\).
+
+\ExStep{Calcolare il modulo}
+
+\ExEq{|1-e^{it}|^2&=(1-\cos t)^2+\sin^2t=2-2\cos t=4\sin^2(t/2),\\
+P(c)&=\frac{\sin^2(8\pi\delta_c)}{64\sin^2(\pi\delta_c)}.}
+Poiché \(8\delta_c=8/3-c\), il numeratore è \(\sin^2(8\pi/3-\pi c)=3/4\). Quindi
+\ExEq{P(c)&=\frac3{256\sin^2(\pi(8-3c)/24)}.}
+
+\ExStep{Sostituire tutti i valori}
+
+I numeratori \(8-3c\) sono \(8,5,2,-1,-4,-7,-10,-13\). Sostituendoli nella formula si ottiene la tabella seguente, arrotondata a sei decimali. Le ampiezze derivano dalla formula complessa della somma finita.\begin{center}\begin{tabular}{rrrr}\toprule c&$\delta_c$&$A(c)$&$P(c)$\\\midrule
+0&0.333333&0.062500+0.108253i&0.015625\\
+1&0.208333&0.023211+0.176304i&0.031622\\
+2&0.083333&-0.108253+0.404006i&0.174940\\
+3&-0.041667&0.504882-0.657975i&0.687838\\
+4&-0.166667&0.187500-0.108253i&0.046875\\
+5&-0.291667&0.135283-0.017810i&0.018619\\
+6&-0.416667&0.108253+0.029006i&0.012560\\
+7&-0.541667&0.086624+0.066469i&0.011922\\
+\bottomrule\end{tabular}\end{center}
+
+\ExStep{Esaminare il picco}
+
+\ExEq{\delta_3&=-1/24,\quad
+A(3)=\frac{3/2+i\sqrt3/2}{8[1-\cos(\pi/12)+i\sin(\pi/12)]},\\
+P(3)&=\frac3{256[(\sqrt6-\sqrt2)/4]^2}\simeq0.687838.}
+Il denominatore ha modulo minimo in c=3, che fornisce quindi il massimo della distribuzione.
+
+\ExStep{Controllare normalizzazione ed errore}
+
+La somma degli otto valori non arrotondati è uno, come segue anche dall’unitarietà dell’inversa. Se si legge 3, la stima è \(3/8\) e
+\ExEq{\frac38-\frac13&=\frac9{24}-\frac8{24}=\frac1{24}.}
+Questo errore riguarda quel ramo. Altre misure danno altri errori; la probabilità del ramo migliore è circa 0.688.
+
+\ExStep{Descrivere il bersaglio}
+
+Per un singolo autostato iniziale, lo stato complessivo finale è \(\sum_cA(c)\ket c\otimes\ket u\). Condizionando su qualunque c di probabilità positiva, il bersaglio resta \(\ket u\), a meno di fase globale.
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-.6,0)--(8.8,0) node[right] {esito};\draw[exaxis] (-.6,0)--(-.6,3.6) node[above] {$p$};\node[left] at (-.6,3) {$ 0.8 $};\draw[Ink!15,dashed] (-.6,3)--(8.3,3);\filldraw[fill=Accent!25,draw=Accent] (0.0,0) rectangle (0.65,0.05859375000000015);\node[below] at (0.325,0) {$ 0 $};\node[above] at (0.325,0.05859375000000015) {$ 0.016 $};\filldraw[fill=Accent!25,draw=Accent] (1.1,0) rectangle (1.75,0.11858187183473612);\node[below] at (1.425,0) {$ 1 $};\node[above] at (1.425,0.11858187183473612) {$ 0.032 $};\filldraw[fill=Accent!25,draw=Accent] (2.2,0) rectangle (2.85,0.656024556017967);\node[below] at (2.5250000000000004,0) {$ 2 $};\node[above] at (2.5250000000000004,0.656024556017967) {$ 0.175 $};\filldraw[fill=Accent!25,draw=Accent] (3.3000000000000003,0) rectangle (3.95,2.5793912347110792);\node[below] at (3.6250000000000004,0) {$ 3 $};\node[above] at (3.6250000000000004,2.5793912347110792) {$ 0.688 $};\filldraw[fill=Accent!25,draw=Accent] (4.4,0) rectangle (5.050000000000001,0.17578125000000006);\node[below] at (4.7250000000000005,0) {$ 4 $};\node[above] at (4.7250000000000005,0.17578125000000006) {$ 0.047 $};\filldraw[fill=Accent!25,draw=Accent] (5.5,0) rectangle (6.15,0.06981990409339718);\node[below] at (5.825,0) {$ 5 $};\node[above] at (5.825,0.06981990409339718) {$ 0.019 $};\filldraw[fill=Accent!25,draw=Accent] (6.6000000000000005,0) rectangle (7.250000000000001,0.04710044398203328);\node[below] at (6.925000000000001,0) {$ 6 $};\node[above] at (6.925000000000001,0.04710044398203328) {$ 0.013 $};\filldraw[fill=Accent!25,draw=Accent] (7.700000000000001,0) rectangle (8.350000000000001,0.044706989360786265);\node[below] at (8.025,0) {$ 7 $};\node[above] at (8.025,0.044706989360786265) {$ 0.012 $};
+\end{tikzpicture}}{Distribuzione con tre bit; valori arrotondati a tre decimali.}
+
+
+\ExInterpret{La precisione finita lascia una dispersione sulle frequenze della griglia. Il picco ha una spiegazione geometrica nell’allineamento quasi completo dei fasori.}
+
+\ExLab{Nella sezione 4.13 impostare fase 1/3 e tre qubit. Confrontare tutti gli otto valori, evitando di arrotondare la fase prima della trasformata.}
+
+
+\end{minipage}

@@ -1,0 +1,71 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G2.09}{Costruire l'aggiunto e verificare l'unitarietà}{Consolidamento}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Per \(U=\frac1{\sqrt2}\begin{pmatrix}1&i\\i&1\end{pmatrix}\), calcolare l’aggiunto, verificare l’unitarietà e seguire due applicazioni a \(\ket0\). Interpretare la norma e la fase finale.
+
+\ExTheory{\ExRef{c2-aggiunto}{2.11}}{L’aggiunto è \(U^\dagger=(U^*)^T\). L’unitarietà richiede \(U^\dagger U=I\) e implica \(\|U\psi\|=\|\psi\|\). La trasposizione scambia righe e colonne; il coniugio cambia i in \(-i\).}
+
+\ExPrediction{Le colonne hanno norma uno e un prodotto interno che dovrebbe annullarsi. La prima applicazione produce componenti di uguale modulo, ma con fase relativa di un quarto di giro.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\node[left] at (-.3,0) {$ \ket{0} $};\draw[Ink] (-.3,0)--(3.0,0);\node[draw=Accent,fill=white,minimum height=9mm,minimum width=10mm] at (0.5,0) {$ U $};\node[draw=Accent,fill=white,minimum height=9mm,minimum width=10mm] at (2.0,0) {$ U $};\node[right] at (3.0,0) {$\ket{\psi_f}$};
+\end{tikzpicture}}{Due applicazioni della stessa matrice unitaria.}
+
+
+\begin{ExTasks}
+
+\item Coniugare e trasporre U.
+
+\item Calcolare i quattro elementi di \(U^\dagger U\).
+
+\item Applicare U a \(\ket0\).
+
+\item Applicarla una seconda volta.
+
+\item Controllare le norme e interpretare la fase globale finale.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Costruire l’aggiunto}
+
+\ExEq{U^*&=\frac1{\sqrt2}\begin{pmatrix}1&-i\\-i&1\end{pmatrix},\\U^\dagger&=(U^*)^T=\frac1{\sqrt2}\begin{pmatrix}1&-i\\-i&1\end{pmatrix}.}
+La matrice è simmetrica, quindi la trasposizione lascia in questo caso la stessa disposizione.
+
+\ExStep{Verificare tutti gli elementi}
+
+\ExEq{(U^\dagger U)_{11}&=(1+(-i)i)/2=(1+1)/2=1,\\(U^\dagger U)_{12}&=(i-i)/2=0,\\(U^\dagger U)_{21}&=(-i+i)/2=0,\\(U^\dagger U)_{22}&=((-i)i+1)/2=1.}
+Il risultato è I, pertanto \(U^{-1}=U^\dagger\).
+
+\ExStep{Prima applicazione}
+
+\ExEq{U\ket0&=\frac1{\sqrt2}\colv{1\cdot1+i\cdot0\\i\cdot1+1\cdot0}
+=\frac1{\sqrt2}\colv{1\\i}.}
+La norma al quadrato è \((1+|i|^2)/2=1\).
+
+\ExStep{Seconda applicazione}
+
+\ExEq{U^2\ket0&=\frac12\colv{1+i^2\\i+i}
+=\frac12\colv{0\\2i}=\colv{0\\i}=i\ket1.}
+Anche \(U^2=\begin{pmatrix}0&i\\i&0\end{pmatrix}=iX\), ricavata moltiplicando le colonne, conserva la norma.
+
+\ExStep{Interpretare le fasi}
+
+Lo stato finale \(i\ket1\) differisce da \(\ket1\) per un fattore comune di modulo uno. Dopo una successiva trasformazione lineare V, \(V(i\ket1)=iV\ket1\): tutti i moduli quadri restano uguali. La fase relativa nello stato intermedio, invece, interviene nel secondo prodotto.
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-0.35,0)--(1.55,0) node[right] {$\operatorname{Re}$};\draw[exaxis] (0,-0.35)--(0,1.55) node[above] {$\operatorname{Im}$};\draw[->,Secondary,line width=1.1pt] (0,0)--(0.707107,0) node[anchor=south west] {$ \alpha $};\draw[->,Accent,line width=1.1pt] (0,0)--(0,0.707107) node[anchor=south west] {$ \beta $};\draw[->,Ink,line width=1.1pt] (0,0)--(0,1) node[anchor=south west] {$ \beta_f=i $};
+\end{tikzpicture}}{Piano delle componenti: dopo la prima porta le lunghezze sono \(1/\sqrt2\), dopo la seconda rimane soltanto la componente i.}
+
+
+\ExInterpret{L’unitarietà conserva prodotti interni e norma in tutto lo spazio. Questa U coincide con \(R_x(-\pi/2)\): sulla sfera di Bloch descrive una rotazione, mentre nei piani delle componenti descrive la combinazione complessa mostrata.}
+
+\ExLab{Nella sezione 2.11 verificare il procedimento aggiunto-prodotto e confrontarlo con i quattro elementi calcolati. Nello strumento delle porte, due rotazioni \(R_x(-90^\circ)\) devono portare dal polo 0 al polo 1; la fase globale finale resta irrilevante per la lettura.}
+
+
+\end{minipage}

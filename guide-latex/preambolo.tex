@@ -1,0 +1,88 @@
+\pdfmapfile{}
+\pdfminorversion=7
+\documentclass[11pt,oneside,openany]{scrbook}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage[dvipsnames,table]{xcolor}
+\usepackage[style=arsclassica,beramono=false,eulermath=true,
+ eulerchapternumbers=true,parts=false,drafting=false]{classicthesis}
+\usepackage{geometry}
+\geometry{paperwidth=176mm,paperheight=250mm,left=20mm,right=20mm,
+ top=16mm,bottom=18mm,headheight=16pt,headsep=6mm,footskip=9mm}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc}
+\usepackage{longtable,booktabs,array,ragged2e,needspace,accsupp,adjustbox}
+\usepackage{enumitem}
+\input{font-map}
+% Preserve a horizontal Planck bar with the Euler h (the package's default
+% fallback substitutes hslash). The accent comes from embedded Computer Modern.
+\DeclareSymbolFont{bookcmr}{OT1}{cmr}{m}{n}
+\DeclareMathSymbol{\HbarStroke}{\mathord}{bookcmr}{"16}
+\AtBeginDocument{\renewcommand{\hbar}{{\HbarStroke\mkern-9mu h}}}
+\definecolor{Ink}{HTML}{253137}
+\definecolor{Accent}{HTML}{783E4D}
+\definecolor{Secondary}{HTML}{4A6F93}
+\colorlet{CTtitle}{Accent}
+\colorlet{CTsemi}{Ink!50}
+\color{Ink}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\setlength{\emergencystretch}{2em}
+\setlength{\LTpre}{5pt}
+\setlength{\LTpost}{7pt}
+\widowpenalty=10000
+\clubpenalty=10000
+\raggedbottom
+\AtBeginDocument{\fontsize{10.5}{13.2}\selectfont}
+\hypersetup{pdftitle={Quantum e post-quantum computing — Guida al laboratorio},
+ pdfauthor={Marzio De Corato; Danilo Bruschi},
+ pdfsubject={Geometria, simulazione e calcolo — edizione ArsClassica 01},
+ colorlinks=true,linkcolor=Accent,urlcolor=Secondary,bookmarksopen=false}
+\clearpairofpagestyles
+\ihead{\sffamily\fontsize{8.3}{10}\selectfont\color{Ink!65}Quantum e post-quantum computing}
+\ohead{\sffamily\fontsize{8.3}{10}\selectfont\color{Accent}Guida al laboratorio}
+\ifoot[\sffamily\fontsize{8}{10}\selectfont\color{Ink!55}]{\sffamily\fontsize{8}{10}\selectfont\color{Ink!55}\ifnum\value{chapter}>0 Capitolo \thechapter\else Guida al laboratorio\fi}
+\ofoot[\sffamily\fontsize{9}{11}\selectfont\thepage]{\sffamily\fontsize{9}{11}\selectfont\thepage}
+\pagestyle{scrheadings}
+\setcounter{secnumdepth}{1}
+\setcounter{tocdepth}{1}
+\renewcommand{\thesection}{\thechapter.\ifnum\value{section}<10 0\fi\arabic{section}}
+\titleformat{\chapter}[display]
+ {\color{Accent}\sffamily\raggedright\hyphenpenalty=10000}
+ {\fontsize{46}{48}\selectfont\thechapter}{10pt}
+ {\fontsize{25}{29}\selectfont}
+\titlespacing*{\chapter}{0pt}{12mm}{9mm}
+\titleformat{\section}{\color{Accent}\sffamily\raggedright\hyphenpenalty=10000\fontsize{18}{22}\selectfont}
+ {\thesection}{.7em}{}
+\titlespacing*{\section}{0pt}{17pt}{10pt}
+\newcommand{\BookHeading}[1]{%
+ \par\Needspace{5\baselineskip}\addvspace{8pt}
+ {\sffamily\color{Accent}\fontsize{10.5}{13}\selectfont #1\par}\nobreak\vspace{2pt}}
+% The visible equation is native Euler math. ActualText retains the Unicode
+% source for copy/paste and semantic content verification.
+\newcommand{\MathBlock}[2]{%
+ \par\addvspace{3pt}\noindent\begin{minipage}{\linewidth}
+ \BeginAccSupp{method=hex,unicode,ActualText=#1}%
+ {\setlength{\parskip}{0pt}\raggedright\hspace{0pt}$\displaystyle #2$\par}%
+ \EndAccSupp{}\end{minipage}\par\addvspace{4pt}}
+\newcommand{\MatrixBlock}[2]{%
+ \par\addvspace{5pt}\noindent\begin{minipage}{\linewidth}
+ \BeginAccSupp{method=hex,unicode,ActualText=#1}%
+ \adjustbox{max width=\linewidth}{$\displaystyle #2$}%
+ \EndAccSupp{}\end{minipage}\par\addvspace{5pt}}
+\newcommand{\TextBlock}[2]{%
+ \par\addvspace{3pt}\noindent\begin{minipage}{\linewidth}
+ \BeginAccSupp{method=hex,unicode,ActualText=#1}#2\par
+ \EndAccSupp{}\end{minipage}\par\addvspace{4pt}}
+\newenvironment{FigureBlock}{%
+ \par\addvspace{4pt}\noindent\begin{minipage}{\linewidth}\centering
+}{\end{minipage}\par\addvspace{6pt}}
+\newcommand{\FigureCaption}[1]{%
+ \par\vspace{4pt}{\raggedright\sffamily\fontsize{8.8}{11.2}\selectfont\color{Ink!70}#1\par}}
+\pdfstringdefDisableCommands{\def\({}\def\){}\def\varphi{phi}\def\psi{psi}\def\theta{theta}}
+
+% Authoritative guided exercises, shared by all chapter editions.
+\input{esercizi/stile}

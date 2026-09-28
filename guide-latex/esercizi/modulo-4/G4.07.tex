@@ -1,0 +1,82 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G4.07}{Leggere un'autofase esatta}{Consolidamento}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Stimare la fase dell’autostato \(\ket1\) per \(U=\operatorname{diag}(1,e^{3\pi i/4})\), usando tre qubit di controllo. Ricostruire la preparazione, il ritorno di fase e l’interferenza finale.
+
+\ExTheory{\ExRef{c4-hadamard-test}{4.11}; \ExRef{c4-qpe-esatta}{4.12}}{Se \(U\ket u=e^{2\pi i\phi}\ket u\), le potenze controllate preparano \(\frac1{\sqrt Q}\sum_xe^{2\pi ix\phi}\ket x\otimes\ket u\). L’inversa di Fourier concentra esattamente la lettura su \(Q\phi\) quando questo numero è intero.}
+
+\ExPrediction{Qui \(\phi=3/8\) e Q=8. Le fasi dovrebbero coincidere con quelle della colonna 3 di F8, permettendo la cancellazione di tutte le altre uscite.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\node[exbox] (n0) at (0.0,0.0) {$U^4:\ -1$};\node[exbox] (n1) at (3.6,0.0) {$U^2:\ -i$};\draw[exother] (n0)--(n1);\node[exbox] (n2) at (7.2,0.0) {$U:\ e^{3\pi i/4}$};\draw[exother] (n1)--(n2);
+\end{tikzpicture}}{Le potenze rendono la fase visibile su tre scale binarie.}
+
+
+\begin{ExTasks}
+
+\item Calcolare gli autovalori di \(U\), \(U^2\) e \(U^4\).
+
+\item Elencare gli otto coefficienti del controllo.
+
+\item Applicare la somma geometrica dell’inversa.
+
+\item Descrivere lo stato del bersaglio dopo la misura.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Associare i bit alle potenze}
+
+L’ordine è \(q_0q_1q_2\), con pesi 4,2,1. Gli autovalori sono
+\ExEq{U:\ e^{3\pi i/4}&=(-1+i)/\sqrt2,\\
+U^2:\ e^{3\pi i/2}&=-i,\qquad U^4:\ e^{3\pi i}=-1.}
+Il controllo q0 riceve quindi fase \(\pi\), q1 fase \(3\pi/2\), q2 fase \(3\pi/4\).
+
+\ExStep{Preparare i fattori}
+
+\ExEq{\ket C&=\frac{\ket0-\ket1}{\sqrt2}\otimes
+\frac{\ket0-i\ket1}{\sqrt2}\otimes
+\frac{\ket0+e^{3\pi i/4}\ket1}{\sqrt2}.}
+Per \(x=4x_0+2x_1+x_2\), il prodotto dei tre fattori di fase è \(e^{3\pi ix/4}\).
+
+\ExStep{Elencare le componenti}
+
+I coefficienti, prima del fattore comune \(1/\sqrt8\), sono
+\ExEq{x=0,1:&\quad 1,\ (-1+i)/\sqrt2,\\
+x=2,3:&\quad -i,\ (1+i)/\sqrt2,\\
+x=4,5:&\quad -1,\ (1-i)/\sqrt2,\\
+x=6,7:&\quad i,\ (-1-i)/\sqrt2.}
+Tutti hanno modulo uno, quindi la norma del controllo è \(\sqrt{8/8}=1\).
+
+\ExStep{Sommare l’inversa}
+
+\ExEq{A(c)&=\frac18\sum_{x=0}^7e^{2\pi i(3-c)x/8}.}
+Per c=3 ogni termine vale uno: \(A(3)=8/8=1\). Per gli altri sette valori, ponendo \(z=e^{2\pi i(3-c)/8}\), si ha \(z\ne1\), \(z^8=1\) e
+\ExEq{(1-z)\sum_{x=0}^7z^x&=1-z^8=0,\qquad A(c)=0.}
+
+\ExStep{Interpretare la lettura}
+
+Lo stato finale è \(\ket{011}\otimes\ket1\). La misura dà \(c=3\), da cui \(c/8=3/8\). Il bersaglio rimane nel proprio autostato: le operazioni controllate ne hanno trasferito l’autovalore in fasi relative del controllo.
+
+\ExStep{Confrontare una sola interferenza}
+
+Con un solo controllo e una sola U, dopo l’ultima H le ampiezze sono \((1+e^{3\pi i/4})/2\) e \((1-e^{3\pi i/4})/2\). Perciò
+\ExEq{P(0)&=\frac{2+2\cos(3\pi/4)}4=\frac{2-\sqrt2}{4}.}
+Questo singolo test fornisce una probabilità dipendente dalla fase. Le tre potenze e l’inversa di Fourier ricostruiscono qui tutti i suoi tre bit.
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-.6,0)--(8.8,0) node[right] {esito};\draw[exaxis] (-.6,0)--(-.6,3.6) node[above] {$p$};\node[left] at (-.6,3) {$ 1 $};\draw[Ink!15,dashed] (-.6,3)--(8.3,3);\filldraw[fill=Accent!25,draw=Accent] (0.0,0) rectangle (0.65,0.0);\node[below] at (0.325,0) {$ 0 $};\node[above] at (0.325,0.0) {$ 0 $};\filldraw[fill=Accent!25,draw=Accent] (1.1,0) rectangle (1.75,0.0);\node[below] at (1.425,0) {$ 1 $};\node[above] at (1.425,0.0) {$ 0 $};\filldraw[fill=Accent!25,draw=Accent] (2.2,0) rectangle (2.85,0.0);\node[below] at (2.5250000000000004,0) {$ 2 $};\node[above] at (2.5250000000000004,0.0) {$ 0 $};\filldraw[fill=Accent!25,draw=Accent] (3.3000000000000003,0) rectangle (3.95,3.0);\node[below] at (3.6250000000000004,0) {$ 3 $};\node[above] at (3.6250000000000004,3.0) {$ 1 $};\filldraw[fill=Accent!25,draw=Accent] (4.4,0) rectangle (5.050000000000001,0.0);\node[below] at (4.7250000000000005,0) {$ 4 $};\node[above] at (4.7250000000000005,0.0) {$ 0 $};\filldraw[fill=Accent!25,draw=Accent] (5.5,0) rectangle (6.15,0.0);\node[below] at (5.825,0) {$ 5 $};\node[above] at (5.825,0.0) {$ 0 $};\filldraw[fill=Accent!25,draw=Accent] (6.6000000000000005,0) rectangle (7.250000000000001,0.0);\node[below] at (6.925000000000001,0) {$ 6 $};\node[above] at (6.925000000000001,0.0) {$ 0 $};\filldraw[fill=Accent!25,draw=Accent] (7.700000000000001,0) rectangle (8.350000000000001,0.0);\node[below] at (8.025,0) {$ 7 $};\node[above] at (8.025,0.0) {$ 0 $};
+\end{tikzpicture}}{La fase esatta 3/8 produce un unico picco, in c=3.}
+
+
+\ExInterpret{La preparazione mantiene separati controllo e bersaglio perché il bersaglio è un autostato. La geometria dei fasori spiega l’uscita esatta senza attribuire una misura intermedia alle potenze controllate.}
+
+\ExLab{Nelle sezioni 4.11 e 4.12 confrontare il test di Hadamard con la stima di fase. Impostare fase 3/8 e tre qubit di controllo; controllare l’associazione fra potenze e bit.}
+
+
+\end{minipage}

@@ -1,0 +1,69 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G1.03}{Invertire un moto e ritrovare la preparazione}{Guida esplicita}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Un corpo libero parte da \(x_0=1\,\mathrm m\) con velocità \(v=2\,\mathrm{m/s}\). Dopo \(T=3\,\mathrm s\) si inverte esattamente la velocità. Determinare la traiettoria di ritorno e l’istante in cui il corpo ritrova la posizione iniziale.
+
+\ExTheory{\ExRef{c1-loschmidt}{1.02}}{La dinamica libera è \(x=x_0+vt\). L’inversione cambia \(v\) in \(-v\) conservando la posizione raggiunta. Conviene usare \(\tau=t-T\) per il tempo trascorso dopo l’inversione.}
+
+\ExPrediction{Il ritorno ripercorre le stesse posizioni in ordine inverso. Nel grafico posizione-tempo le due pendenze hanno segni opposti; nel piano posizione-velocità l’intervento cambia la seconda coordinata.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\node[exbox] (n0) at (0.0,0.0) {$(1,2)$};\node[exbox] (n1) at (3.6,0.0) {$(7,2)$};\draw[exother] (n0)--(n1);\node[exbox] (n2) at (7.2,0.0) {$(7,-2)$};\draw[exother] (n1)--(n2);\node[exbox] (n3) at (0.0,-1.6) {$(1,-2)$};\draw[exother] (n2.south)--++(0,-.4)-|(n3.north);\node[exbox] (n4) at (3.6,-1.6) {$(1,2)$};\draw[exother] (n3)--(n4);
+\end{tikzpicture}}{Punti nel piano posizione-velocità. I cambi di segno sono interventi istantanei; gli altri passaggi sono evoluzioni libere.}
+
+
+\begin{ExTasks}
+
+\item Calcolare la posizione al tempo di inversione.
+
+\item Scrivere la legge usando \(\tau\).
+
+\item Calcolare le posizioni dopo uno e due secondi di ritorno.
+
+\item Risolvere l’equazione di ritorno a \(x_0\).
+
+\item Tradurre il risultato nel tempo totale e distinguere posizione e stato completo.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Arrivare al punto di inversione}
+
+\ExEq{x(T)&=1+2\cdot3=7\,\mathrm m.}
+La coppia prima dell’intervento è \((x,v)=(7,2)\); immediatamente dopo è \((7,-2)\).
+
+\ExStep{Impostare il ritorno}
+
+\ExEq{x_R(\tau)&=7+(-2)\tau=7-2\tau,\qquad\tau\geq0.}
+Il nuovo tempo parte da zero al momento dell’intervento.
+
+\ExStep{Seguire gli istanti intermedi}
+
+\ExEq{x_R(1)&=7-2=5,\qquad x_R(2)=7-4=3.}
+All’andata si avevano \(x(2)=5\) e \(x(1)=3\): l’ordine dei punti è invertito.
+
+\ExStep{Trovare il ritorno}
+
+\ExEq{7-2\tau&=1,\quad -2\tau=-6,\quad\tau=3\,\mathrm s,\\t&=T+\tau=3+3=6\,\mathrm s.}
+La durata della fase inversa deve uguagliare quella diretta.
+
+\ExStep{Confrontare gli stati}
+
+A \(t=6\) la posizione è 1, mentre la velocità è \(-2\). Si è ritrovata la configurazione spaziale con velocità invertite. Una seconda inversione porta \((1,-2)\) in \((1,2)\), ripristinando anche lo stato iniziale completo.
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (0,0)--(6.7,0) node[right] {$t$ (s)};\draw[exaxis] (0,0)--(0,3.3) node[above] {$x$ (m)};\draw[Accent,thick] (0,.4)--(3,2.8);\draw[Secondary,thick] (3,2.8)--(6,.4);\draw[dashed] (3,0)--(3,2.8);\node[below] at (3,0) {$3$};\node[below] at (6,0) {$6$};\node[left] at (0,.4) {$1$};\node[above] at (3,2.8) {$7$};
+\end{tikzpicture}}{Traiettoria nel piano tempo-posizione. La cuspide identifica l’inversione, non un salto della posizione.}
+
+
+\ExInterpret{Questo esempio libero rende esplicita la reversibilità. Nei sistemi a molte particelle il ritorno richiede l’inversione di tutte le velocità pertinenti e una dinamica compatibile con tale simmetria.}
+
+\ExLab{Nella sezione 1.02 scegliere inversione ideale e lasciare alla fase inversa lo stesso tempo della fase diretta. Confrontare il ritorno spaziale delle particelle. Il calcolo qui svolto è il caso libero a una dimensione; urti e pareti della simulazione rendono le traiettorie più articolate.}
+
+
+\end{minipage}

@@ -1,0 +1,69 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G1.02}{Propagare un'incertezza sulla velocità}{Guida esplicita}
+
+\BookHeading{Problema, dati e obiettivo}
+
+La posizione iniziale è nota: \(x_0=1\,\mathrm m\). La velocità costante appartiene all’intervallo \([1{,}8;2{,}2]\,\mathrm{m/s}\). Determinare gli intervalli di posizione a 5 e 10 secondi e separare il valore centrale dall’incertezza.
+
+\ExTheory{\ExRef{c1-moto}{1.01}}{Per \(t\geq0\), la funzione \(x_0+vt\) è crescente rispetto a \(v\). Se \(v=\bar v\pm\delta v\), allora \(x(t)=x_0+\bar vt\pm t\delta v\). Un intervallo di valori possibili non assegna da solo una distribuzione di probabilità.}
+
+\ExPrediction{Le rette delle velocità estreme delimitano un cuneo. La larghezza cresce con il tempo mentre il punto iniziale resta comune.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\node[exbox] (n0) at (0.0,0.0) {$x_0=1$};\node[exbox] (n1) at (3.6,0.0) {$v\in[1{,}8;2{,}2]$};\draw[exother] (n0)--(n1);\node[exbox] (n2) at (7.2,0.0) {$x=1+vt$};\draw[exother] (n1)--(n2);
+\end{tikzpicture}}{Dati dell’esperimento: una posizione nota e un insieme di velocità ammesse.}
+
+
+\begin{ExTasks}
+
+\item Ricavare velocità centrale e semilarghezza.
+
+\item Propagare l’estremo inferiore a 5 secondi.
+
+\item Propagare l’estremo superiore e trovare il centro.
+
+\item Ripetere a 10 secondi.
+
+\item Confrontare le due larghezze e indicare che cosa occorrerebbe per assegnare probabilità.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Descrivere l’intervallo iniziale}
+
+\ExEq{\bar v&=(1{,}8+2{,}2)/2=2,\\\delta v&=(2{,}2-1{,}8)/2=0{,}2\,\mathrm{m/s}.}
+La larghezza totale delle velocità è \(0{,}4\,\mathrm{m/s}\).
+
+\ExStep{Propagare a cinque secondi}
+
+\ExEq{x_{\min}(5)&=1+1{,}8\cdot5=1+9=10\,\mathrm m,\\x_{\max}(5)&=1+2{,}2\cdot5=1+11=12\,\mathrm m.}
+Ogni velocità ammessa produce una posizione fra questi estremi.
+
+\ExStep{Verificare centro e semilarghezza}
+
+\ExEq{\bar x(5)&=1+2\cdot5=11\,\mathrm m,\\\delta x(5)&=5\cdot0{,}2=1\,\mathrm m.}
+Il risultato \(11\pm1\) ricostruisce \([10;12]\).
+
+\ExStep{Raddoppiare il tempo}
+
+\ExEq{x_{\min}(10)&=1+1{,}8\cdot10=19\,\mathrm m,\\x_{\max}(10)&=1+2{,}2\cdot10=23\,\mathrm m,\\\bar x(10)&=21\,\mathrm m,\qquad\delta x(10)=2\,\mathrm m.}
+La larghezza passa da \(12-10=2\) a \(23-19=4\,\mathrm m\).
+
+\ExStep{Interpretare l’insieme delle previsioni}
+
+In generale \(w(t)=x_{\max}-x_{\min}=(2{,}2-1{,}8)t=0{,}4t\). Ogni traiettoria resta deterministica una volta fissata la velocità. Per predire quanti corpi occupino ciascun intervallo occorrerebbe specificare anche come le velocità siano distribuite nell’insieme iniziale.
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (0,0)--(5,0) node[right] {$t$ (s)};\draw[exaxis] (0,0)--(0,3.5) node[above] {$x$ (m)};\fill[Secondary!15] (0,.13)--(4,2.99)--(4,2.47)--cycle;\draw[Secondary] (0,.13)--(4,2.99) node[right] {$23$};\draw[Secondary] (0,.13)--(4,2.47) node[right] {$19$};\draw[Accent,dashed] (0,.13)--(4,2.73);\draw[Ink!40] (2,1.3)--(2,1.56);\node[below] at (2,0) {$5$};\node[below] at (4,0) {$10$};
+\end{tikzpicture}}{Inviluppo delle traiettorie; le sezioni verticali sono gli intervalli di posizione ai tempi scelti.}
+
+
+\ExInterpret{L’allargamento deriva dalla propagazione di un’incertezza iniziale. La geometria del cuneo esprime la legge lineare \(\delta x=t\delta v\).}
+
+\ExLab{Nella sezione 1.01 scegliere posizione iniziale 1, velocità A 2 e incertezza sulla velocità A \(0{,}2\). Confrontare gli estremi a 5 e 10 secondi. Nella distribuzione dei campioni distinguere il supporto teorico dai conteggi finiti.}
+
+
+\end{minipage}

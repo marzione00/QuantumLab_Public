@@ -1,0 +1,79 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G3.10}{Usare e ripulire un'ancilla}{Consolidamento}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Preparare \(\ket{++}\ket0\), calcolare AND in un’ancilla, applicarle Z e ripristinarla con la stessa Toffoli. Confrontare la successiva interferenza dei primi due qubit con il caso in cui il ripristino sia omesso.
+
+\ExTheory{\ExRef{c3-ausiliari}{3.09}}{La Toffoli scrive \(ab\) nell’ausiliario inizialmente zero; Z introduce un segno sul valore uno. Ripetere la Toffoli annulla il contenuto calcolato, perché \(ab\oplus ab=0\), lasciando il segno sul ramo pertinente.}
+
+\ExPrediction{Dopo il ripristino tutti i rami dovrebbero condividere la stessa ancilla. Se la traccia del ramo 11 rimanesse nell’ausiliario, la successiva interferenza del registro dati dovrebbe cambiare.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\node[exbox] (n0) at (0.0,0.0) {calcola AND};\node[exbox] (n1) at (3.6,0.0) {applica $Z$};\draw[exother] (n0)--(n1);\node[exbox] (n2) at (7.2,0.0) {ripristina AND};\draw[exother] (n1)--(n2);
+\end{tikzpicture}}{La marcatura coerente richiede il calcolo e la sua inversa.}
+
+
+\begin{ExTasks}
+
+\item Sviluppare \(\ket{++}\ket0\).
+
+\item Calcolare la Toffoli sui quattro rami.
+
+\item Applicare Z all’ancilla.
+
+\item Ripristinare e fattorizzare l’ausiliario.
+
+\item Applicare H ai due dati e calcolare \(P(00)\) nei due casi.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Preparare tutti i rami}
+
+\ExEq{\ket{\Psi_0}&=\tfrac12(\ket{000}+\ket{010}+\ket{100}+\ket{110}).}
+Ogni ramo ha probabilità \(1/4\).
+
+\ExStep{Calcolare AND}
+
+\ExEq{\ket{\Psi_1}&=\tfrac12(\ket{000}+\ket{010}+\ket{100}+\ket{111}).}
+Soltanto il ramo con dati 11 cambia l’ausiliario.
+
+\ExStep{Marcare con una fase}
+
+\ExEq{\ket{\Psi_2}&=\tfrac12(\ket{000}+\ket{010}+\ket{100}-\ket{111}).}
+Z lascia i rami con ancilla zero invariati e moltiplica per \(-1\) quello con ancilla uno.
+
+\ExStep{Ripristinare l’ausiliario}
+
+\ExEq{\ket{\Psi_3}&=\tfrac12(\ket{000}+\ket{010}+\ket{100}-\ket{110})\\
+&=\tfrac12(\ket{00}+\ket{01}+\ket{10}-\ket{11})\otimes\ket0.}
+Il segno resta nel registro dei dati.
+
+\ExStep{Interferire dopo il ripristino}
+
+Applicando \(H\otimes H\) al vettore \((1,1,1,-1)^T/2\), si ottiene
+\ExEq{\tfrac14\colv{1+1+1-1\\1-1+1+1\\1+1-1+1\\1-1-1-1}
+&=\tfrac12\colv{1\\1\\1\\-1}.}
+Le quattro probabilità sono \(1/4\).
+
+\ExStep{Interferire conservando la traccia}
+
+Se si parte da \(\Psi_2\), per l’esito dati 00 l’ampiezza con ancilla zero è \((1+1+1)/4=3/4\), mentre quella con ancilla uno è \(-1/4\). I due stati dell’ancilla sono ortogonali:
+\ExEq{P(00)&=|3/4|^2+|-1/4|^2=10/16=5/8.}
+Per ogni altro esito la somma sui tre rami ha modulo \(1/4\), e l’ampiezza dell’ancilla uno ha modulo \(1/4\): \(P=2/16=1/8\). Il totale è \(5/8+3/8=1\).
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-.6,0)--(4.4,0) node[right] {esito};\draw[exaxis] (-.6,0)--(-.6,3.6) node[above] {$p$};\node[left] at (-.6,3) {$ 1 $};\draw[Ink!15,dashed] (-.6,3)--(3.9000000000000004,3);\filldraw[fill=Accent!25,draw=Accent] (0.0,0) rectangle (0.65,1.875);\node[below] at (0.325,0) {$ 00 $};\node[above] at (0.325,1.875) {$ 0.625 $};\filldraw[fill=Accent!25,draw=Accent] (1.1,0) rectangle (1.75,0.375);\node[below] at (1.425,0) {$ 01 $};\node[above] at (1.425,0.375) {$ 0.125 $};\filldraw[fill=Accent!25,draw=Accent] (2.2,0) rectangle (2.85,0.375);\node[below] at (2.5250000000000004,0) {$ 10 $};\node[above] at (2.5250000000000004,0.375) {$ 0.125 $};\filldraw[fill=Accent!25,draw=Accent] (3.3000000000000003,0) rectangle (3.95,0.375);\node[below] at (3.6250000000000004,0) {$ 11 $};\node[above] at (3.6250000000000004,0.375) {$ 0.125 $};
+\end{tikzpicture}}{Distribuzione dopo le Hadamard quando il ripristino è omesso; con ripristino tutti gli esiti valgono \(1/4\).}
+
+
+\ExInterpret{Le probabilità nella base computazionale prima della ricombinazione possono nascondere il problema. Il confronto dopo H mostra l’effetto dell’informazione residua nell’ancilla.}
+
+\ExLab{Nella sezione 3.09 confrontare «Marcatura con ripristino» e «Informazione residua senza ripristino». Verificare l’ausiliario in ogni ramo. Le Hadamard finali dell’esercizio forniscono un controllo ulteriore, svolto qui esplicitamente.}
+
+
+\end{minipage}

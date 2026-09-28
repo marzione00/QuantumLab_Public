@@ -21,5 +21,10 @@ export const chapterTwo:DemoInfo[]=[
 {id:'esperimento',title:'Un esperimento dall’inizio alla fine',short:'Il calcolo completo',part:2,pages:[242],intro:'Riprendiamo il problema conclusivo della lezione: dall’operatore e dallo stato ricaviamo gli esiti, le loro probabilità, media e dispersione; infine calcoliamo lo stato condizionato all’esito maggiore.',bridge:'Il simulatore dispone ora di una descrizione dello stato, delle trasformazioni e della misura. I capitoli successivi svilupperanno questo percorso.'}
 ];
 export const courseTitle='Quantum e post-quantum computing';
-export const courseChapters=[{id:1,title:'Dal determinismo al calcolo quantistico',count:10,accent:'coral',intro:'Dai dati iniziali di una particella alle ampiezze di un qubit: seguiamo le informazioni che una simulazione deve conservare per produrre previsioni.'},{id:2,title:'Geometria del calcolo quantistico',count:18,accent:'violet',intro:'Vettori, trasformazioni e probabilità danno una forma matematica agli esperimenti del primo capitolo. Figure e calcoli descrivono insieme ogni passaggio.'}];
-export const futureChapters=[{id:'future',title:'Capitoli successivi',status:'To be done'}];
+export const courseChapters=[
+{id:1,title:'Dal determinismo al calcolo quantistico',count:10,accent:'coral',intro:'Dai dati iniziali di un sistema alle ampiezze: seguiamo le informazioni necessarie per costruire una simulazione.'},
+{id:2,title:'Geometria del calcolo quantistico',count:32,accent:'violet',intro:'Un percorso di lettura in sei unità, con teoria, figure ed esempi svolti prima dell’esplorazione dei parametri.'},
+{id:3,title:'Costruire programmi quantistici',count:14,accent:'blue',intro:'Dagli oggetti matematici ai programmi: preparazioni, circuiti, stati intermedi e misure vengono seguiti nello stesso calcolo.'},
+{id:4,title:'Algoritmi, Fourier e fattorizzazione',count:25,accent:'teal',intro:'La struttura dei problemi guida oracoli, ricerca, stima di fase e aritmetica reversibile, fino a RSA e agli esempi completi di Shor.'}
+];
+export const futureChapters:{id:string;title:string;status:string}[]=[];

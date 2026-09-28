@@ -32,21 +32,21 @@
           "n": 1000,
           "milliseconds": 36,
           "collisions": 376,
-          "returnRms": 1.0026573780019657e-09
+          "returnRms": 1.0026573780019657e-9
         },
         {
           "model": "hard-disks",
           "n": 5000,
           "milliseconds": 191,
           "collisions": 1954,
-          "returnRms": 1.348486156897834e-06
+          "returnRms": 0.000001348486156897834
         },
         {
           "model": "hard-disks",
           "n": 10000,
           "milliseconds": 468,
           "collisions": 3882,
-          "returnRms": 7.449376636762192e-05
+          "returnRms": 0.00007449376636762192
         }
       ],
       "oneMillionScreenDraws": {
@@ -159,5 +159,8 @@
   "githubDeployment": "Da eseguire nel repository del docente.",
   "browserInteractions": "Non collaudate in questa sessione; checklist in docs/COLLAUDO.md.",
   "version": "1.1.0",
-  "checkedOn": "2026-09-19"
+  "checkedOn": "2026-09-19",
+  "historical": true,
+  "currentReport": "docs/corso/VERIFICHE.md",
+  "note": "Rapporto conservato dell'edizione iniziale del modulo 1; non descrive il rilascio Matrix 4.0."
 }

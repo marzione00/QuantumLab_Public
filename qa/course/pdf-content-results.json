@@ -60,111 +60,713 @@
     "notebook_explanations": 8
   },
   "c2-complessi": {
-    "figures": 1,
-    "calculation_steps": 5,
-    "intro_characters": 246,
-    "notebook_explanations": 0
+    "figures": 2,
+    "calculation_steps": 10,
+    "worked_examples": 2,
+    "intro_characters": 1073,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c2-prodotto-complesso": {
+    "figures": 2,
+    "calculation_steps": 8,
+    "worked_examples": 2,
+    "intro_characters": 789,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
   },
   "c2-basi": {
-    "figures": 1,
-    "calculation_steps": 7,
-    "intro_characters": 301,
-    "notebook_explanations": 0
+    "figures": 2,
+    "calculation_steps": 8,
+    "worked_examples": 2,
+    "intro_characters": 958,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c2-norma": {
+    "figures": 5,
+    "calculation_steps": 8,
+    "worked_examples": 2,
+    "intro_characters": 713,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c2-prodotto-interno": {
+    "figures": 5,
+    "calculation_steps": 8,
+    "worked_examples": 2,
+    "intro_characters": 765,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
   },
   "c2-proiezioni": {
-    "figures": 1,
-    "calculation_steps": 7,
-    "intro_characters": 277,
-    "notebook_explanations": 0
+    "figures": 2,
+    "calculation_steps": 8,
+    "worked_examples": 2,
+    "intro_characters": 755,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
   },
   "c2-matrici": {
     "figures": 2,
-    "calculation_steps": 7,
-    "intro_characters": 247,
-    "notebook_explanations": 0
-  },
-  "c2-aggiunto": {
-    "figures": 4,
-    "calculation_steps": 7,
-    "intro_characters": 240,
-    "notebook_explanations": 0
-  },
-  "c2-spettro": {
-    "figures": 3,
     "calculation_steps": 8,
-    "intro_characters": 244,
-    "notebook_explanations": 0
+    "worked_examples": 2,
+    "intro_characters": 752,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c2-nucleo": {
+    "figures": 2,
+    "calculation_steps": 12,
+    "worked_examples": 2,
+    "intro_characters": 825,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
   },
   "c2-composizione": {
-    "figures": 3,
-    "calculation_steps": 7,
-    "intro_characters": 264,
-    "notebook_explanations": 0
-  },
-  "c2-tensore": {
     "figures": 4,
-    "calculation_steps": 6,
-    "intro_characters": 473,
-    "notebook_explanations": 0
+    "calculation_steps": 12,
+    "worked_examples": 2,
+    "intro_characters": 754,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c2-cambio-base": {
+    "figures": 4,
+    "calculation_steps": 12,
+    "worked_examples": 2,
+    "intro_characters": 882,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c2-aggiunto": {
+    "figures": 8,
+    "calculation_steps": 8,
+    "worked_examples": 2,
+    "intro_characters": 923,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c2-spettro": {
+    "figures": 4,
+    "calculation_steps": 8,
+    "worked_examples": 2,
+    "intro_characters": 737,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c2-base-propria": {
+    "figures": 2,
+    "calculation_steps": 8,
+    "worked_examples": 2,
+    "intro_characters": 745,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c2-proiettori": {
+    "figures": 2,
+    "calculation_steps": 8,
+    "worked_examples": 2,
+    "intro_characters": 773,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c2-funzioni-matrice": {
+    "figures": 14,
+    "calculation_steps": 11,
+    "worked_examples": 2,
+    "intro_characters": 1225,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
   },
   "c2-eventi": {
-    "figures": 1,
-    "calculation_steps": 5,
-    "intro_characters": 215,
-    "notebook_explanations": 0
+    "figures": 2,
+    "calculation_steps": 8,
+    "worked_examples": 2,
+    "intro_characters": 743,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c2-distribuzioni": {
+    "figures": 4,
+    "calculation_steps": 10,
+    "worked_examples": 2,
+    "intro_characters": 787,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
   },
   "c2-momenti": {
-    "figures": 1,
-    "calculation_steps": 7,
-    "intro_characters": 273,
-    "notebook_explanations": 0
+    "figures": 4,
+    "calculation_steps": 10,
+    "worked_examples": 2,
+    "intro_characters": 732,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
   },
   "c2-frequenze": {
-    "figures": 1,
-    "calculation_steps": 7,
-    "intro_characters": 258,
-    "notebook_explanations": 0
+    "figures": 4,
+    "calculation_steps": 19,
+    "worked_examples": 2,
+    "intro_characters": 724,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
   },
   "c2-condizionamento": {
     "figures": 2,
-    "calculation_steps": 7,
-    "intro_characters": 274,
-    "notebook_explanations": 0
+    "calculation_steps": 9,
+    "worked_examples": 2,
+    "intro_characters": 753,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
   },
   "c2-stati": {
-    "figures": 3,
-    "calculation_steps": 8,
-    "intro_characters": 354,
-    "notebook_explanations": 0
+    "figures": 6,
+    "calculation_steps": 10,
+    "worked_examples": 2,
+    "intro_characters": 1725,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
   },
-  "c2-unitarie": {
-    "figures": 7,
-    "calculation_steps": 7,
-    "intro_characters": 336,
-    "notebook_explanations": 0
+  "c2-bra": {
+    "figures": 14,
+    "calculation_steps": 12,
+    "worked_examples": 2,
+    "intro_characters": 691,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c2-fase": {
+    "figures": 12,
+    "calculation_steps": 18,
+    "worked_examples": 3,
+    "intro_characters": 1473,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
   },
   "c2-born": {
-    "figures": 6,
-    "calculation_steps": 7,
-    "intro_characters": 230,
-    "notebook_explanations": 0
+    "figures": 22,
+    "calculation_steps": 12,
+    "worked_examples": 2,
+    "intro_characters": 1499,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c2-unitarie": {
+    "figures": 18,
+    "calculation_steps": 12,
+    "worked_examples": 2,
+    "intro_characters": 742,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c2-osservabili": {
+    "figures": 8,
+    "calculation_steps": 8,
+    "worked_examples": 2,
+    "intro_characters": 744,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
   },
   "c2-incompatibilita": {
-    "figures": 2,
-    "calculation_steps": 8,
-    "intro_characters": 303,
-    "notebook_explanations": 0
-  },
-  "c2-composti": {
-    "figures": 5,
-    "calculation_steps": 9,
-    "intro_characters": 297,
-    "notebook_explanations": 0
+    "figures": 4,
+    "calculation_steps": 16,
+    "worked_examples": 2,
+    "intro_characters": 807,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
   },
   "c2-esperimento": {
-    "figures": 2,
+    "figures": 18,
+    "calculation_steps": 30,
+    "worked_examples": 2,
+    "intro_characters": 788,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c2-tensore": {
+    "figures": 10,
+    "calculation_steps": 8,
+    "worked_examples": 2,
+    "intro_characters": 758,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c2-porte-locali": {
+    "figures": 24,
+    "calculation_steps": 12,
+    "worked_examples": 2,
+    "intro_characters": 733,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c2-separabilita": {
+    "figures": 8,
+    "calculation_steps": 8,
+    "worked_examples": 2,
+    "intro_characters": 794,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c2-composti": {
+    "figures": 14,
+    "calculation_steps": 10,
+    "worked_examples": 2,
+    "intro_characters": 819,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c3-programma": {
+    "figures": 12,
+    "calculation_steps": 7,
+    "worked_examples": 2,
+    "intro_characters": 1158,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c3-reversibilita": {
+    "figures": 22,
+    "calculation_steps": 10,
+    "worked_examples": 2,
+    "intro_characters": 1072,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c3-porte": {
+    "figures": 12,
+    "calculation_steps": 9,
+    "worked_examples": 2,
+    "intro_characters": 1111,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c3-preparazione": {
+    "figures": 12,
+    "calculation_steps": 12,
+    "worked_examples": 2,
+    "intro_characters": 1101,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c3-inversa": {
+    "figures": 12,
+    "calculation_steps": 12,
+    "worked_examples": 2,
+    "intro_characters": 713,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c3-interferometro": {
+    "figures": 12,
+    "calculation_steps": 10,
+    "worked_examples": 2,
+    "intro_characters": 762,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c3-registro": {
+    "figures": 14,
+    "calculation_steps": 7,
+    "worked_examples": 2,
+    "intro_characters": 748,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c3-bell": {
+    "figures": 15,
     "calculation_steps": 13,
-    "intro_characters": 274,
-    "notebook_explanations": 0
+    "worked_examples": 2,
+    "intro_characters": 1101,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c3-ausiliari": {
+    "figures": 22,
+    "calculation_steps": 15,
+    "worked_examples": 2,
+    "intro_characters": 784,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c3-sintesi": {
+    "figures": 14,
+    "calculation_steps": 10,
+    "worked_examples": 2,
+    "intro_characters": 865,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c3-deutsch": {
+    "figures": 28,
+    "calculation_steps": 36,
+    "worked_examples": 4,
+    "intro_characters": 987,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c3-grover-primo": {
+    "figures": 18,
+    "calculation_steps": 22,
+    "worked_examples": 2,
+    "intro_characters": 1046,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c3-evoluzione": {
+    "figures": 14,
+    "calculation_steps": 38,
+    "worked_examples": 2,
+    "intro_characters": 1480,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c3-programma-completo": {
+    "figures": 14,
+    "calculation_steps": 12,
+    "worked_examples": 2,
+    "intro_characters": 1130,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c4-deutsch-jozsa": {
+    "figures": 18,
+    "calculation_steps": 18,
+    "worked_examples": 2,
+    "intro_characters": 1129,
+    "notebook_explanations": 0,
+    "data_rows": 18,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c4-bernstein-vazirani": {
+    "figures": 18,
+    "calculation_steps": 18,
+    "worked_examples": 2,
+    "intro_characters": 937,
+    "notebook_explanations": 0,
+    "data_rows": 18,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c4-simon": {
+    "figures": 6,
+    "calculation_steps": 40,
+    "worked_examples": 2,
+    "intro_characters": 1582,
+    "notebook_explanations": 0,
+    "data_rows": 90,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c4-swap": {
+    "figures": 33,
+    "calculation_steps": 27,
+    "worked_examples": 3,
+    "intro_characters": 984,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c4-grover": {
+    "figures": 26,
+    "calculation_steps": 25,
+    "worked_examples": 2,
+    "intro_characters": 1343,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c4-ricerca-ignota": {
+    "figures": 2,
+    "calculation_steps": 10,
+    "worked_examples": 2,
+    "intro_characters": 1194,
+    "notebook_explanations": 0,
+    "data_rows": 16,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c4-amplificazione": {
+    "figures": 18,
+    "calculation_steps": 23,
+    "worked_examples": 2,
+    "intro_characters": 1209,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c4-minimo": {
+    "figures": 2,
+    "calculation_steps": 8,
+    "worked_examples": 2,
+    "intro_characters": 1215,
+    "notebook_explanations": 0,
+    "data_rows": 26,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c4-fourier": {
+    "figures": 14,
+    "calculation_steps": 18,
+    "worked_examples": 2,
+    "intro_characters": 1020,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c4-qft": {
+    "figures": 19,
+    "calculation_steps": 31,
+    "worked_examples": 2,
+    "intro_characters": 1474,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c4-hadamard-test": {
+    "figures": 14,
+    "calculation_steps": 15,
+    "worked_examples": 2,
+    "intro_characters": 991,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c4-qpe-esatta": {
+    "figures": 8,
+    "calculation_steps": 45,
+    "worked_examples": 2,
+    "intro_characters": 1532,
+    "notebook_explanations": 0,
+    "data_rows": 18,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c4-qpe-approssimata": {
+    "figures": 8,
+    "calculation_steps": 45,
+    "worked_examples": 2,
+    "intro_characters": 1281,
+    "notebook_explanations": 0,
+    "data_rows": 18,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c4-conteggio": {
+    "figures": 20,
+    "calculation_steps": 103,
+    "worked_examples": 2,
+    "intro_characters": 1344,
+    "notebook_explanations": 0,
+    "data_rows": 34,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c4-stima-ampiezze": {
+    "figures": 20,
+    "calculation_steps": 103,
+    "worked_examples": 2,
+    "intro_characters": 1155,
+    "notebook_explanations": 0,
+    "data_rows": 34,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c4-aritmetica": {
+    "figures": 2,
+    "calculation_steps": 21,
+    "worked_examples": 2,
+    "intro_characters": 1241,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c4-rsa": {
+    "figures": 2,
+    "calculation_steps": 32,
+    "worked_examples": 2,
+    "intro_characters": 1556,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c4-ordine-fattori": {
+    "figures": 2,
+    "calculation_steps": 16,
+    "worked_examples": 2,
+    "intro_characters": 1119,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c4-somma": {
+    "figures": 2,
+    "calculation_steps": 12,
+    "worked_examples": 2,
+    "intro_characters": 1084,
+    "notebook_explanations": 0,
+    "data_rows": 56,
+    "appendix_rows": 56,
+    "expanded_formulas": 0
+  },
+  "c4-moltiplicazione": {
+    "figures": 2,
+    "calculation_steps": 25,
+    "worked_examples": 2,
+    "intro_characters": 1642,
+    "notebook_explanations": 0,
+    "data_rows": 2379,
+    "appendix_rows": 2362,
+    "expanded_formulas": 0
+  },
+  "c4-autostati": {
+    "figures": 6,
+    "calculation_steps": 40,
+    "worked_examples": 2,
+    "intro_characters": 1208,
+    "notebook_explanations": 0,
+    "data_rows": 0,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c4-frazioni-continue": {
+    "figures": 4,
+    "calculation_steps": 18,
+    "worked_examples": 2,
+    "intro_characters": 1384,
+    "notebook_explanations": 0,
+    "data_rows": 7,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
+  },
+  "c4-shor-15": {
+    "figures": 4,
+    "calculation_steps": 52,
+    "worked_examples": 2,
+    "intro_characters": 1532,
+    "notebook_explanations": 0,
+    "data_rows": 1028,
+    "appendix_rows": 1028,
+    "expanded_formulas": 8
+  },
+  "c4-shor-21": {
+    "figures": 4,
+    "calculation_steps": 62,
+    "worked_examples": 2,
+    "intro_characters": 1458,
+    "notebook_explanations": 0,
+    "data_rows": 2052,
+    "appendix_rows": 2052,
+    "expanded_formulas": 12
+  },
+  "c4-logaritmo": {
+    "figures": 6,
+    "calculation_steps": 31,
+    "worked_examples": 2,
+    "intro_characters": 1498,
+    "notebook_explanations": 0,
+    "data_rows": 12,
+    "appendix_rows": 0,
+    "expanded_formulas": 0
   }
 }

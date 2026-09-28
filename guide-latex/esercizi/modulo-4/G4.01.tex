@@ -1,0 +1,84 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G4.01}{Ricostruire l'interferenza in Deutsch–Jozsa e Bernstein–Vazirani}{Guida esplicita}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Per Deutsch–Jozsa su tre bit confrontare la funzione costante \(f=1\) con \(f(x_0,x_1,x_2)=x_0x_1\oplus x_2\). Per Bernstein–Vazirani usare \(g(x)=x_0\oplus x_2\), associata alla stringa 101. In entrambi i casi preparare l’ausiliario in \(\ket-\) e svolgere tutta l’interferenza.
+
+\ExTheory{\ExRef{c4-deutsch-jozsa}{4.01}; \ExRef{c4-bernstein-vazirani}{4.02}}{L’oracolo reversibile scrive \(y\oplus f(x)\); su \(\ket-\) produce il segno \((-1)^{f(x)}\). La trasformata Hadamard soddisfa \(H^{\otimes3}\ket x=2^{-3/2}\sum_y(-1)^{x\cdot y}\ket y\), dove il prodotto scalare è calcolato modulo due.}
+
+\ExPrediction{La ricombinazione somma segmenti reali di segno opposto. Nel caso bilanciato il coefficiente di 000 deve cancellarsi; la forma affine di Bernstein–Vazirani dovrebbe concentrare l’intera ampiezza sulla stringa cercata.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\node[exbox] (n0) at (0.0,0.0) {prepara $\ket+^{\otimes3}\ket-$};\node[exbox] (n1) at (3.6,0.0) {applica i segni};\draw[exother] (n0)--(n1);\node[exbox] (n2) at (7.2,0.0) {ricombina con $H^{\otimes3}$};\draw[exother] (n1)--(n2);
+\end{tikzpicture}}{Due algoritmi condividono la preparazione, mentre la struttura della funzione determina le cancellazioni.}
+
+
+\begin{ExTasks}
+
+\item Verificare l’equilibrio della prima funzione.
+
+\item Scrivere lo stato dopo il ritorno di fase.
+
+\item Calcolare tutte le otto ampiezze di Deutsch–Jozsa.
+
+\item Confrontare la funzione costante.
+
+\item Fattorizzare la somma di Bernstein–Vazirani sui tre bit.
+
+\item Calcolare la distribuzione e discutere un termine affine costante.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Costruire la tabella}
+
+Per \(x=000,001,010,011,100,101,110,111\), i valori di f sono \(0,1,0,1,0,1,1,0\). Ci sono quattro zeri e quattro uni, quindi la promessa di bilanciamento è soddisfatta.
+
+\ExStep{Preparare i segni}
+
+\ExEq{\ket{\Psi}&=\frac1{\sqrt8}\sum_{x=0}^{7}(-1)^{f(x)}\ket x\otimes\ket-,\\
+A(y)&=\frac18\sum_{x=0}^{7}(-1)^{f(x)+x\cdot y}.}
+Le due normalizzazioni \(1/\sqrt8\) producono il fattore \(1/8\).
+
+\ExStep{Svolgere le otto somme}
+
+\ExEq{A(000)&=(1-1+1-1+1-1-1+1)/8=0\\
+A(001)&=(1+1+1+1+1+1-1-1)/8=0.5\\
+A(010)&=(1-1-1+1+1-1+1-1)/8=0\\
+A(011)&=(1+1-1-1+1+1+1+1)/8=0.5\\
+A(100)&=(1-1+1-1-1+1+1-1)/8=0\\
+A(101)&=(1+1+1+1-1-1+1+1)/8=0.5\\
+A(110)&=(1-1-1+1-1+1-1+1)/8=0\\
+A(111)&=(1+1-1-1-1-1-1-1)/8=-0.5}
+Gli esiti 001, 011, 101 e 111 hanno probabilità \(1/4\); gli altri hanno probabilità zero. In particolare l’uscita 000 è impossibile.
+
+\ExStep{Confrontare la costante}
+
+Per \(f=1\) ogni segno è \(-1\). Per y=000, \(A(000)=(-1-\cdots-1)/8=-1\). Per ogni y non nullo, le otto parole x contengono quattro prodotti \(x\cdot y=0\) e quattro uguali a uno: la somma è zero. La lettura restituisce 000 con certezza.
+
+\ExStep{Ricostruire la stringa affine}
+
+Per \(g(x)=s\cdot x\), con \(s=101\),
+\ExEq{B(y)&=\frac18\sum_x(-1)^{(s\oplus y)\cdot x}\\
+&=\prod_{j=0}^{2}\frac{1+(-1)^{s_j\oplus y_j}}2.}
+Se \(y_j=s_j\), il fattore j vale \((1+1)/2=1\); se differiscono, vale \((1-1)/2=0\). Quindi \(B(101)=1\) e le altre sette ampiezze sono zero.
+
+\ExStep{Controllare termine affine e risorsa}
+
+Per \(g(x)=s\cdot x\oplus1\), tutte le ampiezze acquistano il fattore \(-1\): la lettura rimane 101. Ciascun circuito usa una interrogazione coerente dell’oracolo, oltre alle porte di preparazione e lettura. Il conteggio è distinto dal costo di costruzione dell’oracolo.
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-.6,0)--(4.4,0) node[right] {esito};\draw[exaxis] (-.6,0)--(-.6,3.6) node[above] {$p$};\node[left] at (-.6,3) {$ 0.3 $};\draw[Ink!15,dashed] (-.6,3)--(3.9000000000000004,3);\filldraw[fill=Accent!25,draw=Accent] (0.0,0) rectangle (0.65,2.5);\node[below] at (0.325,0) {$ 001 $};\node[above] at (0.325,2.5) {$ 0.25 $};\filldraw[fill=Accent!25,draw=Accent] (1.1,0) rectangle (1.75,2.5);\node[below] at (1.425,0) {$ 011 $};\node[above] at (1.425,2.5) {$ 0.25 $};\filldraw[fill=Accent!25,draw=Accent] (2.2,0) rectangle (2.85,2.5);\node[below] at (2.5250000000000004,0) {$ 101 $};\node[above] at (2.5250000000000004,2.5) {$ 0.25 $};\filldraw[fill=Accent!25,draw=Accent] (3.3000000000000003,0) rectangle (3.95,2.5);\node[below] at (3.6250000000000004,0) {$ 111 $};\node[above] at (3.6250000000000004,2.5) {$ 0.25 $};
+\end{tikzpicture}}{Esiti di Deutsch–Jozsa per la funzione bilanciata non affine; Bernstein–Vazirani concentra invece tutto il peso su 101.}
+
+
+\ExInterpret{La distinzione fra funzione costante e bilanciata riguarda il coefficiente 000. L’ipotesi affine più forte permette di recuperare un’intera stringa mediante la stessa somma di caratteri binari.}
+
+\ExLab{Nelle sezioni 4.01 e 4.02 scegliere rispettivamente «Bilanciata non affine su tre bit» e «Stringa 101». Confrontare i segni prima della ricombinazione, poi le distribuzioni finali. Usare anche la variante affine con termine costante per osservare la fase globale.}
+
+
+\end{minipage}

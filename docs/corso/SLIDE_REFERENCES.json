@@ -1,0 +1,574 @@
+{
+  "edition": "Seminario, titolo corretto, edizione studio",
+  "references": {
+    "1": {
+      "moto": 12,
+      "loschmidt": 50,
+      "onde": 92,
+      "fenditure": 125,
+      "polarizzazione": 165,
+      "calcolo": 222,
+      "coppie": 246,
+      "ambiente": 277,
+      "informazione": 300,
+      "sintesi": 308
+    },
+    "2": {
+      "complessi": 11,
+      "prodotto-complesso": 11,
+      "basi": 33,
+      "norma": 45,
+      "prodotto-interno": 45,
+      "proiezioni": 45,
+      "matrici": 76,
+      "nucleo": 160,
+      "composizione": 138,
+      "cambio-base": 138,
+      "aggiunto": 89,
+      "spettro": 101,
+      "base-propria": 113,
+      "proiettori": 113,
+      "funzioni-matrice": 180,
+      "eventi": 217,
+      "distribuzioni": 223,
+      "momenti": 229,
+      "frequenze": 242,
+      "condizionamento": 264,
+      "stati": 319,
+      "bra": 331,
+      "fase": 319,
+      "born": 396,
+      "unitarie": 354,
+      "osservabili": 424,
+      "incompatibilita": 433,
+      "esperimento": 488,
+      "tensore": 167,
+      "porte-locali": 167,
+      "separabilita": 449,
+      "composti": 449
+    },
+    "3": {
+      "programma": 7,
+      "reversibilita": 22,
+      "porte": 35,
+      "preparazione": 60,
+      "inversa": 86,
+      "interferometro": 108,
+      "registro": 138,
+      "bell": 164,
+      "ausiliari": 196,
+      "sintesi": 230,
+      "deutsch": 344,
+      "programma-completo": 405,
+      "grover-primo": 368,
+      "evoluzione": 377
+    },
+    "4": {
+      "1": 10,
+      "2": 23,
+      "3": 51,
+      "4": 76,
+      "5": 115,
+      "6": 132,
+      "7": 163,
+      "8": 187,
+      "9": 216,
+      "10": 232,
+      "11": 260,
+      "12": 281,
+      "13": 303,
+      "14": 319,
+      "15": 350,
+      "16": 378,
+      "17": 399,
+      "18": 421,
+      "19": 445,
+      "20": 475,
+      "21": 494,
+      "22": 550,
+      "23": 611,
+      "24": 635,
+      "25": 666,
+      "26": 689,
+      "27": 719,
+      "28": 741,
+      "29": 756,
+      "30": 811
+    }
+  },
+  "toc": {
+    "1": [
+      [
+        1,
+        "Indice",
+        2
+      ],
+      [
+        1,
+        "Parte I – La simulazione classica",
+        12
+      ],
+      [
+        1,
+        "Parte II – La simulazione statistica",
+        50
+      ],
+      [
+        1,
+        "Parte III – Onde e interferenza",
+        92
+      ],
+      [
+        1,
+        "Parte IV – L'interferenza di particelle singole",
+        125
+      ],
+      [
+        1,
+        "Parte V – Stati a due alternative",
+        165
+      ],
+      [
+        1,
+        "Parte VI – Il calcolo quantistico",
+        222
+      ],
+      [
+        1,
+        "Parte VII – Due qubit e stati congiunti",
+        246
+      ],
+      [
+        1,
+        "Parte VIII – Ambiente e perdita di interferenza",
+        277
+      ],
+      [
+        1,
+        "Parte IX – Informazione e irreversibilità",
+        300
+      ],
+      [
+        1,
+        "Sintesi",
+        308
+      ],
+      [
+        1,
+        "Parte X – Come si costruisce un computer quantistico",
+        325
+      ],
+      [
+        1,
+        "Coppie di fotoni da cristalli non lineari",
+        378
+      ],
+      [
+        2,
+        "Preparazioni HH, VV e scelta casuale",
+        384
+      ],
+      [
+        2,
+        "Pompa coerente e due letture della coppia",
+        397
+      ],
+      [
+        2,
+        "Dalle lamine alle proprietà del cristallo",
+        431
+      ],
+      [
+        2,
+        "Cristallo, accordo di fase e raccolta",
+        435
+      ],
+      [
+        2,
+        "Tracce temporali e precompensazione",
+        452
+      ],
+      [
+        2,
+        "Produzione, perdite e registro",
+        471
+      ],
+      [
+        1,
+        "Parte XI – Dalla meccanica quantistica al calcolo quantistico",
+        491
+      ]
+    ],
+    "2": [
+      [
+        1,
+        "Numeri complessi",
+        11
+      ],
+      [
+        1,
+        "Vettori, basi e coordinate",
+        33
+      ],
+      [
+        1,
+        "Prodotto interno e ortogonalità",
+        45
+      ],
+      [
+        1,
+        "Matrici e trasformazioni lineari",
+        76
+      ],
+      [
+        1,
+        "Aggiunto, hermitiane e unitarie",
+        89
+      ],
+      [
+        1,
+        "Autovalori e autovettori",
+        101
+      ],
+      [
+        1,
+        "Diagonalizzazione e spettro",
+        113
+      ],
+      [
+        1,
+        "Cambio di base e commutatori",
+        138
+      ],
+      [
+        1,
+        "Nucleo, immagine e rango",
+        160
+      ],
+      [
+        1,
+        "Prodotto tensoriale",
+        167
+      ],
+      [
+        1,
+        "Funzioni di matrici",
+        180
+      ],
+      [
+        1,
+        "Un problema di algebra completo",
+        203
+      ],
+      [
+        1,
+        "Esiti ed eventi",
+        217
+      ],
+      [
+        1,
+        "Variabili aleatorie discrete",
+        223
+      ],
+      [
+        1,
+        "Valore atteso",
+        229
+      ],
+      [
+        1,
+        "Varianza e dispersione",
+        235
+      ],
+      [
+        1,
+        "Prove ripetute e binomiale",
+        242
+      ],
+      [
+        1,
+        "Frequenze e precisione",
+        253
+      ],
+      [
+        1,
+        "Condizionamento e Bayes",
+        264
+      ],
+      [
+        1,
+        "Distribuzioni congiunte",
+        271
+      ],
+      [
+        1,
+        "Dal vettore al ket",
+        319
+      ],
+      [
+        1,
+        "Bra e prodotto interno",
+        331
+      ],
+      [
+        1,
+        "Prodotto diadico e proiettori",
+        345
+      ],
+      [
+        1,
+        "Operatori e trasformazioni del qubit",
+        354
+      ],
+      [
+        1,
+        "Autostati e decomposizione spettrale",
+        389
+      ],
+      [
+        1,
+        "Regola di Born",
+        396
+      ],
+      [
+        1,
+        "Misura e aggiornamento dello stato",
+        410
+      ],
+      [
+        1,
+        "Valori medi e dispersioni quantistiche",
+        424
+      ],
+      [
+        1,
+        "Osservabili incompatibili",
+        433
+      ],
+      [
+        1,
+        "Sistemi composti",
+        449
+      ],
+      [
+        1,
+        "Un esperimento calcolato dall’inizio alla fine",
+        488
+      ]
+    ],
+    "3": [
+      [
+        1,
+        "Descrivere un programma quantistico",
+        7
+      ],
+      [
+        1,
+        "Conservare l’informazione",
+        22
+      ],
+      [
+        1,
+        "Le operazioni su un qubit",
+        35
+      ],
+      [
+        1,
+        "Preparare uno stato assegnato",
+        60
+      ],
+      [
+        1,
+        "Comporre e invertire",
+        86
+      ],
+      [
+        1,
+        "Rendere osservabile una fase",
+        108
+      ],
+      [
+        1,
+        "Operare su un registro",
+        138
+      ],
+      [
+        1,
+        "Costruire e misurare l’entanglement",
+        164
+      ],
+      [
+        1,
+        "Utilizzare i qubit ausiliari",
+        196
+      ],
+      [
+        1,
+        "Costruire operazioni più complesse",
+        230
+      ],
+      [
+        1,
+        "Gli oracoli e l’algoritmo di Deutsch",
+        344
+      ],
+      [
+        1,
+        "Un programma completo",
+        405
+      ]
+    ],
+    "4": [
+      [
+        1,
+        "Strumenti e convenzioni",
+        10
+      ],
+      [
+        1,
+        "Deutsch e Deutsch–Jozsa",
+        23
+      ],
+      [
+        1,
+        "Bernstein–Vazirani",
+        51
+      ],
+      [
+        1,
+        "Simon e i vincoli binari",
+        76
+      ],
+      [
+        1,
+        "Confrontare stati: il test SWAP",
+        115
+      ],
+      [
+        1,
+        "Grover e le riflessioni",
+        132
+      ],
+      [
+        1,
+        "Iterazioni e più soluzioni",
+        163
+      ],
+      [
+        1,
+        "Ricerca con numero ignoto di soluzioni",
+        187
+      ],
+      [
+        1,
+        "Amplificazione delle ampiezze",
+        216
+      ],
+      [
+        1,
+        "Il minimo di Dürr–Høyer",
+        232
+      ],
+      [
+        1,
+        "La geometria di Fourier",
+        260
+      ],
+      [
+        1,
+        "Circuiti per QFT e inversa",
+        281
+      ],
+      [
+        1,
+        "Il test di Hadamard",
+        303
+      ],
+      [
+        1,
+        "Stima di fase e autostati",
+        319
+      ],
+      [
+        1,
+        "Precisione della stima di fase",
+        350
+      ],
+      [
+        1,
+        "Conteggio quantistico",
+        378
+      ],
+      [
+        1,
+        "Stima di ampiezze e medie",
+        399
+      ],
+      [
+        1,
+        "Strumenti di aritmetica",
+        421
+      ],
+      [
+        1,
+        "RSA e il problema della fattorizzazione",
+        445
+      ],
+      [
+        1,
+        "Dalla fattorizzazione all’ordine",
+        475
+      ],
+      [
+        1,
+        "Costruire l’aritmetica reversibile",
+        494
+      ],
+      [
+        1,
+        "Moltiplicazione ed esponenziazione modulari",
+        550
+      ],
+      [
+        1,
+        "Autostati della moltiplicazione modulare",
+        611
+      ],
+      [
+        1,
+        "Ricostruire una frazione",
+        635
+      ],
+      [
+        1,
+        "Shor completo: N = 15",
+        666
+      ],
+      [
+        1,
+        "Shor completo: N = 21",
+        689
+      ],
+      [
+        1,
+        "Correttezza, probabilità e costo",
+        719
+      ],
+      [
+        1,
+        "Dai fattori alla chiave RSA",
+        741
+      ],
+      [
+        1,
+        "Il logaritmo discreto quantistico",
+        756
+      ],
+      [
+        1,
+        "Raccordo e fonti",
+        811
+      ]
+    ]
+  }
+}

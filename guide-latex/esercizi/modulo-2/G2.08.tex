@@ -1,0 +1,67 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G2.08}{Cambiare coordinate mantenendo lo stesso oggetto}{Consolidamento}
+
+\BookHeading{Problema, dati e obiettivo}
+
+La nuova base è \(f_1=(1,1)^T\), \(f_2=(1,-1)^T\). Per \(u=(3,1)^T\) e \(A=\operatorname{diag}(2,1)\), calcolare coordinate nella nuova base, matrice trasformata e risultato dell’operazione nei due sistemi di coordinate.
+
+\ExTheory{\ExRef{c2-cambio-base}{2.10}}{La matrice \(S=(f_1\ f_2)\) porta le coordinate nuove in quelle canoniche: \(u=S[u]_f\). Pertanto \([u]_f=S^{-1}u\) e \([A]_f=S^{-1}AS\). La base scelta è ortogonale ma i suoi vettori hanno norma \(\sqrt2\).}
+
+\ExPrediction{Il punto u resta lo stesso quando se ne cambiano le coordinate. Il rettangolo di dilatazione descritto da A appare con termini fuori diagonale nella base inclinata.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-0.35,0)--(3.55,0) node[right] {$x_1$};\draw[exaxis] (0,-1.35)--(0,1.55) node[above] {$x_2$};\draw[->,Accent,line width=1.1pt] (0,0)--(1,1) node[anchor=south west] {$ f_1 $};\draw[->,Secondary,line width=1.1pt] (0,0)--(1,-1) node[anchor=north west] {$ f_2 $};\draw[->,Ink,line width=1.1pt] (0,0)--(3,1) node[anchor=south west] {$ u $};
+\end{tikzpicture}}{Base inclinata e punto u nello stesso piano geometrico.}
+
+
+\begin{ExTasks}
+
+\item Costruire S e verificarne l’inversa.
+
+\item Calcolare le nuove coordinate di u e ricostruirlo.
+
+\item Calcolare AS e poi \(S^{-1}AS\).
+
+\item Applicare la matrice trasformata.
+
+\item Riportare il risultato nella base canonica e controllare la norma usando la metrica corretta.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Verificare l’inversa}
+
+\ExEq{S&=\begin{pmatrix}1&1\\1&-1\end{pmatrix},\\S^2&=\begin{pmatrix}1+1&1-1\\1-1&1+1\end{pmatrix}=2I,\qquad S^{-1}=S/2.}
+
+\ExStep{Cambiare le coordinate}
+
+\ExEq{[u]_f&=\tfrac12\colv{3+1\\3-1}=\colv{2\\1},\\S[u]_f&=\colv{2+1\\2-1}=\colv{3\\1}.}
+
+\ExStep{Trasformare l’operatore}
+
+\ExEq{AS&=\begin{pmatrix}2&2\\1&-1\end{pmatrix},\\S^{-1}AS&=\tfrac12\begin{pmatrix}2+1&2-1\\2-1&2+1\end{pmatrix}
+=\tfrac12\begin{pmatrix}3&1\\1&3\end{pmatrix}.}
+
+\ExStep{Agire nelle nuove coordinate}
+
+\ExEq{[Au]_f&=\tfrac12\colv{3\cdot2+1\cdot1\\1\cdot2+3\cdot1}
+=\colv{7/2\\5/2},\\S[Au]_f&=\colv{7/2+5/2\\7/2-5/2}=\colv{6\\1}.}
+
+\ExStep{Confrontare la via diretta e la metrica}
+
+Il calcolo canonico dà \(Au=(2\cdot3,1\cdot1)^T=(6,1)^T\). Per le coordinate della base f, \(S^TS=2I\): quindi \(\|u\|^2=2(2^2+1^2)=10=3^2+1^2\). Analogamente \(2[(7/2)^2+(5/2)^2]=37=6^2+1^2\).
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\node[exbox] (n0) at (0.0,0.0) {$[u]_f=(2,1)$};\node[exbox] (n1) at (3.6,0.0) {$[Au]_f=(7/2,5/2)$};\draw[exother] (n0)--(n1);\node[exbox] (n2) at (7.2,0.0) {$Au=(6,1)$};\draw[exother] (n1)--(n2);
+\end{tikzpicture}}{Il cambio di coordinate e l’azione dell’operatore sono passaggi distinti.}
+
+
+\ExInterpret{Le coordinate dipendono dalla base; il vettore geometrico e l’azione di A restano definiti indipendentemente da essa. La metrica \(S^TS\) mantiene corretta la lettura delle lunghezze in una base non normalizzata.}
+
+\ExLab{Nella sezione 2.10 seguire i due percorsi del cambio di base. Confrontare il punto ottenuto applicando prima A con quello ricostruito dopo \(S^{-1}AS\), usando sempre le stesse colonne di S.}
+
+
+\end{minipage}

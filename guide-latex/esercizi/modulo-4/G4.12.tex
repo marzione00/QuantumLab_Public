@@ -1,0 +1,85 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G4.12}{Costruire gli autostati di un'orbita modulare}{Collegamento}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Studiare l’operatore \(U_2\ket y=\ket{2y\bmod15}\) sul ciclo che parte da 1. Costruire i quattro autostati e decomporre la preparazione \(\ket1\). Estendere il ragionamento al ciclo modulo 21.
+
+\ExTheory{\ExRef{c4-autostati}{4.21}}{Una permutazione ciclica di lunghezza r è diagonalizzata dalle fasi di Fourier. Sul ciclo \(\ket{a^j\bmod N}\), gli stati \(r^{-1/2}\sum_je^{-2\pi ikj/r}\ket{a^j\bmod N}\) hanno autovalore \(e^{2\pi ik/r}\).}
+
+\ExPrediction{L’operatore sposta ogni coefficiente al vertice successivo del ciclo. Una progressione uniforme di fase dovrebbe riprodurre lo stesso vettore moltiplicato per una fase comune.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\node[circle,draw=Accent,fill=white,minimum size=8mm] (n0) at (0.00000,2.00000) {$ 1 $};\node[circle,draw=Accent,fill=white,minimum size=8mm] (n1) at (2.00000,0.00000) {$ 2 $};\node[circle,draw=Accent,fill=white,minimum size=8mm] (n2) at (0.00000,-2.00000) {$ 4 $};\node[circle,draw=Accent,fill=white,minimum size=8mm] (n3) at (-2.00000,-0.00000) {$ 8 $};\draw[exother,bend right=12] (n0) to (n1);\draw[exother,bend right=12] (n1) to (n2);\draw[exother,bend right=12] (n2) to (n3);\draw[exother,bend right=12] (n3) to (n0);
+\end{tikzpicture}}{La moltiplicazione modulare è una traslazione lungo l’orbita.}
+
+
+\begin{ExTasks}
+
+\item Calcolare il ciclo modulo 15.
+
+\item Dimostrare l’autovalore mediante cambio di indice.
+
+\item Elencare e normalizzare i quattro autostati.
+
+\item Ricostruire ket 1 senza supporre una preparazione dei singoli autostati.
+
+\item Ripetere il ciclo modulo 21.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Calcolare l’orbita}
+
+\ExEq{2\cdot1&=2,\quad2\cdot2=4,\quad2\cdot4=8,\\
+2\cdot8&=16=15+1.}
+Il primo ritorno a 1 avviene dopo quattro passi, dunque r=4.
+
+\ExStep{Dimostrare la relazione spettrale}
+
+\ExEq{U_a\ket{u_k}
+&=\frac1{\sqrt r}\sum_{j=0}^{r-1}e^{-2\pi ikj/r}\ket{a^{j+1}\bmod N}\\
+&=\frac1{\sqrt r}\sum_{\ell=0}^{r-1}e^{-2\pi ik(\ell-1)/r}\ket{a^\ell\bmod N}\\
+&=e^{2\pi ik/r}\ket{u_k}.}
+Il termine che attraversa il bordo del ciclo è coerente perché \(e^{-2\pi ik}=1\).
+
+\ExStep{Elencare i quattro vettori}
+
+Nell’ordine della base orbitale \((1,2,4,8)\):
+\ExEq{u_0&=(1,1,1,1)^T/2,&\lambda_0&=1,\\
+u_1&=(1,-i,-1,i)^T/2,&\lambda_1&=i,\\
+u_2&=(1,-1,1,-1)^T/2,&\lambda_2&=-1,\\
+u_3&=(1,i,-1,-i)^T/2,&\lambda_3&=-i.}
+Per esempio \(U_2u_1=(i,1,-i,-1)^T/2=i u_1\).
+
+\ExStep{Verificare ortonormalità}
+
+Ogni norma al quadrato è \((1+1+1+1)/4=1\). Per k diverso da l, il prodotto interno è \(\frac14\sum_{j=0}^3e^{2\pi i(k-l)j/4}\). Le tre somme possibili sono \(1+i-1-i=0\), \(1-1+1-1=0\), \(1-i-1+i=0\).
+
+\ExStep{Decomporre la preparazione semplice}
+
+\ExEq{\frac{u_0+u_1+u_2+u_3}{2}
+&=\frac14(4,\,1-i-1+i,\,1-1+1-1,\,1+i-1-i)^T\\
+&=(1,0,0,0)^T=\ket1.}
+I quattro coefficienti nella base degli autostati sono \(1/2\), dunque i pesi spettrali sono \(1/4\). Preparare \(\ket1\) richiede soltanto fissare un bit del registro; non richiede di conoscere r.
+
+\ExStep{Estendere a modulo 21}
+
+\ExEq{1&\to2\to4\to8\to16\to11\to1,\\
+2\cdot16&=32=21+11,\quad2\cdot11=22=21+1.}
+Qui r=6, \(\ket{u_k}=6^{-1/2}\sum_{j=0}^5e^{-2\pi ikj/6}\ket{2^j\bmod21}\) e \(\ket1=6^{-1/2}\sum_{k=0}^5\ket{u_k}\). La stessa somma di radici dell’unità prova norma, ortogonalità e ricostruzione.
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-1.35,0)--(1.55,0) node[right] {$\operatorname{Re}$};\draw[exaxis] (0,-1.35)--(0,1.55) node[above] {$\operatorname{Im}$};\draw[->,Accent,line width=1.1pt] (0,0)--(1,0) node[anchor=south west] {$ 1 $};\draw[->,Secondary,line width=1.1pt] (0,0)--(0,1) node[anchor=south west] {$ i $};\draw[->,Accent,line width=1.1pt] (0,0)--(-1,0) node[anchor=south west] {$ -1 $};\draw[->,Secondary,line width=1.1pt] (0,0)--(0,-1) node[anchor=north west] {$ -i $};
+\end{tikzpicture}}{I quattro autovalori corrispondono alle frequenze ammesse dal ciclo di lunghezza quattro.}
+
+
+\ExInterpret{La decomposizione spettrale spiega perché una preparazione elementare contenga tutte le fasi utili. Gli autostati sono lo strumento di analisi della procedura; l’esecuzione può iniziare direttamente da \(\ket1\).}
+
+\ExLab{Nella sezione 4.21 confrontare l’orbita, i coefficienti complessi e l’effetto di una moltiplicazione. Verificare il fattore comune i per u1 prima di passare al ciclo di lunghezza sei.}
+
+
+\end{minipage}

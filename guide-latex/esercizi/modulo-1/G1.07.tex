@@ -1,0 +1,92 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G1.07}{Localizzare i minimi per una fenditura stretta}{Consolidamento}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Una fenditura singola di larghezza \(a=20\,\mu\mathrm m\) è illuminata con luce di lunghezza d’onda \(\lambda=550\,\mathrm{nm}\). Lo schermo è a \(L=1\,\mathrm m\) e mostra \(-70\leq x\leq70\,\mathrm{mm}\). Determinare i primi due minimi sui due lati, la larghezza del massimo centrale e l’intensità relativa a metà strada dal primo minimo. Si assume illuminazione uniforme, propagazione scalare paraxiale e campo lontano.
+
+\ExTheory{\ExRef{c1-fenditure}{1.04}}{Per una singola apertura uniforme, \(I(x)/I(0)=(\sin\beta/\beta)^2\), dove \(\beta=\pi ax/(\lambda L)\). Al centro il rapporto vale uno per continuità. I minimi diversi dal centro soddisfano \(\beta=k\pi\), con \(k\) intero non nullo. Il numero \(F_a=a^2/(\lambda L)\) permette di controllare l’ipotesi di campo lontano.}
+
+\ExPrediction{Prima di calcolare, prevedere la simmetria rispetto a \(x=0\). Se si dimezzasse l’apertura, la scala trasversale \(\lambda L/a\) raddoppierebbe: indicare sulla figura dove ci si attenderebbe il nuovo primo minimo.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-4.6,0)--(4.8,0) node[right] {$x$ (mm)};
+\draw[Accent,very thick] (0,-.4)--(0,.4);
+\foreach \x/\lab in {-3.85/-55,-1.925/-27{,}5,0/0,1.925/27{,}5,3.85/55}{\draw (\x,-.08)--(\x,.08);\node[below] at (\x,-.15) {$\lab$};}
+\node[above] at (0,.55) {centro dello schermo};
+\end{tikzpicture}}{Coordinate fisiche sullo schermo. I segni distinguono i due lati della stessa apertura.}
+
+
+\begin{ExTasks}
+
+\item Convertire \(a\) e \(\lambda\) in metri e calcolare \(F_a\).
+
+\item Risolvere \(\beta=\pi\) rispetto a \(x\), controllandone l’unità.
+
+\item Calcolare i quattro minimi con \(k=\pm1,\pm2\).
+
+\item Ricavare la distanza fra i primi due minimi ai lati del centro.
+
+\item Calcolare \(I/I(0)\) per \(x=13{,}75\,\mathrm{mm}\) e ripetere la previsione per \(a=10\,\mu\mathrm m\).
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Controllare il regime}
+
+Le conversioni sono \(a=20\cdot10^{-6}=2\cdot10^{-5}\,\mathrm m\) e \(\lambda=550\cdot10^{-9}=5{,}5\cdot10^{-7}\,\mathrm m\). Pertanto
+\ExEq{F_a&=\frac{(2\cdot10^{-5})^2}{(5{,}5\cdot10^{-7})\cdot1}
+=\frac{4\cdot10^{-10}}{5{,}5\cdot10^{-7}}
+\simeq7{,}27\cdot10^{-4}.}
+Il rapporto è adimensionale e molto minore di uno. Il modello di Fraunhofer è quindi appropriato per questa apertura e questa distanza.
+
+\ExStep{Isolare la coordinata del minimo}
+
+Si sostituisce la definizione di \(\beta\):
+\ExEq{\frac{\pi ax}{\lambda L}&=k\pi,\\
+ ax&=k\lambda L,\qquad x_k=k\frac{\lambda L}{a},\\
+\frac{\lambda L}{a}&=\frac{5{,}5\cdot10^{-7}\cdot1}{2\cdot10^{-5}}\,\mathrm m
+=0{,}0275\,\mathrm m=27{,}5\,\mathrm{mm}.}
+L’unità del rapporto è \(\mathrm m\cdot\mathrm m/\mathrm m=\mathrm m\).
+
+\ExStep{Collocare i minimi}
+
+Per \(k=1\), \(x_1=27{,}5\,\mathrm{mm}\); per \(k=-1\), \(x_{-1}=-27{,}5\,\mathrm{mm}\). Per \(k=2\), \(x_2=2\cdot27{,}5=55\,\mathrm{mm}\); per \(k=-2\), \(x_{-2}=-55\,\mathrm{mm}\). Tutti e quattro appartengono alla finestra dello schermo. Il terzo minimo sarebbe a \(82{,}5\,\mathrm{mm}\), oltre il bordo.
+
+\ExStep{Misurare il massimo centrale}
+
+La sua larghezza, misurata fra i primi zeri, è
+\ExEq{w&=x_1-x_{-1}=27{,}5-(-27{,}5)=55\,\mathrm{mm}.}
+L’angolo del primo minimo è approssimativamente \(x_1/L=0{,}0275\,\mathrm{rad}\). La piccolezza dell’angolo è coerente con l’approssimazione paraxiale.
+
+\ExStep{Calcolare un punto intermedio}
+
+Per \(x=13{,}75\,\mathrm{mm}=x_1/2\) si ha
+\ExEq{\beta&=\pi\frac{x}{x_1}=\frac\pi2,\\
+\frac{I(x)}{I(0)}&=\left(\frac{\sin(\pi/2)}{\pi/2}\right)^2
+=\left(\frac{1}{\pi/2}\right)^2=\frac4{\pi^2}\simeq0{,}4053.}
+Questo rapporto confronta due intensità; una probabilità per un intervallo richiederebbe anche l’integrazione e la normalizzazione sulla finestra.
+
+\ExStep{Variare l’apertura}
+
+Se \(a'=10\,\mu\mathrm m=a/2\), allora
+\ExEq{x'_1&=\frac{\lambda L}{a/2}=2\frac{\lambda L}{a}=55\,\mathrm{mm},\\w'&=2x'_1=110\,\mathrm{mm},\qquad F'_a=F_a/4\simeq1{,}82\cdot10^{-4}.}
+Il massimo centrale si allarga e la condizione di campo lontano rimane soddisfatta.
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-4.4,0)--(4.6,0) node[right] {$x$ (mm)};\draw[exaxis] (0,0)--(0,2.8) node[above] {$I/I(0)$};
+\draw[Accent,thick,domain=-60:60,samples=201] plot ({.07*\x},{2.3*(abs(\x)<.0001 ? 1 : (sin(180*\x/27.5)/(pi*\x/27.5))^2)});
+\foreach \x/\lab in {-3.85/-55,-1.925/-27{,}5,1.925/27{,}5,3.85/55}{\fill[Secondary] (\x,0) circle(1.7pt);\node[below] at (\x,0) {$\lab$};}
+\draw[Secondary,dashed] (.9625,0)--(.9625,.9322);\node[above right] at (.9625,.9322) {$4/\pi^2$};
+\end{tikzpicture}}{Profilo di Fraunhofer per i dati dell’esercizio. La figura mostra intensità relative, senza campionamento casuale.}
+
+
+\ExInterpret{Gli zeri provengono dalla cancellazione dei contributi dell’apertura. La scala \(\lambda L/a\) collega la geometria dell’apparato alla larghezza del profilo. La formula è stata applicata dopo averne controllato il regime.}
+
+\ExLab{Aprire la sezione 1.04, scegliere una sola fenditura e impostare \(a=20\,\mu\mathrm m\), \(\lambda=550\,\mathrm{nm}\), \(L=1\,\mathrm m\), semilarghezza \(70\,\mathrm{mm}\). Confrontare il profilo teorico di Fresnel con i minimi previsti; mantenere piccola la risoluzione del rivelatore rispetto a \(27{,}5\,\mathrm{mm}\). Dimezzare \(a\) e verificare lo spostamento del primo minimo. Le frequenze di pochi arrivi possono oscillare attorno alla previsione.}
+
+
+\end{minipage}

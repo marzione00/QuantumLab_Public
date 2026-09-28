@@ -1,0 +1,80 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G3.12}{Svolgere i quattro casi di Deutsch}{Collegamento}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Svolgere l’algoritmo di Deutsch per tutte le funzioni da un bit a un bit: \(f=0\), \(f=1\), \(f(x)=x\), \(f(x)=1\oplus x\). Preparare controllo \(\ket0\) e bersaglio \(\ket1\), applicare H a entrambi, interrogare \(U_f\) e ricombinare soltanto il controllo.
+
+\ExTheory{\ExRef{c3-deutsch}{3.11}}{L’oracolo è \(U_f\ket{x,y}=\ket{x,y\oplus f(x)}\). Il bersaglio \(\ket-=(\ket0-\ket1)/\sqrt2\) è autostato di X con autovalore \(-1\). Perciò il valore di f diventa un segno sul ramo x.}
+
+\ExPrediction{Le funzioni costanti assegnano lo stesso segno ai due rami; quelle bilanciate assegnano segni opposti. L’ultima H dovrebbe distinguere le due direzioni \(\ket+\) e \(\ket-\) del controllo.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\node[exbox] (n0) at (0.0,0.0) {$\ket+\ket-$};\node[exbox] (n1) at (3.6,0.0) {$U_f$: segni $s_x$};\draw[exother] (n0)--(n1);\node[exbox] (n2) at (7.2,0.0) {$H$ sul controllo};\draw[exother] (n1)--(n2);\node[exbox] (n3) at (0.0,-1.6) {costante: $0$};\draw[exother] (n2.south)--++(0,-.4)-|(n3.north);\node[exbox] (n4) at (3.6,-1.6) {bilanciata: $1$};\draw[exother] (n3)--(n4);
+\end{tikzpicture}}{La preparazione in un autostato trasforma una scrittura reversibile in una fase.}
+
+
+\begin{ExTasks}
+
+\item Costruire \(\ket+\ket-\) dalla preparazione.
+
+\item Verificare esplicitamente \(X\ket-=-\ket-\).
+
+\item Scrivere lo stato dopo l’oracolo per valori generici \(f(0),f(1)\).
+
+\item Applicare l’ultima H.
+
+\item Sostituire tutte le quattro tabelle e calcolare la lettura del primo qubit.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Preparazione}
+
+\ExEq{H\ket0&=(\ket0+\ket1)/\sqrt2=\ket+,\\
+H\ket1&=(\ket0-\ket1)/\sqrt2=\ket-.}
+Lo stato congiunto ha quattro ampiezze \((1,-1,1,-1)/2\), di norma uno.
+
+\ExStep{Autostato del bersaglio}
+
+\ExEq{X\ket-&=(\ket1-\ket0)/\sqrt2=-\ket-.}
+Dunque \(X^{f(x)}\ket-=(-1)^{f(x)}\ket-\).
+
+\ExStep{Ritorno di fase}
+
+\ExEq{U_f\ket+\ket-
+&=\frac{(-1)^{f(0)}\ket0+(-1)^{f(1)}\ket1}{\sqrt2}\otimes\ket-.}
+Il bersaglio è separato e conserva la stessa autodirezione.
+
+\ExStep{Ricombinare il controllo}
+
+Ponendo \(s_0=(-1)^{f(0)}\), \(s_1=(-1)^{f(1)}\),
+\ExEq{H\frac{s_0\ket0+s_1\ket1}{\sqrt2}
+&=\frac{s_0+s_1}{2}\ket0+\frac{s_0-s_1}{2}\ket1.}
+
+\ExStep{Svolgere i quattro casi}
+
+\ExEq{f=0:\ &(s_0,s_1)=(1,1)\Rightarrow(\alpha,\beta)=(1,0),\\
+f=1:\ &(s_0,s_1)=(-1,-1)\Rightarrow(\alpha,\beta)=(-1,0),\\
+f(x)=x:\ &(s_0,s_1)=(1,-1)\Rightarrow(\alpha,\beta)=(0,1),\\
+f(x)=1\oplus x:\ &(s_0,s_1)=(-1,1)\Rightarrow(\alpha,\beta)=(0,-1).}
+Le probabilità del controllo sono \((1,0)\) per le costanti e \((0,1)\) per le bilanciate. I segni globali dei secondi casi non cambiano la lettura.
+
+\ExStep{Controllare la risorsa}
+
+Il circuito usa una interrogazione coerente di \(U_f\). Una procedura classica deterministica che debba distinguere con certezza i due tipi deve conoscere entrambi i valori. Questo conteggio riguarda le interrogazioni: la costruzione fisica dell’oracolo ha un costo ulteriore.
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-0.35,0)--(1.55,0) node[right] {$x_1$};\draw[exaxis] (0,-1.0571)--(0,1.2570999999999999) node[above] {$x_2$};\draw[->,Accent,line width=1.1pt] (0,0)--(0.7071,0.7071) node[anchor=south west] {$ + $};\draw[->,Secondary,line width=1.1pt] (0,0)--(0.7071,-0.7071) node[anchor=north west] {$ - $};
+\end{tikzpicture}}{Le due possibili direzioni del controllo prima dell’ultima H sono ortogonali.}
+
+
+\ExInterpret{La classificazione emerge dalla somma coerente dei contributi. La soluzione conserva lo stato del bersaglio e rende esplicito perché il suo autovalore ritorni come segno sul controllo.}
+
+\ExLab{Nella sezione 3.11 selezionare tutte le quattro funzioni. Confrontare stato congiunto e marginale del primo qubit; la distribuzione completa sui due qubit conserva due esiti del bersaglio, anche quando il controllo è deterministico.}
+
+
+\end{minipage}

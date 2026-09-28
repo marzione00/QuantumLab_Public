@@ -1,77 +1,91 @@
 # Quantum e post-quantum computing · Laboratorio interattivo
 
-**Edizione Matrix 3.0.** Il tema definitivo comprende tutte le 28 dimostrazioni. Le guide PDF adottano la palette chiara per la stampa. Per riprendere il progetto e aggiungere moduli leggere [ISTRUZIONI_PER_NUOVI_MODULI.md](ISTRUZIONI_PER_NUOVI_MODULI.md).
+Edizione Matrix 4.2 · 28 settembre 2026.
 
-Due capitoli, 28 dimostrazioni commentate e capitoli futuri indicati come **To be done**. Il primo capitolo sviluppa il problema della simulazione; il secondo accompagna la teoria matematica con costruzioni geometriche e calcoli svolti. Non sono presenti quiz o punteggi.
+La guida PDF adotta il modello **ArsClassica 01 · Classica**, scelto come standard: pagina B5, testo Palatino, matematica Euler, titoli Iwona e accento bordeaux. I sorgenti del volume e dei quattro capitoli sono in `guide-latex/`.
 
-## Utilizzo immediato
+Quattro moduli consecutivi, 81 sezioni. I moduli 2–4 comprendono 146 esempi svolti, con teoria, calcoli, diagrammi e interpretazione. Il primo modulo conserva le dieci esperienze originali e aggiorna il modello delle fenditure. Le presentazioni Seminario sono incluse senza modifiche didattiche o grafiche. Non sono presenti quiz, punteggi o percorsi valutativi.
 
-Nel pacchetto GitHub aprire `dist/index.html`; nel pacchetto locale aprire `index.html` dopo avere estratto l'intero archivio. Non occorre un server. JavaScript, React e CSS sono incorporati nell'HTML. I PDF e le guide restano accanto al file HTML. Il corso completo e i due capitoli sono disponibili anche come pacchetti locali separati.
+| Modulo | Sezioni | Contenuto |
+| --- | ---: | --- |
+| 1 | 10 | Dal determinismo al calcolo quantistico; Fresnel e limite geometrico |
+| 2 | 32 | Algebra, geometria, probabilità, misura e sistemi composti; 65 esempi |
+| 3 | 14 | Programmi, circuiti, reversibilità, interferenza e primi algoritmi; 30 esempi |
+| 4 | 25 | Oracoli, ricerca, Fourier, stima di fase, aritmetica, RSA e Shor; 51 esempi |
 
-La versione online è https://quantum-lab-dal-moto-al-qubit.saren605078.chatgpt.site . Gli indirizzi storici, per esempio `#calcolo`, aprono ancora la dimostrazione corrispondente del primo capitolo. I nuovi indirizzi usano `#capitolo-1/calcolo` e `#capitolo-2/complessi`.
+## Aprire il corso
 
-## Pubblicazione su GitHub Pages
+Estrarre interamente il pacchetto locale e aprire `index.html`. Nel pacchetto GitHub il file è `dist/index.html`. JavaScript, React e CSS sono incorporati; guide e presentazioni sono risorse relative incluse. Il progetto è predisposto per l'uso locale senza server. Il comportamento reale con `file://` resta da collaudare secondo `docs/corso/COLLAUDO.md`.
 
-1. Creare un repository e caricare **il contenuto della cartella principale**, comprese `.github`, `src`, `scripts`, `public`, `assets`, `qa`, `package.json` e `pnpm-lock.yaml`.
-2. Nelle impostazioni del repository, aprire **Pages** e scegliere **GitHub Actions** come origine.
-3. Effettuare un commit sul ramo `main`. Il workflow installa le dipendenze fissate, esegue i controlli, genera `dist` e pubblica il corso.
+Il progetto genera anche ingressi HTML autonomi per ciascun modulo; la consegna viene raccolta nei tre ZIP locale, sorgenti e GitHub. Gli hash storici, per esempio `#calcolo`, sono conservati; gli indirizzi espliciti usano `#capitolo-2/complessi`. Questa consegna non aggiorna automaticamente un sito precedentemente pubblicato.
 
-Non sono richiesti segreti applicativi. La configurazione usa permessi di scrittura soltanto nel lavoro di pubblicazione Pages. I percorsi relativi funzionano anche in un repository pubblicato sotto un prefisso.
+## Compilazione e verifica
 
-## Generare il laboratorio
-
-Requisiti: Node.js 24, pnpm 11.25.0. Le versioni sono dichiarate nel progetto.
+Requisiti: Node 24 e pnpm 11.25.0. Il lockfile fissa le dipendenze.
 
 ```sh
 pnpm install --frozen-lockfile
 pnpm run check
 ```
 
-Il comando controlla i tipi, i modelli dei due capitoli, i collegamenti e gli HTML prodotti. `pnpm run build` rigenera il sito locale e le guide HTML; copia i PDF già inclusi nel progetto.
+`check` esegue TypeScript, prove numeriche, build, controlli strutturali, tema e interazioni React in DOM simulato. `build` rigenera gli HTML e copia i PDF presenti in `public/`.
 
-Per rigenerare anche le guide PDF e gli archivi occorrono Python 3.10 o successivo, ReportLab e PyMuPDF. I font necessari sono inclusi con le relative licenze.
+Per rigenerare anche guide PDF e ZIP:
+
+Installare anche TeX Live completo o MiKTeX con pdfLaTeX e Poppler (`pdftotext`). I componenti ArsClassica e i font specifici sono inclusi in `guide-latex/vendor/`, con le licenze originali.
 
 ```sh
 python3 -m venv .venv
-. .venv/bin/activate
-python3 -m pip install -r requirements-guides.txt
+# Attivare l'ambiente secondo il sistema operativo.
+python -m pip install -r requirements-guides.txt
 pnpm run generate:all
 ```
 
-Su Windows l'attivazione dell'ambiente Python si effettua con `.venv\Scripts\activate`. Il comando genera le guide, costruisce gli HTML e scrive gli ZIP in `release/`. Le due presentazioni PDF sono materiali di ingresso inclusi; il generatore del laboratorio non ricompila le slide LaTeX.
+I font sono inclusi con le licenze. Le quattro presentazioni sono ingressi congelati; il laboratorio non ricompila le slide LaTeX. Gli ZIP verificati sono scritti in `release/`.
 
-## Struttura
+## Sorgenti
 
-| Percorso | Contenuto |
+| Percorso | Funzione |
 | --- | --- |
-| `src/course/app.tsx` | Indice, copertine, navigazione, collegamenti tra capitoli |
-| `src/course/catalogue.ts` | Catalogo del capitolo 2, parti, riferimenti e capitoli futuri |
-| `src/course/chapter-one.tsx` | Catalogo e integrazione dei dieci laboratori precedenti |
-| `src/course/shared.tsx` | Campi, figure, calcoli, esportazione, ingrandimento |
-| `src/course/course.css` | Struttura e impaginazione comuni |
-| `src/course/matrix.css`, `matrix-palette.json` | Tema definitivo e palette per schermo e stampa |
-| `src/course/demos/` | Diciotto dimostrazioni del secondo capitolo |
-| `src/course/math/core.ts` | Algebra complessa, operatori, misura e probabilità |
-| `src/components/`, `src/lib/` | Laboratori e modelli del primo capitolo |
-| `public/` | Presentazioni, guide e materiali statici |
-| `scripts/` | Generatori HTML, PDF e pacchetti |
-| `qa/` | Verifiche numeriche e strutturali ripetibili |
-| `docs/corso/` | Guida docente, verifica e collaudo |
+| `src/course/registry.tsx` | Registro dei quattro moduli, riferimenti, componenti |
+| `src/course/app.tsx` | Navigazione, copertine e indirizzi |
+| `src/course/book/` | Teoria e 32 sezioni del modulo 2; viste comuni degli esempi |
+| `src/course/algorithms/` | Moduli 3–4, simulatore di stati, circuiti e reti reversibili |
+| `src/course/demos/`, `legacy-tools.tsx` | Diciotto strumenti esplorativi del modulo 2, conservati |
+| `src/lib/diffraction.ts` | Propagazione di Fresnel e risposta del rivelatore |
+| `src/components/`, `src/lib/` | Esperienze del modulo 1 |
+| `src/course/matrix-palette.json` | Colori comuni per schermo e stampa |
+| `public/` | Slide e guide generate |
+| `guide-latex/` | Modello Classica, capitoli LaTeX, figure TikZ e compilazione autonoma |
+| `scripts/`, `qa/` | Generazione, confezionamento e verifiche ripetibili |
+| `docs/corso/` | Indicazioni didattiche, limiti e collaudo |
 
-## Aggiungere un capitolo
+## Materiali e limiti
 
-Il catalogo separa titoli, descrizioni, riferimenti e dimostrazioni. Per un nuovo capitolo si aggiungono catalogo e componenti, mantenendo il contratto `Lesson` per teoria, controlli, geometria, passaggi e interpretazione. Si estende quindi il registro delle rotte in `app.tsx`, il generatore delle guide e quello dei pacchetti. I tipi delle rotte sono deliberatamente espliciti: per un terzo capitolo vanno aggiornati anche `Route`, `initialChapter` e `scope`, oltre alle verifiche. La voce futura non apre una pagina incompleta.
+Le guide HTML/PDF contengono gli esempi predefiniti completi, compresi quelli di confronto. Nel PDF le espansioni più lunghe e le tabelle estese dei registri e delle reti elementari sono raccolte in appendici identificate, con collegamenti di andata e ritorno al passaggio pertinente. Tutti i termini e tutte le righe rimangono disponibili; il modulo 4 è un volume di consultazione ampio. Nel laboratorio le tabelle si aprono su richiesta. L'esportazione HTML conserva la lezione e i valori correnti; i dati tabellari principali sono esportabili in CSV.
 
-Nel secondo capitolo ogni dimostrazione dichiara lo spazio rappresentato, distingue i dati di ingresso dalle coordinate della vista e tratta le configurazioni degeneri. I comandi descrivono la quantità che modificano. Ogni passaggio contiene formula e spiegazione; il risultato numerico deriva dagli stessi dati usati dalla figura.
+I circuiti operano su vettori di stato classici di piccola dimensione. Shor riceve N, a e la precisione; il periodo non è un ingresso del circuito. Le piccole reti modulari sono sintetizzate tramite mintermini e verificate su tutta la base: questa sintesi cresce esponenzialmente e non rappresenta l'implementazione efficiente di Shor. L'esempio di logaritmo discreto su sei livelli usa una Fourier astratta, senza sintesi binaria. Questi limiti sono espliciti anche nelle lezioni.
 
-## Materiali per la lezione
+I controlli numerici e DOM sono automatici; il Canvas nel test DOM è simulato e il CSS è escluso. Le guide vengono controllate per contenuto, glifi e limiti della pagina, con ispezione visiva campionaria. Mouse, touch, stampa da browser, impaginazione mobile e avvio reale offline richiedono il collaudo indicato in `COLLAUDO.md`.
 
-`public/Guida_corso.pdf` raccoglie le configurazioni iniziali e gli svolgimenti. Sono incluse le guide separate dei capitoli, la guida HTML, le presentazioni e `docs/corso/GUIDA_DOCENTE.md`. L'esportazione di una dimostrazione salva le figure statiche, la teoria, l’interpretazione, tutti i calcoli correnti e i parametri. Le raccolte e le configurazioni non vengono conservate automaticamente dopo l'uscita.
+## Continuità e pubblicazione
 
-## Verifiche e limiti
+Per aggiungere moduli leggere `ISTRUZIONI_PER_NUOVI_MODULI.md`. Conservare Matrix per il laboratorio, Seminario per le slide e ArsClassica 01 per le guide PDF. Il workflow GitHub Pages incluso pubblica `dist/`: caricare il contenuto della cartella di progetto e selezionare GitHub Actions nelle impostazioni Pages. Una pubblicazione sul repository dell'utente richiede un'azione autorizzata separata.
 
-Le verifiche numeriche includono casi casuali, casi degeneri e risultati esatti della lezione. Il nucleo matematico supera 13.607 controlli; la revisione aggiunge 1.985 verifiche mirate, comprese configurazioni renderizzate con parametri differenti. Il rendering statico verifica 28 dimostrazioni e tre copertine; non sostituisce il collaudo interattivo del browser, che non è stato completato nell'ambiente di realizzazione. La procedura è descritta in `docs/corso/COLLAUDO.md` e i risultati in `docs/corso/VERIFICHE.md`.
+Autori dei materiali di partenza: Marzio De Corato e Danilo Bruschi, Università degli Studi di Milano. Le licenze dei componenti e dei font sono incluse; questa revisione non introduce una nuova licenza per i materiali didattici.
 
-Le ipotesi del primo capitolo sono documentate anche in `docs/MODELLI.md`. I commenti e le condizioni presenti nelle dimostrazioni specificano il significato didattico dei modelli.
 
-Autori dei materiali: Marzio De Corato e Danilo Bruschi, Università degli Studi di Milano. Le licenze dei componenti e dei font sono incluse nei rispettivi file; questa distribuzione non introduce una nuova licenza per i materiali didattici degli autori.
+## Esercizi guidati implementati
+
+Sono presenti 60 esercizi, 15 per modulo, con 336 passaggi principali di soluzione e 120 diagrammi TikZ nuovi. Ogni esercizio integra richiami alla teoria, traccia e soluzione completa. I file guide-latex/esercizi/modulo-N/GN.xx.tex sono sorgenti autorevoli mantenuti a mano; scripts/export-guide-latex.py rigenera gli indici e la collocazione, preservando questi file. La mappa e le istruzioni sono in docs/corso/ESERCIZI_GUIDATI.md (incluso anche nel pacchetto LaTeX). Per i moduli futuri conservare gli ID, dichiarare prerequisiti e convenzioni e verificare i nuovi calcoli con procedure indipendenti.
+
+
+## Revisione 4.2: esperimenti modificabili e formule
+
+Le 39 sezioni dei moduli 3 e 4 hanno un’area «Esperimento: modifica i dati, calcola e misura». I 12 circuiti generali del modulo 3 permettono di modificare ampiezze, porte, controlli, ordine e basi di misura; le restanti sezioni espongono parametri specifici. Il calcolo si avvia esplicitamente e azzera le misure. Quando i dati cambiano, i risultati precedenti restano identificati e le nuove misure sono disabilitate fino al ricalcolo.
+
+La matematica sullo schermo usa MathML nativo incorporato nell’HTML. Le formule di partenza sono conservate per il generatore LaTeX e per le verifiche. La guida mantiene Palatino, Euler, Iwona e ArsClassica 01; le slide Seminario restano congelate. Simon presenta normalizzazione, interferenza, marginale e sistemi su F₂ in passaggi separati.
+
+I dettagli scientifici, i limiti e le prove eseguite sono in `docs/corso/REVISIONE_4_2.md`. Per continuare il lavoro leggere anche `src/course/algorithms/experiment-notes.ts`, `experiments.ts` e `src/course/book/experiment-panel.tsx`.
+
+Ogni consegna futura comprende tre archivi ZIP: locale, sorgenti e GitHub. Non pubblicare automaticamente un repository o un sito.

@@ -1,0 +1,71 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G4.02}{Recuperare il periodo binario di Simon}{Guida esplicita}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Un oracolo di Simon associa le coppie \(000/101\), \(001/100\), \(010/111\), \(011/110\) agli esiti rispettivi \(000,001,010,011\). Ricostruire il periodo binario a partire dalle letture 010 e 111. Analizzare un ramo con bersaglio osservato 010.
+
+\ExTheory{\ExRef{c4-simon}{4.03}}{La promessa è \(f(x)=f(x\oplus s)\), con un unico \(s\ne0\). Dopo la misura del bersaglio si ottiene una coppia coerente \((\ket x+\ket{x\oplus s})/\sqrt2\). La Hadamard produce soltanto y tali che \(y\cdot s=0\) in \(\mathbb F_2\).}
+
+\ExPrediction{Le coppie dell’oracolo sono traslazioni binarie. La misura individua un sottospazio di equazioni, non direttamente il periodo. Le equazioni indipendenti ne ridurranno lo spazio dei candidati.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\node[exbox] (n0) at (0.0,0.0) {$000\leftrightarrow101$};\node[exbox] (n1) at (3.6,0.0) {$001\leftrightarrow100$};\draw[exother] (n0)--(n1);\node[exbox] (n2) at (7.2,0.0) {$010\leftrightarrow111$};\draw[exother] (n1)--(n2);\node[exbox] (n3) at (0.0,-1.6) {$011\leftrightarrow110$};\draw[exother] (n2.south)--++(0,-.4)-|(n3.north);
+\end{tikzpicture}}{Le quattro coppie condividono la traslazione XOR 101.}
+
+
+\begin{ExTasks}
+
+\item Verificare la traslazione comune delle quattro coppie.
+
+\item Normalizzare il ramo con bersaglio 010.
+
+\item Calcolare l’ampiezza generica dopo Hadamard.
+
+\item Elencare gli esiti possibili e i loro segni.
+
+\item Risolvere il sistema delle due letture e discutere letture nulle o ripetute.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Verificare la promessa}
+
+Le quattro somme XOR sono \(000\oplus101=101\), \(001\oplus100=101\), \(010\oplus111=101\), \(011\oplus110=101\). Ogni valore dell’oracolo compare esattamente due volte.
+
+\ExStep{Condizionare il registro}
+
+La preparazione uniforme contiene otto rami di probabilità \(1/8\). Il bersaglio 010 corrisponde a due rami, quindi ha probabilità \(2/8=1/4\). Dividendo le ampiezze \(1/\sqrt8\) per \(\sqrt{1/4}=1/2\), il primo registro diventa \((\ket{010}+\ket{111})/\sqrt2\).
+
+\ExStep{Ricavare la cancellazione}
+
+\ExEq{A(y)&=\frac14\bigl[(-1)^{010\cdot y}+(-1)^{111\cdot y}\bigr]\\
+&=\frac{(-1)^{010\cdot y}}4\bigl[1+(-1)^{101\cdot y}\bigr].}
+Se \(101\cdot y=1\), il termine tra parentesi vale zero. Se vale zero, il termine è 2.
+
+\ExStep{Calcolare il supporto}
+
+La condizione è \(y_0\oplus y_2=0\). Gli esiti sono \(000,010,101,111\), con ampiezze rispettivamente \(1/2,-1/2,1/2,-1/2\). I quattro quadrati valgono \(1/4\) e sommano a uno.
+
+\ExStep{Risolvere le equazioni binarie}
+
+La lettura 010 impone \(s_1=0\). La lettura 111 impone \(s_0\oplus s_1\oplus s_2=0\). Sostituendo \(s_1=0\), si ottiene \(s_2=s_0\). I candidati sono \(000\) e \(101\); la promessa esclude il vettore nullo e seleziona 101.
+
+\ExStep{Valutare l’informazione raccolta}
+
+La lettura 000 produce \(0=0\) e non aumenta il rango. Una ripetizione di 010 ripropone la stessa equazione. Nel sottospazio a quattro elementi, dopo una prima equazione non nulla, due dei quattro esiti possibili sono indipendenti da essa. La probabilità di rango due dopo due letture è \((3/4)(2/4)=3/8\).
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\node[exbox] (a) at (0,1) {$s_1=0$};\node[exbox] (b) at (0,-.5) {$s_0+s_1+s_2=0$};\node[exbox] (c) at (4,.25) {$s=(t,0,t)$\\$t\in\mathbb F_2$};\draw[exother] (a)--(c);\draw[exother] (b)--(c);
+\end{tikzpicture}}{Intersezione delle equazioni sul campo binario. Il parametro t distingue il vettore nullo dal periodo non nullo.}
+
+
+\ExInterpret{La geometria qui è quella di un sottospazio vettoriale su \(\mathbb F_2\); i segmenti dello schema rappresentano dipendenze logiche. Le cancellazioni delle ampiezze producono le equazioni che il calcolo classico risolve.}
+
+\ExLab{Nella sezione 4.03 scegliere «Segreto 101: equazioni indipendenti». Confrontare con il caso di equazioni ripetute: il numero di letture e il rango della matrice raccolta sono quantità differenti.}
+
+
+\end{minipage}

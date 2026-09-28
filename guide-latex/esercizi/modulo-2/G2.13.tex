@@ -1,0 +1,87 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G2.13}{Svolgere integralmente una misura di un'osservabile}{Collegamento}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Misurare \(A=\begin{pmatrix}1&1\\1&-1\end{pmatrix}\) nello stato \(\ket0\). Calcolare esiti, probabilità, stati condizionati, media e varianza. Confrontare poi le sequenze A seguita da Z e Z seguita da A, conservando l’informazione sull’ordine.
+
+\ExTheory{\ExRef{c2-osservabili}{2.26}; \ExRef{c2-incompatibilita}{2.27}; \ExRef{c2-esperimento}{2.28}}{Una misura proiettiva di A dà un autovalore \(a_j\) con probabilità \(p_j=\|P_j\psi\|^2\). Se \(p_j>0\), lo stato condizionato è \(P_j\psi/\sqrt{p_j}\). Per una sequenza si applica la seconda regola di Born allo stato del ramo della prima misura.}
+
+\ExPrediction{Le autodirezioni di A sono inclinate rispetto a quelle di Z. La prima misura di A dovrebbe quindi rendere possibile un successivo esito Z negativo, anche se la preparazione iniziale è \(\ket0\).}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-0.732683,0)--(1.55,0) node[right] {$x_1$};\draw[exaxis] (0,-0.35)--(0,1.47388) node[above] {$x_2$};\draw[->,Accent,line width=1.1pt] (0,0)--(0.92388,0.382683) node[anchor=south west] {$ u_+ $};\draw[->,Secondary,line width=1.1pt] (0,0)--(-0.382683,0.92388) node[anchor=south west] {$ u_- $};\draw[->,Ink,line width=1.1pt] (0,0)--(1,0) node[anchor=south west] {$ \ket0 $};
+\end{tikzpicture}}{Piano reale delle ampiezze. L’angolo di \(u_+\) con \(\ket0\) è \(\pi/8\); il corrispondente angolo di Bloch è \(\pi/4\).}
+
+
+\begin{ExTasks}
+
+\item Calcolare gli autovalori e due autovettori ortonormali.
+
+\item Proiettare \(\ket0\) e razionalizzare le probabilità.
+
+\item Ricavare gli stati condizionati.
+
+\item Calcolare media e varianza.
+
+\item Costruire le quattro probabilità congiunte per A poi Z.
+
+\item Ripetere per Z poi A e confrontare le marginali di Z.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Risolvere lo spettro}
+
+\ExEq{\det(A-\lambda I)&=(1-\lambda)(-1-\lambda)-1=\lambda^2-2.}
+Gli autovalori sono \(\pm\sqrt2\). Posto \(t=\sqrt2-1\) e \(n=\sqrt{1+t^2}\), si scelgono \(u_+=(1,t)^T/n\) e \(u_-=(-t,1)^T/n\).
+
+\ExStep{Verificare le autodirezioni}
+
+Poiché \(t^2=3-2\sqrt2\), \(n^2=4-2\sqrt2\). Si ha
+\ExEq{A\colv{1\\t}&=\colv{1+t\\1-t}=\sqrt2\colv{1\\t},\\A\colv{-t\\1}&=\colv{1-t\\-t-1}=-\sqrt2\colv{-t\\1}.}
+Inoltre \(u_+^Tu_-=(-t+t)/n^2=0\) e le norme sono uno.
+
+\ExStep{Calcolare le probabilità}
+
+\ExEq{c_+&=\langle u_+|0\rangle=1/n,\quad c_-=-t/n,\\p_+&=\frac1{4-2\sqrt2}=\frac{4+2\sqrt2}{16-8}=\frac{2+\sqrt2}{4},\\p_-&=1-p_+=\frac{2-\sqrt2}{4}.}
+La somma vale uno; entrambi gli esiti sono possibili.
+
+\ExStep{Normalizzare i rami}
+
+Per l’esito positivo, \(P_+\ket0=c_+u_+=u_+/n\); dividendo per \(\sqrt{p_+}=1/n\) si ottiene \(u_+\). Per l’esito negativo, \(P_-\ket0=-tu_-/n\), e \(\sqrt{p_-}=t/n\), poiché \(t>0\). Il risultato è \(-u_-\), equivalente fisicamente a \(u_-\) per la fase globale.
+
+\ExStep{Calcolare i momenti}
+
+\ExEq{\langle A\rangle&=\sqrt2(p_+-p_-)=\sqrt2\frac{2\sqrt2}{4}=1,\\\langle A^2\rangle&=2p_++2p_-=2,\\(\Delta A)^2&=2-1^2=1.}
+Direttamente \(A^2=\begin{pmatrix}2&0\\0&2\end{pmatrix}\), in accordo con il secondo momento.
+
+\ExStep{Eseguire A prima di Z}
+
+Il ramo positivo ha probabilità di Z=+1 uguale a \(|(u_+)_0|^2=p_+\); il ramo negativo ha probabilità \(p_-\). Le quattro probabilità sono
+\ExEq{P(A+,Z+)&=p_+^2=(3+2\sqrt2)/8,\\P(A+,Z-)&=p_+p_-=1/8,\\P(A-,Z+)&=p_-^2=(3-2\sqrt2)/8,\\P(A-,Z-)&=p_-p_+=1/8.}
+Ne segue \(P(Z+)=6/8=3/4\) e \(P(Z-)=2/8=1/4\).
+
+\ExStep{Eseguire Z prima di A}
+
+La preparazione \(\ket0\) dà Z=+1 con probabilità uno e resta invariata. Quindi \(P(Z+,A+)=p_+\), \(P(Z+,A-)=p_-\), mentre i due eventi con Z negativo sono impossibili. La marginale di Z è ora \((1,0)\).
+
+\ExStep{Collegare il risultato agli operatori}
+
+\ExEq{AZ&=\begin{pmatrix}1&-1\\1&1\end{pmatrix},\quad ZA=\begin{pmatrix}1&1\\-1&1\end{pmatrix},\\{}[A,Z]&=\begin{pmatrix}0&-2\\2&0\end{pmatrix}\ne0.}
+La prima misura modifica la preparazione disponibile alla seconda. Il confronto riguarda sequenze sullo stesso sistema, su molte copie della preparazione iniziale.
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-.6,0)--(2.2,0) node[right] {esito};\draw[exaxis] (-.6,0)--(-.6,3.6) node[above] {$p$};\node[left] at (-.6,3) {$ 1 $};\draw[Ink!15,dashed] (-.6,3)--(1.7000000000000002,3);\filldraw[fill=Accent!25,draw=Accent] (0.0,0) rectangle (0.65,2.25);\node[below] at (0.325,0) {$ Z+  $};\node[above] at (0.325,2.25) {$ 0.75 $};\filldraw[fill=Accent!25,draw=Accent] (1.1,0) rectangle (1.75,0.75);\node[below] at (1.425,0) {$ Z- $};\node[above] at (1.425,0.75) {$ 0.25 $};
+\end{tikzpicture}}{Marginale della seconda misura nella sequenza A poi Z.}
+
+
+\ExInterpret{Gli autovalori sono i numeri restituiti dallo strumento; gli autovettori descrivono gli stati condizionati. Le probabilità congiunte mantengono esplicita la dipendenza dall’ordine delle misure.}
+
+\ExLab{Nelle sezioni 2.26–2.28 confrontare spettro, proiezioni e sequenze di misura. Ricostruire ciascuna riga della tabella con il prodotto «probabilità del primo ramo per probabilità condizionata del secondo», usando l’esercizio come caso esatto di controllo.}
+
+
+\end{minipage}

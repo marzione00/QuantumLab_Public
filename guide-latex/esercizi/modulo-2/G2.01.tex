@@ -1,0 +1,69 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G2.01}{Passare da componenti complesse a modulo e fase}{Guida esplicita}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Dato \(z=-1+i\sqrt3\), calcolare modulo, fase principale nell’intervallo \((-\pi,\pi]\), coniugato, inverso e numero normalizzato. Spiegare geometricamente ogni operazione.
+
+\ExTheory{\ExRef{c2-complessi}{2.01}}{Per \(z=a+ib\), il coniugato è \(z^*=a-ib\) e \(|z|=\sqrt{a^2+b^2}\). La fase si determina da seno, coseno e quadrante. Per \(z\ne0\), \(z^{-1}=z^*/|z|^2\); \(z/|z|\) appartiene al cerchio unitario.}
+
+\ExPrediction{Il punto è nel secondo quadrante. Il coniugato sarà nel terzo; l’inverso avrà la stessa direzione del coniugato e una lunghezza reciproca di quella iniziale.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-1.35,0)--(1.55,0) node[right] {$\operatorname{Re}$};\draw[exaxis] (0,-0.35)--(0,2.28205) node[above] {$\operatorname{Im}$};\draw[->,Accent,line width=1.1pt] (0,0)--(-1,1.73205) node[anchor=south west] {$ z $};
+\end{tikzpicture}}{Il punto iniziale si trova nel secondo quadrante del piano complesso.}
+
+
+\begin{ExTasks}
+
+\item Identificare le componenti reali e immaginarie.
+
+\item Calcolare il modulo quadro e il modulo.
+
+\item Determinare il quadrante e la fase.
+
+\item Costruire coniugato e inverso e verificarne il prodotto.
+
+\item Normalizzare e controllare la lunghezza finale.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Leggere le componenti}
+
+La parte reale è \(a=-1\), la parte immaginaria è \(b=\sqrt3\). Il simbolo \(i\) soddisfa \(i^2=-1\); la coordinata verticale è il numero reale \(\sqrt3\).
+
+\ExStep{Calcolare la lunghezza}
+
+\ExEq{|z|^2&=(-1)^2+(\sqrt3)^2=1+3=4,\\|z|&=\sqrt4=2.}
+Lo stesso risultato segue da \((-1-i\sqrt3)(-1+i\sqrt3)=1+3\), dopo cancellazione dei termini incrociati.
+
+\ExStep{Scegliere l’angolo corretto}
+
+\ExEq{\cos\varphi&=-1/2,\quad\sin\varphi=\sqrt3/2,\\\varphi&=2\pi/3=120^\circ,\qquad z=2e^{2\pi i/3}.}
+Il rapporto \(b/a=-\sqrt3\) da solo ammetterebbe anche un angolo del quarto quadrante; il segno delle due coordinate seleziona il secondo.
+
+\ExStep{Coniugare e invertire}
+
+\ExEq{z^*&=-1-i\sqrt3,\\z^{-1}&=\frac{-1-i\sqrt3}{4}=-\frac14-i\frac{\sqrt3}{4},\\zz^{-1}&=\frac{(-1+i\sqrt3)(-1-i\sqrt3)}4=\frac{1+3}4=1.}
+Il modulo dell’inverso è \(\sqrt{1/16+3/16}=1/2\).
+
+\ExStep{Normalizzare}
+
+\ExEq{\widehat z&=z/2=-\frac12+i\frac{\sqrt3}{2},\\|\widehat z|^2&=\frac14+\frac34=1.}
+L’operazione conserva l’angolo di \(120^\circ\). Il vettore nullo non ammetterebbe questa divisione.
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-1.35,0)--(1.55,0) node[right] {$\operatorname{Re}$};\draw[exaxis] (0,-2.08205)--(0,2.28205) node[above] {$\operatorname{Im}$};\draw[->,Accent,line width=1.1pt] (0,0)--(-1,1.73205) node[anchor=south west] {$ z $};\draw[->,Secondary,line width=1.1pt] (0,0)--(-1,-1.73205) node[anchor=north west] {$ z^* $};\draw[->,Ink,line width=1.1pt] (0,0)--(-0.25,-0.433013) node[anchor=north west] {$ z^{-1} $};
+\end{tikzpicture}}{Il coniugio riflette rispetto all’asse reale; l’inversione aggiunge una variazione del modulo.}
+
+
+\ExInterpret{Modulo e fase descrivono lo stesso punto delle coordinate cartesiane. Il piano complesso qui rappresenta un numero; negli stati quantistici ogni componente complessa avrà il proprio ruolo nella combinazione del vettore.}
+
+\ExLab{Nella sezione 2.01 usare lo strumento del numero complesso e porre parte reale \(-1\), parte immaginaria \(\sqrt3\simeq1{,}73205\). Confrontare modulo e angolo; cambiare poi il segno della parte immaginaria. Se si inseriscono decimali, valutare l’errore rispetto ai risultati esatti.}
+
+
+\end{minipage}

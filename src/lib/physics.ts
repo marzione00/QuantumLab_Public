@@ -1,3 +1,4 @@
+import {fresnelScreen} from './diffraction.ts';
 // Ideal models used by the laboratories. Units of the gas are arbitrary.
 export const TAU = 2 * Math.PI;
 export const rad = (d: number) => d * Math.PI / 180;
@@ -41,13 +42,8 @@ export function environmentProbabilities(coupling:number, phase:number, undo=fal
   state=[cadd(cscale(state[0],ca),cscale(state[1],sa)),cadd(cscale(state[0],-sa),cscale(state[1],ca)),cadd(cscale(state[2],ca),cscale(state[3],sa)),cadd(cscale(state[2],-sa),cscale(state[3],ca))];
   return state.map(z=>z[0]**2+z[1]**2);
 }
-export function screenDistribution(slits:number, coherent:boolean, spacing:number, phase:number, aperture=40, wavelength=550, distance=1, visibility=1) {
-  const n=6400, ys:number[]=[], weights:number[]=[];
-  for(let i=0;i<n;i++) { const y=-22+44*(i+.5)/n; const q=Math.PI*aperture*y/(wavelength*distance); const env=Math.abs(q)<1e-12?1:(Math.sin(q)/q)**2;
-    const interference=slits===1?1:coherent?2+2*visibility*Math.cos(TAU*spacing*y/(wavelength*distance)+rad(phase)):2;
-    ys.push(y); weights.push(Math.max(0,env*interference)); }
-  const total=weights.reduce((a,b)=>a+b,0), probabilities=weights.map(v=>v/total); let sum=0;
-  const cdf=probabilities.map(p=>sum+=p); cdf[n-1]=1; return {ys,probabilities,cdf};
+export function screenDistribution(slits:number, coherent:boolean, spacing:number, phase:number, aperture=40, wavelength=550, distance=1, visibility=1,span=22,resolution=0) {
+ return fresnelScreen({slits,coherent,spacing,phase,aperture,wavelength,distance,visibility,span,resolution});
 }
 export function screenSample(cdf:number[], rng:()=>number) { const u=rng();let lo=0,hi=cdf.length-1;while(lo<hi){const m=(lo+hi)>>>1;if(cdf[m]<u)lo=m+1;else hi=m;}return lo; }
 export type Particle={x:number;y:number;vx:number;vy:number};

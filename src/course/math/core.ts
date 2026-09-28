@@ -37,7 +37,7 @@ export const real=(a:number[][]):Mat=>a.map(r=>r.map(x=>z(x)));
 export const X=real([[0,1],[1,0]]),Y:Mat=[[z(),z(0,-1)],[z(0,1),z()]],Z=real([[1,0],[0,-1]]),H=mscale(real([[1,1],[1,-1]]),z(Math.SQRT1_2));
 export function qubit(theta:number,phi:number,global=0):V{const t=rad(theta)/2;return [mul(z(Math.cos(t)),cis(rad(global))),mul(scale(cis(rad(phi)),Math.sin(t)),cis(rad(global)))];}
 export function bloch(v:V):R3{const n=norm2(v);if(n<1e-20)return [0,0,0];const c=mul(conj(v[0]),v[1]);return [2*c[0]/n,2*c[1]/n,(abs2(v[0])-abs2(v[1]))/n];}
-export function fromBloch(r:R3):V{const t=Math.acos(Math.max(-1,Math.min(1,r[2])))*180/Math.PI,p=Math.atan2(r[1],r[0])*180/Math.PI;return qubit(t,p);}
+export function fromBloch(r:R3):V{const t=Math.atan2(Math.hypot(r[0],r[1]),r[2])*180/Math.PI,p=Math.atan2(r[1],r[0])*180/Math.PI;return qubit(t,p);}
 export function measurementBasis(theta:number,phi:number):V[]{const t=rad(theta)/2,p=rad(phi);return [[z(Math.cos(t)),scale(cis(p),Math.sin(t))],[z(-Math.sin(t)),scale(cis(p),Math.cos(t))]];}
 export function eigenHermitian(a:Mat){
  if(a.length!==2||!hermitian(a))throw Error('Occorre una matrice hermitiana 2 × 2');
@@ -49,7 +49,10 @@ export function eigenHermitian(a:Mat){
  const u=make(1),w=make(-1);return{values:[t+r,t-r],vectors:[u,w],projectors:[outer(u),outer(w)],degenerate:false,axis:n};
 }
 export function spectral(a:Mat,fn:(lambda:number)=>Z):Mat{const e=eigenHermitian(a);if(e.degenerate)return mscale(eye(2),fn(e.values[0]));return madd(mscale(e.projectors[0],fn(e.values[0])),mscale(e.projectors[1],fn(e.values[1])));}
-export function born(v:V,basis:V[]){return basis.map(u=>{const amplitude=dot(u,v),probability=abs2(amplitude),projection=vscale(u,amplitude);return{u,amplitude,probability,projection,post:probability>1e-16?normalize(projection):null};});}
+export function born(v:V,basis:V[]){return basis.map(u=>{const amplitude=dot(u,v),probability=abs2(amplitude),projection=vscale(u,amplitude),magnitude=Math.hypot(...amplitude),length=Math.hypot(...u.flat());
+ // Normalize the direction before scaling: a rare positive branch remains defined.
+ const post=magnitude>0&&length>0?vscale(u,[amplitude[0]/magnitude/length,amplitude[1]/magnitude/length]):null;
+ return{u,amplitude,probability,projection,post};});}
 export function observe(a:Mat,v:V){const av=mv(a,v),mean=dot(v,av),second=dot(av,av)[0],variance=Math.max(0,second-mean[0]**2);return{av,mean:mean[0],second,variance,sd:Math.sqrt(variance)};}
 export function sequential(v:V,first:V[],second:V[]){return born(v,first).map(x=>second.map(u=>x.post?x.probability*abs2(dot(u,x.post)):0));}
 export function rot(angle:number):Mat{const c=Math.cos(rad(angle)),s=Math.sin(rad(angle));return real([[c,-s],[s,c]]);}

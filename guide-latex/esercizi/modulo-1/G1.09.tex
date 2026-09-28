@@ -1,0 +1,66 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G1.09}{Prevedere la trasmissione di un analizzatore}{Consolidamento}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Una polarizzazione lineare forma un angolo \(\theta=30^\circ\) con l’orizzontale. Un analizzatore orientato a \(\alpha=0^\circ\) separa le componenti parallela e perpendicolare. Calcolare le probabilità dei due esiti e ripetere per \(\alpha=30^\circ\) e \(120^\circ\).
+
+\ExTheory{\ExRef{c1-polarizzazione}{1.05}}{Il vettore unitario della preparazione è \(u=(\cos\theta,\sin\theta)^T\). L’asse trasmesso è \(a=(\cos\alpha,\sin\alpha)^T\), quindi l’ampiezza proiettata è \(a^Tu=\cos(\theta-\alpha)\). La probabilità è il suo quadrato; l’altro esito ha probabilità \(\sin^2(\theta-\alpha)\).}
+
+\ExPrediction{La proiezione sul primo asse ha lunghezza maggiore di quella sul secondo. Quando l’analizzatore coincide con la preparazione, l’intero vettore appartiene alla direzione trasmessa.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-0.35,0)--(1.55,0) node[right] {$x_1$};\draw[exaxis] (0,-0.35)--(0,1.05) node[above] {$x_2$};\draw[->,Accent,line width=1.1pt] (0,0)--(0.866025,0.5) node[anchor=south west] {$ u $};\draw[->,Secondary,line width=1.1pt] (0,0)--(1,0) node[anchor=south west] {$ a $};\draw[dashed,Secondary] (.866025,.5)--(.866025,0);
+\end{tikzpicture}}{Piano reale delle componenti di polarizzazione. L’angolo fra i due vettori è \(30^\circ\).}
+
+
+\begin{ExTasks}
+
+\item Scrivere le componenti della preparazione.
+
+\item Calcolare le due proiezioni per analizzatore orizzontale.
+
+\item Passare dalle ampiezze alle probabilità.
+
+\item Ripetere nei due orientamenti indicati.
+
+\item Calcolare i conteggi medi su 200 prove e controllare la normalizzazione.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Preparare il vettore}
+
+\ExEq{u&=\colv{\cos30^\circ\\\sin30^\circ}=\colv{\sqrt3/2\\1/2},\\\|u\|^2&=3/4+1/4=1.}
+
+\ExStep{Proiettare sugli assi}
+
+Per \(\alpha=0\), \(a=(1,0)^T\) e \(a_\perp=(0,1)^T\). Si ottiene \(a^Tu=1\cdot\sqrt3/2+0\cdot1/2=\sqrt3/2\), mentre \(a_\perp^Tu=1/2\).
+
+\ExStep{Calcolare gli esiti}
+
+\ExEq{p_\parallel&=(\sqrt3/2)^2=3/4,\\p_\perp&=(1/2)^2=1/4,\quad p_\parallel+p_\perp=1.}
+Su 200 prove i conteggi medi sono \(200\cdot3/4=150\) e \(200\cdot1/4=50\).
+
+\ExStep{Allineare l’analizzatore}
+
+Per \(\alpha=30^\circ\), la differenza angolare è zero. Quindi \(p_\parallel=\cos^20=1\), \(p_\perp=0\). La previsione media è 200 esiti paralleli.
+
+\ExStep{Ruotare di un angolo retto}
+
+Per \(\alpha=120^\circ\), \(\theta-\alpha=-90^\circ\). Pertanto \(p_\parallel=\cos^2(-90^\circ)=0\) e \(p_\perp=1\). Il segno dell’angolo scompare nel quadrato, mentre resta rilevante nella descrizione delle ampiezze.
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-.6,0)--(2.2,0) node[right] {esito};\draw[exaxis] (-.6,0)--(-.6,3.6) node[above] {$p$};\node[left] at (-.6,3) {$ 1 $};\draw[Ink!15,dashed] (-.6,3)--(1.7000000000000002,3);\filldraw[fill=Accent!25,draw=Accent] (0.0,0) rectangle (0.65,2.25);\node[below] at (0.325,0) {$ \parallel $};\node[above] at (0.325,2.25) {$ 0.75 $};\filldraw[fill=Accent!25,draw=Accent] (1.1,0) rectangle (1.75,0.75);\node[below] at (1.425,0) {$ \perp $};\node[above] at (1.425,0.75) {$ 0.25 $};
+\end{tikzpicture}}{Probabilità per analizzatore orizzontale, ottenute dalle due proiezioni.}
+
+
+\ExInterpret{Il passaggio dalla proiezione al quadrato collega geometria e conteggi. L’angolo del vettore di polarizzazione sarà distinto dall’angolo polare sulla sfera di Bloch nel prossimo esercizio.}
+
+\ExLab{Nella sezione 1.05 impostare orientazione iniziale \(30^\circ\), fase aggiunta nulla e analizzatore \(0^\circ\). Confrontare la previsione con una raccolta di prove, quindi ruotare l’analizzatore a \(30^\circ\) e \(120^\circ\).}
+
+
+\end{minipage}

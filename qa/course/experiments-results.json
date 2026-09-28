@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "checks": 41012,
+  "sections": 39,
+  "checksInclude": [
+    "Simon promise and distribution for every secret at n=2..5",
+    "Simon measured recovery",
+    "Grover zero/all solutions",
+    "Operational counting and amplitude estimation versus spectral reference",
+    "QPE mixture versus known grid",
+    "Discrete logarithm groups 5,7,11,13",
+    "Shor versus direct complex sums without supplied period",
+    "Invalid inputs",
+    "MathML structural rendering"
+  ]
+}

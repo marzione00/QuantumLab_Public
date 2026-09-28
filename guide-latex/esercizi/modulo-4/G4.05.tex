@@ -1,0 +1,71 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G4.05}{Seguire una ricerca con budget e soglia variabile}{Guida esplicita}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Cercare il minimo della lista \([9,4,7,1,6,3,8,2]\). Partire dall’indice 1, di valore 4, e usare la sequenza prefissata di iterazioni \(j=1,1,1,2\). Analizzare la possibile successione di misure \(5,7,0,3\), accettando un candidato solo quando il suo valore è inferiore alla soglia.
+
+\ExTheory{\ExRef{c4-ricerca-ignota}{4.06}; \ExRef{c4-minimo}{4.08}}{L’oracolo della soglia t marca gli indici con valore minore di t. Se M indici soddisfano il criterio, la probabilità dopo j iterazioni è \(\sin^2((2j+1)\arcsin\sqrt{M/8})\). Quando M è ignoto, questa formula descrive l’analisi del procedimento; il valore di M non è un dato utilizzabile dalla ricerca.}
+
+\ExPrediction{Abbassare la soglia restringe l’insieme marcato. Una misura può fallire e lasciare la soglia invariata; il procedimento deve prevedere tale ramo.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\node[exbox] (n0) at (0.0,0.0) {$t=4,\ M=3$};\node[exbox] (n1) at (3.6,0.0) {$t=3,\ M=2$};\draw[exother] (n0)--(n1);\node[exbox] (n2) at (7.2,0.0) {$t=2,\ M=1$};\draw[exother] (n1)--(n2);\node[exbox] (n3) at (0.0,-1.6) {rifiuta il valore 9};\draw[exother] (n2.south)--++(0,-.4)-|(n3.north);\node[exbox] (n4) at (3.6,-1.6) {$t=2,\ j=2$};\draw[exother] (n3)--(n4);\node[exbox] (n5) at (7.2,-1.6) {$t=1$};\draw[exother] (n4)--(n5);
+\end{tikzpicture}}{La soglia cambia solo dopo la verifica classica del candidato. M è indicato per l’analisi.}
+
+
+\begin{ExTasks}
+
+\item Elencare gli indici marcati a ogni soglia.
+
+\item Calcolare le probabilità della traccia indicata.
+
+\item Aggiornare la soglia soltanto dopo verifica.
+
+\item Distinguere interrogazioni di fase, letture dei valori e certificazione finale.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Prima soglia}
+
+Per t=4 gli indici marcati sono 3,5,7: \(p=M/8=3/8\). Dopo una iterazione la probabilità totale è
+\ExEq{\sin^2(3\theta)&=p(3-4p)^2=\frac38\left(3-\frac32\right)^2=\frac{27}{32}.}
+Ogni indice marcato ha probabilità \(9/32\); ciascuno degli altri cinque ha probabilità \(1/32\). Misurare 5, di valore 3, permette di aggiornare t a 3.
+
+\ExStep{Seconda soglia}
+
+Per t=3 rimangono gli indici 3 e 7. Ora \(p=2/8=1/4\), quindi \(p(3-4p)^2=(1/4)2^2=1\). Ogni indice marcato ha probabilità \(1/2\). La lettura 7 restituisce valore 2 e aggiorna t a 2.
+
+\ExStep{Un tentativo senza miglioramento}
+
+Per t=2 è marcato soltanto l’indice 3. Con una iterazione, \(P_{\mathrm{buono}}=(1/8)(3-1/2)^2=25/32\). Ogni indice non marcato ha probabilità \(1/32\). La lettura 0, di valore 9, è quindi possibile e viene respinta: t rimane 2.
+
+\ExStep{Un secondo tentativo}
+
+Con la stessa soglia e due iterazioni, G4.04 ha calcolato \(P_{\mathrm{buono}}=121/128\). La lettura 3 restituisce valore 1 e aggiorna la soglia. La probabilità dell’intera traccia indicata è
+\ExEq{\frac9{32}\frac12\frac1{32}\frac{121}{128}&=\frac{1089}{262144}\simeq0.004154.}
+Questa singola traccia illustra rami ammessi e non rappresenta una probabilità complessiva di successo.
+
+\ExStep{Contare le risorse}
+
+Le chiamate all’oracolo di fase sono \(1+1+1+2=5\). Le letture classiche dei valori sono una iniziale e quattro verifiche dei candidati. Gli indici distinti già letti sono 0,1,3,5,7. Una certificazione esaustiva del minimo richiede ancora gli indici 2,4,6: in totale otto letture di valori. Le due categorie sommano a 13 interrogazioni astratte, ma una chiamata di fase può richiedere valutazione reversibile, confronto e uncompute. Questa traccia con certificazione esaustiva non dimostra un vantaggio asintotico.
+
+\ExStep{Gestire una soglia senza soluzioni}
+
+Per t=1 non esiste alcun valore inferiore: M=0, O=I e \(D\ket s=\ket s\). Ogni verifica fallisce. Una procedura con budget finito deve ammettere l’uscita «nessun miglioramento trovato», che da sola non certifica l’assenza di valori migliori.
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-.6,0)--(4.4,0) node[right] {tentativo};\draw[exaxis] (-.6,0)--(-.6,3.6) node[above] {$p$};\node[left] at (-.6,3) {$ 1 $};\draw[Ink!15,dashed] (-.6,3)--(3.9000000000000004,3);\filldraw[fill=Accent!25,draw=Accent] (0.0,0) rectangle (0.65,2.53125);\node[below] at (0.325,0) {$ 1 $};\node[above] at (0.325,2.53125) {$ 0.8438 $};\filldraw[fill=Accent!25,draw=Accent] (1.1,0) rectangle (1.75,3.0);\node[below] at (1.425,0) {$ 2 $};\node[above] at (1.425,3.0) {$ 1 $};\filldraw[fill=Accent!25,draw=Accent] (2.2,0) rectangle (2.85,2.34375);\node[below] at (2.5250000000000004,0) {$ 3 $};\node[above] at (2.5250000000000004,2.34375) {$ 0.7812 $};\filldraw[fill=Accent!25,draw=Accent] (3.3000000000000003,0) rectangle (3.95,2.8359375);\node[below] at (3.6250000000000004,0) {$ 4 $};\node[above] at (3.6250000000000004,2.8359375) {$ 0.9453 $};
+\end{tikzpicture}}{Probabilità totale di ottenere un miglioramento nei quattro tentativi.}
+
+
+\ExInterpret{Il piano collettivo dipende dalla soglia. Il numero di iterazioni prefissato rende possibile analizzare la ricerca senza supporre che il numero di soluzioni sia conosciuto.}
+
+\ExLab{Nelle sezioni 4.06 e 4.08 osservare l’aggiornamento della soglia e le verifiche dei candidati. Riprodurre su carta la lista di questo esercizio; confrontare le categorie di costo con quelle mostrate dal laboratorio, che può usare una diversa traccia di misure.}
+
+
+\end{minipage}

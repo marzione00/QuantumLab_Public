@@ -1,0 +1,78 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G4.13}{Ricostruire e verificare un denominatore}{Collegamento}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Usare le frazioni continue per interpretare due letture, 85 e 171, su un registro di dimensione Q=512. L’operatore è la moltiplicazione per 2 modulo 21. Stabilire quali denominatori siano ordini verificati.
+
+\ExTheory{\ExRef{c4-frazioni-continue}{4.22}}{Le frazioni continue producono razionali candidati vicini a c/Q. Un denominatore q deve essere verificato calcolando \(a^q\bmod N\); anche quando restituisce uno, occorre distinguere un ordine minimo da un suo multiplo.}
+
+\ExPrediction{Le due letture approssimano 1/6 e 1/3. La seconda frazione potrebbe aver perso un fattore del denominatore perché la fase campionata ha numeratore non coprimo con l’ordine.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis](0,0)--(7,0);\draw[Accent](2,-.15)--(2,.15) node[above]{$85/512$};\draw[Secondary](4,-.15)--(4,.15) node[above]{$1/6$};\draw[<->](2,-.7)--(4,-.7) node[midway,below]{$1/1536$};
+\end{tikzpicture}}{Ingrandimento locale della retta dei razionali: il primo errore è negativo.}
+
+
+\begin{ExTasks}
+
+\item Eseguire Euclide per 85/512.
+
+\item Costruire tutti i convergenti con la ricorrenza.
+
+\item Verificare il denominatore 6 e la sua minimalità.
+
+\item Ripetere per 171/512 e spiegare il fallimento del denominatore 3.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Espandere la prima frazione}
+
+\ExEq{512&=6\cdot85+2,\quad85=42\cdot2+1,\quad2=2\cdot1.}
+Quindi \(85/512=[0;6,42,2]\).
+
+\ExStep{Costruire i convergenti}
+
+Con \(p_{-2}=0,p_{-1}=1,q_{-2}=1,q_{-1}=0\), si usa \(p_j=a_jp_{j-1}+p_{j-2}\), analogamente per q:
+\ExEq{a_0=0:\quad&p_0=0,\ q_0=1;\\
+a_1=6:\quad&p_1=6\cdot0+1=1,\ q_1=6\cdot1+0=6;\\
+a_2=42:\quad&p_2=42\cdot1+0=42,\ q_2=42\cdot6+1=253;\\
+a_3=2:\quad&p_3=2\cdot42+1=85,\ q_3=2\cdot253+6=512.}
+I convergenti sono \(0/1,1/6,42/253,85/512\).
+
+\ExStep{Controllare precisione e ordine}
+
+\ExEq{\frac{85}{512}-\frac16&=\frac{510-512}{3072}=-\frac1{1536},\\
+2^6&=64=3\cdot21+1.}
+Il candidato 6 supera il test. I divisori propri 1,2,3 danno rispettivamente \(2,4,8\pmod{21}\), tutti diversi da uno; quindi l’ordine è proprio 6. La disuguaglianza \(1/1536<1/(2\cdot6^2)=1/72\) garantisce che 1/6 compaia fra i convergenti, mentre il test modulare ne verifica il significato aritmetico.
+
+\ExStep{Espandere la seconda frazione}
+
+\ExEq{512&=2\cdot171+170,\quad171=1\cdot170+1,\quad170=170\cdot1.}
+Quindi \(171/512=[0;2,1,170]\). Le ricorrenze danno
+\ExEq{(p_0,q_0)&=(0,1),\\
+(p_1,q_1)&=(2\cdot0+1,2\cdot1+0)=(1,2),\\
+(p_2,q_2)&=(1\cdot1+0,1\cdot2+1)=(1,3),\\
+(p_3,q_3)&=(170\cdot1+1,170\cdot3+2)=(171,512).}
+
+\ExStep{Verificare il candidato ridotto}
+
+\ExEq{\frac{171}{512}-\frac13&=\frac{513-512}{1536}=\frac1{1536},\\
+2^2\bmod21&=4,\qquad2^3\bmod21=8.}
+Né 2 né 3 è l’ordine. La fase \(2/6=1/3\) può avere denominatore ridotto. Una strategia aggiuntiva può provare multipli del candidato, come 6, oppure raccogliere altre letture; tale passo deve essere dichiarato e verificato.
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis](0,0)--(7,0);\draw[Secondary](2,-.15)--(2,.15) node[above]{$1/3$};\draw[Accent](4,-.15)--(4,.15) node[above]{$171/512$};\draw[<->](2,-.7)--(4,-.7) node[midway,below]{$1/1536$};
+\end{tikzpicture}}{Il secondo errore è positivo e ha lo stesso modulo; la qualità dell’approssimazione non certifica l’ordine.}
+
+
+\ExInterpret{Le frazioni continue collegano una misura su una griglia binaria a un rapporto di piccoli interi. La verifica modulare distingue una buona approssimazione numerica da un periodo effettivo.}
+
+\ExLab{Nella sezione 4.22 confrontare i candidati prodotti dalle due letture. Annotare separatamente frazione approssimante, denominatore e risultato del test \(2^q\bmod21\).}
+
+
+\end{minipage}

@@ -1,0 +1,37 @@
+% Exercise typography extends the approved Classica style.
+\usetikzlibrary{positioning,decorations.pathreplacing}
+\newcounter{exstep}
+\providecommand{\theHexstep}{}
+\renewcommand{\theHexstep}{\CurrentExercise.\arabic{exstep}}
+\newcommand{\ExRef}[2]{\hyperref[#1]{sezione #2 (p.\,\pageref*{#1})}}
+\newcommand{\ExerciseStart}[3]{%
+ \clearpage\setcounter{exstep}{0}\def\CurrentExercise{#1}%
+ \hypertarget{ex-#1}{}\phantomsection\label{ex-#1}\addcontentsline{toc}{subsection}{#1 · #2}%
+ {\sffamily\small\color{Secondary}ESERCIZIO GUIDATO · #3\par}
+ \vspace{3mm}{\sffamily\color{Accent}\fontsize{18}{22}\selectfont #1\enspace #2\par}\vspace{2mm}}
+\newcommand{\ExTheory}[2]{\BookHeading{Richiami alla teoria}#1\par #2\par}
+\newcommand{\ExPrediction}[1]{\BookHeading{Previsione geometrica e fisica}#1\par}
+\newenvironment{ExTasks}{%
+ \BookHeading{Percorso guidato\hfill{\normalfont\small
+ \hyperref[sol-\CurrentExercise]{Soluzione a p.\,\pageref*{sol-\CurrentExercise}}}}%
+ \begin{enumerate}[leftmargin=6mm,itemsep=2pt]}{\end{enumerate}}
+\newcommand{\ExSolution}{\clearpage\hypertarget{sol-\CurrentExercise}{}\phantomsection\label{sol-\CurrentExercise}
+ {\sffamily\color{Accent}\fontsize{17}{21}\selectfont\CurrentExercise\ · Svolgimento\par}
+ {\small\hyperref[ex-\CurrentExercise]{Torna alla traccia (p.\,\pageref*{ex-\CurrentExercise})}.}\par\vspace{3mm}}
+\newcommand{\ExStep}[1]{\refstepcounter{exstep}\BookHeading{\arabic{exstep}. #1}}
+\newcommand{\ExInterpret}[1]{\BookHeading{Interpretazione e controlli}#1\par}
+\newcommand{\ExLab}[1]{\BookHeading{Confronto nel laboratorio}#1\par\phantomsection\label{end-\CurrentExercise}}
+\newcommand{\ExFigure}[2]{%
+ \begin{FigureBlock}\adjustbox{max width=\linewidth,max height=67mm}{#1}%
+ \FigureCaption{\CurrentExercise\ · #2}\end{FigureBlock}}
+\newcommand{\ExEq}[1]{\begin{equation*}\begin{aligned}\relax #1\end{aligned}\end{equation*}}
+\newcommand{\ket}[1]{\lvert #1\rangle}
+\newcommand{\bra}[1]{\langle #1\rvert}
+\newcommand{\inner}[2]{\langle #1\mid #2\rangle}
+\newcommand{\colv}[1]{\begin{pmatrix}#1\end{pmatrix}}
+\tikzset{exaxis/.style={->,Ink!60,line width=.5pt},
+ exvec/.style={->,Accent,line width=1.2pt},
+ exother/.style={->,Secondary,line width=1.1pt},
+ exlabel/.style={font=\sffamily\fontsize{8.5}{10}\selectfont},
+ exbox/.style={draw=Secondary!65,fill=Secondary!5,rounded corners=2pt,
+ minimum height=9mm,text width=25mm,align=center,inner sep=4pt}}

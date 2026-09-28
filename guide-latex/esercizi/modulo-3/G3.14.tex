@@ -1,0 +1,86 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G3.14}{Seguire un'evoluzione e la sua inversa}{Collegamento}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Sia \(K=X+Z=\begin{pmatrix}1&1\\1&-1\end{pmatrix}\). Studiare \(U(t)=e^{-itK}\), con t adimensionale, sulla preparazione \(\ket0\). Usare \(t=\pi/(4\sqrt2)\), quindi applicare \(U(-t)\). Ricavare anche la traiettoria di Bloch.
+
+\ExTheory{\ExRef{c3-evoluzione}{3.13}}{Dalla moltiplicazione si ha \(K^2=2I\). Separare termini pari e dispari nella serie dell’esponenziale permette di ottenere seno e coseno. Se l’Hamiltoniano fisico fosse \(\hbar\Omega K\), il tempo adimensionale sarebbe \(t=\Omega t_{\mathrm{fisico}}\).}
+
+\ExPrediction{La dinamica è una rotazione di Bloch attorno alla direzione \((1,0,1)/\sqrt2\). L’inversione del tempo dovrebbe ripercorrere la stessa orbita in senso opposto.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\node[left] at (-.3,0) {$ \ket{0} $};\draw[Ink] (-.3,0)--(3.0,0);\node[draw=Accent,fill=white,minimum height=9mm,minimum width=10mm] at (0.5,0) {$ U(t) $};\node[draw=Accent,fill=white,minimum height=9mm,minimum width=10mm] at (2.0,0) {$ U(-t) $};\node[right] at (3.0,0) {$\ket{\psi_f}$};
+\end{tikzpicture}}{Evoluzione e inversa applicate alla stessa preparazione.}
+
+
+\begin{ExTasks}
+
+\item Verificare \(K^2=2I\).
+
+\item Raggruppare la serie dell’esponenziale.
+
+\item Calcolare le ampiezze al tempo scelto.
+
+\item Costruire l’inversa ed eseguire il ritorno.
+
+\item Calcolare Bloch e identificare la circonferenza della traiettoria.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Verificare le potenze}
+
+\ExEq{K^2&=\begin{pmatrix}1+1&1-1\\1-1&1+1\end{pmatrix}=2I.}
+Quindi \(K^{2n}=2^nI\) e \(K^{2n+1}=2^nK\).
+
+\ExStep{Sommare la serie}
+
+\ExEq{e^{-itK}&=\sum_{n=0}^\infty\frac{(-1)^nt^{2n}2^n}{(2n)!}I
+-i\sum_{n=0}^\infty\frac{(-1)^nt^{2n+1}2^n}{(2n+1)!}K\\
+&=\cos(\sqrt2t)I-\frac{i\sin(\sqrt2t)}{\sqrt2}K.}
+Le serie tra parentesi sono esattamente quelle di coseno e seno.
+
+\ExStep{Applicare il tempo assegnato}
+
+Poiché \(\sqrt2t=\pi/4\), si ottiene
+\ExEq{U(t)&=\frac1{\sqrt2}I-\frac i2K,\\
+\ket{\psi(t)}&=\colv{1/\sqrt2-i/2\\-i/2}.}
+Le probabilità sono \(1/2+1/4=3/4\) e \(1/4\), con somma uno.
+
+\ExStep{Invertire l’evoluzione}
+
+Scrivendo \(a=1/\sqrt2\), si ha
+\ExEq{U(-t)&=\begin{pmatrix}a+i/2&i/2\\i/2&a-i/2\end{pmatrix},\\
+[U(-t)\psi(t)]_0&=(a+i/2)(a-i/2)+(i/2)(-i/2)
+=a^2+1/4+1/4=1,\\
+[U(-t)\psi(t)]_1&=(i/2)(a-i/2)+(a-i/2)(-i/2)=0.}
+Il ritorno è esattamente \(\ket0\).
+
+\ExStep{Calcolare le coordinate di Bloch}
+
+\ExEq{\alpha^*\beta&=(a+i/2)(-i/2)=1/4-ia/2,\\
+\mathbf r&=(1/2,-1/\sqrt2,1/2).}
+La norma è \(1/4+1/2+1/4=1\). Il prodotto con l’asse \(\mathbf n=(1,0,1)/\sqrt2\) vale \(1/\sqrt2\), come per il punto iniziale \((0,0,1)\).
+
+\ExStep{Descrivere l’intera orbita}
+
+Ponendo \(\eta=2\sqrt2t\), le coordinate sono
+\ExEq{r_x&=(1-\cos\eta)/2,\quad r_y=-\sin\eta/\sqrt2,\quad
+r_z=(1+\cos\eta)/2.}
+Il piano \(r_x+r_z=1\) interseca la sfera in una circonferenza. A tempo negativo \(\sin\eta\) cambia segno e si percorre l’orbita inversa.
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (0,0)--(2.7,0) node[right] {$r_x$};\draw[exaxis] (0,0)--(1.35,.75) node[right] {$r_y$};\draw[exaxis] (0,0)--(0,2.7) node[above] {$r_z$};\draw[Ink!25,dashed,domain=0:360,samples=100] plot ({1-cos(\x)-.9*sin(\x)/sqrt(2)},{-.5*sin(\x)/sqrt(2)+1+cos(\x)});\draw[Accent,thick,domain=0:90,samples=50] plot ({1-cos(\x)-.9*sin(\x)/sqrt(2)},{-.5*sin(\x)/sqrt(2)+1+cos(\x)});\fill[Secondary] (0,2) circle(2pt);\node[left] at (0,2) {$t=0$};\fill[Accent] (.363604,.646447) circle(2pt);\node[below right] at (.363604,.646447) {$\eta=\pi/2$};
+\end{tikzpicture}}{Proiezione del cerchio di Bloch sul foglio: il tratto colorato è l’arco percorso. Gli assi dichiarano le tre coordinate, senza rappresentare un moto nello spazio fisico.}
+
+
+\ExInterpret{La serie, la matrice e l’orbita descrivono la stessa evoluzione. L’angolo di Bloch è \(2\sqrt2t\); il fattore due nasce dall’azione relativa delle due autofasi.}
+
+\ExLab{La sezione 3.13 usa lo stesso generatore K con \(t=0{,}5\), approssimato mediante due oppure otto passi. Sostituire \(t=0{,}5\) nella formula esatta ricavata qui e confrontare i vettori. La sequenza inversa dei passi approssimati richiede ordine opposto e angoli negativi.}
+
+
+\end{minipage}

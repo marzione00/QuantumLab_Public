@@ -1,0 +1,68 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G1.06}{Dalle ampiezze all'intensità}{Consolidamento}
+
+\BookHeading{Problema, dati e obiettivo}
+
+In un punto del rivelatore arrivano due contributi coerenti di ampiezza reale 2 e 1. Ponendo l’intensità proporzionale al modulo quadro dell’ampiezza, calcolare \(I(\varphi)=|2+e^{i\varphi}|^2\), i valori per \(\varphi=0,\pi/3,\pi/2,\pi\) e la visibilità.
+
+\ExTheory{\ExRef{c1-onde}{1.03}}{Per \(z=a+ib\), \(|z|^2=z^*z=a^2+b^2\). Si definisce visibilità \(V=(I_{\max}-I_{\min})/(I_{\max}+I_{\min})\). Le intensità di ciascun contributo isolato sono \(2^2=4\) e \(1^2=1\), nelle unità relative adottate.}
+
+\ExPrediction{Il contributo più corto può ruotare attorno alla punta di quello maggiore. La distanza dall’origine oscilla fra \(2-1=1\) e \(2+1=3\); prevedere gli estremi dell’intensità prima dello sviluppo algebrico.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-.4,0)--(3.7,0) node[right] {$\mathrm{Re}$};\draw[exaxis] (0,-1.3)--(0,1.5) node[above] {$\mathrm{Im}$};\draw[Secondary,dashed] (2,0) circle(1);\draw[exvec] (0,0)--(2,0) node[below] {$2$};\draw[exother] (2,0)--(2.5,.866) node[right] {$e^{i\pi/3}$};\draw[Accent!50] (0,0)--(2.5,.866);
+\end{tikzpicture}}{Luogo delle punte della somma quando varia la fase. Il cerchio ha raggio uno e centro nel punto 2.}
+
+
+\begin{ExTasks}
+
+\item Scrivere il coniugato della somma.
+
+\item Svolgere i quattro prodotti distributivi.
+
+\item Raccogliere le due esponenziali in un coseno.
+
+\item Valutare i quattro angoli indicati.
+
+\item Calcolare la visibilità e interpretare il minimo positivo.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Costruire il modulo quadro}
+
+\ExEq{I&=(2+e^{-i\varphi})(2+e^{i\varphi})\\&=2\cdot2+2e^{i\varphi}+2e^{-i\varphi}+e^{-i\varphi}e^{i\varphi}\\&=4+2e^{i\varphi}+2e^{-i\varphi}+1.}
+
+\ExStep{Isolare l’interferenza}
+
+\ExEq{e^{i\varphi}+e^{-i\varphi}&=(\cos\varphi+i\sin\varphi)+(\cos\varphi-i\sin\varphi)=2\cos\varphi,\\I(\varphi)&=5+4\cos\varphi.}
+Il termine 5 è la somma delle intensità isolate; \(4\cos\varphi\) è il termine incrociato.
+
+\ExStep{Valutare gli angoli}
+
+\ExEq{I(0)&=5+4=9,\\I(\pi/3)&=5+4\cdot\tfrac12=7,\\I(\pi/2)&=5+4\cdot0=5,\\I(\pi)&=5-4=1.}
+Nel caso \(\pi/3\), la somma è \(5/2+i\sqrt3/2\), il cui modulo quadro è \(25/4+3/4=7\).
+
+\ExStep{Calcolare la visibilità}
+
+\ExEq{V&=\frac{9-1}{9+1}=\frac8{10}=0{,}8.}
+Il minimo resta positivo perché i contributi opposti hanno lunghezze differenti.
+
+\ExStep{Confrontare con ampiezze uguali}
+
+Se il primo contributo fosse anch'esso unitario, \(I=2+2\cos\varphi\), con massimo 4 e minimo 0. La visibilità sarebbe \((4-0)/(4+0)=1\). La fase controlla l’interferenza; il rapporto delle ampiezze ne limita il contrasto.
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-.6,0)--(4.4,0) node[right] {$\varphi$};\draw[exaxis] (-.6,0)--(-.6,3.6) node[above] {$I$};\node[left] at (-.6,3) {$ 10 $};\draw[Ink!15,dashed] (-.6,3)--(3.9000000000000004,3);\filldraw[fill=Accent!25,draw=Accent] (0.0,0) rectangle (0.65,2.7);\node[below] at (0.325,0) {$ 0 $};\node[above] at (0.325,2.7) {$ 9 $};\filldraw[fill=Accent!25,draw=Accent] (1.1,0) rectangle (1.75,2.1);\node[below] at (1.425,0) {$ \pi/3 $};\node[above] at (1.425,2.1) {$ 7 $};\filldraw[fill=Accent!25,draw=Accent] (2.2,0) rectangle (2.85,1.5);\node[below] at (2.5250000000000004,0) {$ \pi/2 $};\node[above] at (2.5250000000000004,1.5) {$ 5 $};\filldraw[fill=Accent!25,draw=Accent] (3.3000000000000003,0) rectangle (3.95,0.3);\node[below] at (3.6250000000000004,0) {$ \pi $};\node[above] at (3.6250000000000004,0.3) {$ 1 $};
+\end{tikzpicture}}{Intensità relative nei quattro casi, ottenute dagli stessi contributi.}
+
+
+\ExInterpret{Il quadrato della somma contiene i prodotti incrociati. Le intensità sono locali: il profilo completo descrive come l’energia si distribuisca sul rivelatore.}
+
+\ExLab{Nella sezione 1.03 scegliere ampiezza B pari a metà di A e variare il ritardo relativo. L’esercizio usa una scala di ampiezza doppia: dividere le intensità calcolate per 4 per confrontarle con una configurazione avente ampiezza A unitaria. La visibilità resta \(0{,}8\).}
+
+
+\end{minipage}

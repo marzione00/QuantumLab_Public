@@ -1,0 +1,68 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G2.06}{Leggere una matrice attraverso le immagini della base}{Consolidamento}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Studiare la trasformazione \(A=\begin{pmatrix}1&2\\2&4\end{pmatrix}\). Calcolare le immagini della base canonica, del vettore \(v=(3,-1)^T\) e di \(w=(1,0)^T\); determinare nucleo e immagine.
+
+\ExTheory{\ExRef{c2-matrici}{2.07}; \ExRef{c2-nucleo}{2.08}}{La colonna j di A è l’immagine di \(e_j\). Per \(x=(x_1,x_2)^T\), \(Ax=x_1Ae_1+x_2Ae_2\). Il nucleo contiene i vettori mandati in zero, l’immagine tutti i risultati possibili.}
+
+\ExPrediction{Le colonne sono parallele. Il piano degli ingressi dovrebbe quindi essere mandato su una retta; una direzione intera perderà la propria componente distinguibile.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-0.35,0)--(1.55,0) node[right] {$x_1$};\draw[exaxis] (0,-0.35)--(0,1.55) node[above] {$x_2$};\draw[->,Accent,line width=1.1pt] (0,0)--(1,0) node[anchor=south west] {$ e_1 $};\draw[->,Secondary,line width=1.1pt] (0,0)--(0,1) node[anchor=south west] {$ e_2 $};
+\end{tikzpicture}}{Base del piano di ingresso.}
+
+
+\begin{ExTasks}
+
+\item Leggere e verificare le due colonne.
+
+\item Eseguire il prodotto con v.
+
+\item Eseguire il prodotto con w e confrontare gli ingressi.
+
+\item Risolvere \(Ax=0\).
+
+\item Parametrizzare l’immagine e spiegare il rango.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Applicare A alla base}
+
+\ExEq{Ae_1&=\colv{1\cdot1+2\cdot0\\2\cdot1+4\cdot0}=\colv{1\\2},\\Ae_2&=\colv{1\cdot0+2\cdot1\\2\cdot0+4\cdot1}=\colv{2\\4}=2Ae_1.}
+
+\ExStep{Trasformare il primo ingresso}
+
+\ExEq{Av&=\colv{1\cdot3+2(-1)\\2\cdot3+4(-1)}=\colv{3-2\\6-4}=\colv{1\\2}.}
+
+\ExStep{Confrontare un altro ingresso}
+
+\ExEq{Aw&=\colv{1\cdot1+2\cdot0\\2\cdot1+4\cdot0}=\colv{1\\2}.}
+La differenza è \(v-w=(2,-1)^T\). Applicando A si ottiene \((2-2,4-4)^T=(0,0)^T\).
+
+\ExStep{Risolvere il sistema del nucleo}
+
+\ExEq{x_1+2x_2&=0,\qquad2x_1+4x_2=0.}
+La seconda equazione è il doppio della prima. Posto \(x_2=t\), si ha \(x_1=-2t\), dunque \(\ker A=\{t(-2,1)^T:t\in\mathbb R\}\).
+
+\ExStep{Ricavare l’immagine}
+
+\ExEq{Ax&=\colv{x_1+2x_2\\2(x_1+2x_2)}=(x_1+2x_2)\colv{1\\2}.}
+Ogni multiplo è ottenibile scegliendo \(x_2=0\). L’immagine è \(\operatorname{span}\{(1,2)^T\}\), di dimensione 1. La dimensione del nucleo è 1 e \(1+1=2\) verifica il teorema rango-nullità.
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-0.35,0)--(2.55,0) node[right] {$x_1$};\draw[exaxis] (0,-0.35)--(0,4.55) node[above] {$x_2$};\draw[->,Accent,line width=1.1pt] (0,0)--(1,2) node[anchor=south west] {$ Ae_1 $};\draw[->,Secondary,line width=1.1pt] (0,0)--(2,4) node[anchor=south west] {$ Ae_2 $};
+\end{tikzpicture}}{Le immagini delle due direzioni di base appartengono alla medesima retta.}
+
+
+\ExInterpret{A conserva soltanto la combinazione \(x_1+2x_2\). Il determinante \(1\cdot4-2\cdot2=0\) conferma la perdita di invertibilità. Una trasformazione di questo tipo non rappresenta da sola l’evoluzione unitaria di un sistema quantistico chiuso.}
+
+\ExLab{Nelle sezioni 2.07–2.08 inserire la matrice nello strumento delle trasformazioni e confrontare immagini della base, griglia trasformata e nucleo. Muovere l’ingresso lungo una retta parallela a \((-2,1)\): l’uscita resta invariata.}
+
+
+\end{minipage}

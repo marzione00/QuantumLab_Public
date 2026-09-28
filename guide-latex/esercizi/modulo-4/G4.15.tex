@@ -1,0 +1,98 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G4.15}{Svolgere Shor per \(N=21\)}{Collegamento}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Eseguire la ricostruzione di Shor per N=21, base a=2, nove qubit di controllo e cinque qubit di dati. Analizzare la lettura c=85, confrontarla con c=171 e verificare anche un caso in cui l’ordine pari non produce fattori utili.
+
+\ExTheory{\ExRef{c4-shor-21}{4.24}}{La preparazione usa l’esponenziazione modulare reversibile, seguita dall’inversa di Fourier sul controllo. Il periodo serve nell’analisi dello stato prodotto; non viene fornito come dato alla costruzione delle potenze modulari.}
+
+\ExPrediction{Il periodo sei non divide 512. I picchi avranno quindi larghezza finita, e una lettura dovrà essere interpretata con frazioni continue e controlli aritmetici.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\node[circle,draw=Accent,fill=white,minimum size=8mm] (n0) at (0.00000,2.00000) {$ 1 $};\node[circle,draw=Accent,fill=white,minimum size=8mm] (n1) at (1.73205,1.00000) {$ 2 $};\node[circle,draw=Accent,fill=white,minimum size=8mm] (n2) at (1.73205,-1.00000) {$ 4 $};\node[circle,draw=Accent,fill=white,minimum size=8mm] (n3) at (0.00000,-2.00000) {$ 8 $};\node[circle,draw=Accent,fill=white,minimum size=8mm] (n4) at (-1.73205,-1.00000) {$ 16 $};\node[circle,draw=Accent,fill=white,minimum size=8mm] (n5) at (-1.73205,1.00000) {$ 11 $};\draw[exother,bend right=12] (n0) to (n1);\draw[exother,bend right=12] (n1) to (n2);\draw[exother,bend right=12] (n2) to (n3);\draw[exother,bend right=12] (n3) to (n4);\draw[exother,bend right=12] (n4) to (n5);\draw[exother,bend right=12] (n5) to (n0);
+\end{tikzpicture}}{Il ciclo modulo 21 produce sei famiglie di rami, con lunghezze 86 o 85 nel controllo finito.}
+
+
+\begin{ExTasks}
+
+\item Calcolare le costanti delle potenze controllate.
+
+\item Raggruppare lo stato per residui del periodo.
+
+\item Ricavare la probabilità della lettura 85 mediante somme finite.
+
+\item Verificare ordine e fattori.
+
+\item Confrontare una lettura con denominatore ridotto e una base sfavorevole.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Preparare l’esponenziazione}
+
+\ExEq{b_0&=2,\quad b_1=2^2=4,\quad b_2=4^2=16,\\
+b_3&=16^2\bmod21=256-12\cdot21=4.}
+Le quadrature successive alternano 16 e 4: \(b_4,\ldots,b_8=16,4,16,4,16\). Per \(x=\sum_{j=0}^8x_j2^j\), il prodotto delle costanti selezionate è \(2^x\bmod21\). Lo stato diventa
+\ExEq{\ket\Psi&=\frac1{\sqrt{512}}\sum_{x=0}^{511}\ket x\ket{2^x\bmod21}.}
+
+\ExStep{Raggruppare i rami}
+
+L’orbita è \(1,2,4,8,16,11\), con ritorno a 1. Poiché \(512=6\cdot85+2\), i residui j=0,1 compaiono 86 volte; i residui j=2,3,4,5 compaiono 85 volte. Scrivendo \(y_j=2^j\bmod21\), si ha
+\ExEq{\ket\Psi&=\frac1{\sqrt{512}}\sum_{j=0}^5\sum_{k=0}^{L_j-1}\ket{6k+j}\ket{y_j}.}
+
+\ExStep{Applicare Fourier inversa}
+
+\ExEq{A(c,j)&=\frac{e^{-2\pi icj/512}}{512}
+\sum_{k=0}^{L_j-1}z_c^k,\quad z_c=e^{-2\pi i6c/512},\\
+P(c)&=\sum_{j=0}^5|A(c,j)|^2.}
+I sei stati dei dati sono ortogonali, quindi si sommano le probabilità dei sei rami. Per \(z_c\ne1\), la somma è \((1-z_c^{L_j})/(1-z_c)\); per \(z_c=1\), vale \(L_j\).
+
+\ExStep{Calcolare il picco in 85}
+
+\ExEq{6\cdot85&=510,\quad z_{85}=e^{i\pi/128},\\
+P(85)&=\frac{2\sin^2(86\pi/256)+4\sin^2(85\pi/256)}
+{512^2\sin^2(\pi/256)}\\
+&\simeq 0.113989499.}
+Le molteplicità 2 e 4 derivano dai due gruppi di lunghezza 86 e dai quattro di lunghezza 85. Per c=171 il rapporto è coniugato e la probabilità coincide. Per c=0 o 256,
+\ExEq{P(c)&=\frac{2\cdot86^2+4\cdot85^2}{512^2}=\frac{43692}{262144}.}
+
+\ExStep{Ricostruire l’ordine e i fattori}
+
+G4.13 ricava \(85/512=[0;6,42,2]\) e verifica l’ordine r=6. Dunque
+\ExEq{z&=2^{r/2}\bmod21=2^3=8,\\
+\gcd(z-1,21)&=\gcd(7,21)=7,\\
+\gcd(z+1,21)&=\gcd(9,21)=3.}
+L’ultimo MCD si ottiene da \(21=2\cdot9+3\), \(9=3\cdot3\). I due fattori non banali hanno prodotto 21.
+
+\ExStep{Distinguere gli altri rami}
+
+La lettura 171 suggerisce 1/3: il denominatore 3 fallisce perché \(2^3\bmod21=8\). Il ramo c=0 non fornisce una frazione informativa. La distribuzione ha probabilità positiva su tutti i 512 esiti: per \(z_c\ne1\), l’ordine di \(z_c\) è una potenza di due maggiore di uno, che non divide 85; perciò il gruppo di lunghezza 85 ha somma non nulla. Per \(z_c=1\) la somma è direttamente positiva.
+
+\ExStep{Descrivere i dati condizionati}
+
+\ExEq{\ket{\chi_{85}}&=\frac1{\sqrt{P(85)}}\sum_{j=0}^5A(85,j)\ket{y_j}.}
+Questo vettore è normalizzato dalla probabilità del ramo. Poiché la precisione è finita, non coincide esattamente con un singolo autostato della moltiplicazione. Nella decomposizione spettrale sopravvivono più fasi compatibili con la finestra di misura.
+
+\ExStep{Esaminare una base sfavorevole}
+
+Per a=5, l’orbita è \(1,5,4,20,16,17\): \(25=21+4\), \(5\cdot4=20\), \(100=4\cdot21+16\), \(80=3\cdot21+17\), \(85=4\cdot21+1\). L’ordine è sei, ma \(5^3\bmod21=20=-1\bmod21\). Si ottengono \(\gcd(19,21)=1\) e \(\gcd(21,21)=21\), entrambi inutili. È necessario cambiare base. L’ordine pari da solo non basta.
+
+\ExStep{Dichiarare il modello di costo}
+
+Le costanti modulari sono calcolate classicamente senza conoscere l’ordine. Una realizzazione didattica mediante tabelle o mintermini verifica i piccoli esempi, ma non dimostra il costo polinomiale della sintesi generale: quest’ultimo richiede circuiti aritmetici reversibili scalabili.
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel,x=.63cm]
+\draw[exaxis] (-.6,0)--(12.100000000000001,0) node[right] {esito};\draw[exaxis] (-.6,0)--(-.6,3.6) node[above] {$p$};\node[left] at (-.6,3) {$ 0.12 $};\draw[Ink!15,dashed] (-.6,3)--(11.600000000000001,3);\filldraw[fill=Accent!25,draw=Accent] (0.0,0) rectangle (0.65,0.011206665927392659);\node[below] at (0.325,0) {$ 80 $};\filldraw[fill=Accent!25,draw=Accent] (1.1,0) rectangle (1.75,0.016937800114436644);\node[below] at (1.425,0) {$ 81 $};\filldraw[fill=Accent!25,draw=Accent] (2.2,0) rectangle (2.85,0.028573261214600406);\node[below] at (2.5250000000000004,0) {$ 82 $};\filldraw[fill=Accent!25,draw=Accent] (3.3000000000000003,0) rectangle (3.95,0.058233765873313754);\node[below] at (3.6250000000000004,0) {$ 83 $};\filldraw[fill=Accent!25,draw=Accent] (4.4,0) rectangle (5.050000000000001,0.1781819490136379);\node[below] at (4.7250000000000005,0) {$ 84 $};\filldraw[fill=Accent!25,draw=Accent] (5.5,0) rectangle (6.15,2.84973746466339);\node[below] at (5.825,0) {$ 85 $};\filldraw[fill=Accent!25,draw=Accent] (6.6000000000000005,0) rectangle (7.250000000000001,0.7124946547657598);\node[below] at (6.925000000000001,0) {$ 86 $};\filldraw[fill=Accent!25,draw=Accent] (7.700000000000001,0) rectangle (8.350000000000001,0.11406736180944128);\node[below] at (8.025,0) {$ 87 $};\filldraw[fill=Accent!25,draw=Accent] (8.8,0) rectangle (9.450000000000001,0.04460793104762214);\node[below] at (9.125,0) {$ 88 $};\filldraw[fill=Accent!25,draw=Accent] (9.9,0) rectangle (10.55,0.023633949268719055);\node[below] at (10.225,0) {$ 89 $};\filldraw[fill=Accent!25,draw=Accent] (11.0,0) rectangle (11.65,0.01462320723374083);\node[below] at (11.325,0) {$ 90 $};
+\end{tikzpicture}}{Ingrandimento del picco vicino a 512/6. Sono rappresentati solo gli esiti da 80 a 90.}
+
+
+\ExInterpret{L’orbita modulare determina le frequenze; Fourier le rende osservabili con precisione finita; le frazioni continue propongono un denominatore; i test modulari e i MCD ne completano l’interpretazione aritmetica.}
+
+\ExLab{Nelle sezioni 4.23 e 4.24 confrontare N=15 e N=21. Per N=21 leggere la distribuzione completa e i rami condizionati; controllare che c=85 e c=171 abbiano la stessa probabilità pur producendo candidati diversi. Consultare le tabelle complete della sezione 4.24 per gli esiti non mostrati nell’ingrandimento. La tabella completa è raggiungibile a p.\,\pageref{appendix-T4.24.1.1}.}
+
+
+\end{minipage}

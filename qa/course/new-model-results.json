@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "checks": 25816,
+  "modules": [
+    10,
+    32,
+    14,
+    25
+  ],
+  "newWorkedExamples": 146,
+  "independentChecks": [
+    "QFT matrix against gate network",
+    "inverse Fourier",
+    "ripple addition and clean carry history",
+    "modular inverse and products",
+    "RSA all 55 messages",
+    "Shor full distributions against period-class sums",
+    "Simon and discrete logarithm distributions",
+    "Fresnel constants, symmetry, minima, geometric limit"
+  ],
+  "browserInteractionTested": false
+}

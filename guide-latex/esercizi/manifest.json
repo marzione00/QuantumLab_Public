@@ -1,0 +1,1097 @@
+[
+  {
+    "id": "G1.01",
+    "chapter": 1,
+    "number": 1,
+    "title": "Prevedere due moti dagli stessi dati di posizione",
+    "theory": [
+      {
+        "label": "c1-moto",
+        "section": "1.01",
+        "title": "Dati iniziali e previsione del moto"
+      }
+    ],
+    "after_section": 1,
+    "level": "Guida esplicita",
+    "source": "esercizi/modulo-1/G1.01.tex"
+  },
+  {
+    "id": "G1.02",
+    "chapter": 1,
+    "number": 2,
+    "title": "Propagare un'incertezza sulla velocità",
+    "theory": [
+      {
+        "label": "c1-moto",
+        "section": "1.01",
+        "title": "Dati iniziali e previsione del moto"
+      }
+    ],
+    "after_section": 1,
+    "level": "Guida esplicita",
+    "source": "esercizi/modulo-1/G1.02.tex"
+  },
+  {
+    "id": "G1.03",
+    "chapter": 1,
+    "number": 3,
+    "title": "Invertire un moto e ritrovare la preparazione",
+    "theory": [
+      {
+        "label": "c1-loschmidt",
+        "section": "1.02",
+        "title": "Reversibilità e inversione di Loschmidt"
+      }
+    ],
+    "after_section": 2,
+    "level": "Guida esplicita",
+    "source": "esercizi/modulo-1/G1.03.tex"
+  },
+  {
+    "id": "G1.04",
+    "chapter": 1,
+    "number": 4,
+    "title": "Confrontare ritorno ideale e ritorno perturbato",
+    "theory": [
+      {
+        "label": "c1-loschmidt",
+        "section": "1.02",
+        "title": "Reversibilità e inversione di Loschmidt"
+      }
+    ],
+    "after_section": 2,
+    "level": "Guida esplicita",
+    "source": "esercizi/modulo-1/G1.04.tex"
+  },
+  {
+    "id": "G1.05",
+    "chapter": 1,
+    "number": 5,
+    "title": "Sommare due onde con fase assegnata",
+    "theory": [
+      {
+        "label": "c1-onde",
+        "section": "1.03",
+        "title": "Sovrapposizione e fase relativa"
+      }
+    ],
+    "after_section": 3,
+    "level": "Guida esplicita",
+    "source": "esercizi/modulo-1/G1.05.tex"
+  },
+  {
+    "id": "G1.06",
+    "chapter": 1,
+    "number": 6,
+    "title": "Dalle ampiezze all'intensità",
+    "theory": [
+      {
+        "label": "c1-onde",
+        "section": "1.03",
+        "title": "Sovrapposizione e fase relativa"
+      }
+    ],
+    "after_section": 3,
+    "level": "Consolidamento",
+    "source": "esercizi/modulo-1/G1.06.tex"
+  },
+  {
+    "id": "G1.07",
+    "chapter": 1,
+    "number": 7,
+    "title": "Localizzare i minimi per una fenditura stretta",
+    "theory": [
+      {
+        "label": "c1-fenditure",
+        "section": "1.04",
+        "title": "Dai singoli arrivi alla distribuzione"
+      }
+    ],
+    "after_section": 4,
+    "level": "Consolidamento",
+    "source": "esercizi/modulo-1/G1.07.tex"
+  },
+  {
+    "id": "G1.08",
+    "chapter": 1,
+    "number": 8,
+    "title": "Attraversare i regimi della diffrazione",
+    "theory": [
+      {
+        "label": "c1-fenditure",
+        "section": "1.04",
+        "title": "Dai singoli arrivi alla distribuzione"
+      }
+    ],
+    "after_section": 4,
+    "level": "Consolidamento",
+    "source": "esercizi/modulo-1/G1.08.tex"
+  },
+  {
+    "id": "G1.09",
+    "chapter": 1,
+    "number": 9,
+    "title": "Prevedere la trasmissione di un analizzatore",
+    "theory": [
+      {
+        "label": "c1-polarizzazione",
+        "section": "1.05",
+        "title": "Polarizzazione, misura e sfera di Bloch"
+      }
+    ],
+    "after_section": 5,
+    "level": "Consolidamento",
+    "source": "esercizi/modulo-1/G1.09.tex"
+  },
+  {
+    "id": "G1.10",
+    "chapter": 1,
+    "number": 10,
+    "title": "Seguire una preparazione sulla sfera di Bloch",
+    "theory": [
+      {
+        "label": "c1-polarizzazione",
+        "section": "1.05",
+        "title": "Polarizzazione, misura e sfera di Bloch"
+      },
+      {
+        "label": "c1-calcolo",
+        "section": "1.06",
+        "title": "Operazioni su un qubit"
+      }
+    ],
+    "after_section": 6,
+    "level": "Consolidamento",
+    "source": "esercizi/modulo-1/G1.10.tex"
+  },
+  {
+    "id": "G1.11",
+    "chapter": 1,
+    "number": 11,
+    "title": "Preparare, introdurre una fase e ricombinare",
+    "theory": [
+      {
+        "label": "c1-calcolo",
+        "section": "1.06",
+        "title": "Operazioni su un qubit"
+      }
+    ],
+    "after_section": 6,
+    "level": "Collegamento",
+    "source": "esercizi/modulo-1/G1.11.tex"
+  },
+  {
+    "id": "G1.12",
+    "chapter": 1,
+    "number": 12,
+    "title": "Ricavare marginali e correlazioni da una tabella congiunta",
+    "theory": [
+      {
+        "label": "c1-coppie",
+        "section": "1.07",
+        "title": "Statistiche locali e correlazioni"
+      }
+    ],
+    "after_section": 7,
+    "level": "Collegamento",
+    "source": "esercizi/modulo-1/G1.12.tex"
+  },
+  {
+    "id": "G1.13",
+    "chapter": 1,
+    "number": 13,
+    "title": "Seguire l'effetto di un'interazione con l'ambiente",
+    "theory": [
+      {
+        "label": "c1-ambiente",
+        "section": "1.08",
+        "title": "Una coppia entangled incontra l’ambiente"
+      }
+    ],
+    "after_section": 8,
+    "level": "Collegamento",
+    "source": "esercizi/modulo-1/G1.13.tex"
+  },
+  {
+    "id": "G1.14",
+    "chapter": 1,
+    "number": 14,
+    "title": "Stabilire quali dati servano alla previsione successiva",
+    "theory": [
+      {
+        "label": "c1-informazione",
+        "section": "1.09",
+        "title": "Quali dati servono per continuare?"
+      }
+    ],
+    "after_section": 9,
+    "level": "Collegamento",
+    "source": "esercizi/modulo-1/G1.14.tex"
+  },
+  {
+    "id": "G1.15",
+    "chapter": 1,
+    "number": 15,
+    "title": "Ricostruire un esperimento a partire dai suoi risultati",
+    "theory": [
+      {
+        "label": "c1-sintesi",
+        "section": "1.10",
+        "title": "Stessi conteggi, cause differenti"
+      }
+    ],
+    "after_section": 10,
+    "level": "Collegamento",
+    "source": "esercizi/modulo-1/G1.15.tex"
+  },
+  {
+    "id": "G2.01",
+    "chapter": 2,
+    "number": 1,
+    "title": "Passare da componenti complesse a modulo e fase",
+    "theory": [
+      {
+        "label": "c2-complessi",
+        "section": "2.01",
+        "title": "Componenti, modulo e fase"
+      }
+    ],
+    "after_section": 1,
+    "level": "Guida esplicita",
+    "source": "esercizi/modulo-2/G2.01.tex"
+  },
+  {
+    "id": "G2.02",
+    "chapter": 2,
+    "number": 2,
+    "title": "Sommare e moltiplicare due ampiezze",
+    "theory": [
+      {
+        "label": "c2-prodotto-complesso",
+        "section": "2.02",
+        "title": "Sommare e moltiplicare ampiezze"
+      }
+    ],
+    "after_section": 2,
+    "level": "Guida esplicita",
+    "source": "esercizi/modulo-2/G2.02.tex"
+  },
+  {
+    "id": "G2.03",
+    "chapter": 2,
+    "number": 3,
+    "title": "Ricostruire un vettore e normalizzarlo",
+    "theory": [
+      {
+        "label": "c2-basi",
+        "section": "2.03",
+        "title": "Vettori, combinazioni e basi"
+      },
+      {
+        "label": "c2-norma",
+        "section": "2.04",
+        "title": "Lunghezza e normalizzazione"
+      }
+    ],
+    "after_section": 4,
+    "level": "Guida esplicita",
+    "source": "esercizi/modulo-2/G2.03.tex"
+  },
+  {
+    "id": "G2.04",
+    "chapter": 2,
+    "number": 4,
+    "title": "Calcolare prodotti interni e proiezioni",
+    "theory": [
+      {
+        "label": "c2-prodotto-interno",
+        "section": "2.05",
+        "title": "Prodotto interno e ortogonalità"
+      }
+    ],
+    "after_section": 5,
+    "level": "Guida esplicita",
+    "source": "esercizi/modulo-2/G2.04.tex"
+  },
+  {
+    "id": "G2.05",
+    "chapter": 2,
+    "number": 5,
+    "title": "Costruire una base con Gram–Schmidt",
+    "theory": [
+      {
+        "label": "c2-proiezioni",
+        "section": "2.06",
+        "title": "Costruire direzioni ortonormali"
+      }
+    ],
+    "after_section": 6,
+    "level": "Guida esplicita",
+    "source": "esercizi/modulo-2/G2.05.tex"
+  },
+  {
+    "id": "G2.06",
+    "chapter": 2,
+    "number": 6,
+    "title": "Leggere una matrice attraverso le immagini della base",
+    "theory": [
+      {
+        "label": "c2-matrici",
+        "section": "2.07",
+        "title": "La matrice attraverso le sue colonne"
+      },
+      {
+        "label": "c2-nucleo",
+        "section": "2.08",
+        "title": "Informazione perduta: nucleo e immagine"
+      }
+    ],
+    "after_section": 8,
+    "level": "Consolidamento",
+    "source": "esercizi/modulo-2/G2.06.tex"
+  },
+  {
+    "id": "G2.07",
+    "chapter": 2,
+    "number": 7,
+    "title": "Confrontare due ordini di composizione",
+    "theory": [
+      {
+        "label": "c2-composizione",
+        "section": "2.09",
+        "title": "Seguire l’ordine delle operazioni"
+      }
+    ],
+    "after_section": 9,
+    "level": "Consolidamento",
+    "source": "esercizi/modulo-2/G2.07.tex"
+  },
+  {
+    "id": "G2.08",
+    "chapter": 2,
+    "number": 8,
+    "title": "Cambiare coordinate mantenendo lo stesso oggetto",
+    "theory": [
+      {
+        "label": "c2-cambio-base",
+        "section": "2.10",
+        "title": "Descrivere una trasformazione in un’altra base"
+      }
+    ],
+    "after_section": 10,
+    "level": "Consolidamento",
+    "source": "esercizi/modulo-2/G2.08.tex"
+  },
+  {
+    "id": "G2.09",
+    "chapter": 2,
+    "number": 9,
+    "title": "Costruire l'aggiunto e verificare l'unitarietà",
+    "theory": [
+      {
+        "label": "c2-aggiunto",
+        "section": "2.11",
+        "title": "Aggiunto e conservazione della norma"
+      }
+    ],
+    "after_section": 11,
+    "level": "Consolidamento",
+    "source": "esercizi/modulo-2/G2.09.tex"
+  },
+  {
+    "id": "G2.10",
+    "chapter": 2,
+    "number": 10,
+    "title": "Ricavare autovalori, autovettori e proiettori",
+    "theory": [
+      {
+        "label": "c2-spettro",
+        "section": "2.12",
+        "title": "Riconoscere un’autodirezione"
+      },
+      {
+        "label": "c2-base-propria",
+        "section": "2.13",
+        "title": "Costruire una base di autovettori"
+      },
+      {
+        "label": "c2-proiettori",
+        "section": "2.14",
+        "title": "Separare e ricomporre le componenti"
+      },
+      {
+        "label": "c2-funzioni-matrice",
+        "section": "2.15",
+        "title": "Calcolare con la decomposizione spettrale"
+      }
+    ],
+    "after_section": 15,
+    "level": "Consolidamento",
+    "source": "esercizi/modulo-2/G2.10.tex"
+  },
+  {
+    "id": "G2.11",
+    "chapter": 2,
+    "number": 11,
+    "title": "Dagli eventi a media e varianza",
+    "theory": [
+      {
+        "label": "c2-eventi",
+        "section": "2.16",
+        "title": "Dagli esiti agli eventi"
+      },
+      {
+        "label": "c2-distribuzioni",
+        "section": "2.17",
+        "title": "Normalizzare e raggruppare i pesi"
+      },
+      {
+        "label": "c2-momenti",
+        "section": "2.18",
+        "title": "Media e dispersione"
+      },
+      {
+        "label": "c2-frequenze",
+        "section": "2.19",
+        "title": "Ripetizioni, conteggi e frequenze"
+      },
+      {
+        "label": "c2-condizionamento",
+        "section": "2.20",
+        "title": "Selezionare un’informazione"
+      }
+    ],
+    "after_section": 20,
+    "level": "Collegamento",
+    "source": "esercizi/modulo-2/G2.11.tex"
+  },
+  {
+    "id": "G2.12",
+    "chapter": 2,
+    "number": 12,
+    "title": "Preparare uno stato e renderne osservabile la fase",
+    "theory": [
+      {
+        "label": "c2-stati",
+        "section": "2.21",
+        "title": "Preparare un vettore di stato"
+      },
+      {
+        "label": "c2-bra",
+        "section": "2.22",
+        "title": "Dal ket al bra"
+      },
+      {
+        "label": "c2-fase",
+        "section": "2.23",
+        "title": "Fase relativa e interferenza"
+      },
+      {
+        "label": "c2-born",
+        "section": "2.24",
+        "title": "Calcolare una misura proiettiva"
+      },
+      {
+        "label": "c2-unitarie",
+        "section": "2.25",
+        "title": "Trasformare le ampiezze"
+      }
+    ],
+    "after_section": 25,
+    "level": "Collegamento",
+    "source": "esercizi/modulo-2/G2.12.tex"
+  },
+  {
+    "id": "G2.13",
+    "chapter": 2,
+    "number": 13,
+    "title": "Svolgere integralmente una misura di un'osservabile",
+    "theory": [
+      {
+        "label": "c2-osservabili",
+        "section": "2.26",
+        "title": "Esiti, valore medio e varianza"
+      },
+      {
+        "label": "c2-incompatibilita",
+        "section": "2.27",
+        "title": "Due misure in successione"
+      },
+      {
+        "label": "c2-esperimento",
+        "section": "2.28",
+        "title": "Un esperimento completo"
+      }
+    ],
+    "after_section": 28,
+    "level": "Collegamento",
+    "source": "esercizi/modulo-2/G2.13.tex"
+  },
+  {
+    "id": "G2.14",
+    "chapter": 2,
+    "number": 14,
+    "title": "Costruire uno stato composto e applicare una porta locale",
+    "theory": [
+      {
+        "label": "c2-tensore",
+        "section": "2.29",
+        "title": "Costruire le quattro ampiezze"
+      },
+      {
+        "label": "c2-porte-locali",
+        "section": "2.30",
+        "title": "Agire su un solo sistema"
+      }
+    ],
+    "after_section": 30,
+    "level": "Collegamento",
+    "source": "esercizi/modulo-2/G2.14.tex"
+  },
+  {
+    "id": "G2.15",
+    "chapter": 2,
+    "number": 15,
+    "title": "Distinguere stato prodotto ed entanglement",
+    "theory": [
+      {
+        "label": "c2-separabilita",
+        "section": "2.31",
+        "title": "Riconoscere uno stato prodotto"
+      },
+      {
+        "label": "c2-composti",
+        "section": "2.32",
+        "title": "Misure congiunte e correlazioni"
+      }
+    ],
+    "after_section": 32,
+    "level": "Collegamento",
+    "source": "esercizi/modulo-2/G2.15.tex"
+  },
+  {
+    "id": "G3.01",
+    "chapter": 3,
+    "number": 1,
+    "title": "Tradurre un circuito nella sequenza delle operazioni",
+    "theory": [
+      {
+        "label": "c3-programma",
+        "section": "3.01",
+        "title": "Leggere un circuito"
+      }
+    ],
+    "after_section": 1,
+    "level": "Guida esplicita",
+    "source": "esercizi/modulo-3/G3.01.tex"
+  },
+  {
+    "id": "G3.02",
+    "chapter": 3,
+    "number": 2,
+    "title": "Costruire la versione reversibile di una piccola funzione",
+    "theory": [
+      {
+        "label": "c3-reversibilita",
+        "section": "3.02",
+        "title": "Conservare l’informazione"
+      }
+    ],
+    "after_section": 2,
+    "level": "Guida esplicita",
+    "source": "esercizi/modulo-3/G3.02.tex"
+  },
+  {
+    "id": "G3.03",
+    "chapter": 3,
+    "number": 3,
+    "title": "Applicare X, Z e H agli stessi stati",
+    "theory": [
+      {
+        "label": "c3-porte",
+        "section": "3.03",
+        "title": "Operazioni su un qubit"
+      }
+    ],
+    "after_section": 3,
+    "level": "Guida esplicita",
+    "source": "esercizi/modulo-3/G3.03.tex"
+  },
+  {
+    "id": "G3.04",
+    "chapter": 3,
+    "number": 4,
+    "title": "Preparare uno stato assegnato",
+    "theory": [
+      {
+        "label": "c3-preparazione",
+        "section": "3.04",
+        "title": "Preparare uno stato assegnato"
+      }
+    ],
+    "after_section": 4,
+    "level": "Guida esplicita",
+    "source": "esercizi/modulo-3/G3.04.tex"
+  },
+  {
+    "id": "G3.05",
+    "chapter": 3,
+    "number": 5,
+    "title": "Costruire e verificare l'inversa di un circuito",
+    "theory": [
+      {
+        "label": "c3-inversa",
+        "section": "3.05",
+        "title": "Comporre e invertire un programma"
+      }
+    ],
+    "after_section": 5,
+    "level": "Guida esplicita",
+    "source": "esercizi/modulo-3/G3.05.tex"
+  },
+  {
+    "id": "G3.06",
+    "chapter": 3,
+    "number": 6,
+    "title": "Calcolare un interferometro con fase π/3",
+    "theory": [
+      {
+        "label": "c3-interferometro",
+        "section": "3.06",
+        "title": "Rendere osservabile una fase"
+      }
+    ],
+    "after_section": 6,
+    "level": "Consolidamento",
+    "source": "esercizi/modulo-3/G3.06.tex"
+  },
+  {
+    "id": "G3.07",
+    "chapter": 3,
+    "number": 7,
+    "title": "Applicare una porta al filo corretto",
+    "theory": [
+      {
+        "label": "c3-registro",
+        "section": "3.07",
+        "title": "Operare su un registro"
+      }
+    ],
+    "after_section": 7,
+    "level": "Consolidamento",
+    "source": "esercizi/modulo-3/G3.07.tex"
+  },
+  {
+    "id": "G3.08",
+    "chapter": 3,
+    "number": 8,
+    "title": "Seguire CNOT su base e sovrapposizione",
+    "theory": [
+      {
+        "label": "c3-registro",
+        "section": "3.07",
+        "title": "Operare su un registro"
+      }
+    ],
+    "after_section": 7,
+    "level": "Consolidamento",
+    "source": "esercizi/modulo-3/G3.08.tex"
+  },
+  {
+    "id": "G3.09",
+    "chapter": 3,
+    "number": 9,
+    "title": "Preparare e misurare uno stato di Bell",
+    "theory": [
+      {
+        "label": "c3-bell",
+        "section": "3.08",
+        "title": "Costruire e misurare entanglement"
+      }
+    ],
+    "after_section": 8,
+    "level": "Consolidamento",
+    "source": "esercizi/modulo-3/G3.09.tex"
+  },
+  {
+    "id": "G3.10",
+    "chapter": 3,
+    "number": 10,
+    "title": "Usare e ripulire un'ancilla",
+    "theory": [
+      {
+        "label": "c3-ausiliari",
+        "section": "3.09",
+        "title": "Calcolare, marcare e ripristinare"
+      }
+    ],
+    "after_section": 9,
+    "level": "Consolidamento",
+    "source": "esercizi/modulo-3/G3.10.tex"
+  },
+  {
+    "id": "G3.11",
+    "chapter": 3,
+    "number": 11,
+    "title": "Verificare una porta composta",
+    "theory": [
+      {
+        "label": "c3-sintesi",
+        "section": "3.10",
+        "title": "Costruire una porta composta"
+      }
+    ],
+    "after_section": 10,
+    "level": "Collegamento",
+    "source": "esercizi/modulo-3/G3.11.tex"
+  },
+  {
+    "id": "G3.12",
+    "chapter": 3,
+    "number": 12,
+    "title": "Svolgere i quattro casi di Deutsch",
+    "theory": [
+      {
+        "label": "c3-deutsch",
+        "section": "3.11",
+        "title": "Deutsch e il ritorno di fase"
+      }
+    ],
+    "after_section": 11,
+    "level": "Collegamento",
+    "source": "esercizi/modulo-3/G3.12.tex"
+  },
+  {
+    "id": "G3.13",
+    "chapter": 3,
+    "number": 13,
+    "title": "Eseguire una ricerca fra quattro alternative",
+    "theory": [
+      {
+        "label": "c3-grover-primo",
+        "section": "3.12",
+        "title": "Una ricerca fra quattro alternative"
+      }
+    ],
+    "after_section": 12,
+    "level": "Collegamento",
+    "source": "esercizi/modulo-3/G3.13.tex"
+  },
+  {
+    "id": "G3.14",
+    "chapter": 3,
+    "number": 14,
+    "title": "Seguire un'evoluzione e la sua inversa",
+    "theory": [
+      {
+        "label": "c3-evoluzione",
+        "section": "3.13",
+        "title": "Simulare un’evoluzione"
+      }
+    ],
+    "after_section": 13,
+    "level": "Collegamento",
+    "source": "esercizi/modulo-3/G3.14.tex"
+  },
+  {
+    "id": "G3.15",
+    "chapter": 3,
+    "number": 15,
+    "title": "Verificare un programma completo",
+    "theory": [
+      {
+        "label": "c3-programma-completo",
+        "section": "3.14",
+        "title": "Verificare un programma completo"
+      }
+    ],
+    "after_section": 14,
+    "level": "Collegamento",
+    "source": "esercizi/modulo-3/G3.15.tex"
+  },
+  {
+    "id": "G4.01",
+    "chapter": 4,
+    "number": 1,
+    "title": "Ricostruire l'interferenza in Deutsch–Jozsa e Bernstein–Vazirani",
+    "theory": [
+      {
+        "label": "c4-deutsch-jozsa",
+        "section": "4.01",
+        "title": "Deutsch–Jozsa"
+      },
+      {
+        "label": "c4-bernstein-vazirani",
+        "section": "4.02",
+        "title": "Bernstein–Vazirani"
+      }
+    ],
+    "after_section": 2,
+    "level": "Guida esplicita",
+    "source": "esercizi/modulo-4/G4.01.tex"
+  },
+  {
+    "id": "G4.02",
+    "chapter": 4,
+    "number": 2,
+    "title": "Recuperare il periodo binario di Simon",
+    "theory": [
+      {
+        "label": "c4-simon",
+        "section": "4.03",
+        "title": "Simon e le equazioni binarie"
+      }
+    ],
+    "after_section": 3,
+    "level": "Guida esplicita",
+    "source": "esercizi/modulo-4/G4.02.tex"
+  },
+  {
+    "id": "G4.03",
+    "chapter": 4,
+    "number": 3,
+    "title": "Stimare una sovrapposizione mediante SWAP test",
+    "theory": [
+      {
+        "label": "c4-swap",
+        "section": "4.04",
+        "title": "SWAP test"
+      }
+    ],
+    "after_section": 4,
+    "level": "Guida esplicita",
+    "source": "esercizi/modulo-4/G4.03.tex"
+  },
+  {
+    "id": "G4.04",
+    "chapter": 4,
+    "number": 4,
+    "title": "Ricostruire Grover come due riflessioni",
+    "theory": [
+      {
+        "label": "c4-grover",
+        "section": "4.05",
+        "title": "Grover: iterazioni e sovrarotazione"
+      },
+      {
+        "label": "c4-amplificazione",
+        "section": "4.07",
+        "title": "Amplificare una preparazione assegnata"
+      }
+    ],
+    "after_section": 7,
+    "level": "Guida esplicita",
+    "source": "esercizi/modulo-4/G4.04.tex"
+  },
+  {
+    "id": "G4.05",
+    "chapter": 4,
+    "number": 5,
+    "title": "Seguire una ricerca con budget e soglia variabile",
+    "theory": [
+      {
+        "label": "c4-ricerca-ignota",
+        "section": "4.06",
+        "title": "Ricerca con numero ignoto di soluzioni"
+      },
+      {
+        "label": "c4-minimo",
+        "section": "4.08",
+        "title": "Ricercare un minimo"
+      }
+    ],
+    "after_section": 8,
+    "level": "Guida esplicita",
+    "source": "esercizi/modulo-4/G4.05.tex"
+  },
+  {
+    "id": "G4.06",
+    "chapter": 4,
+    "number": 6,
+    "title": "Costruire una Fourier a quattro livelli",
+    "theory": [
+      {
+        "label": "c4-fourier",
+        "section": "4.09",
+        "title": "Sommare le fasi di Fourier"
+      },
+      {
+        "label": "c4-qft",
+        "section": "4.10",
+        "title": "Costruire il circuito QFT"
+      }
+    ],
+    "after_section": 10,
+    "level": "Consolidamento",
+    "source": "esercizi/modulo-4/G4.06.tex"
+  },
+  {
+    "id": "G4.07",
+    "chapter": 4,
+    "number": 7,
+    "title": "Leggere un'autofase esatta",
+    "theory": [
+      {
+        "label": "c4-hadamard-test",
+        "section": "4.11",
+        "title": "Hadamard test"
+      },
+      {
+        "label": "c4-qpe-esatta",
+        "section": "4.12",
+        "title": "Stima di fase esatta"
+      }
+    ],
+    "after_section": 12,
+    "level": "Consolidamento",
+    "source": "esercizi/modulo-4/G4.07.tex"
+  },
+  {
+    "id": "G4.08",
+    "chapter": 4,
+    "number": 8,
+    "title": "Calcolare una fase non rappresentabile esattamente",
+    "theory": [
+      {
+        "label": "c4-qpe-approssimata",
+        "section": "4.13",
+        "title": "Stima di fase a precisione finita"
+      }
+    ],
+    "after_section": 13,
+    "level": "Consolidamento",
+    "source": "esercizi/modulo-4/G4.08.tex"
+  },
+  {
+    "id": "G4.09",
+    "chapter": 4,
+    "number": 9,
+    "title": "Dalle autofasi di Grover al conteggio",
+    "theory": [
+      {
+        "label": "c4-conteggio",
+        "section": "4.14",
+        "title": "Conteggio quantistico"
+      },
+      {
+        "label": "c4-stima-ampiezze",
+        "section": "4.15",
+        "title": "Stimare una probabilità"
+      }
+    ],
+    "after_section": 15,
+    "level": "Consolidamento",
+    "source": "esercizi/modulo-4/G4.09.tex"
+  },
+  {
+    "id": "G4.10",
+    "chapter": 4,
+    "number": 10,
+    "title": "Costruire RSA e recuperare la chiave dai fattori",
+    "theory": [
+      {
+        "label": "c4-aritmetica",
+        "section": "4.16",
+        "title": "Euclide, inversi e potenze modulari"
+      },
+      {
+        "label": "c4-rsa",
+        "section": "4.17",
+        "title": "RSA e recupero della chiave dai fattori"
+      },
+      {
+        "label": "c4-ordine-fattori",
+        "section": "4.18",
+        "title": "Dall’ordine ai fattori"
+      }
+    ],
+    "after_section": 18,
+    "level": "Consolidamento",
+    "source": "esercizi/modulo-4/G4.10.tex"
+  },
+  {
+    "id": "G4.11",
+    "chapter": 4,
+    "number": 11,
+    "title": "Verificare somma e moltiplicazione modulari reversibili",
+    "theory": [
+      {
+        "label": "c4-somma",
+        "section": "4.19",
+        "title": "Sommare conservando i riporti"
+      },
+      {
+        "label": "c4-moltiplicazione",
+        "section": "4.20",
+        "title": "Moltiplicare ed esponenziare modulo N"
+      }
+    ],
+    "after_section": 20,
+    "level": "Collegamento",
+    "source": "esercizi/modulo-4/G4.11.tex"
+  },
+  {
+    "id": "G4.12",
+    "chapter": 4,
+    "number": 12,
+    "title": "Costruire gli autostati di un'orbita modulare",
+    "theory": [
+      {
+        "label": "c4-autostati",
+        "section": "4.21",
+        "title": "Autostati della moltiplicazione modulare"
+      }
+    ],
+    "after_section": 21,
+    "level": "Collegamento",
+    "source": "esercizi/modulo-4/G4.12.tex"
+  },
+  {
+    "id": "G4.13",
+    "chapter": 4,
+    "number": 13,
+    "title": "Ricostruire e verificare un denominatore",
+    "theory": [
+      {
+        "label": "c4-frazioni-continue",
+        "section": "4.22",
+        "title": "Ricostruire un denominatore"
+      }
+    ],
+    "after_section": 22,
+    "level": "Collegamento",
+    "source": "esercizi/modulo-4/G4.13.tex"
+  },
+  {
+    "id": "G4.14",
+    "chapter": 4,
+    "number": 14,
+    "title": "Svolgere Shor per N = 15",
+    "theory": [
+      {
+        "label": "c4-shor-15",
+        "section": "4.23",
+        "title": "Shor completo: fattorizzare 15"
+      }
+    ],
+    "after_section": 23,
+    "level": "Collegamento",
+    "source": "esercizi/modulo-4/G4.14.tex"
+  },
+  {
+    "id": "G4.15",
+    "chapter": 4,
+    "number": 15,
+    "title": "Svolgere Shor per N = 21",
+    "theory": [
+      {
+        "label": "c4-shor-21",
+        "section": "4.24",
+        "title": "Shor completo: fattorizzare 21"
+      }
+    ],
+    "after_section": 24,
+    "level": "Collegamento",
+    "source": "esercizi/modulo-4/G4.15.tex"
+  }
+]

@@ -1,0 +1,82 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G3.15}{Verificare un programma completo}{Collegamento}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Preparare \((2\ket0+i\ket1)/\sqrt5\) sul primo qubit e \(\ket0\) sul secondo. Applicare S al primo, H al primo, CNOT dal primo al secondo e H al secondo. Calcolare tutti gli stati, la distribuzione finale e gli stati condizionati. Confrontare con \(S^\dagger\) al posto di S.
+
+\ExTheory{\ExRef{c3-programma-completo}{3.14}}{Si ha \(S=P(\pi/2)=\operatorname{diag}(1,i)\). L’ultima H trasforma una lettura X del secondo qubit in una lettura Z. La base del registro è \(00,01,10,11\); si conserva lo stato congiunto anche dopo CNOT.}
+
+\ExPrediction{La fase iniziale i e la porta S producono un segno reale. La prima H renderà le due probabilità del controllo molto diverse; CNOT trasferirà tale struttura nelle correlazioni.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\node[exbox] (n0) at (0.0,0.0) {prepara $(2,i)/\sqrt5$};\node[exbox] (n1) at (3.6,0.0) {$S$ e $H$ sul primo};\draw[exother] (n0)--(n1);\node[exbox] (n2) at (7.2,0.0) {CNOT};\draw[exother] (n1)--(n2);\node[exbox] (n3) at (0.0,-1.6) {$H$ sul secondo};\draw[exother] (n2.south)--++(0,-.4)-|(n3.north);\node[exbox] (n4) at (3.6,-1.6) {lettura Z,Z};\draw[exother] (n3)--(n4);
+\end{tikzpicture}}{Programma completo, con la base di lettura incorporata nel circuito.}
+
+
+\begin{ExTasks}
+
+\item Scrivere il vettore iniziale a quattro componenti.
+
+\item Applicare S e poi H al primo qubit.
+
+\item Applicare CNOT.
+
+\item Applicare H al secondo qubit.
+
+\item Calcolare probabilità, marginali e stati condizionati.
+
+\item Ripetere il circuito con \(S^\dagger\).
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Preparazione}
+
+\ExEq{\ket{\Psi_0}&=\frac1{\sqrt5}\colv{2\\0\\i\\0}.}
+La norma è \((4+1)/5=1\).
+
+\ExStep{Fase e prima ricombinazione}
+
+S moltiplica per i le componenti con primo bit uno:
+\ExEq{\ket{\Psi_1}&=\frac1{\sqrt5}\colv{2\\0\\-1\\0},\\
+\ket{\Psi_2}&=\frac1{\sqrt{10}}\colv{2-1\\0+0\\2+1\\0-0}
+=\frac1{\sqrt{10}}\colv{1\\0\\3\\0}.}
+
+\ExStep{Applicare CNOT}
+
+Le componenti 10 e 11 si scambiano:
+\ExEq{\ket{\Psi_3}&=\frac1{\sqrt{10}}\colv{1\\0\\0\\3}
+=\frac{\ket{00}+3\ket{11}}{\sqrt{10}}.}
+La matrice dei coefficienti ha determinante \(3/10\ne0\), quindi lo stato è entangled.
+
+\ExStep{Leggere il secondo qubit in X}
+
+\ExEq{\ket{\Psi_f}&=\frac1{\sqrt{20}}\colv{1+0\\1-0\\0+3\\0-3}
+=\frac1{\sqrt{20}}\colv{1\\1\\3\\-3}.}
+I quattro moduli quadri sono \(1/20,1/20,9/20,9/20\), che sommano a uno.
+
+\ExStep{Calcolare marginali e rami}
+
+La marginale del primo qubit è \((2/20,18/20)=(1/10,9/10)\); quella del secondo è \((10/20,10/20)=(1/2,1/2)\). Prima della H di lettura, condizionare A=0 dà B nello stato \(\ket0\), mentre A=1 dà \(\ket1\). Dopo la H gli stati condizionati sono \(\ket+\) e \(\ket-\), ottenuti dividendo i rispettivi vettori per \(\sqrt{1/10}\) e \(\sqrt{9/10}\).
+
+\ExStep{Verificare la variante}
+
+Con \(S^\dagger\), il prodotto \((-i)i=1\) porta il primo qubit in \((2,1)^T/\sqrt5\). Dopo H si ottiene \((3,1)^T/\sqrt{10}\); dopo CNOT il registro è \((3,0,0,1)^T/\sqrt{10}\); dopo la H finale,
+\ExEq{\ket{\widetilde\Psi_f}&=(3,3,1,-1)^T/\sqrt{20}.}
+La distribuzione è \((9/20,9/20,1/20,1/20)\). La marginale del controllo si scambia, quella del secondo qubit resta uniforme.
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-.6,0)--(4.4,0) node[right] {esito};\draw[exaxis] (-.6,0)--(-.6,3.6) node[above] {$p$};\node[left] at (-.6,3) {$ 1 $};\draw[Ink!15,dashed] (-.6,3)--(3.9000000000000004,3);\filldraw[fill=Accent!25,draw=Accent] (0.0,0) rectangle (0.65,0.15000000000000002);\node[below] at (0.325,0) {$ 00 $};\node[above] at (0.325,0.15000000000000002) {$ 0.05 $};\filldraw[fill=Accent!25,draw=Accent] (1.1,0) rectangle (1.75,0.15000000000000002);\node[below] at (1.425,0) {$ 01 $};\node[above] at (1.425,0.15000000000000002) {$ 0.05 $};\filldraw[fill=Accent!25,draw=Accent] (2.2,0) rectangle (2.85,1.35);\node[below] at (2.5250000000000004,0) {$ 10 $};\node[above] at (2.5250000000000004,1.35) {$ 0.45 $};\filldraw[fill=Accent!25,draw=Accent] (3.3000000000000003,0) rectangle (3.95,1.35);\node[below] at (3.6250000000000004,0) {$ 11 $};\node[above] at (3.6250000000000004,1.35) {$ 0.45 $};
+\end{tikzpicture}}{Distribuzione finale per S. La variante con \(S^\dagger\) scambia i due gruppi del primo bit.}
+
+
+\ExInterpret{La verifica segue preparazione, interferenza, correlazione e lettura. La marginale uniforme del secondo qubit è compatibile con stati condizionati differenti: il registro completo conserva tale distinzione.}
+
+\ExLab{Nella sezione 3.14 confrontare «Programma con S» e «Variante con \(S^\dagger\)». Seguire tutti i vettori intermedi e verificare le probabilità esatte \(1/20\) e \(9/20\), oltre ai decimali mostrati.}
+
+
+\end{minipage}

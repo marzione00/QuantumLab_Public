@@ -1,29 +1,77 @@
 [
   {
     "file": "Guida_corso.pdf",
-    "pages": 133,
-    "figures": 71,
+    "pages": 1184,
+    "figures": 737,
     "outsidePage": [],
     "missingGlyphs": 0,
-    "demonstrations": 28,
-    "links": 56
+    "demonstrations": 81,
+    "links": 526,
+    "formulasVerified": 1491,
+    "dataRowsVerified": 5810,
+    "embeddedFontCount": 1549,
+    "overfullBoxes": 0,
+    "format": "B5",
+    "theme": "ArsClassica 01 Classica"
   },
   {
     "file": "Guida_capitolo_1.pdf",
-    "pages": 41,
+    "pages": 85,
     "figures": 22,
     "outsidePage": [],
     "missingGlyphs": 0,
     "demonstrations": 10,
-    "links": 20
+    "links": 88,
+    "formulasVerified": 0,
+    "dataRowsVerified": 4,
+    "embeddedFontCount": 72,
+    "overfullBoxes": 0,
+    "format": "B5",
+    "theme": "ArsClassica 01 Classica"
   },
   {
     "file": "Guida_capitolo_2.pdf",
-    "pages": 93,
-    "figures": 49,
+    "pages": 233,
+    "figures": 234,
     "outsidePage": [],
     "missingGlyphs": 0,
-    "demonstrations": 18,
-    "links": 36
+    "demonstrations": 32,
+    "links": 126,
+    "formulasVerified": 381,
+    "dataRowsVerified": 0,
+    "embeddedFontCount": 628,
+    "overfullBoxes": 0,
+    "format": "B5",
+    "theme": "ArsClassica 01 Classica"
+  },
+  {
+    "file": "Guida_capitolo_3.pdf",
+    "pages": 193,
+    "figures": 221,
+    "outsidePage": [],
+    "missingGlyphs": 0,
+    "demonstrations": 14,
+    "links": 91,
+    "formulasVerified": 227,
+    "dataRowsVerified": 0,
+    "embeddedFontCount": 413,
+    "overfullBoxes": 0,
+    "format": "B5",
+    "theme": "ArsClassica 01 Classica"
+  },
+  {
+    "file": "Guida_capitolo_4.pdf",
+    "pages": 680,
+    "figures": 260,
+    "outsidePage": [],
+    "missingGlyphs": 0,
+    "demonstrations": 25,
+    "links": 224,
+    "formulasVerified": 883,
+    "dataRowsVerified": 5806,
+    "embeddedFontCount": 576,
+    "overfullBoxes": 0,
+    "format": "B5",
+    "theme": "ArsClassica 01 Classica"
   }
 ]

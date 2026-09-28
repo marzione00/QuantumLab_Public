@@ -1,0 +1,108 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G4.14}{Svolgere Shor per \(N=15\)}{Collegamento}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Fattorizzare \(N=15\) scegliendo \(a=2\). Il registro di lettura ha \(m=8\) qubit, quindi \(Q=256\); il registro dati ha quattro qubit e parte da \(\ket1\). Analizzare il ramo con \(c=64\), poi analizzare gli esiti \(c=0\), \(128\) e \(192\). L’ordine di 2 modulo 15 deve essere ricostruito e verificato.
+
+\ExTheory{\ExRef{c4-shor-15}{4.23}}{La moltiplicazione modulare agisce come \(U_a\ket y=\ket{ay\bmod N}\) sui residui validi; le parole \(y\geq N\) restano fisse. La Fourier inversa usa \(Q^{-1/2}e^{-2\pi icx/Q}\). Un candidato ordine \(r\) si verifica mediante \(a^r\equiv1\pmod N\); se \(r\) è pari e \(a^{r/2}\not\equiv\pm1\), i fattori si cercano con \(\gcd(a^{r/2}\pm1,N)\). Si vedano anche \ExRef{c4-autostati}{4.21} e \ExRef{c4-frazioni-continue}{4.22}.}
+
+\ExPrediction{Il registro dati seguirà un ciclo finito di residui. Una periodicità esatta compatibile con la griglia di Fourier produrrà picchi stretti. Individuare prima le operazioni consentite dai dati \(N,a,m\), senza usare un periodo come parametro del circuito.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel,y=.85cm]
+\node[exbox] (n0) at (0.0,0.0) {$\ket0^{\otimes8}\ket1$};\node[exbox] (n1) at (3.6,0.0) {$H^{\otimes8}$};\draw[exother] (n0)--(n1);\node[exbox] (n2) at (7.2,0.0) {$2^x\bmod15$};\draw[exother] (n1)--(n2);\node[exbox] (n3) at (0.0,-1.6) {$F_{256}^{\dagger}$};\draw[exother] (n2.south)--++(0,-.4)-|(n3.north);\node[exbox] (n4) at (3.6,-1.6) {$c/256$};\draw[exother] (n3)--(n4);\node[exbox] (n5) at (7.2,-1.6) {ordine e gcd};\draw[exother] (n4)--(n5);
+\end{tikzpicture}}{Preparazione operativa e trattamento classico. Le potenze modulari dipendono da \(N,a,m\); l’ordine viene verificato dopo la lettura.}
+
+
+\begin{ExTasks}\setlength{\itemsep}{0pt}
+
+\item Verificare la coprimalità e costruire le otto potenze modulari controllate.
+
+\item Scrivere lo stato dopo le Hadamard e dopo l’esponenziazione.
+
+\item Ricavare l’orbita dai residui calcolati e raggruppare i termini dello stato.
+
+\item Applicare la Fourier inversa, distinguendo ampiezze congiunte e probabilità marginali.
+
+\item Per \(c=64\), costruire la frazione continua e verificare il candidato ordine.
+
+\item Calcolare entrambi i massimi comuni divisori e controllare il prodotto dei fattori.
+
+\item Classificare gli altri esiti e calcolare la probabilità di successo.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Costruire i dati classici del circuito}
+
+L’algoritmo di Euclide dà \(15=7\cdot2+1\) e \(2=2\cdot1+0\), dunque \(\gcd(2,15)=1\). La precisione soddisfa \(15^2=225\leq256<450=2\cdot15^2\).
+\ExEq{b_0&=2\bmod15=2,\\b_1&=b_0^2\bmod15=4,\\b_2&=b_1^2\bmod15=16\bmod15=1,\\b_3&=1^2\bmod15=1,\quad b_4=b_5=b_6=b_7=1.}
+Il bit \(x_j\) di peso \(2^j\) controlla la moltiplicazione per \(b_j\); nella convenzione big-endian appartiene al filo \(q_{7-j}\). I controlli con moltiplicatore uno sono identità. Queste potenze si ottengono per quadrature, senza conoscere l’ordine.
+
+\ExStep{Preparare e trasformare i registri}
+
+Le otto Hadamard producono
+\ExEq{\ket{\Psi_0}&=\ket0^{\otimes8}\ket1,\\
+\ket{\Psi_1}&=\frac1{\sqrt{256}}\sum_{x=0}^{255}\ket x\ket1
+=\frac1{16}\sum_{x=0}^{255}\ket x\ket1.}
+Scrivendo \(x=\sum_{j=0}^{7}x_j2^j\), le moltiplicazioni controllate danno
+\ExEq{\prod_{j=0}^{7}b_j^{x_j}&\equiv\prod_{j=0}^{7}2^{x_j2^j}
+=2^{\sum_jx_j2^j}=2^x\pmod{15},\\
+\ket{\Psi_2}&=\frac1{16}\sum_{x=0}^{255}\ket x\ket{2^x\bmod15}.}
+La norma è \(256\cdot(1/16)^2=1\), perché i 256 valori del primo registro sono ortogonali.
+
+\ExStep{Riconoscere la struttura dei residui}
+
+Calcolando in successione si ottiene \(1\mapsto2\mapsto4\mapsto8\mapsto16\bmod15=1\). Questo controllo permette di interpretare lo stato già costruito. I gruppi sono
+\ExEq{x=4k&\Rightarrow y=1,\qquad x=4k+1\Rightarrow y=2,\\
+x=4k+2&\Rightarrow y=4,\qquad x=4k+3\Rightarrow y=8,}
+con \(k=0,\ldots,63\). Quindi
+\ExEq{\ket{\Psi_2}&=\frac1{16}\sum_{j=0}^{3}\sum_{k=0}^{63}\ket{4k+j}\ket{2^j\bmod15}.}
+Non occorre misurare il bersaglio: i quattro gruppi rimangono nello stato congiunto.
+
+\ExStep{Calcolare le ampiezze dopo Fourier}
+
+Per l’esito di lettura \(c\) e il residuo del gruppo \(j\),
+\ExEq{A(c,j)&=\frac1{256}\sum_{k=0}^{63}e^{-2\pi ic(4k+j)/256}\\
+&=\frac{e^{-2\pi icj/256}}{256}\sum_{k=0}^{63}z^k,\qquad z=e^{-2\pi ic/64}.}
+Per \(z\ne1\), moltiplicando la somma per \(1-z\) si cancellano i termini intermedi:
+\ExEq{(1-z)(1+z+\cdots+z^{63})&=1-z^{64},\\
+\sum_{k=0}^{63}z^k&=\frac{1-z^{64}}{1-z}=0,}
+poiché \(z^{64}=e^{-2\pi ic}=1\) per \(c\) intero. Se \(z=1\), ciascun addendo vale uno e la somma è 64. Ciò accade per \(c=0,64,128,192\). In tali casi \(A(c,j)=e^{-2\pi icj/256}/4\), quindi
+\ExEq{P(c)&=\sum_{j=0}^{3}|A(c,j)|^2=4\cdot\frac1{16}=\frac14.}
+Si sommano i moduli quadri dei quattro residui ortogonali. La distribuzione completa ha somma \(4\cdot1/4=1\).
+
+\ExStep{Seguire il ramo selezionato}
+
+Dato \(c=64\), la probabilità del ramo è \(1/4\). Il bersaglio normalizzato è
+\ExEq{\ket{u_1}&=\frac12\left(\ket1-i\ket2-\ket4+i\ket8\right),}
+perché \(e^{-2\pi ij/4}\) assume i valori \(1,-i,-1,i\). Il fattore \(1/2\) deriva dalla divisione delle ampiezze \(1/4\) per \(\sqrt{1/4}=1/2\). La sua norma è \(4\cdot(1/2)^2=1\).
+La lettura fornisce \(c/Q=64/256=1/4\). Le divisioni \(256=4\cdot64+0\) danno la frazione continua \([0;4]\), con convergenti \(0/1\) e \(1/4\). Il candidato denominatore è 4.
+
+\ExStep{Verificare l’ordine e ottenere i fattori}
+
+La verifica modulare dà \(2^4=16=1+15\), dunque il candidato soddisfa il test. I divisori propri positivi di 4 sono 1 e 2: \(2^1\equiv2\), \(2^2\equiv4\); nessuno restituisce uno. L’ordine è quindi 4.
+\ExEq{z&=2^{4/2}\bmod15=4,\\
+d_-&=\gcd(4-1,15)=\gcd(3,15)=3,\\
+d_+&=\gcd(4+1,15)=\gcd(5,15)=5.}
+Le divisioni \(15=5\cdot3\) e \(15=3\cdot5\) verificano i due gcd. Infine \(3\cdot5=15\). La radice 4 è diversa sia da 1 sia da \(-1\equiv14\).
+
+\ExStep{Analizzare successo e ripetizione}
+
+Per \(c=0\), la frazione è zero e non fornisce un denominatore utile. Per \(c=128\), \(128/256=1/2\) suggerisce 2, ma \(2^2\equiv4\ne1\): il candidato viene rifiutato. Per \(c=192\), \(192/256=3/4=[0;1,3]\) restituisce 4: infatti \(4=1\cdot3+1\), \(3=3\cdot1\). Si recuperano gli stessi fattori.
+Con la procedura qui adottata, che ripete dopo un denominatore rifiutato, gli esiti utili sono 64 e 192. La probabilità di successo del tentativo è \(1/4+1/4=1/2\). Dopo \(t\) tentativi indipendenti con la stessa base, la probabilità di almeno un successo è \(1-(1/2)^t\); per \(t=3\) vale \(7/8\).
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-.6,0)--(4.4,0) node[right] {esito};\draw[exaxis] (-.6,0)--(-.6,3.6) node[above] {$p$};\node[left] at (-.6,3) {$ 0.3 $};\draw[Ink!15,dashed] (-.6,3)--(3.9000000000000004,3);\filldraw[fill=Accent!25,draw=Accent] (0.0,0) rectangle (0.65,2.5);\node[below] at (0.325,0) {$ 0 $};\node[above] at (0.325,2.5) {$ 0.25 $};\filldraw[fill=Accent!25,draw=Accent] (1.1,0) rectangle (1.75,2.5);\node[below] at (1.425,0) {$ 64 $};\node[above] at (1.425,2.5) {$ 0.25 $};\filldraw[fill=Accent!25,draw=Accent] (2.2,0) rectangle (2.85,2.5);\node[below] at (2.5250000000000004,0) {$ 128 $};\node[above] at (2.5250000000000004,2.5) {$ 0.25 $};\filldraw[fill=Accent!25,draw=Accent] (3.3000000000000003,0) rectangle (3.95,2.5);\node[below] at (3.6250000000000004,0) {$ 192 $};\node[above] at (3.6250000000000004,2.5) {$ 0.25 $};
+\end{tikzpicture}}{Probabilità marginali del registro di lettura. Tutti gli altri 252 esiti hanno probabilità esattamente nulla.}
+
+
+\ExInterpret{La periodicità calcolata dai residui induce cancellazioni esatte nella Fourier. Gli autostati spiegano il bersaglio condizionato, mentre la preparazione del circuito rimane \(\ket1\). Il vantaggio asintotico di Shor richiede aritmetica reversibile scalabile; la rete per mintermini del piccolo laboratorio serve a verificare questa istanza e ha costo esponenziale.}
+
+\ExLab{Aprire 4.23 e scegliere «Base a=2». Seguire preparazione, potenze controllate e Fourier inversa. Analizzare separatamente gli esiti 64, 128, 0 e 192; confrontare probabilità, denominatore proposto, verifica modulare e gcd. Le tabelle complete della sezione riportano tutti i 256 rami. Il comando di selezione studia un ramo e non simula una scelta controllabile dell’esito fisico. La tabella completa è raggiungibile a p.\,\pageref{appendix-T4.23.1.1}.}
+
+
+\end{minipage}

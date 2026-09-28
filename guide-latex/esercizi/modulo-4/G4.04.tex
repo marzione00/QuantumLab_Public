@@ -1,0 +1,74 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G4.04}{Ricostruire Grover come due riflessioni}{Guida esplicita}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Cercare la parola 101 fra otto parole, usando Grover a partire dalla sovrapposizione uniforme. Calcolare tre iterazioni e individuare il punto oltre il quale la probabilità di successo diminuisce.
+
+\ExTheory{\ExRef{c4-grover}{4.05}; \ExRef{c4-amplificazione}{4.07}}{Siano \(\ket g=\ket{101}\) e \(\ket b=7^{-1/2}\sum_{x\ne101}\ket x\). Nel piano ortonormale \((b,g)\), \(\ket s=(\sqrt7,1)^T/\sqrt8\), l’oracolo è \(O=\operatorname{diag}(1,-1)\) e la diffusione è \(D=2\ket s\bra s-I\).}
+
+\ExPrediction{Due riflessioni compongono una rotazione. Avvicinandosi all’asse g, la sua proiezione aumenta; superato l’asse, ulteriori rotazioni possono ridurla.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-0.5838535866733713,0)--(1.55,0) node[right] {$x_1$};\draw[exaxis] (0,-0.35)--(0,1.522271824131503) node[above] {$x_2$};\draw[->,Secondary,line width=1.1pt] (0,0)--(0.9354143466934853,0.3535533905932738) node[anchor=south west] {$ s $};\draw[->,Accent,line width=1.1pt] (0,0)--(-0.23385358667337133,0.9722718241315028) node[anchor=south west] {$ Q^2s $};
+\end{tikzpicture}}{Coordinate nel piano collettivo: asse orizzontale b, verticale g. I coefficienti sono ampiezze reali.}
+
+
+\begin{ExTasks}
+
+\item Costruire le matrici O, D e Q=DO.
+
+\item Applicare Q tre volte, senza rinormalizzazioni intermedie.
+
+\item Calcolare la probabilità del bersaglio dopo ogni iterazione.
+
+\item Interpretare il segno della componente lungo b.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Costruire la diffusione}
+
+\ExEq{D&=\frac14\begin{pmatrix}7&\sqrt7\\\sqrt7&1\end{pmatrix}-I
+=\begin{pmatrix}3/4&\sqrt7/4\\\sqrt7/4&-3/4\end{pmatrix},\\
+Q=DO&=\begin{pmatrix}3/4&-\sqrt7/4\\\sqrt7/4&3/4\end{pmatrix}.}
+Ponendo \(\sin\theta=1/\sqrt8\), risulta \(\cos2\theta=3/4\), \(\sin2\theta=\sqrt7/4\). Q ruota di \(2\theta\).
+
+\ExStep{Prima iterazione}
+
+\ExEq{Q\ket s&=\frac1{4\sqrt8}\binom{3\sqrt7-\sqrt7}{7+3}
+=\frac1{2\sqrt8}\binom{\sqrt7}{5},\\
+P_1&=\frac{25}{32},\qquad \|\psi_1\|^2=\frac{7+25}{32}=1.}
+Ogni parola non marcata ha ampiezza \(1/(2\sqrt8)\) e probabilità \(1/32\).
+
+\ExStep{Seconda iterazione}
+
+\ExEq{Q^2\ket s&=\frac1{8\sqrt8}\binom{3\sqrt7-5\sqrt7}{7+15}
+=\frac1{4\sqrt8}\binom{-\sqrt7}{11},\\
+P_2&=\frac{121}{128},\qquad \|\psi_2\|^2=\frac{7+121}{128}=1.}
+L’asse g è stato superato: la componente b è negativa.
+
+\ExStep{Terza iterazione}
+
+\ExEq{Q^3\ket s&=\frac1{16\sqrt8}\binom{-3\sqrt7-11\sqrt7}{-7+33}
+=\frac1{8\sqrt8}\binom{-7\sqrt7}{13},\\
+P_3&=\frac{169}{512},\qquad \|\psi_3\|^2=\frac{343+169}{512}=1.}
+
+\ExStep{Scegliere il numero di iterazioni}
+
+Le probabilità per \(j=0,1,2,3\) sono \(1/8,25/32,121/128,169/512\). Fra questi quattro valori il massimo si raggiunge con due iterazioni. La formula \(P_j=\sin^2((2j+1)\theta)\) riproduce i quattro calcoli; la periodicità impedisce una crescita monotona.
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-.6,0)--(4.4,0) node[right] {j};\draw[exaxis] (-.6,0)--(-.6,3.6) node[above] {$p$};\node[left] at (-.6,3) {$ 1 $};\draw[Ink!15,dashed] (-.6,3)--(3.9000000000000004,3);\filldraw[fill=Accent!25,draw=Accent] (0.0,0) rectangle (0.65,0.375);\node[below] at (0.325,0) {$ 0 $};\node[above] at (0.325,0.375) {$ 0.125 $};\filldraw[fill=Accent!25,draw=Accent] (1.1,0) rectangle (1.75,2.34375);\node[below] at (1.425,0) {$ 1 $};\node[above] at (1.425,2.34375) {$ 0.7812 $};\filldraw[fill=Accent!25,draw=Accent] (2.2,0) rectangle (2.85,2.8359375);\node[below] at (2.5250000000000004,0) {$ 2 $};\node[above] at (2.5250000000000004,2.8359375) {$ 0.9453 $};\filldraw[fill=Accent!25,draw=Accent] (3.3000000000000003,0) rectangle (3.95,0.990234375);\node[below] at (3.6250000000000004,0) {$ 3 $};\node[above] at (3.6250000000000004,0.990234375) {$ 0.3301 $};
+\end{tikzpicture}}{Probabilità di successo dopo j iterazioni.}
+
+
+\ExInterpret{La diffusione riflette rispetto alla direzione s; l’oracolo riflette rispetto all’asse b. Il quadrato della proiezione su g dà la probabilità di successo e rende visibile la sovrarotazione.}
+
+\ExLab{Nelle sezioni 4.05 e 4.07 impostare otto candidati e una parola marcata. Confrontare le probabilità dopo zero, una, due e tre iterazioni con le frazioni ottenute.}
+
+
+\end{minipage}

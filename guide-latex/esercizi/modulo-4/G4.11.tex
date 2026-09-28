@@ -1,0 +1,93 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G4.11}{Verificare somma e moltiplicazione modulari reversibili}{Collegamento}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Seguire i riporti di \(3+2\) e \(5+5\) su tre bit. Definire poi l’addizione reversibile di 3 modulo 5 e la moltiplicazione per 2 modulo 15, includendo gli ingressi non validi dei registri binari.
+
+\ExTheory{\ExRef{c4-somma}{4.19}; \ExRef{c4-moltiplicazione}{4.20}}{Una porta reversibile deve essere una permutazione dell’intera base del registro. Le informazioni temporanee, come riporti e confronti, devono essere conservate oppure cancellate mediante uncompute, senza eliminare informazione sul dato.}
+
+\ExPrediction{Una riduzione modulare può apparire molti-a-uno se si osserva soltanto una sottrazione. La mappa completa sui residui, estesa ai codici inutilizzati, dovrà invece avere un’uscita distinta per ogni ingresso.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\node[exbox] (n0) at (0.0,0.0) {bit 0: somma e riporto};\node[exbox] (n1) at (3.6,0.0) {bit 1: usa il riporto};\draw[exother] (n0)--(n1);\node[exbox] (n2) at (7.2,0.0) {bit 2: usa il riporto};\draw[exother] (n1)--(n2);
+\end{tikzpicture}}{I riporti collegano il significato aritmetico alle dipendenze fra bit.}
+
+
+\begin{ExTasks}
+
+\item Svolgere i due addendi dal bit meno significativo.
+
+\item Dichiarare quali registri conserva un sommatore reversibile.
+
+\item Elencare la permutazione modulo 5 e ripulire i flag.
+
+\item Costruire la moltiplicazione modulo 15 come rotazione dei bit.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Seguire i riporti}
+
+Per \(3=011\), \(2=010\), dal bit meno significativo:
+\ExEq{1+0+0&=1:\ s_0=1,\ c_1=0,\\
+1+1+0&=2:\ s_1=0,\ c_2=1,\\
+0+0+1&=1:\ s_2=1,\ c_3=0.}
+La somma è 101. Per \(5=101\) e \(5=101\):
+\ExEq{1+1+0&=2:\ s_0=0,\ c_1=1,\\
+0+0+1&=1:\ s_1=1,\ c_2=0,\\
+1+1+0&=2:\ s_2=0,\ c_3=1.}
+Il risultato completo è 1010; sui soli tre bit di somma compare 010.
+
+\ExStep{Dichiarare la mappa reversibile}
+
+La trasformazione \(\ket a\ket b\mapsto\ket a\ket{a+b\bmod8}\) è invertita dalla sottrazione di a modulo 8. Il registro a viene conservato. Per ottenere anche la somma intera occorre rendere disponibile il riporto finale in un registro aggiuntivo, ripulendo gli eventuali riporti di lavoro mediante una rete reversibile.
+
+\ExStep{Estendere l’addizione modulo 5}
+
+Sugli ingressi 0–4 si applica \(r=(y+3)\bmod5\); gli ingressi 5–7 rimangono fissi. Un confronto produce \(v=[y<5]\). Per v=1, il flag di riduzione è \(q=[y\ge2]\). La tabella descrive la funzione logica dei registri di lavoro:\begin{center}\begin{tabular}{rrrrrr}\toprule y&v&somma&q&r&q finale\\\midrule
+0&1&3&0&3&0\\
+1&1&4&0&4&0\\
+2&1&5&1&0&0\\
+3&1&6&1&1&0\\
+4&1&7&1&2&0\\
+5&0&5&0&5&0\\
+6&0&6&0&6&0\\
+7&0&7&0&7&0\\
+\bottomrule\end{tabular}\end{center}Le uscite sono 3,4,0,1,2,5,6,7: tutti i codici compaiono una volta. La tabella specifica una permutazione implementabile; non sostituisce una decomposizione in porte elementari.
+
+\ExStep{Ripulire i confronti}
+
+Per gli ingressi validi si ha \(q=[r<3]\): gli ingressi 0,1 producono 3,4 con q=0; gli ingressi 2,3,4 producono 0,1,2 con q=1. L’operazione \(q\leftarrow q\oplus(v\land[r<3])\) riporta q a zero. La validità è preservata, dunque \(v\leftarrow v\oplus[r<5]\) riporta v a zero anche sugli ingressi invalidi. L’ordine delle due pulizie è necessario perché la prima usa v.
+
+\ExStep{Moltiplicare modulo 15}
+
+Per quattro bit \(y=8b_3+4b_2+2b_1+b_0\), la rotazione a sinistra produce \(r=8b_2+4b_1+2b_0+b_3\). Poiché \(2y=16b_3+8b_2+4b_1+2b_0\), risulta \(2y-r=15b_3\). Quindi r è \(2y\bmod15\) per y<15, mentre 15 resta fisso.\begin{center}\begin{tabular}{rrrr}\toprule y&uscita&y&uscita\\\midrule
+0&0&8&1\\
+1&2&9&3\\
+2&4&10&5\\
+3&6&11&7\\
+4&8&12&9\\
+5&10&13&11\\
+6&12&14&13\\
+7&14&15&15\\
+\bottomrule\end{tabular}\end{center}
+
+\ExStep{Costruire circuito e inversa}
+
+Tre SWAP adiacenti sui fili, in ordine \((q_0,q_1)\), \((q_1,q_2)\), \((q_2,q_3)\), trasformano \(b_3b_2b_1b_0\) in \(b_2b_1b_0b_3\). Ogni SWAP usa tre CNOT, quindi questa realizzazione richiede nove CNOT. L’inversa ruota a destra e corrisponde a moltiplicare per 8 modulo 15, perché \(2\cdot8\equiv1\). Questa semplificazione sfrutta la forma particolare di 15 e non descrive il costo di un moltiplicatore modulare generale.
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\node[circle,draw=Accent,fill=white,minimum size=8mm] (n0) at (0.00000,2.00000) {$ 1 $};\node[circle,draw=Accent,fill=white,minimum size=8mm] (n1) at (2.00000,0.00000) {$ 2 $};\node[circle,draw=Accent,fill=white,minimum size=8mm] (n2) at (0.00000,-2.00000) {$ 4 $};\node[circle,draw=Accent,fill=white,minimum size=8mm] (n3) at (-2.00000,-0.00000) {$ 8 $};\draw[exother,bend right=12] (n0) to (n1);\draw[exother,bend right=12] (n1) to (n2);\draw[exother,bend right=12] (n2) to (n3);\draw[exother,bend right=12] (n3) to (n0);
+\end{tikzpicture}}{La rotazione dei bit percorre il ciclo 0001, 0010, 0100, 1000.}
+
+
+\ExInterpret{La reversibilità riguarda tutti i codici binari e tutti i registri ausiliari. La descrizione delle permutazioni e la pulizia dei flag rendono verificabile questo requisito prima della sintesi del circuito.}
+
+\ExLab{Nelle sezioni 4.19 e 4.20 confrontare somma, riduzione e moltiplicazione reversibile. Controllare anche i codici fuori intervallo e lo stato finale degli ausiliari; la loro omissione impedirebbe di verificare l’unitarietà della mappa completa.}
+
+
+\end{minipage}

@@ -1,0 +1,89 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G3.06}{Calcolare un interferometro con fase \(\pi/3\)}{Consolidamento}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Il circuito prepara \(\ket0\), applica \(H\), poi \(P(\pi/3)\), infine \(H\), e misura nella base \((\ket0,\ket1)\). Calcolare lo stato dopo ciascuna porta, le probabilità e la previsione media su 400 ripetizioni. L’ordine degli operatori sul vettore è \(HP(\pi/3)H\).
+
+\ExTheory{\ExRef{c3-interferometro}{3.06}}{Si usano \(H=\frac1{\sqrt2}\begin{pmatrix}1&1\\1&-1\end{pmatrix}\), \(P(\varphi)=\operatorname{diag}(1,e^{i\varphi})\), \(e^{i\varphi}=\cos\varphi+i\sin\varphi\) e \(p_j=|\alpha_j|^2\). Per \(z=a+ib\), \(|z|^2=(a-ib)(a+ib)=a^2+b^2\).}
+
+\ExPrediction{Nel piano complesso i contributi \(1\) ed \(e^{i\pi/3}\) formano un angolo di 60 gradi. Prevedere quale fra somma e differenza abbia lunghezza maggiore e collegarla all’uscita favorita.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\node[left] at (-.3,0) {$ \ket{0} $};\draw[Ink] (-.3,0)--(4.5,0);\node[draw=Accent,fill=white,minimum height=9mm,minimum width=10mm] at (0.5,0) {$ H $};\node[draw=Accent,fill=white,minimum height=9mm,minimum width=10mm] at (2.0,0) {$ P(\pi/3) $};\node[draw=Accent,fill=white,minimum height=9mm,minimum width=10mm] at (3.5,0) {$ H $};\node[right] at (4.5,0) {$\ket{\psi_f}$};
+\end{tikzpicture}}{Il tempo procede da sinistra a destra. Il vettore riceve per prima la matrice più a destra nel prodotto \(HPH\).}
+
+
+\begin{ExTasks}
+
+\item Moltiplicare \(H\) per il vettore iniziale.
+
+\item Applicare la matrice diagonale e sostituire seno e coseno.
+
+\item Eseguire entrambi i prodotti riga-colonna dell’ultima \(H\).
+
+\item Calcolare i due moduli quadri e controllarne la somma.
+
+\item Ricavare i conteggi medi su 400 prove e confrontare le fasi \(0\) e \(\pi\).
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Preparare la sovrapposizione}
+
+Il primo prodotto dà
+\ExEq{\ket{\psi_1}&=\frac1{\sqrt2}\begin{pmatrix}1&1\\1&-1\end{pmatrix}\colv{1\\0}
+=\frac1{\sqrt2}\colv{1\cdot1+1\cdot0\\1\cdot1-1\cdot0}
+=\frac1{\sqrt2}\colv{1\\1}.}
+Le probabilità sarebbero \(1/2\) e \(1/2\), se si misurasse in questo stadio. Qui il circuito prosegue senza misura.
+
+\ExStep{Introdurre la fase relativa}
+
+Poiché \(\cos(\pi/3)=1/2\) e \(\sin(\pi/3)=\sqrt3/2\),
+\ExEq{\ket{\psi_2}&=\begin{pmatrix}1&0\\0&e^{i\pi/3}\end{pmatrix}\frac1{\sqrt2}\colv{1\\1}
+=\frac1{\sqrt2}\colv{1\\\frac12+i\frac{\sqrt3}{2}}.}
+Entrambe le componenti hanno ancora modulo \(1/\sqrt2\). La trasformazione ruota soltanto la seconda ampiezza nel suo piano complesso.
+
+\ExStep{Ricombinare le ampiezze}
+
+L’ultima Hadamard forma somma e differenza:
+\ExEq{\ket{\psi_f}&=\frac12\begin{pmatrix}1&1\\1&-1\end{pmatrix}\colv{1\\\frac12+i\frac{\sqrt3}{2}},\\
+\alpha&=\frac12\left(1+\frac12+i\frac{\sqrt3}{2}\right)
+=\frac34+i\frac{\sqrt3}{4},\\
+\beta&=\frac12\left(1-\frac12-i\frac{\sqrt3}{2}\right)
+=\frac14-i\frac{\sqrt3}{4}.}
+La stessa fase produce interferenza diversa nelle due uscite perché cambia il segno del secondo contributo.
+
+\ExStep{Applicare la regola di Born}
+
+I prodotti con i coniugati sono
+\ExEq{p_0&=\left(\frac34-i\frac{\sqrt3}{4}\right)\left(\frac34+i\frac{\sqrt3}{4}\right)
+=\frac9{16}+\frac3{16}=\frac34,\\
+p_1&=\left(\frac14+i\frac{\sqrt3}{4}\right)\left(\frac14-i\frac{\sqrt3}{4}\right)
+=\frac1{16}+\frac3{16}=\frac14,\\p_0+p_1&=\frac34+\frac14=1.}
+Nei prodotti i termini immaginari incrociati si cancellano; \(i^2=-1\) rende positivo il contributo del modulo della parte immaginaria.
+
+\ExStep{Confrontare probabilità e frequenze}
+
+Per 400 preparazioni indipendenti i conteggi medi sono \(400\cdot3/4=300\) e \(400\cdot1/4=100\). Il numero effettivo di zeri varia: la sua varianza binomiale è \(400\cdot(3/4)\cdot(1/4)=75\), quindi lo scarto tipo è \(\sqrt{75}=5\sqrt3\simeq8{,}66\).
+
+\ExStep{Controllare due casi limite}
+
+Per \(\varphi=0\), \(e^{i\varphi}=1\), quindi \(\alpha=(1+1)/2=1\), \(\beta=(1-1)/2=0\). Per \(\varphi=\pi\), \(e^{i\varphi}=-1\), quindi \(\alpha=0\), \(\beta=1\). In generale
+\ExEq{p_0&=\frac{(1+e^{-i\varphi})(1+e^{i\varphi})}{4}
+=\frac{2+2\cos\varphi}{4}=\cos^2(\varphi/2),\\p_1&=1-p_0=\sin^2(\varphi/2).}
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-0.35,0)--(2.05,0) node[right] {$\operatorname{Re}$};\draw[exaxis] (0,-1.2160250000000001)--(0,1.416025) node[above] {$\operatorname{Im}$};\draw[->,Secondary,line width=1.1pt] (0,0)--(1,0) node[anchor=south west] {$ 1 $};\draw[->,Secondary,line width=1.1pt] (0,0)--(0.5,0.866025) node[anchor=south west] {$ e^{i\pi/3} $};\draw[->,Accent,line width=1.1pt] (0,0)--(1.5,0.866025) node[anchor=south west] {$ 2\alpha $};\draw[->,Ink,line width=1.1pt] (0,0)--(0.5,-0.866025) node[anchor=north west] {$ 2\beta $};
+\end{tikzpicture}}{Piano complesso dei contributi. Somma e differenza vanno divise per due prima di applicare la regola di Born.}
+
+
+\ExInterpret{Le lunghezze di \(2\alpha\) e \(2\beta\) sono \(\sqrt3\) e \(1\); dopo la divisione per due i quadrati sono \(3/4\) e \(1/4\). Una misura intermedia avrebbe modificato il procedimento. Il diagramma rappresenta ampiezze, non traiettorie spaziali della particella.}
+
+\ExLab{Nella sezione 3.06 impostare «Fase relativa» a \(60^\circ\). Seguire i tre stadi e confrontare lo stato finale con \((3+i\sqrt3,1-i\sqrt3)^T/4\). Portare poi il controllo a \(0^\circ\) e \(180^\circ\), verificando gli esiti deterministici calcolati sopra.}
+
+
+\end{minipage}

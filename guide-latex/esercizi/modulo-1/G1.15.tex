@@ -1,0 +1,66 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G1.15}{Ricostruire un esperimento a partire dai suoi risultati}{Collegamento}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Due apparati producono entrambi \(P(0)=P(1)=1/2\) dopo un interferometro. In A la fase vale 0 oppure \(\pi\), con uguale frequenza, e l’ambiente non distingue i cammini. In B la fase è stabilmente zero e le tracce ambientali dei cammini sono ortogonali. Progettare due interventi che distinguano le cause.
+
+\ExTheory{\ExRef{c1-sintesi}{1.10}}{Se la sovrapposizione reale delle tracce è \(\gamma\), la probabilità di uscita è \(P(0\mid\varphi)=(1+\gamma\cos\varphi)/2\). Con fasi variabili si media sulle preparazioni. Stabilizzare la fase significa fissare \(\varphi=0\); compensare coerentemente l’interazione ambientale significa riportare \(\gamma\) a 1.}
+
+\ExPrediction{I conteggi iniziali sono uguali. La stabilizzazione dovrebbe cambiare A, mentre la compensazione della traccia dovrebbe cambiare B. L’intervento deve essere eseguito prima della lettura finale.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\node[exbox] (n0) at (0.0,0.0) {A: fase $0/\pi$};\node[exbox] (n1) at (3.6,0.0) {$\gamma=1$};\draw[exother] (n0)--(n1);\node[exbox] (n2) at (7.2,0.0) {$P(0)=1/2$};\draw[exother] (n1)--(n2);\node[exbox] (n3) at (0.0,-1.6) {B: fase $0$};\draw[exother] (n2.south)--++(0,-.4)-|(n3.north);\node[exbox] (n4) at (3.6,-1.6) {$\gamma=0$};\draw[exother] (n3)--(n4);\node[exbox] (n5) at (7.2,-1.6) {$P(0)=1/2$};\draw[exother] (n4)--(n5);
+\end{tikzpicture}}{Due preparazioni conducono agli stessi conteggi iniziali.}
+
+
+\begin{ExTasks}
+
+\item Calcolare i due valori di \(P(0)\) per A e la loro media.
+
+\item Calcolare \(P(0)\) per B.
+
+\item Applicare soltanto la stabilizzazione a entrambi.
+
+\item Applicare soltanto la compensazione ambientale a entrambi.
+
+\item Calcolare il risultato dei due interventi combinati e indicare quali osservazioni distinguano i modelli.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Calcolare la media di A}
+
+Per A, \(\gamma=1\). A fase zero \(P(0\mid0)=(1+1)/2=1\); a fase \(\pi\), \(P(0\mid\pi)=(1-1)/2=0\). Quindi
+\ExEq{P_A(0)&=\tfrac12\cdot1+\tfrac12\cdot0=\tfrac12.}
+
+\ExStep{Calcolare la previsione di B}
+
+Per B, \(\gamma=0\) e \(\varphi=0\). Pertanto \(P_B(0)=(1+0\cdot1)/2=1/2\). Lo stesso dato finale proviene da una preparazione diversa.
+
+\ExStep{Stabilizzare la fase}
+
+In A si elimina l’alternanza e si fissa \(\varphi=0\): \(P_A(0)=1\). In B la fase era già zero e la traccia resta distinguibile: \(P_B(0)=1/2\). Su 200 prove i conteggi medi di zero sono 200 e 100.
+
+\ExStep{Compensare soltanto la traccia}
+
+In A \(\gamma\) era già 1 e le fasi rimangono alternate: \(P_A(0)=1/2\). In B la compensazione porta \(\gamma=1\) a fase zero: \(P_B(0)=1\). I conteggi medi si scambiano: 100 e 200.
+
+\ExStep{Combinare gli interventi}
+
+Con \(\gamma=1\) e \(\varphi=0\), entrambi danno \(P(0)=(1+1)/2=1\). La coppia ordinata di risposte ai singoli interventi è \((1,1/2)\) per A e \((1/2,1)\) per B: essa discrimina i due modelli ideali. Campioni finiti richiedono confronti statistici coerenti con le incertezze dei conteggi.
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\node[exbox] (a) at (0,1) {A};\node[exbox] (b) at (0,-1) {B};\node[exbox] (as) at (4,1) {stabilizza: $1$\ compensa: $1/2$};\node[exbox] (bs) at (4,-1) {stabilizza: $1/2$\ compensa: $1$};\draw[exother] (a)--(as);\draw[exother] (b)--(bs);
+\end{tikzpicture}}{Risposte diagnostiche: ogni numero è la probabilità di zero dopo il singolo intervento indicato.}
+
+
+\ExInterpret{L’identificazione richiede trasformazioni controllate e previsioni confrontabili. La compensazione qui assunta è un’inversione coerente dell’interazione prima della misura; cancellare un dato classico già registrato non realizzerebbe quella trasformazione.}
+
+\ExLab{Nella sezione 1.10 confrontare «Condizioni iniziali», «Stabilizza soltanto la fase», «Compensa soltanto la traccia» e «Applica entrambi gli interventi». Conservare le tabelle dei conteggi e affiancare le probabilità teoriche. I due modelli dell’esercizio fissano i casi ideali cui confrontare i parametri esposti dalla simulazione.}
+
+
+\end{minipage}

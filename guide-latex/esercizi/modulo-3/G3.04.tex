@@ -1,0 +1,69 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G3.04}{Preparare uno stato assegnato}{Guida esplicita}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Costruire una preparazione di \(\ket\psi=(2\ket0+i\ket1)/\sqrt5\) partendo da \(\ket0\). Usare \(R_y(\theta)\) per i moduli e \(P(\varphi)\) per la fase relativa. Ricavare gli angoli dai dati.
+
+\ExTheory{\ExRef{c3-preparazione}{3.04}}{\(R_y(\theta)=\begin{pmatrix}\cos(\theta/2)&-\sin(\theta/2)\\\sin(\theta/2)&\cos(\theta/2)\end{pmatrix}\), \(P(\varphi)=\operatorname{diag}(1,e^{i\varphi})\). L’angolo \(\theta\) coincide con l’angolo polare di Bloch, mentre le componenti usano \(\theta/2\).}
+
+\ExPrediction{La prima componente è più lunga della seconda, quindi il punto finale sarà nell’emisfero superiore. La fase positiva di un quarto di giro collocherà la componente trasversale lungo y.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\node[left] at (-.3,0) {$ \ket{0} $};\draw[Ink] (-.3,0)--(3.0,0);\node[draw=Accent,fill=white,minimum height=9mm,minimum width=10mm] at (0.5,0) {$ R_y(\theta) $};\node[draw=Accent,fill=white,minimum height=9mm,minimum width=10mm] at (2.0,0) {$ P(\pi/2) $};\node[right] at (3.0,0) {$\ket{\psi_f}$};
+\end{tikzpicture}}{La rotazione prepara i moduli; la porta diagonale assegna la fase relativa.}
+
+
+\begin{ExTasks}
+
+\item Controllare la norma del bersaglio.
+
+\item Ricavare seno, coseno e tangente del semiangolo.
+
+\item Determinare la fase relativa.
+
+\item Applicare le due matrici con gli angoli ottenuti.
+
+\item Calcolare Bloch e probabilità per il controllo finale.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Normalizzare il bersaglio}
+
+\ExEq{\|\psi\|^2&=(4+|i|^2)/5=1.}
+I moduli richiesti sono \(2/\sqrt5\) e \(1/\sqrt5\).
+
+\ExStep{Ricavare la rotazione}
+
+\ExEq{\cos(\theta/2)&=2/\sqrt5,\quad\sin(\theta/2)=1/\sqrt5,\\\tan(\theta/2)&=\frac{1/\sqrt5}{2/\sqrt5}=\frac12,\\\theta&=2\arctan(1/2)\simeq53{,}1301^\circ.}
+La scelta \(0<\theta<\pi\) è coerente con i moduli positivi.
+
+\ExStep{Ricavare la fase}
+
+La prima componente ha argomento zero; la seconda ha argomento \(\pi/2\). Quindi \(\varphi=\arg(i/\sqrt5)-\arg(2/\sqrt5)=\pi/2\).
+
+\ExStep{Applicare le porte}
+
+\ExEq{R_y(\theta)\ket0&=\frac1{\sqrt5}\begin{pmatrix}2&-1\\1&2\end{pmatrix}\colv{1\\0}
+=\frac1{\sqrt5}\colv{2\\1},\\P(\pi/2)R_y(\theta)\ket0&=\frac1{\sqrt5}\colv{2\\i}.}
+
+\ExStep{Controllare la rappresentazione geometrica}
+
+\ExEq{\alpha^*\beta&=2i/5,\\\mathbf r&=(2\Re(2i/5),2\Im(2i/5),4/5-1/5)=(0,4/5,3/5),\\\|\mathbf r\|^2&=16/25+9/25=1.}
+Le probabilità sono \(4/5\) e \(1/5\). La quota \(3/5\) coincide con \(\cos\theta\).
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[Ink!25] (0,0) circle(2);\draw[exaxis] (-2.5,0)--(2.6,0) node[right] {$r_y$};\draw[exaxis] (0,-2.4)--(0,2.6) node[above] {$r_z$};\draw[exvec] (0,0)--(1.60000,1.20000) node[above right] {$ \mathbf r $};\draw[Secondary,->] (0,.7) arc(90:36.869898:.7);\node[right] at (.6,.75) {$\vartheta=53.1301^\circ$};
+\end{tikzpicture}}{Meridiano y,z della sfera di Bloch dopo la preparazione; le coordinate sono \((r_y,r_z)=(4/5,3/5)\).}
+
+
+\ExInterpret{La costruzione separa due parametri geometrici indipendenti. Gli angoli sono ricavati dalle ampiezze assegnate e verificati con una moltiplicazione completa.}
+
+\ExLab{Nella sezione 3.04 scegliere «Preparare (2,i)/\(\sqrt5\)». Confrontare gli angoli mostrati e le due porte con il calcolo. Seguire il punto sulla sfera prima e dopo la fase, mantenendo fissi i moduli delle componenti.}
+
+
+\end{minipage}

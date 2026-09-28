@@ -1,0 +1,833 @@
+\setcounter{chapter}{0}
+\chapter{Dal determinismo al calcolo quantistico}
+\phantomsection\label{chapter-1}
+
+Dai dati iniziali di un sistema alle ampiezze: seguiamo le informazioni necessarie per costruire una simulazione.\par
+
+
+\input{esercizi/indice-1}
+\Needspace{.43\textheight}
+\section{Dati iniziali e previsione del moto}
+\phantomsection\label{c1-moto}
+
+{\sffamily\small\color{Ink!70} Riferimento alle slide: p. 12.\par}
+
+{\sffamily\small\color{Ink!70} Laboratorio locale: \nolinkurl{index.html#capitolo-1/moto}\par}
+
+Due particelle partono dallo stesso punto. Per prevedere dove si troveranno occorre conoscere anche la loro velocità. Il primo confronto segue due moti ben determinati; la raccolta sottostante mostra invece che cosa accade quando i dati della preparazione sono noti soltanto entro un intervallo.\par
+
+
+\BookHeading{Preparazione e significato dei comandi}
+
+Posizione iniziale\par
+
+È il punto da cui partono sia \(A\) sia \(B\). Il valore 0 è l'origine scelta per misurare le distanze, non un bordo del tavolo.\par
+
+Velocità \(A\)\par
+
+Indica lo spostamento di \(A\) in un secondo. Un valore positivo porta verso destra; un valore negativo verso sinistra; con 0 la particella resta ferma.\par
+
+Velocità \(B\)\par
+
+\(B\) parte dallo stesso punto di \(A\), ma può avere una velocità diversa. I due moti vengono calcolati separatamente.\par
+
+Incertezza sulla velocità \(A\)\par
+
+Specifica quanto la velocità può differire dal valore centrale, in entrambi i versi. Per 3 m/s con incertezza 0,5 m/s consideriamo tutte le velocità da 2,5 a 3,5 m/s.\par
+
+
+\BookHeading{Figure della configurazione iniziale}
+\begin{FigureBlock}\centering\includegraphics[width=\linewidth,height=94mm,keepaspectratio]{figure/fec498382cb770de3.pdf}\FigureCaption{Due moti uniformi. Tempo 0,0 secondi. \(A\) a 0,0 metri, \(B\) a 0,0 metri.}\end{FigureBlock}
+\begin{FigureBlock}\centering\includegraphics[width=\linewidth,height=94mm,keepaspectratio]{figure/f473b887929b75220.pdf}\FigureCaption{Istogramma di 5000 posizioni al tempo 0,0}\end{FigureBlock}
+
+
+\BookHeading{Due moti e la loro rappresentazione nel tempo}
+Le due righe superiori mostrano \(A\) in verde e \(B\) in corallo sullo stesso asse delle posizioni. Il cerchio vuoto indica il punto di partenza; il punto pieno la posizione all'istante attuale. Il segmento che parte dal punto indica il verso del moto e cresce con la velocità.\par
+
+Nel grafico sotto, l'asse orizzontale misura il tempo e quello verticale la posizione in metri. Ogni punto della retta descrive quindi una posizione a un certo istante, non una curva percorsa nello spazio. La fascia azzurra indica l'intervallo consentito dall'incertezza sulla velocità di \(A\). Cambiare un dato iniziale riporta l'esperimento al tempo zero.\par
+
+
+Dopo 0,0 s, \(A\) si trova a 0,0 m e \(B\) a 0,0 m. La stessa posizione iniziale è compatibile con moti diversi. L'incertezza sulla velocità amplia l'intervallo delle posizioni previste nel tempo.\par
+
+
+\BookHeading{Quali dati servono per prevedere il moto?}
+\BookHeading{Dalla velocità alla posizione}
+Il modello considera un moto lungo una retta, a velocità costante. Se una particella parte da 2 m e percorre 3 m ogni secondo, dopo 4 s avrà compiuto uno spostamento di 3 \(\times\) 4 \(=\) 12 m. La posizione finale è dunque 2 + 12 \(=\) 14 m. Per una velocità negativa lo spostamento si sottrae alla posizione di partenza: il segno distingue i due versi del moto.\par
+
+Nel grafico inferiore del primo disegno il tempo cresce verso destra e la posizione si legge in verticale. Una retta più inclinata indica un cambiamento più rapido della posizione. Le rette di \(A\) e \(B\) iniziano nello stesso punto; se le velocità sono uguali, coincidono per tutta la durata dell'esperimento.\par
+
+\BookHeading{Un intervallo di dati produce un intervallo di previsioni}
+Impostiamo per \(A\) una velocità di 3 m/s con incertezza di 0,5 m/s. Consideriamo così possibili tutte le velocità fra 2,5 e 3,5 m/s. Partendo da 0, dopo 4 s le posizioni estreme saranno 2,5 \(\times\) 4 \(=\) 10 m e 3,5 \(\times\) 4 \(=\) 14 m. La fascia colorata comprende le posizioni fra questi estremi. Con il passare del tempo si allarga, perché piccole differenze di velocità si accumulano nello spostamento.\par
+
+L'istogramma aggiunge molte preparazioni indipendenti. Il programma sceglie una posizione e una velocità entro gli intervalli indicati, senza favorire alcuna parte di ciascun intervallo. Conta poi quante particelle arrivano in ogni tratto della retta. Questo criterio di scelta è un'ipotesi ulteriore: conoscere soltanto gli estremi possibili non stabilisce quanto spesso compaia ciascun valore.\par
+
+Confronta una raccolta di 1.000 preparazioni con una di 20.000, lasciando fisse le incertezze. La forma delle barre diventa più regolare, ma l'intervallo delle posizioni possibili resta lo stesso. Un numero maggiore di simulazioni descrive meglio l'incertezza assegnata; per restringerla occorrono dati iniziali più precisi.\par
+
+
+Il modello e le sue condizioni\par
+
+Le particelle si muovono lungo una retta senza cambiare velocità e senza interagire. La posizione finale si ottiene aggiungendo alla posizione iniziale lo spostamento: velocità moltiplicata per tempo. La fascia comprende tutte le posizioni compatibili con l'intervallo di velocità; da sola non assegna frequenze ai valori al suo interno. Il tempo è espresso in secondi e le posizioni in metri.\par
+
+
+\input{esercizi/modulo-1/G1.01.tex}
+\input{esercizi/modulo-1/G1.02.tex}
+\Needspace{.43\textheight}
+\section{Reversibilità e inversione di Loschmidt}
+\phantomsection\label{c1-loschmidt}
+
+{\sffamily\small\color{Ink!70} Riferimento alle slide: p. 50.\par}
+
+{\sffamily\small\color{Ink!70} Laboratorio locale: \nolinkurl{index.html#capitolo-1/loschmidt}\par}
+
+Il gas viene preparato nella metà sinistra del recipiente e lasciato espandere. L'esperimento si ferma prima di invertire le velocità. Da quella stessa configurazione partono due ritorni: uno usa tutti i dati disponibili, l'altro introduce l'imprecisione scelta. Il confronto rende osservabile il ruolo dell'informazione necessaria a ricostruire il moto.\par
+
+
+\BookHeading{Preparazione e significato dei comandi}
+
+\BookHeading{Preparazione e tempi}
+Numero di particelle\par
+
+Ogni punto è una particella simulata. Cambiare il numero prepara un nuovo esperimento; il moto precedente viene azzerato.\par
+
+Durata minima di ciascuna fase\par
+
+È il tempo di visione, misurato con un orologio reale. Espansione e ritorno hanno la stessa durata impostata; il calcolo può richiedere più tempo su un dispositivo lento.\par
+
+Tempo simulato prima dell'inversione\par
+
+Stabilisce quanto evolve fisicamente il gas prima del cambio di verso. Le unità di tempo, indicate con u.t., appartengono al modello e non sono secondi reali.\par
+
+Interazione fra particelle\par
+
+Nella prima opzione, particelle vicine si respingono e modificano le rispettive velocità. Nella seconda si attraversano senza influenzarsi; rimangono i rimbalzi sulle pareti.\par
+
+La repulsione agisce entro 3,8 u.l., con la stessa distanza per tutte le popolazioni. Aumentare il numero di particelle nello stesso recipiente aumenta la densità e può modificare la frequenza degli incontri.\par
+
+\BookHeading{Precisione dell'inversione}
+Origine dell'imprecisione\par
+
+La registrazione incompleta conserva una direzione arrotondata. L'errore d'inversione parte invece dalla direzione nota e la altera nel momento in cui si cambia il verso del moto.\par
+
+Passo della registrazione angolare\par
+
+Con un passo di \(5{}^{\circ} \), il programma conserva soltanto direzioni multiple di \(5{}^{\circ} \): per esempio \(12{}^{\circ} \) diventa \(10{}^{\circ} \). L'inversione usa questo dato arrotondato. Il valore 0 mantiene la direzione completa.\par
+
+Velocità interessate\par
+
+Sceglie a quante particelle applicare l'imprecisione. Tutte le altre velocità vengono invertite accuratamente.\par
+
+Con \(0{}^{\circ} \) i due ritorni coincidono. Un passo di registrazione di \(1{}^{\circ} \) conserva soltanto il grado più vicino alla direzione misurata. I moduli delle velocità rimangono invariati entro la precisione numerica.\par
+
+\BookHeading{Lettura del confronto}
+\guillemotleft{}Particelle\guillemotright{} mostra i punti; \guillemotleft{}Densità\guillemotright{} raggruppa i conteggi in regioni; \guillemotleft{}Velocità\guillemotright{} aggiunge segmenti dal punto verso la direzione del moto. Cambia il disegno, mentre l'evoluzione resta la stessa.\par
+
+L'espansione si arresta prima dell'inversione. Dopo il confronto, la stessa configurazione può essere riutilizzata con un errore diverso. I risultati restano visibili fino a una nuova azione.\par
+
+
+\BookHeading{Figure della configurazione iniziale}
+\begin{FigureBlock}\centering\includegraphics[width=\linewidth,height=94mm,keepaspectratio]{figure/f077e3ac633cde7f8.pdf}\FigureCaption{Quanta parte del gas ritorna nella regione iniziale?. Tempo simulato (unità del modello); Particelle nella metà sinistra}\end{FigureBlock}
+
+
+\BookHeading{Due criteri per valutare il ritorno}
+La prima percentuale conta quante particelle occupano la metà sinistra, dove il gas era stato preparato. La seconda confronta ogni particella con la propria posizione iniziale e conta quelle che distano al massimo 2 unità di lunghezza dal punto di partenza. Per confronto, la larghezza del recipiente è 720 unità. I due criteri distinguono il ritorno nella regione iniziale dal recupero delle posizioni individuali.\par
+
+Il confronto conclusivo va letto quando il tempo di ritorno uguaglia quello di espansione. Durante il tragitto le particelle stanno ancora ripercorrendo il moto: una distanza dalla posizione iniziale non è, da sola, un errore. Il recipiente con particelle verdi fornisce il riferimento; quello con particelle corallo mostra il risultato dell'imprecisione scelta.\par
+
+Il tratteggio verticale divide il recipiente per il conteggio e non è una parete. Invertire una velocità significa mantenere quanto rapidamente la particella si muove e cambiarne il verso. Le posizioni nel momento dell'inversione restano identiche nei due ritorni.\par
+
+
+\BookHeading{Preparazione iniziale}
+Le 5000 particelle occupano la metà sinistra del recipiente. L'espansione durerà almeno 45 secondi e si fermerà prima dell'inversione.\par
+
+
+All'inizio tutte le particelle si trovano nella metà sinistra. Durante l'espansione il loro numero in questa regione cambia. Gli incontri fra particelle modificano le velocità. La descrizione microscopica conserva posizioni e velocità di ciascuna particella.\par
+
+
+Il modello e le sue condizioni\par
+
+Le particelle si respingono quando si avvicinano e rimbalzano sulle pareti senza perdere energia. Gli incontri hanno una durata finita: sono descritti da una forza di repulsione, non dall'urto istantaneo fra palline rigide. Il disegno ingrandisce i punti per renderli visibili. Il recipiente è largo 720 e alto 340 unità di lunghezza; queste unità sono indicate con u.l.\par
+
+Il calcolo conserva posizioni e velocità su una griglia numerica. Ogni passo può essere invertito sulla stessa griglia: questo permette al riferimento di recuperare le posizioni iniziali, con velocità di verso opposto. Il tempo simulato avanza con un passo fisso, indipendente dalla rapidità dell'animazione. La reversibilità del procedimento è distinta dalla sua approssimazione delle equazioni fisiche continue.\par
+
+Al momento dell'inversione viene conservata una sola configurazione. I due ritorni sono ricalcolati applicando le forze, senza riprodurre una registrazione delle traiettorie. Nell'inversione incompleta si arrotondano le direzioni prima di cambiarne il verso; nell'inversione perturbata si devia la direzione dopo il cambio di verso. L'imprecisione viene applicata una sola volta. Le formule e le scelte numeriche sono documentate nel file MODELLI incluso nel pacchetto locale.\par
+
+Il risultato riguarda questo sistema isolato nel modello, con tutte le forze e tutte le particelle sotto controllo. Un ritorno imperfetto mostra l'effetto dell'informazione perduta o del controllo incompleto entro questa dinamica reversibile. Riferimento sul metodo numerico reversibile: Rein e Tamayo, JANUS (2017).\par
+
+
+\input{esercizi/modulo-1/G1.03.tex}
+\input{esercizi/modulo-1/G1.04.tex}
+\Needspace{.43\textheight}
+\section{Sovrapposizione e fase relativa}
+\phantomsection\label{c1-onde}
+
+{\sffamily\small\color{Ink!70} Riferimento alle slide: p. 92.\par}
+
+{\sffamily\small\color{Ink!70} Laboratorio locale: \nolinkurl{index.html#capitolo-1/onde}\par}
+
+Per simulare un'onda occorre descrivere un'oscillazione in ciascun punto. Le prime due curve rappresentano onde con lo stesso periodo; la terza ne mostra la somma. L'intensità misura l'energia che attraversa una data superficie in un dato tempo: qui è espressa rispetto a quella della sola onda \(A\). Variando il ritardo fra i contributi osserveremo come cambia il segnale risultante.\par
+
+
+\BookHeading{Preparazione e significato dei comandi}
+
+Ritardo relativo\par
+
+Le due onde hanno lo stesso periodo, cioè impiegano lo stesso tempo a compiere un'oscillazione. Qui si regola lo spostamento di un ciclo rispetto all'altro: \(90{}^{\circ} \) corrisponde a un quarto di periodo, \(180{}^{\circ} \) a mezzo periodo.\par
+
+Questi tre casi permettono di seguire il passaggio dal rinforzo alla cancellazione. Mantieni inizialmente uguali le ampiezze delle due onde.\par
+
+Ampiezza dell'onda \(B\)\par
+
+L'ampiezza è il massimo scostamento dall'equilibrio. L'onda \(A\) ha ampiezza 1: con \(B\) \(=\) 1 i contributi sono uguali, con \(B\) \(=\) 0 rimane soltanto \(A\).\par
+
+
+\BookHeading{Figure della configurazione iniziale}
+\begin{FigureBlock}\centering\includegraphics[width=\linewidth,height=94mm,keepaspectratio]{figure/fdf0db99a00c82595.pdf}\FigureCaption{Due onde e la loro somma; ritardo 0 gradi; intensità 4,00}\end{FigureBlock}
+\begin{FigureBlock}\centering\includegraphics[width=\linewidth,height=94mm,keepaspectratio]{figure/f888eee51b5f36926.pdf}\FigureCaption{Ampiezze sommate testa a coda e risultante alla stessa scala}\end{FigureBlock}
+\begin{FigureBlock}\centering\includegraphics[width=\linewidth,height=94mm,keepaspectratio]{figure/fea07175688d0de07.pdf}\FigureCaption{Dalla fase all'intensità. Fase relativa (gradi); Intensità rispetto alla sola onda \(A\)}\end{FigureBlock}
+
+
+\BookHeading{Leggere la somma nello stesso istante}
+Le tre linee orizzontali segnano il livello di equilibrio. Sopra ogni linea il contributo è positivo, sotto è negativo. In una stessa posizione si somma il valore verde a quello corallo: il risultato forma la curva blu. Le tre curve usano la stessa scala verticale, così il raddoppio e la cancellazione dell'ampiezza sono visibili direttamente.\par
+
+I cicli delle due onde sono allineati: creste e valli coincidono. L'ampiezza \(B\) vale 1,0 rispetto all'ampiezza 1 di \(A\).\par
+
+
+L'intensità della somma vale 4,00 volte quella della sola onda \(A\). La fase relativa modifica il risultato anche quando le intensità dei singoli contributi rimangono fisse.\par
+
+
+\BookHeading{Dalle oscillazioni alla figura di interferenza}
+\BookHeading{Sommare i contributi nello stesso punto}
+In ogni posizione, lo spostamento dell'onda \(A\) si somma a quello dell'onda \(B\) tenendo conto del segno. Se entrambe le onde si trovano a +1 rispetto all'equilibrio, lo spostamento risultante è +2. Se una è a +1 e l'altra a \(- 1\), la somma è 0. La stessa operazione viene ripetuta lungo tutto il profilo e costruisce la terza curva.\par
+
+L'ampiezza è il massimo scostamento dall'equilibrio. Il ritardo relativo stabilisce invece come si dispongono fra loro creste e valli. Con ritardo nullo, due onde uguali raggiungono insieme i massimi e i minimi. Con mezzo ciclo di differenza, a ogni cresta dell'una corrisponde una valle dell'altra: le oscillazioni si compensano in tutte le posizioni.\par
+
+\BookHeading{Un quarto di ciclo nella costruzione geometrica}
+La costruzione con le frecce conserva sia l'ampiezza, rappresentata dalla lunghezza, sia la fase, rappresentata dall'orientazione. Si dispone l'inizio della seconda freccia sulla punta della prima; la freccia che va dall'origine alla punta finale rappresenta la somma. \(A\) un quarto di ciclo le due frecce sono perpendicolari. Con entrambe le ampiezze uguali a 1, il quadrato della lunghezza risultante vale 1 + 1 \(=\) 2: questa è l'intensità indicata dal simulatore.\par
+
+\BookHeading{Un confronto che cambia una sola condizione}
+Mantenendo uguali le ampiezze, le intensità separate restano fisse anche quando cambia il ritardo. Il programma deve conservare la relazione fra i cicli per prevedere la sovrapposizione; registrare soltanto le due intensità esclude questa informazione.\par
+
+Con l'ampiezza \(B\) ridotta a 0,5 e mezzo ciclo di ritardo, i contributi opposti hanno lunghezze diverse: resta un'ampiezza di 1 \(- \) 0,5 \(=\) 0,5 e un'intensità di 0,5 \(\times\) 0,5 \(=\) 0,25. La cancellazione completa richiede sia l'opposizione di fase sia l'uguaglianza delle ampiezze.\par
+
+
+Il modello e le sue condizioni\par
+
+Le due onde hanno la stessa forma periodica, lo stesso periodo e la stessa direzione di oscillazione. Il campo risultante è la somma dei campi in ogni punto. L'intensità, calcolata sull'intera oscillazione, è proporzionale al quadrato dell'ampiezza risultante. L'onda \(A\) fornisce l'unità di confronto. L'animazione serve a seguire le oscillazioni; avviarla o fermarla non modifica le intensità previste.\par
+
+
+\input{esercizi/modulo-1/G1.05.tex}
+\input{esercizi/modulo-1/G1.06.tex}
+\Needspace{.43\textheight}
+\section{Dai singoli arrivi alla distribuzione}
+\phantomsection\label{c1-fenditure}
+
+{\sffamily\small\color{Ink!70} Riferimento alle slide: p. 125.\par}
+
+{\sffamily\small\color{Ink!70} Laboratorio locale: \nolinkurl{index.html#capitolo-1/fenditure}\par}
+
+Ogni evento aggiunge un punto allo schermo. La figura complessiva nasce dall'accumulo di molti arrivi: le regioni più frequentate diventano riconoscibili e possono essere confrontate con la previsione. Cominciamo con una sola apertura, poi apriamo anche la seconda mantenendo fisse le altre condizioni.\par
+
+
+\BookHeading{Preparazione e significato dei comandi}
+
+\BookHeading{Tre regimi spiegati}
+Con una fenditura si osserva il profilo di diffrazione di una singola apertura, dal campo lontano all'impronta di campo vicino. Con due fenditure si può studiare anche il confronto fra i due contributi.\par
+
+Combinazione\par
+
+\guillemotleft{}Con interferenza\guillemotright{} conserva la relazione di fase fra i contributi. \guillemotleft{}Somma dei profili\guillemotright{} somma le probabilità dei due cammini, come nel caso in cui siano distinguibili. Con una sola apertura questa scelta non ha effetto.\par
+
+Larghezza delle fenditure\par
+
+È l'ampiezza fisica a di ciascuna apertura. Un micrometro \((\mu m)\) è un millesimo di millimetro. Nel campo lontano, restringere a allarga il profilo sullo schermo. Nel regime geometrico, invece, la larghezza dell'impronta segue quella dell'apertura, con diffrazione ai bordi. I preset permettono di attraversare questi regimi.\par
+
+Separazione delle fenditure\par
+
+È la distanza d fra i centri delle due aperture. Nel campo lontano determina la distanza approssimata \(\lambda L/d\) fra le frange; nel campo vicino modifica la sovrapposizione dei contributi. Il numero di Fresnel dell'intero apparato usa l'estensione \(D=d+a\).\par
+
+Lunghezza d'onda\par
+
+È la distanza fra due creste successive dell'onda. Un nanometro (nm) è un milionesimo di millimetro; per la luce visibile, lunghezze d'onda diverse corrispondono a colori diversi.\par
+
+Distanza dello schermo\par
+
+Nel campo lontano, aumentare \(L\) dilata la figura; attraversando il regime di Fresnel può cambiare anche la forma del profilo. Nel disegno l'apparato rimane schematico: le distanze fisiche sono quelle impostate nei controlli.\par
+
+Semilarghezza dello schermo\par
+
+Seleziona la finestra visualizzata da \(- s\) a +s millimetri. Le probabilità sono condizionate agli arrivi in questa finestra. La risposta del rivelatore conserva il proprio supporto anche quando comprende punti esterni al ritaglio.\par
+
+Risoluzione del rivelatore\par
+
+È la larghezza dell'intervallo sul quale si media l'intensità in ogni posizione. Il supporto applicato coincide con il valore richiesto; il passo numerico e il metodo di integrazione sono riportati nel profilo e nel CSV. Una risoluzione maggiore può attenuare le frange fini anche con una sorgente coerente.\par
+
+Fase relativa\par
+
+Indica di quanto un contributo è avanti nel ciclo rispetto all'altro. Un giro di \(360{}^{\circ} \) è un ciclo completo; \(90{}^{\circ} \) è un quarto di ciclo e \(180{}^{\circ} \) è mezzo ciclo.\par
+
+Coerenza dei due contributi\par
+
+La coerenza indica quanto viene mantenuta la relazione di fase. Con 1 il modello conserva tutta l'interferenza; con 0 rimane la somma dei profili. I valori intermedi riducono la differenza fra zone chiare e scure.\par
+
+
+\BookHeading{Figure della configurazione iniziale}
+\begin{FigureBlock}\centering\includegraphics[width=\linewidth,height=94mm,keepaspectratio]{figure/fc6c3031742de02e2.pdf}\FigureCaption{Diffrazione e interferenza: 0 arrivi}\end{FigureBlock}
+\begin{FigureBlock}\centering\includegraphics[width=\linewidth,height=94mm,keepaspectratio]{figure/f4283d5c81cc373e9.pdf}\FigureCaption{Confronto risolto fra frequenze e probabilità nelle regioni dello schermo}\end{FigureBlock}
+
+
+\BookHeading{Lo schermo e le barre contano gli stessi eventi}
+L'apparato è schematico: sorgente, aperture e schermo indicano la disposizione dell'esperimento. Sullo schermo, 0 mm è il centro; i valori positivi e negativi distinguono i due lati. La posizione verticale di ogni barra corrisponde alla stessa regione dello schermo. Una barra più lunga significa che vi è arrivata una frazione maggiore degli eventi.\par
+
+Il blu indica la previsione del modello. I punti e le barre verdi si costruiscono invece evento dopo evento. \(A\) raccolta vuota non sono ancora presenti dati da confrontare. Nelle raccolte molto dense il colore dello schermo viene compresso per mantenere visibili sia le regioni deboli sia quelle più popolate: i conteggi esatti restano nelle barre e nel file esportato.\par
+
+Con una sola apertura osserviamo il profilo di diffrazione. La larghezza della fenditura determina il regime: il profilo si allarga nel caso stretto e si avvicina all'impronta geometrica nel caso ampio osservato a risoluzione finita.\par
+
+
+Sono registrati 0 arrivi. La linea del modello è già visibile; per confrontarla con i dati occorre iniziare la raccolta.\par
+
+
+\BookHeading{Come leggere la distribuzione degli arrivi}
+\BookHeading{Il singolo punto e il profilo della raccolta}
+Il punto sullo schermo indica la posizione di una rivelazione. L'istogramma a destra divide lo schermo in piccoli intervalli e conta gli arrivi in ciascuno di essi. Una barra più lunga indica una parte maggiore della raccolta in quella regione. La linea blu mostra le probabilità previste per gli stessi intervalli.\par
+
+Con 100 arrivi possono comparire irregolarità marcate: alcuni intervalli ricevono più eventi di altri anche quando hanno probabilità simili. Proseguendo fino a 10.000 o 100.000 arrivi, il profilo delle frequenze tende a diventare più stabile. Il numero maggiore di eventi migliora la lettura della distribuzione; la forma prevista dipende dall'apparato.\par
+
+\BookHeading{La larghezza del profilo e la distanza fra le frange}
+La diffrazione descrive la propagazione dalle aperture anche oltre l'impronta geometrica. Nel campo lontano di una singola fenditura la parte centrale è più popolata, vi sono minimi laterali e restringere l'apertura allarga il profilo. Questa regola richiede \(a^{2}/(\lambda L)\) piccolo: a indica la larghezza intera, \(\lambda \) la lunghezza d'onda e \(L\) la distanza dello schermo. Nel preset intermedio si osserva la transizione di Fresnel; nel preset geometrico l'impronta segue soprattutto la larghezza dell'apertura e rimangono oscillazioni ai bordi, attenuate dalla media del rivelatore.\par
+
+Con due fenditure e una relazione di fase mantenuta, i contributi interferiscono dove si sovrappongono. Nel campo lontano l'inviluppo della singola apertura limita l'estensione delle frange, mentre la separazione d fra i centri ne determina la distanza approssimata \(\lambda L/d\). Per usare insieme queste regole deve essere piccolo \(F_{D}=D^{2}/(\lambda L)\), con \(D=d+a\): il numero \(F_{a}\) della sola fenditura non basta a classificare un apparato con aperture molto distanti. Nel campo vicino il laboratorio calcola direttamente il profilo di Fresnel.\par
+
+La fase relativa cambia le regioni favorite e sfavorite; nel campo lontano questo si legge come uno spostamento delle frange. Ridurre la coerenza attenua il termine di interferenza. Al valore 0 rimane la somma dei profili dei due cammini. La scelta \guillemotleft{}Somma dei profili\guillemotright{} permette di confrontare direttamente questa previsione con quella che conserva l'interferenza. La risoluzione del rivelatore media invece l'intensità su un intervallo spaziale della larghezza dichiarata, senza modificare la coerenza della sorgente.\par
+
+\BookHeading{Che cosa viene confrontato}
+Le raccolte sono confrontate a parità di numero di arrivi registrati nella finestra dello schermo. Il laboratorio mostra quindi dove si distribuiscono gli eventi, senza rappresentare l'aumento o la diminuzione della quantità totale di luce trasmessa dalle aperture. Le statistiche distinguono la frazione di flusso nella finestra prima e dopo la media del rivelatore; soltanto in seguito le probabilità visualizzate sono normalizzate al 100\%. La media usa anche il campo esterno alla finestra e conserva la stessa larghezza ai bordi. Quando modifichi l'apparato, la raccolta corrente viene azzerata; puoi conservare prima il profilo per confrontarlo con il successivo. La sua etichetta include la risoluzione, che può differire da quella della nuova raccolta.\par
+
+
+Il modello e le sue condizioni\par
+
+Il calcolo integra la propagazione scalare di Fresnel di una luce piana, uniforme e monocromatica. È una descrizione paraassiale: apertura, separazione e posizione sullo schermo devono restare piccole rispetto alla distanza. La fenditura è larga rispetto alla lunghezza d'onda. Il numero \(F_{a}=a^{2}/(\lambda L)\), definito con la larghezza intera a, caratterizza ciascuna fenditura. Per l'apparato completo usiamo \(F_{D}=D^{2}/(\lambda L)\), con \(D=a\) per una fenditura e \(D=d+a\) per due, dove d è la separazione dei centri. Il campo lontano dell'intero apparato richiede \(F_{D}\) piccolo; \(F_{a}\) piccolo da solo non basta quando le aperture sono molto separate. La coerenza rimane indipendente dalla larghezza.\par
+
+Le probabilità si riferiscono agli arrivi nella finestra dello schermo, da \(- 28\) a +28 mm. La loro somma nella finestra è il 100\%. Si confrontano così le forme a parità di eventi registrati, senza calcolare il flusso totale trasmesso dall'apparato. Ogni evento contribuisce sia allo schermo sia alle barre. Il confronto resta valido sulla medesima finestra. La risposta del rivelatore è la media rettangolare sulla larghezza richiesta, anche al bordo: il campo è calcolato oltre la finestra prima della media. La linea ambra mostra l'impronta geometrica, mediata sullo stesso supporto. Le oscillazioni fini del campo coerente possono essere risolte diminuendo la larghezza del rivelatore.\par
+
+
+\input{esercizi/modulo-1/G1.07.tex}
+\input{esercizi/modulo-1/G1.08.tex}
+\Needspace{.43\textheight}
+\section{Polarizzazione, misura e sfera di Bloch}
+\phantomsection\label{c1-polarizzazione}
+
+{\sffamily\small\color{Ink!70} Riferimento alle slide: p. 165.\par}
+
+{\sffamily\small\color{Ink!70} Laboratorio locale: \nolinkurl{index.html#capitolo-1/polarizzazione}\par}
+
+Riprendiamo la luce polarizzata usata nella lezione. Il disegno del campo mostra come oscilla la luce; la sfera di Bloch rappresenta la preparazione del qubit; le uscite \(A\) e \(B\) registrano gli esiti della misura. Il laboratorio mette in relazione queste tre descrizioni, mantenendone distinto il significato.\par
+
+
+\BookHeading{Preparazione e significato dei comandi}
+
+\(H\) indica la polarizzazione orizzontale, \(V\) quella verticale. \(+45{}^{\circ} \) e \(- 45{}^{\circ} \) sono le due diagonali. La diagonale \(+45{}^{\circ} \) ha componenti concordi, quella \(- 45{}^{\circ} \) componenti opposte. Ai poli \(H\) e \(V\) è presente una sola componente. I pulsanti selezionano lo stato completo corrispondente.\par
+
+Orientazione prima dello sfasamento\par
+
+Prima di aggiungere una fase, questo è l'angolo della polarizzazione lineare nel piano del campo. Regola il peso delle componenti orizzontale e verticale. Se poi introduci una fase, la punta del campo può descrivere un'ellisse e non ha più un'unica direzione fissa.\par
+
+Orientazione dell'analizzatore\par
+
+\(A\) \(0{}^{\circ} \) le uscite \(A\) e \(B\) corrispondono rispettivamente a \(H\) e \(V\). \(A\) \(45{}^{\circ} \) corrispondono alle diagonali \(+45{}^{\circ} \) e \(- 45{}^{\circ} \). Ruotare l'analizzatore cambia la domanda posta alla stessa preparazione.\par
+
+Fase aggiunta alla componente \(V\)\par
+
+Cursore \(\cdot\) Fase aggiunta alla componente \(V\)\par
+
+Il comando aggiunge una fase alla polarizzazione lineare scelta. La diagonale \(- 45{}^{\circ} \) parte già con componenti opposte; la lettura dello stato riporta la fase effettiva dopo questa aggiunta.\par
+
+
+\BookHeading{Figure della configurazione iniziale}
+\begin{FigureBlock}\centering\includegraphics[width=\linewidth,height=94mm,keepaspectratio]{figure/f7065a0e4aca63db0.pdf}\FigureCaption{Polarizzazione 45 gradi; analizzatore 0 gradi; sfera di Bloch dello stato preparato}\end{FigureBlock}
+\begin{FigureBlock}\centering\includegraphics[width=\linewidth,height=94mm,keepaspectratio]{figure/f7b59d219325a6978.pdf}\FigureCaption{La stessa preparazione, tutte le orientazioni di misura. Orientazione dell'analizzatore (gradi); Probabilità dell'uscita \(A\)}\end{FigureBlock}
+
+
+\BookHeading{Il campo, la preparazione e le due uscite}
+Il segmento o l'ellisse a sinistra descrive il movimento della punta del campo elettrico durante un ciclo, guardando il fascio lungo la propagazione. La figura resta in un piano perpendicolare al fascio. L'analizzatore separa due polarizzazioni perpendicolari: \(A\) segue l'orientazione scelta, \(B\) quella a \(90{}^{\circ} \) rispetto ad \(A\).\par
+
+Sulla sfera il punto blu rappresenta la preparazione; l'asse tratteggiato indica la misura. Sono due rappresentazioni diverse: il punto sulla sfera non oscilla insieme al campo. Con l'analizzatore a \(0{}^{\circ} \), i poli \(H\) e \(V\) danno uscite certe, mentre ogni punto dell'equatore dà 50\% e 50\%.\par
+
+Con le impostazioni attuali, il modello prevede 50,0\% in \(A\) e 50,0\% in \(B\). Il campo è lineare: la sua punta percorre il segmento disegnato. Ogni prova registra un solo evento; le percentuali si stimano ripetendo la preparazione.\par
+
+
+Con l'analizzatore a \(0{}^{\circ} \), la probabilità dell'uscita \(A\) è 50,0\%. Quando entrambe le componenti sono presenti, la fase relativa può modificare la figura del campo e il punto sulla sfera. Una preparazione circolare assegna 50/50 a ogni analizzatore lineare.\par
+
+
+\BookHeading{Dalla polarizzazione alla scelta della misura}
+\BookHeading{Due componenti dello stesso campo}
+Guardiamo il fascio lungo la direzione di propagazione. Una polarizzazione \(H\) oscilla orizzontalmente, una polarizzazione \(V\) verticalmente. Nella diagonale a \(+45{}^{\circ} \) il campo ha una componente orizzontale e una verticale di uguale ampiezza, che oscillano insieme. Sono componenti dello stesso campo elettrico.\par
+
+\guillemotleft{}Anima il campo\guillemotright{} segue la punta del vettore lungo le posizioni raggiunte durante un'oscillazione. Per una polarizzazione lineare si ottiene un segmento. Se le due componenti acquistano uno sfasamento, la punta può percorrere un'ellisse; con ampiezze uguali e un quarto di ciclo di differenza percorre un cerchio. Le figure descrivono l'oscillazione del campo di un fascio classico, non il tragitto di un pacchetto di luce nello spazio.\par
+
+\BookHeading{Misurare un pacchetto alla volta}
+Con l'analizzatore a \(0{}^{\circ} \), l'uscita \(A\) corrisponde alla polarizzazione \(H\) e l'uscita \(B\) alla polarizzazione \(V\). La preparazione \(H\) conduce sempre ad \(A\) nel modello ideale; la preparazione \(V\) conduce sempre a \(B\). La diagonale a \(+45{}^{\circ} \) assegna invece uguale probabilità ai due esiti.\par
+
+Ogni prova prepara un nuovo pacchetto e registra un solo esito. Su molte prove con la diagonale ci aspettiamo circa metà degli arrivi in \(A\) e metà in \(B\). La scomposizione del campo non significa che ciascun pacchetto sia registrato per metà in ogni uscita. Il 50\% descrive la probabilità dei singoli esiti e il comportamento di una raccolta numerosa.\par
+
+\BookHeading{La stessa ripartizione può provenire da preparazioni diverse}
+Prepara prima \(+45{}^{\circ} \) e poi \(- 45{}^{\circ} \), lasciando l'analizzatore a \(0{}^{\circ} \). Entrambe le preparazioni danno probabilità 50\% e 50\%. Sulla sfera occupano però due punti opposti dell'equatore. La stessa altezza rispetto all'asse H/V spiega l'uguaglianza delle probabilità in quella misura; la diversa posizione conserva la differenza fra gli stati.\par
+
+Ruota ora l'analizzatore a \(45{}^{\circ} \). L'uscita \(A\) legge la diagonale \(+45{}^{\circ} \) e \(B\) la diagonale perpendicolare \(- 45{}^{\circ} \). La prima preparazione produce \(A\) con certezza, la seconda \(B\) con certezza. Cambiare la misura rende quindi osservabile una differenza che la precedente scelta non distingueva.\par
+
+La preparazione circolare offre un ulteriore confronto: tutte le orientazioni lineari dell'analizzatore danno 50\% e 50\%. Questo risultato non identifica lo stato con una scelta casuale fra \(H\) e \(V\). La preparazione circolare conserva una relazione precisa fra le componenti; altre operazioni, prima della misura, possono renderla osservabile. Il laboratorio mostra qui soltanto analizzatori lineari.\par
+
+
+Il modello e le sue condizioni\par
+
+Ogni prova impiega un nuovo pacchetto di luce nella stessa preparazione. L'analizzatore ideale registra un solo esito, \(A\) oppure \(B\), senza perdite. Il modello considera qui misure lungo due polarizzazioni lineari perpendicolari.\par
+
+La sfera riassume la preparazione attraverso un punto. I suoi poli sono \(H\) e \(V\); le diagonali occupano punti opposti dell'equatore. La scomposizione in componenti \(H\) e \(V\) e lo sfasamento fra esse determinano il punto rappresentato. La spiegazione geometrica accompagna le figure; le relazioni usate dal programma sono documentate nei sorgenti.\par
+
+
+\input{esercizi/modulo-1/G1.09.tex}
+\Needspace{.43\textheight}
+\section{Operazioni su un qubit}
+\phantomsection\label{c1-calcolo}
+
+{\sffamily\small\color{Ink!70} Riferimento alle slide: p. 222.\par}
+
+{\sffamily\small\color{Ink!70} Laboratorio locale: \nolinkurl{index.html#capitolo-1/calcolo}\par}
+
+Un circuito è una sequenza di operazioni: ciascun blocco riceve uno stato, lo trasforma e passa il risultato al successivo. Useremo i nomi 0 e 1 per i due esiti della misura, che nella parte sulla polarizzazione erano indicati con \(H\) e \(V\). La sequenza R--F--R riprende l'esperimento della lezione: una fase che conserva le probabilità intermedie può cambiare quelle finali. Le operazioni \(X\), \(Y\) e \(Z\) permettono poi di costruire e confrontare altre sequenze.\par
+
+
+\BookHeading{Preparazione e significato dei comandi}
+
+\BookHeading{Preparare e intervenire}
+Operazione da applicare\par
+
+Seleziona un blocco del circuito e scegli l'operazione. Gli altri due passaggi mantengono la loro configurazione.\par
+
+Applica il terzo blocco\par
+
+Escludendolo, la misura riceve direttamente lo stato uscito dal secondo blocco. Puoi così confrontare il risultato prima e dopo l'ultima operazione.\par
+
+Il primo blocco diventa l'ultimo e l'ultimo diventa il primo. Lo stato iniziale rimane lo stesso. In generale, cambiare l'ordine cambia il risultato.\par
+
+Partendo da +, \(X\) lascia lo stato invariato e \(R\) lo porta in 0. Invertendo l'ordine si ottiene I--R--X: \(R\) porta + in 0 e \(X\) porta 0 in 1. La misura finale passa così da 0 certo a 1 certo.\par
+
+
+\BookHeading{Figure della configurazione iniziale}
+\begin{FigureBlock}\centering\includegraphics[width=\linewidth,height=94mm,keepaspectratio]{figure/f6e2ab56cb2cc2b36.pdf}\FigureCaption{Preparazione iniziale: sfera modificabile}\end{FigureBlock}
+\begin{FigureBlock}\centering\includegraphics[width=\linewidth,height=94mm,keepaspectratio]{figure/fc2c65a10b1c2d59a.pdf}\FigureCaption{Stato dopo il blocco 1}\end{FigureBlock}
+\begin{FigureBlock}\centering\includegraphics[width=\linewidth,height=94mm,keepaspectratio]{figure/fd04f3209636537e2.pdf}\FigureCaption{Stato dopo il blocco 2}\end{FigureBlock}
+\begin{FigureBlock}\centering\includegraphics[width=\linewidth,height=94mm,keepaspectratio]{figure/f1e47cb1f015f680d.pdf}\FigureCaption{Stato dopo il blocco 3}\end{FigureBlock}
+\begin{FigureBlock}\centering\includegraphics[width=\linewidth,height=94mm,keepaspectratio]{figure/f616a7430b3e5b510.pdf}\FigureCaption{Stato sulla sfera di Bloch}\end{FigureBlock}
+\begin{FigureBlock}\centering\includegraphics[width=\linewidth,height=94mm,keepaspectratio]{figure/f70a572e97509e0be.pdf}\FigureCaption{Stato sulla sfera di Bloch}\end{FigureBlock}
+\begin{FigureBlock}\centering\includegraphics[width=\linewidth,height=94mm,keepaspectratio]{figure/f46cfb2fa0b467aae.pdf}\FigureCaption{Stato sulla sfera di Bloch}\end{FigureBlock}
+\begin{FigureBlock}\centering\includegraphics[width=\linewidth,height=94mm,keepaspectratio]{figure/fc2c273ae5cdd6209.pdf}\FigureCaption{Contributi delle componenti \(H\) e \(V\) a ciascuna uscita di \(R\)}\end{FigureBlock}
+
+
+\BookHeading{\(R\) \(\cdot\) Ricombina le ampiezze}
+\(R\) porta 0 nello stato + e 1 nello stato \(- \). Applicata a + dà 0; applicata a \(- \) dà 1. In questo modo rende distinguibili due stati che, misurati direttamente in 0/1, darebbero entrambi 50/50. È la ricombinazione già incontrata nella lezione.\par
+
+In questo passaggio Stato + diventa Stato 0. La curva sulla sfera mostra come agisce l'operazione sullo stato in ingresso.\par
+
+\BookHeading{Prima dell'operazione}
+\BookHeading{Dopo \(R\)}
+Il cerchio vuoto indica la posizione iniziale; il punto blu indica quella finale. La curva corallo segue la trasformazione sulla sfera. Le percentuali riguardano una misura 0/1 eseguita in quel punto.\par
+
+\BookHeading{Esempi con \(R\)}
+La tabella applica soltanto \(R\) a ciascuno stato iniziale. \guillemotleft{}Carica\guillemotright{} prepara quel caso nel primo blocco e lascia I negli altri due, così puoi raccogliere gli esiti e confrontarli con la previsione.\par
+
+\BookHeading{Che cosa significano + e \(- \)}
+I due stati occupano punti opposti dell'equatore. Entrambi danno 50/50 nella misura 0/1; la loro fase relativa differisce di mezzo giro. \(R\) porta + in 0 e \(- \) in 1. Questo esempio mostra perché, per prevedere una sequenza di operazioni, occorre conservare anche la fase dello stato.\par
+
+\BookHeading{Come \(R\) ricombina le ampiezze}
+Ogni ampiezza in ingresso contribuisce a entrambi gli esiti. Per l'esito 0 i contributi si sommano; per l'esito 1 il secondo contributo cambia verso. Le frecce verde e corallo rappresentano questi contributi, mentre la risultante blu determina la probabilità. Con lo stato + i contributi si rinforzano in 0 e si cancellano in 1; con lo stato \(- \) avviene il contrario.\par
+
+\BookHeading{Eseguire il circuito}
+Ogni prova prepara un nuovo qubit nello stato iniziale scelto, applica tutte le operazioni attive e legge 0 oppure 1. Selezionare un passaggio cambia il dettaglio consultato; i conteggi riguardano sempre l'uscita dell'intero circuito.\par
+
+Prove al secondo\par
+
+Regola soltanto la rapidità della raccolta sullo schermo. Le probabilità di ciascuna prova restano le stesse.\par
+
+\BookHeading{Esiti della misura}
+La barra colorata mostra la parte della raccolta in cui è comparso ciascun esito: una barra piena corrisponde al 100\%. Il segno verticale indica la probabilità prevista dal modello, anche prima di raccogliere dati.\par
+
+Non sono ancora state eseguite prove. Le barre sono vuote; i segni verticali e le percentuali riportano già ciò che il modello prevede.\par
+
+Ogni prova ripete l'esperimento con una nuova preparazione. Modificare la preparazione o la misura avvia una nuova raccolta: conserva prima il confronto se vuoi ricordare i conteggi precedenti.\par
+
+
+\BookHeading{Il circuito completo}
+Trascina il punto della prima sfera per cambiare la preparazione. Seleziona un blocco per scegliere l'operazione; le caselle modificano direttamente i suoi angoli.\par
+
+Trascina il punto blu.\par
+
+Stato 0\par
+
+Fase\par
+
+Stato +\par
+
+Angolo\par
+
+Stato +\par
+
+Stato 0\par
+
+I conteggi si raccolgono con i pulsanti delle prove.\par
+
+Ogni blocco trasforma lo stato ricevuto da quello precedente. Le sfere mostrano gli stati intermedi calcolati: l'unica misura eseguita è quella finale. La retta corallo indica l'asse della trasformazione; la curva con freccia ne mostra il percorso, dal cerchio vuoto al punto blu. Le fasi dello stato sono riportate fra \(- 180{}^{\circ} \) e \(+180{}^{\circ} \); l'angolo scelto in \(F\) è invece la variazione da applicare. Un segno negativo indica il verso opposto.\par
+
+Ingrandisci la sfera e regola lo stato iniziale\par
+
+\BookHeading{Prepara il punto sulla sfera}
+Trascina il punto blu per cambiare la preparazione. Le frecce della tastiera regolano inclinazione e fase; Maiusc riduce il passo, Inizio e Fine selezionano i poli. Al bordo della sfera, ruota la vista per proseguire sull'altro emisfero.\par
+
+0: 100,0\% \(\cdot\) 1: 0,0\% Ai poli è presente una sola componente: la fase relativa non è definita.\par
+
+Muovere il punto cambia lo stato iniziale del qubit. Tutti i blocchi vengono applicati di nuovo a questo stato e la previsione finale si aggiorna insieme alle sfere intermedie. Il tratteggio della freccia indica che il punto si trova sulla metà posteriore della sfera.\par
+
+Distanza angolare dal polo 0\par
+
+Cursore \(\cdot\) Distanza angolare dal polo 0\par
+
+Fase relativa dello stato\par
+
+Cursore \(\cdot\) Fase relativa dello stato\par
+
+Il polo superiore dà 0 con certezza; quello inferiore dà 1 con certezza. Sull'equatore i due esiti hanno la stessa probabilità. Muoversi lungo un parallelo conserva queste probabilità e cambia la fase relativa. Puoi inserire anche una fase negativa: \(- 90{}^{\circ} \) e \(+270{}^{\circ} \) individuano lo stesso punto. Le fasi dello stato sono riportate fra \(- 180{}^{\circ} \) e \(+180{}^{\circ} \); la distanza dal polo 0 varia fra \(0{}^{\circ} \) e \(180{}^{\circ} \).\par
+
+
+\BookHeading{Che cosa mostra questa configurazione}
+Il circuito parte da Stato 0 e arriva a Stato 0. La misura finale prevede 100,00\% di esiti 0 e 0,00\% di esiti 1.\par
+
+Le probabilità si aggiornano quando cambia la preparazione o una delle operazioni. I conteggi si costruiscono avviando le prove; ogni nuova configurazione apre una nuova raccolta.\par
+
+Dopo \(F\), \(R\) ricombina le ampiezze: la fase può così modificare le probabilità finali.\par
+
+
+Il modello e le sue condizioni\par
+
+Il simulatore descrive uno stato puro mediante due ampiezze, a e b, associate agli esiti 0 e 1. Le probabilità sono i quadrati dei loro moduli. \(X\) scambia a e b; \(Z\) cambia il segno di b; \(Y\) porta la coppia (a, b) in \((- ib\), ia), dove i indica una rotazione di un quarto di giro nel piano delle ampiezze. Una stessa fase applicata a entrambe le ampiezze non modifica lo stato rappresentato sulla sfera.\par
+
+\(R\) calcola \((a+b)/\sqrt{2}\) e \((a- b)/\sqrt{2}\). \(F\) conserva l'ampiezza associata a 0 e ruota quella associata a 1 dell'angolo scelto. La sfera mantiene la rappresentazione geometrica di queste operazioni. I nomi \(X\), \(Y\) e \(Z\) identificano operazioni fissate; il solo angolo regolabile nel circuito è quello di \(F\).\par
+
+Il trascinamento modifica lo stato iniziale e ricalcola tutta la sequenza. Le sfere intermedie sono previsioni del modello; ogni prova genera un esito soltanto alla misura finale, ripartendo ogni volta dalla stessa preparazione. I nomi 0/1 sostituiscono H/V senza modificare il modello matematico.\par
+
+
+\input{esercizi/modulo-1/G1.10.tex}
+\input{esercizi/modulo-1/G1.11.tex}
+\Needspace{.43\textheight}
+\section{Statistiche locali e correlazioni}
+\phantomsection\label{c1-coppie}
+
+{\sffamily\small\color{Ink!70} Riferimento alle slide: p. 246.\par}
+
+{\sffamily\small\color{Ink!70} Laboratorio locale: \nolinkurl{index.html#capitolo-1/coppie}\par}
+
+Una prova produce due risultati, che vanno conservati insieme. Confronteremo preparazioni con gli stessi conteggi individuali e tabelle delle coppie differenti; cambieremo poi la misura per distinguere una scelta casuale da una sovrapposizione.\par
+
+
+\BookHeading{Preparazione e significato dei comandi}
+
+\BookHeading{Preparare e intervenire}
+Sorgente di coppie\par
+
+La sorgente prepara un unico stato congiunto, con contributi uguali delle due alternative indicate. La fase relativa appartiene alla preparazione della coppia.\par
+
+Fase della preparazione congiunta\par
+
+Modifica la relazione di fase fra le due alternative della sovrapposizione. La misura H/V mantiene le stesse coppie possibili; cambiando la misura si può rendere osservabile la fase. Il controllo è inattivo per le miscele e per la preparazione indipendente.\par
+
+Orientazione della misura sul primo\par
+
+\(A_{1}\) è l'uscita lungo la direzione scelta, \(B_{1}\) quella perpendicolare. \(A\) \(0{}^{\circ} \) leggiamo H/V; a \(45{}^{\circ} \) leggiamo \(+45{}^{\circ} /- 45{}^{\circ} \).\par
+
+Orientazione della misura sul secondo\par
+
+\(A_{2}\) e \(B_{2}\) sono le due uscite del secondo analizzatore. Cambiarne l'orientazione cambia la misura sul secondo sistema; la preparazione alla sorgente rimane quella scelta.\par
+
+\BookHeading{La stessa operazione del laboratorio 6}
+La lettura sulle diagonali equivale, per queste statistiche, a inserire l'operazione \(R\) su ciascun qubit e misurare poi H/V. Le impostazioni a \(45{}^{\circ} \) riproducono quindi il confronto dopo ricombinazione delle slide.\par
+
+
+\BookHeading{Figure della configurazione iniziale}
+\begin{FigureBlock}\centering\includegraphics[width=\linewidth,height=94mm,keepaspectratio]{figure/f19fa5b6229d6bfb9.pdf}\FigureCaption{Due analizzatori a 0 e 0 gradi}\end{FigureBlock}
+
+\BookHeading{Esiti della stessa prova \(\cdot\) probabilità prevista e conteggio osservato}
+\begingroup\sffamily\fontsize{8.8}{11}\selectfont\setlength{\tabcolsep}{1.6mm}\renewcommand{\arraystretch}{1.28}
+\begin{longtable}{>{\RaggedRight\arraybackslash}p{32.421mm}>{\RaggedRight\arraybackslash}p{32.421mm}>{\RaggedRight\arraybackslash}p{32.421mm}>{\RaggedRight\arraybackslash}p{25.937mm}}
+\toprule\rowcolor{Accent!7}\BeginAccSupp{method=hex,unicode,ActualText=005000720069006D006F0020002F0020007300650063006F006E0064006F}Primo / secondo\EndAccSupp{} & \BeginAccSupp{method=hex,unicode,ActualText=00412082}\(A_{2}\)\EndAccSupp{} & \BeginAccSupp{method=hex,unicode,ActualText=00422082}\(B_{2}\)\EndAccSupp{} & \BeginAccSupp{method=hex,unicode,ActualText=005000720069006D006F002000730069007300740065006D0061}Primo sistema\EndAccSupp{} \\
+\midrule\endfirsthead
+\toprule\rowcolor{Accent!7}\BeginAccSupp{method=hex,unicode,ActualText=005000720069006D006F0020002F0020007300650063006F006E0064006F}Primo / secondo\EndAccSupp{} & \BeginAccSupp{method=hex,unicode,ActualText=00412082}\(A_{2}\)\EndAccSupp{} & \BeginAccSupp{method=hex,unicode,ActualText=00422082}\(B_{2}\)\EndAccSupp{} & \BeginAccSupp{method=hex,unicode,ActualText=005000720069006D006F002000730069007300740065006D0061}Primo sistema\EndAccSupp{} \\
+\midrule\endhead\bottomrule\endfoot
+\BeginAccSupp{method=hex,unicode,ActualText=00412081}\(A_{1}\)\EndAccSupp{} & \BeginAccSupp{method=hex,unicode,ActualText=00350030002C00300025003000200063006F007000700069006500410041}50,0\%0 coppieAA\EndAccSupp{} & \BeginAccSupp{method=hex,unicode,ActualText=0030002C00300025003000200063006F007000700069006500410042}0,0\%0 coppieAB\EndAccSupp{} & \BeginAccSupp{method=hex,unicode,ActualText=00350030002C003000250030002000650073006900740069}50,0\%0 esiti\EndAccSupp{} \\
+\BeginAccSupp{method=hex,unicode,ActualText=00422081}\(B_{1}\)\EndAccSupp{} & \BeginAccSupp{method=hex,unicode,ActualText=0030002C00300025003000200063006F007000700069006500420041}0,0\%0 coppieBA\EndAccSupp{} & \BeginAccSupp{method=hex,unicode,ActualText=00350030002C00300025003000200063006F007000700069006500420042}50,0\%0 coppieBB\EndAccSupp{} & \BeginAccSupp{method=hex,unicode,ActualText=00350030002C003000250030002000650073006900740069}50,0\%0 esiti\EndAccSupp{} \\
+\BeginAccSupp{method=hex,unicode,ActualText=005300650063006F006E0064006F002000730069007300740065006D0061}Secondo sistema\EndAccSupp{} & \BeginAccSupp{method=hex,unicode,ActualText=00350030002C003000250030002000650073006900740069}50,0\%0 esiti\EndAccSupp{} & \BeginAccSupp{method=hex,unicode,ActualText=00350030002C003000250030002000650073006900740069}50,0\%0 esiti\EndAccSupp{} & \BeginAccSupp{method=hex,unicode,ActualText=00310030003000250030002000700072006F00760065}100\%0 prove\EndAccSupp{} \\
+\end{longtable}\endgroup
+
+\BookHeading{Due analizzatori, una registrazione congiunta}
+Sovrapposizione HH / VV. La prima lettera di ogni coppia appartiene al primo sistema, la seconda al secondo.\par
+
+Prove al secondo\par
+
+Regola soltanto la rapidità della raccolta sullo schermo. Le probabilità di ciascuna prova restano le stesse.\par
+
+\BookHeading{Leggere una riga del registro}
+Esegui una prova per evidenziare la casella corrispondente. Le somme delle righe danno le frequenze del primo sistema; quelle delle colonne danno le frequenze del secondo. I totali individuali non conservano quale esito accompagnasse l'altro.\par
+
+Con \guillemotleft{}Conserva confronto\guillemotright{} puoi mantenere i risultati attuali prima di cambiare sorgente. Per confrontare miscela e sovrapposizione, tieni entrambi gli analizzatori a \(45{}^{\circ} \) e la fase della sovrapposizione a \(0{}^{\circ} \).\par
+
+\BookHeading{Esiti della misura}
+La barra colorata mostra la parte della raccolta in cui è comparso ciascun esito: una barra piena corrisponde al 100\%. Il segno verticale indica la probabilità prevista dal modello, anche prima di raccogliere dati.\par
+
+Non sono ancora state eseguite prove. Le barre sono vuote; i segni verticali e le percentuali riportano già ciò che il modello prevede.\par
+
+Ogni prova ripete l'esperimento con una nuova preparazione. Modificare la preparazione o la misura avvia una nuova raccolta: conserva prima il confronto se vuoi ricordare i conteggi precedenti.\par
+
+
+\BookHeading{Che cosa mostra questa configurazione}
+Gli esiti sono concordi nel 100,0\% delle prove e discordi nel 0,0\%. I totali ai margini della tabella mostrano ciò che ciascun osservatore può contare da solo.\par
+
+Con sorgenti concordi e discordi nella lettura H/V, le frequenze individuali sono entrambe 50/50, mentre le coppie occupano caselle diverse. La concordanza in una sola misura può essere prodotta anche da una miscela. Per la sovrapposizione HH/VV con fase nulla, la misura diagonale distingue la preparazione coerente dalla miscela. La possibilità di distinguerle dipende dalla fase e dalla misura.\par
+
+Con fase \(0{}^{\circ} \) e misure \(0{}^{\circ} \) / \(0{}^{\circ} \): la distribuzione coincide con quella della miscela delle stesse alternative. Questo confronto non distingue le preparazioni; la coincidenza riguarda soltanto la misura selezionata.\par
+
+
+Il modello e le sue condizioni\par
+
+Si calcolano le quattro probabilità della coppia prima di campionare un evento. Le sovrapposizioni hanno due ampiezze di uguale modulo e fase relativa regolabile; le miscele hanno pesi classici uguali. L'interazione guidata è uno scambio condizionato sul secondo qubit. Le orientazioni degli analizzatori definiscono proiezioni su polarizzazioni lineari ortogonali.\par
+
+La preparazione HV/VH è anticorrelata nella base H/V. La sua correlazione in altre basi dipende anche dalla fase: il solo nome \guillemotleft{}anticorrelata\guillemotright{} non implica esiti opposti per qualsiasi misura. Le probabilità locali delle sorgenti congiunte bilanciate restano 50/50. Il confronto dei registri richiede l'associazione degli esiti della stessa prova.\par
+
+
+\input{esercizi/modulo-1/G1.12.tex}
+\Needspace{.43\textheight}
+\section{Una coppia entangled incontra l'ambiente}
+\phantomsection\label{c1-ambiente}
+
+{\sffamily\small\color{Ink!70} Riferimento alle slide: p. 277.\par}
+
+{\sffamily\small\color{Ink!70} Laboratorio locale: \nolinkurl{index.html#capitolo-1/ambiente}\par}
+
+Riprendiamo la coppia entangled del laboratorio precedente, preparata in modo che \(H\) e \(V\) compaiano con uguale probabilità e che i due esiti siano concordi. Facciamo interagire il secondo sistema con l'ambiente e osserviamo soltanto la coppia. L'ambiente può conservare una traccia diversa a seconda della componente \(H\) o \(V\) con cui ha interagito: al crescere di questa distinzione, la coppia perde la coerenza iniziale.\par
+
+
+\BookHeading{Preparazione e significato dei comandi}
+
+\BookHeading{Preparare e intervenire}
+Accoppiamento con l'ambiente\par
+
+Questo comando regola quanto le due alternative \(H\) e \(V\) del secondo sistema lasciano tracce differenti nell'ambiente. \(A\) 0 la coppia è isolata. \(A\) 100 le tracce sono completamente distinguibili; i valori intermedi descrivono un'interazione parziale. La scala da 0 a 100 è una regolazione del modello: al valore 50 l'indicatore di coerenza residua vale circa 71\%. Il comando regola l'interazione, mentre l'indicatore sottostante ne quantifica l'effetto. Tutte le coppie arrivano ai rivelatori.\par
+
+\BookHeading{Scegliere che cosa misurare}
+I due analizzatori vengono orientati nello stesso modo. La scelta cambia la domanda posta alla coppia dopo l'interazione.\par
+
+H/V distingue orizzontale e verticale. La lettura diagonale distingue le polarizzazioni \(+45{}^{\circ} \) e \(- 45{}^{\circ} \), indicate nei conteggi con + e \(- \). Il primo simbolo di ciascun esito riguarda il sistema 1, il secondo il sistema 2.\par
+
+\BookHeading{Una sequenza da provare}
+Il confronto iniziale usa 10.000 prove diagonali sulla coppia isolata. Ripetendo la raccolta con accoppiamento 100 compaiono anche esiti discordi. La lettura H/V, alle stesse condizioni di accoppiamento, conserva invece la concordanza: la differenza fra le due misure permette di riconoscere quale informazione sia divenuta inaccessibile nella descrizione della sola coppia.\par
+
+
+\BookHeading{Figure della configurazione iniziale}
+\begin{FigureBlock}\centering\includegraphics[width=\linewidth,height=94mm,keepaspectratio]{figure/f9c1abf2280a9eb3c.pdf}\FigureCaption{Coppia entangled: il secondo sistema interagisce con l'ambiente; intensità 0 su 100. Entrambi sono poi misurati lungo le diagonali}\end{FigureBlock}
+
+
+Le due linee seguono i membri della coppia. Soltanto il secondo incontra l'ambiente, rappresentato dal riquadro corallo. I cerchi indicano in modo qualitativo quanto le due tracce siano distinguibili; la loro area di sovrapposizione non è una scala di probabilità.\par
+
+\BookHeading{Dove si vede la perdita di coerenza}
+La misura H/V continua a produrre soltanto HH e VV, anche quando l'ambiente li distingue completamente. La misura diagonale è sensibile alla relazione di fase fra queste alternative: per la coppia isolata i due esiti sono sempre concordi; aumentando l'interazione compaiono \(+- \) e \(- +\), fino a rendere i quattro esiti equiprobabili.\par
+
+\BookHeading{La correlazione rimane}
+Esiti concordi HH oppure VV\par
+
+\BookHeading{La coerenza diventa osservabile}
+Esiti concordi ++ oppure \(- - \)\par
+
+È un indicatore del modello, riferito alla relazione fra HH e VV. Al 100\% la fase iniziale è interamente disponibile nelle misure della coppia; allo 0\% la coppia ha perso questa coerenza. Nella lettura diagonale, l'indicatore è la differenza fra la percentuale di esiti concordi e quella di esiti discordi.\par
+
+\BookHeading{Dalle previsioni ai conteggi}
+Ogni prova registra entrambi i risultati della stessa coppia. Per esempio, \(+- \) significa \(+45{}^{\circ} \) sul primo sistema e \(- 45{}^{\circ} \) sul secondo. Aumentando il numero di prove, le frequenze tendono ai valori riportati nella colonna \guillemotleft{}Dopo l'interazione\guillemotright{}.\par
+
+Considerato singolarmente, ciascun sistema continua a dare due esiti equiprobabili in entrambe le letture. Per osservare la variazione occorre conservare l'associazione fra i due risultati e confrontare le coppie.\par
+
+Prove al secondo\par
+
+Regola soltanto la rapidità della raccolta sullo schermo. Le probabilità di ciascuna prova restano le stesse.\par
+
+\BookHeading{Conteggi dopo l'interazione}
+La barra colorata mostra la parte della raccolta in cui è comparso ciascun esito: una barra piena corrisponde al 100\%. Il segno verticale indica la probabilità prevista dal modello, anche prima di raccogliere dati.\par
+
+Non sono ancora state eseguite prove. Le barre sono vuote; i segni verticali e le percentuali riportano già ciò che il modello prevede.\par
+
+Ogni prova ripete l'esperimento con una nuova preparazione. Modificare la preparazione o la misura avvia una nuova raccolta: conserva prima il confronto se vuoi ricordare i conteggi precedenti.\par
+
+
+\BookHeading{Che cosa mostra questa configurazione}
+Con l'interazione a 0 su 100, la misura diagonale dà esiti concordi nel 100,0\% delle prove e discordi nel 0,0\%. Il valore si riferisce alle probabilità; una raccolta finita può discostarsene.\par
+
+La coppia isolata conserva la fase della preparazione e mostra concordanza perfetta sia in H/V sia sulle diagonali.\par
+
+Questa riduzione della coerenza nella descrizione della coppia è la decoerenza. Il modello conserva la descrizione quantistica dell'insieme formato dalla coppia e dall'ambiente; osservare soltanto i due sistemi lascia fuori le correlazioni sviluppate con l'ambiente.\par
+
+
+Il modello e le sue condizioni\par
+
+La preparazione iniziale è la sovrapposizione coerente ed equiprobabile di HH e VV, con fase relativa nulla. Il secondo qubit interagisce con un ambiente inizialmente puro: \(H\) lascia l'ambiente invariato, \(V\) ne ruota lo stato di un angolo proporzionale al comando, da \(0{}^{\circ} \) a \(90{}^{\circ} \). Quando le due tracce diventano distinguibili, le probabilità della sola coppia si avvicinano a quelle di una scelta casuale fra HH e VV. Il programma calcola le probabilità della coppia sommando su tutti gli esiti dell'ambiente, che qui non viene letto.\par
+
+Il modello descrive una perdita di coerenza rispetto alle componenti HH e VV senza assorbimento né rilassamento. L'indicatore riportato vale 1 per tracce identiche e 0 per tracce ortogonali; coincide con il contrasto fra esiti concordi e discordi nella lettura diagonale. L'interazione rappresenta una possibile causa di decoerenza: altre interazioni possono produrre comportamenti differenti.\par
+
+Ogni prova usa una nuova coppia e un ambiente preparato nello stesso stato iniziale. Ridurre il comando cambia l'interazione delle prove successive; non ricostruisce lo stato delle coppie già misurate. Con tracce completamente distinguibili, la coppia è una miscela separabile di HH e VV. Le letture mostrate si riferiscono a questa famiglia di stati e non costituiscono una verifica universale dell'entanglement.\par
+
+
+\input{esercizi/modulo-1/G1.13.tex}
+\Needspace{.43\textheight}
+\section{Quali dati servono per continuare?}
+\phantomsection\label{c1-informazione}
+
+{\sffamily\small\color{Ink!70} Riferimento alle slide: p. 300.\par}
+
+{\sffamily\small\color{Ink!70} Laboratorio locale: \nolinkurl{index.html#capitolo-1/informazione}\par}
+
+Per continuare il calcolo dopo un'interruzione occorre registrare informazioni sufficienti sulle operazioni ancora da eseguire. Confronteremo un archivio che conserva il punto sulla sfera con uno che conserva soltanto le probabilità 0/1. La geometria mostrerà quali preparazioni diventano indistinguibili nel secondo archivio.\par
+
+
+\BookHeading{Preparazione e significato dei comandi}
+
+\BookHeading{Preparare e intervenire}
+Contenuto del prossimo archivio\par
+
+Il primo archivio conserva la probabilità di 0; quella di 1 si ottiene per differenza dal totale. Il secondo conserva le tre coordinate del punto, che includono anche la fase. Sono dati già noti al programma che ha preparato la simulazione.\par
+
+Il riferimento originale resta separato, per verificare le previsioni dopo la ricarica. La ricostruzione non vi accede. \guillemotleft{}Prepara un nuovo stato\guillemotright{} riapre una sessione di lavoro lasciando disponibile l'archivio esistente.\par
+
+Operazione dopo la ricarica\par
+
+\(R\) porta 0 nello stato + e 1 nello stato \(- \). Applicata a + dà 0; applicata a \(- \) dà 1. In questo modo rende distinguibili due stati che, misurati direttamente in 0/1, darebbero entrambi 50/50. È la ricombinazione già incontrata nella lezione.\par
+
+
+\BookHeading{Figure della configurazione iniziale}
+\begin{FigureBlock}\centering\includegraphics[width=\linewidth,height=94mm,keepaspectratio]{figure/fe4af1e191385e86b.pdf}\FigureCaption{Stato sulla sfera di Bloch}\end{FigureBlock}
+
+
+\BookHeading{Lo stato che il programma sta usando}
+Il punto iniziale prepara Stato +: 0 con probabilità 50,0\%, 1 con probabilità 50,0\%. Muovi il punto per scegliere anche probabilità intermedie.\par
+
+\BookHeading{Prepara il punto sulla sfera}
+Trascina il punto blu per cambiare la preparazione. Le frecce della tastiera regolano inclinazione e fase; Maiusc riduce il passo, Inizio e Fine selezionano i poli. Al bordo della sfera, ruota la vista per proseguire sull'altro emisfero.\par
+
+0: 50,0\% \(\cdot\) 1: 50,0\% Fase relativa \(0{,}0{}^{\circ} \)\par
+
+Muovere il punto cambia lo stato iniziale del qubit. Tutti i blocchi vengono applicati di nuovo a questo stato e la previsione finale si aggiorna insieme alle sfere intermedie. Il tratteggio della freccia indica che il punto si trova sulla metà posteriore della sfera.\par
+
+Distanza angolare dal polo 0\par
+
+Cursore \(\cdot\) Distanza angolare dal polo 0\par
+
+Fase relativa dello stato\par
+
+Cursore \(\cdot\) Fase relativa dello stato\par
+
+Il polo superiore dà 0 con certezza; quello inferiore dà 1 con certezza. Sull'equatore i due esiti hanno la stessa probabilità. Muoversi lungo un parallelo conserva queste probabilità e cambia la fase relativa. Puoi inserire anche una fase negativa: \(- 90{}^{\circ} \) e \(+270{}^{\circ} \) individuano lo stesso punto. Le fasi dello stato sono riportate fra \(- 180{}^{\circ} \) e \(+180{}^{\circ} \); la distanza dal polo 0 varia fra \(0{}^{\circ} \) e \(180{}^{\circ} \).\par
+
+\BookHeading{Il contenuto effettivo del file}
+Importa un archivio\par
+
+La chiave pH indica la probabilità di \(H\), cioè 0; vector contiene le coordinate del punto. Il contenuto visualizzato coincide con il file esportato. I risultati delle prove hanno un'esportazione separata.\par
+
+
+\BookHeading{Che cosa mostra questa configurazione}
+La sequenza di registrazione, chiusura e ricarica permette di verificare se i dati conservati bastano per prevedere l'operazione scelta.\par
+
+
+Il modello e le sue condizioni\par
+
+Si salva uno stato puro noto al simulatore classico. L'archivio ridotto contiene la probabilità teorica esatta di 0, così da separare la perdita della fase dall'imprecisione statistica di una stima. Le ricostruzioni sono i punti della sfera con quella stessa probabilità; gli estremi delle previsioni sono calcolati sull'intero parallelo.\par
+
+Il file ridotto non include fase o nome della preparazione. Il riferimento usato per il controllo resta esterno alla procedura di ricostruzione. Su un qubit fisico sconosciuto, una singola misura non rende disponibile l'intero stato. La registrazione qui esaminata riguarda dati già presenti nel programma.\par
+
+
+\input{esercizi/modulo-1/G1.14.tex}
+\Needspace{.43\textheight}
+\section{Stessi conteggi, cause differenti}
+\phantomsection\label{c1-sintesi}
+
+{\sffamily\small\color{Ink!70} Riferimento alle slide: p. 308.\par}
+
+{\sffamily\small\color{Ink!70} Laboratorio locale: \nolinkurl{index.html#capitolo-1/sintesi}\par}
+
+Due apparati producono inizialmente gli stessi conteggi \(D_{1}/D_{2}\) per qualunque fase impostata. Vogliamo verificare se questa osservazione basti a descriverne il funzionamento. Sono disponibili due interventi: stabilizzare la fase fra le prove e compensare un'eventuale traccia dei cammini nell'ambiente. Confrontandone gli effetti potremo distinguere le spiegazioni considerate nel modello.\par
+
+
+\BookHeading{Preparazione e significato dei comandi}
+
+\BookHeading{Preparare e intervenire}
+Fase nominale dell'interferometro\par
+
+È la differenza di fase impostata fra i due cammini. La scansione ripete la raccolta a tredici valori, da \(0{}^{\circ} \) a \(360{}^{\circ} \), per verificare come cambia la probabilità di \(D_{1}\).\par
+
+Stabilizza la fase fra le prove\par
+
+Rende ripetibile la fase impostata, eliminando le sue eventuali variazioni casuali da una preparazione alla successiva. Agisce sul ritardo relativo; una traccia già presente nell'ambiente resta disponibile.\par
+
+Compensa la traccia dei cammini\par
+
+Applica l'inversa dell'interazione di marcatura presente nell'apparato, prima dell'ultima \(R\). Se i cammini avevano lasciato tracce diverse, questa operazione le riporta allo stesso stato. Le eventuali variazioni casuali della fase rimangono.\par
+
+Mostra anche la polarizzazione dell'ambiente\par
+
+Suddivide gli stessi eventi secondo la lettura H/V della traccia: \(D_{1}\cdot H\), \(D_{1}\cdot V\), \(D_{2}\cdot H\), \(D_{2}\cdot V\). Il comando cambia il raggruppamento del registro; i totali \(D_{1}/D_{2}\) restano gli stessi. Qui la polarizzazione realizza l'ambiente controllabile incontrato nel laboratorio 08.\par
+
+Registra impostazioni e conteggi delle prove a fase fissata. La scansione completa si esporta dal proprio grafico.\par
+
+
+\BookHeading{Figure della configurazione iniziale}
+\begin{FigureBlock}\centering\includegraphics[width=\linewidth,height=94mm,keepaspectratio]{figure/fbb64579c63f10ba0.pdf}\FigureCaption{Disposizione comune ai due apparati: preparazione, due cammini, regolazione della fase, possibile interazione e compensazione, ricombinazione, misura}\end{FigureBlock}
+
+
+\(R\) prepara i due cammini; \(F\) ne regola la fase relativa. Il riquadro inferiore indica dove un cammino può lasciare una traccia nell'ambiente e dove viene applicata l'operazione inversa. In assenza di marcatura, la compensazione lascia lo stato invariato. \(D_{1}\) e \(D_{2}\) registrano un solo esito a ogni prova.\par
+
+\BookHeading{Variazioni di fase}
+La lettura riguarda \(0{}^{\circ} \). La scansione permette di verificare se questa probabilità varia quando cambia la fase.\par
+
+\BookHeading{Tracce dei cammini}
+La lettura riguarda \(0{}^{\circ} \). La scansione permette di verificare se questa probabilità varia quando cambia la fase.\par
+
+\BookHeading{Confrontare gli stessi interventi}
+Una prima scansione senza interventi fornisce il riferimento. Stabilizzando soltanto la fase e ripetendo la scansione si osserva quale apparato risponde al controllo del ritardo. Il confronto successivo, eseguito con la sola compensazione, verifica il ruolo della traccia nell'ambiente. I pulsanti degli esempi impostano questi casi; i comandi consentono di combinarli liberamente.\par
+
+Prove al secondo\par
+
+Regola soltanto la rapidità della raccolta sullo schermo. Le probabilità di ciascuna prova restano le stesse.\par
+
+\BookHeading{Apparato 1 \(\cdot\) risultati}
+La barra colorata mostra la parte della raccolta in cui è comparso ciascun esito: una barra piena corrisponde al 100\%. Il segno verticale indica la probabilità prevista dal modello, anche prima di raccogliere dati.\par
+
+Non sono ancora state eseguite prove. Le barre sono vuote; i segni verticali e le percentuali riportano già ciò che il modello prevede.\par
+
+Ogni prova ripete l'esperimento con una nuova preparazione. Modificare la preparazione o la misura avvia una nuova raccolta: conserva prima il confronto se vuoi ricordare i conteggi precedenti.\par
+
+\BookHeading{Apparato 2 \(\cdot\) risultati}
+Non sono ancora state eseguite prove. Le barre sono vuote; i segni verticali e le percentuali riportano già ciò che il modello prevede.\par
+
+\BookHeading{Una scansione completa}
+Si raccolgono 2.000 nuove prove a ciascuna delle tredici fasi: 26.000 prove per apparato, 52.000 complessive. I conteggi a fase fissata, mostrati sopra, costituiscono raccolte separate. Nelle curve la coordinata orizzontale è la fase, quella verticale è la frequenza di \(D_{1}\).\par
+
+\BookHeading{Quaderno dei confronti}
+Il quaderno conserverà i confronti registrati con il comando accanto alle regolazioni. Per mantenerli anche dopo l'uscita dal laboratorio, esporta il file CSV.\par
+
+
+\BookHeading{Che cosa mostra questa configurazione}
+Entrambi gli apparati prevedono 50/50 per ogni fase nominale.\par
+
+Nell'apparato 1, le variazioni casuali della fase cancellano le frange della raccolta complessiva. Nell'apparato 2, i cammini lasciano tracce distinguibili nell'ambiente. Stabilizzare la fase interviene sulla prima causa; compensare la marcatura interviene sulla seconda. Le curve permettono di seguire separatamente questi effetti, nelle condizioni ideali qui specificate.\par
+
+
+Il modello e le sue condizioni\par
+
+Apparato 1: interferometro bilanciato senza marcatura, con un ritardo aggiuntivo uniforme su un ciclo completo e indipendente a ogni prova. Per ciascun valore fissato del ritardo è definita una distribuzione con interferenza. Mediando le distribuzioni relative ai diversi ritardi si ottiene probabilità 1/2 in ciascuna uscita. La stabilizzazione elimina questo ritardo aggiuntivo.\par
+
+Apparato 2: fase stabile e marcatura completa, con \(H\) associato al primo cammino e \(V\) al secondo. La compensazione applica l'inversa dell'interazione prima della ricombinazione. Sono modelli ideali specificati, con raccolte indipendenti nei due apparati; l'esperimento verifica le loro previsioni senza fornire una procedura universale per riconoscere ogni possibile ambiente.\par
+
+
+\input{esercizi/modulo-1/G1.15.tex}
+

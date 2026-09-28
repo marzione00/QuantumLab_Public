@@ -67,11 +67,49 @@ Due onde coerenti hanno intensità relativa 1 + b² + 2b cos φ. La somma
 delle sole intensità vale 1 + b². Il disegno delle ampiezze rappresenta
 questa somma nel piano complesso.
 
-Lo schermo usa la diffrazione di Fraunhofer nell’approssimazione
-paraxiale: sinc²(πay/λL), moltiplicata per 2 + 2V cos(2πdy/λL + φ)
-quando si aprono due fenditure. Qui sinc(u) = sin(u)/u. La distribuzione
-è normalizzata nella finestra da −22 a +22 mm; non misura il flusso
-totale trasmesso. Si integrano 6.400 punti medi, aggregati in 800 intervalli di 0,055 mm. Il campionamento risolve la distanza minima delle frange consentita dai comandi, 0,50 mm. Il dettaglio centrale mantiene la normalizzazione della finestra completa.
+Lo schermo calcola la propagazione scalare paraxiale di Fresnel attraverso
+aperture rettangolari. Per ogni apertura l'ampiezza è una differenza degli
+integrali C e S ai due bordi, con coordinate scalate da √(2/(λL)).
+Due aperture sommano ampiezze, fase e termine di coerenza dichiarati.
+Nel limite di Fraunhofer si ritrova sinc²(πay/(λL)); il modello completo
+permette anche di osservare il campo vicino.
+
+Il numero di Fresnel della singola fenditura è F_a = a²/(λL). Per il campo
+lontano dell'intero apparato occorre F_D = D²/(λL) piccolo, con D=a per
+una fenditura e D=d+a per due, dove d è la separazione fra i centri.
+La regola «restringere l'apertura allarga il profilo» vale nel campo lontano;
+nel regime geometrico la larghezza dell'impronta segue quella dell'apertura.
+Il confronto geometrico è l'ombra
+delle aperture, mediata con la stessa risposta rettangolare del rivelatore.
+La risoluzione finita è esplicita e non viene confusa con perdita di coerenza.
+Si usano almeno 6.400 punti nella finestra, regolabile da ±1 a ±150 mm.
+La griglia si infittisce fino a risolvere con almeno otto campioni il periodo
+minimo λL/D, o almeno sedici quando la risoluzione è positiva. Il campo è
+esteso oltre la finestra di almeno metà supporto del rivelatore, più le celle
+necessarie all'interpolazione cubica. La media integra tale interpolante su
+un supporto rettangolare esattamente largo quanto la risoluzione richiesta:
+le celle terminali hanno pesi frazionari, senza troncamento o rinormalizzazione
+ai bordi della finestra. L'ombra geometrica usa l'intersezione esatta con lo
+stesso supporto. L'esattezza della larghezza non elimina l'errore numerico
+dell'interpolazione e della griglia; i confronti a griglia infittita lo verificano.
+Gli 800 pixel
+visualizzati integrano i campioni; se sono larghi, possono mediare le frange.
+Le unità interne sono SI; i comandi espongono µm, nm, m e mm.
+La distribuzione è normalizzata nella finestra scelta; non misura il flusso
+totale trasmesso. Le frazioni catturate prima e dopo la risposta del rivelatore,
+mostrate nell'interfaccia e nel CSV, sono riferite al flusso totale trasmesso;
+non sono la somma delle probabilità condizionate. Il CSV distingue risoluzione
+richiesta, supporto effettivo, passo della griglia e campioni per intervallo.
+La scala paraxiale, la discretizzazione e l'illuminazione piana uniforme
+delimitano il modello. Per F grande rimangono effetti ai bordi: il limite
+classico dipende anche dalla risoluzione dell'osservazione.
+
+Preset verificati a λ = 550 nm e L = 1 m: a = 20 µm, finestra ±70 mm,
+primo minimo circa 27,5 mm; a = 1 mm, F circa 1,82; a = 8 mm,
+F circa 116,36, finestra ±7 mm e risoluzione 0,16 mm.
+Nel terzo caso lo scarto integrato L1 rispetto alla distribuzione geometrica
+normalizzata è inferiore a 0,13. È un controllo numerico a parametri finiti,
+non una dimostrazione generale del limite asintotico.
 Tutti gli arrivi, fino a un milione, aggiornano lo schermo e i conteggi.
 Per molti eventi il colore dello schermo è logaritmico; l’istogramma
 rimane lineare. Non si attribuisce un cammino a ogni singolo evento.
@@ -201,3 +239,51 @@ I controlli numerici e il rendering statico non sostituiscono un collaudo
 interattivo su diversi browser. Il rapporto di verifica specifica i controlli effettivamente eseguiti e il collaudo manuale ancora necessario.
 
 La revisione 1.1 aggiunge `qa/verify-revision.mjs`: fase effettiva, trascinamento sui due emisferi, R–F–R e bypass, risoluzione minima delle frange, fase della coppia, archivi generici e interventi diagnostici.
+
+## Modelli dei moduli 2–4
+
+L'algebra usa coppie di numeri reali per i complessi e vettori di ampiezze.
+Le matrici agiscono per prodotto riga-colonna; il prodotto interno coniuga
+il primo argomento. Il registro è big-endian. Le figure delle ampiezze
+e le tabelle delle probabilità derivano dai medesimi vettori.
+
+La QFT diretta e la rete di porte vengono confrontate su tutta la base
+dei piccoli registri. La QPE calcola le somme finite delle fasi e conserva
+la distribuzione completa; su sovrapposizioni di autostati, il ramo
+condizionato richiede le ampiezze complesse di ogni autostato.
+
+Grover opera nel piano determinato dalla preparazione e dal sottospazio
+buono, conservando anche tutte le ampiezze. Il metodo con M ignoto
+campiona il numero di iterazioni e verifica i candidati entro un budget:
+l'insuccesso non dimostra che M sia nullo. L'esempio del minimo include
+una verifica classica esaustiva finale, esplicitamente conteggiata.
+
+RSA usa interi piccoli esatti. Shor applica le potenze modulari al registro
+inizializzato in |1⟩ e trasforma il registro di lettura con Fourier inversa.
+Il periodo non è un ingresso. Le tabelle dei rami e delle frazioni continue
+includono esiti inutili e candidati che falliscono la verifica modulare.
+
+Le reti di moltiplicazione sono sintetizzate per mintermini e decomposte
+in X, CNOT e Toffoli con ripristino degli ausiliari. Sono verificate su tutta
+la base per N = 15 e N = 21. La crescita è esponenziale: queste reti
+verificano esempi didattici piccoli e non costituiscono l'implementazione
+aritmetica efficiente richiesta per la complessità polinomiale di Shor.
+Il sommatore mostra calcolo e ripristino della storia dei riporti.
+Nel logaritmo discreto, la Fourier F6 è astratta e non sintetizzata in qubit.
+
+## Materiali di riferimento della revisione
+
+Le presentazioni Seminario dei quattro moduli costituiscono il riferimento
+locale per sequenza, convenzioni ed esempi; la corrispondenza alle pagine
+PDF si trova in src/course/slide-references.json e, con l'indice delle
+presentazioni, in docs/corso/SLIDE_REFERENCES.json nei sorgenti.
+
+Per le fenditure: Richard Fitzpatrick, University of Texas at Austin,
+[Single-Slit Diffraction](https://farside.ph.utexas.edu/teaching/315/Waves/node96.html)
+e [Diffraction from a Slit](https://farside.ph.utexas.edu/teaching/315/Waves/node103.html).
+Il codice esplicita le proprie approssimazioni e viene verificato mediante
+integrali di Fresnel, casi limite e confronto a griglia raddoppiata.
+
+Gli altri testi allegati al progetto restano materiali di consultazione.
+Questa revisione non li riproduce né presume di averne verificato ogni
+capitolo; i risultati numerici degli esempi sono controllati nei sorgenti.

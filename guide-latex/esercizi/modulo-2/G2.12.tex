@@ -1,0 +1,74 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G2.12}{Preparare uno stato e renderne osservabile la fase}{Collegamento}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Preparare \(\ket\psi=(\sqrt3/2)\ket0+(i/2)\ket1\). Calcolare bra, probabilità iniziali e stato dopo H. Confrontare con la preparazione a fase relativa nulla e con una moltiplicazione globale per \(e^{i\pi/4}\).
+
+\ExTheory{\ExRef{c2-stati}{2.21}; \ExRef{c2-bra}{2.22}; \ExRef{c2-fase}{2.23}; \ExRef{c2-born}{2.24}; \ExRef{c2-unitarie}{2.25}}{Il bra è il coniugato trasposto del ket. La porta \(H=(1/\sqrt2)\begin{pmatrix}1&1\\1&-1\end{pmatrix}\) mescola le componenti. Per \(\alpha\ket0+\beta\ket1\), le coordinate di Bloch sono \((2\Re(\alpha^*\beta),2\Im(\alpha^*\beta),|\alpha|^2-|\beta|^2)\).}
+
+\ExPrediction{La fase relativa è \(90^\circ\). La componente trasversale del vettore di Bloch è orientata lungo y; la Hadamard renderà equiprobabili le due uscite nella base Z.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\node[left] at (-.3,0) {$ (\sqrt3,i)^T/2 $};\draw[Ink] (-.3,0)--(1.5,0);\node[draw=Accent,fill=white,minimum height=9mm,minimum width=10mm] at (0.5,0) {$ H $};\node[right] at (1.5,0) {$\ket{\psi_f}$};
+\end{tikzpicture}}{La preparazione in ingresso ha ampiezze di moduli differenti.}
+
+
+\begin{ExTasks}
+
+\item Controllare la norma e scrivere il bra.
+
+\item Calcolare le probabilità iniziali.
+
+\item Eseguire i due prodotti riga-colonna con H.
+
+\item Calcolare le probabilità finali e le coordinate di Bloch.
+
+\item Ripetere per fase relativa nulla e giustificare l’invarianza rispetto alla fase globale.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Bra e normalizzazione}
+
+\ExEq{\bra\psi&=(\sqrt3/2,\ -i/2),\\\inner\psi\psi&=3/4+(-i)i/4=3/4+1/4=1.}
+
+\ExStep{Lettura iniziale}
+
+\(p_0=3/4\) e \(p_1=1/4\). Inoltre \(\alpha^*\beta=i\sqrt3/4\), quindi \(\mathbf r=(0,\sqrt3/2,1/2)\).
+
+\ExStep{Applicare H}
+
+\ExEq{H\ket\psi&=\frac1{2\sqrt2}\colv{\sqrt3+i\\\sqrt3-i},\\p'_0&=\frac{(\sqrt3-i)(\sqrt3+i)}8=\frac{3+1}8=\frac12,\\p'_1&=\frac{(\sqrt3+i)(\sqrt3-i)}8=\frac12.}
+
+\ExStep{Controllare la geometria finale}
+
+Le ampiezze finali danno
+\ExEq{\alpha'^*\beta'&=(\sqrt3-i)^2/8=(2-2i\sqrt3)/8
+=1/4-i\sqrt3/4,\\\mathbf r'&=(1/2,-\sqrt3/2,0).}
+La norma del vettore di Bloch è \(1/4+3/4=1\); la quota finale nulla corrisponde a probabilità uguali.
+
+\ExStep{Confrontare la fase relativa nulla}
+
+Per \(\ket{\psi_0}=(\sqrt3,1)^T/2\), le ampiezze finali sono \((\sqrt3+1,\sqrt3-1)^T/(2\sqrt2)\). Quindi
+\ExEq{p_0^{(0)}&=(\sqrt3+1)^2/8=(4+2\sqrt3)/8=\tfrac12+\tfrac{\sqrt3}{4},\\p_1^{(0)}&=\tfrac12-\tfrac{\sqrt3}{4}.}
+I valori sono circa \(0{,}9330\) e \(0{,}0670\), con le stesse probabilità iniziali dell’altro stato.
+
+\ExStep{Controllare una fase globale}
+
+Posto \(\ket{\widetilde\psi}=e^{i\pi/4}\ket\psi\), la linearità dà \(H\ket{\widetilde\psi}=e^{i\pi/4}H\ket\psi\). Per ogni componente, \(|e^{i\pi/4}\alpha'|^2=e^{-i\pi/4}e^{i\pi/4}|\alpha'|^2=|\alpha'|^2\).
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-0.35,0)--(1.55,0) node[right] {$\operatorname{Re}$};\draw[exaxis] (0,-0.703553)--(0,1.05) node[above] {$\operatorname{Im}$};\draw[->,Accent,line width=1.1pt] (0,0)--(0.612372,0.353553) node[anchor=south west] {$ \alpha^{\prime} $};\draw[->,Secondary,line width=1.1pt] (0,0)--(0.612372,-0.353553) node[anchor=north west] {$ \beta^{\prime} $};
+\end{tikzpicture}}{Le ampiezze dopo H sono coniugate e hanno uguale modulo \(1/\sqrt2\).}
+
+
+\ExInterpret{La fase relativa entra nei termini incrociati quando le componenti si ricombinano. La fase globale moltiplica tutte le alternative allo stesso modo e si cancella nel modulo quadro.}
+
+\ExLab{Nelle sezioni 2.21–2.25 confrontare la costruzione del bra, la fase e la misura. Nella preparazione del qubit usare angolo polare di Bloch \(60^\circ\) e fase \(90^\circ\), applicare H e confrontare con fase zero.}
+
+
+\end{minipage}

@@ -1,0 +1,72 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G3.02}{Costruire la versione reversibile di una piccola funzione}{Guida esplicita}
+
+\BookHeading{Problema, dati e obiettivo}
+
+La funzione classica AND assegna ad \((a,b)\) il bit \(ab\). Costruire l’estensione reversibile \(T\ket{a,b,t}=\ket{a,b,t\oplus ab}\), descriverne tutti gli ingressi e applicarla a \((\ket{100}+\ket{110})/\sqrt2\). Verificare il ripristino dell’ausiliario.
+
+\ExTheory{\ExRef{c3-reversibilita}{3.02}}{Il simbolo \(\oplus\) indica somma modulo due. La porta Toffoli conserva i primi due bit e inverte il terzo soltanto quando entrambi i controlli valgono uno. Una permutazione della base si estende linearmente a una trasformazione unitaria.}
+
+\ExPrediction{Nella base a tre bit soltanto due vertici devono scambiarsi; gli altri sei restano fissi. La funzione AND da sola identifica più ingressi, mentre il registro completo conserva le etichette necessarie a invertire la trasformazione.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[Ink] (0,1.5)--(4,1.5);\draw[Ink] (0,.75)--(4,.75);\draw[Ink] (0,0)--(4,0);\foreach \y/\lab in {1.5/a,.75/b,0/t}{\node[left] at (0,\y) {$\lab$};}\fill[Accent] (2,1.5) circle(2pt);\fill[Accent] (2,.75) circle(2pt);\draw[Accent] (2,1.5)--(2,0);\draw[Accent,fill=white] (2,0) circle(.15);\draw[Accent] (1.85,0)--(2.15,0);\draw[Accent] (2,-.15)--(2,.15);
+\end{tikzpicture}}{Due controlli e un bersaglio: la Toffoli agisce sul registro completo.}
+
+
+\begin{ExTasks}
+
+\item Scrivere la tabella classica AND.
+
+\item Calcolare gli otto ingressi di T.
+
+\item Verificare che ogni uscita compaia una sola volta.
+
+\item Applicare T ai due rami della sovrapposizione.
+
+\item Applicare T una seconda volta e controllare l’ausiliario.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Tabella della funzione}
+
+\(00\mapsto0\), \(01\mapsto0\), \(10\mapsto0\), \(11\mapsto1\). Dal solo risultato zero non si può recuperare un ingresso unico.
+
+\ExStep{Estensione su tutti i bit}
+
+\ExEq{000&\mapsto000,\quad001\mapsto001,\\010&\mapsto010,\quad011\mapsto011,\\100&\mapsto100,\quad101\mapsto101,\\110&\mapsto111,\quad111\mapsto110.}
+Per \(ab=0\), \(t\oplus ab=t\). Per \(ab=1\), \(0\oplus1=1\) e \(1\oplus1=0\).
+
+\ExStep{Verificare l’inversa}
+
+Le uscite sono tutte distinte. Inoltre \((t\oplus ab)\oplus ab=t\), perciò \(T^2=I\) e \(T^{-1}=T\). La permutazione conserva ortonormalità e norma.
+
+\ExStep{Agire su una sovrapposizione}
+
+\ExEq{T\frac{\ket{100}+\ket{110}}{\sqrt2}
+&=\frac{T\ket{100}+T\ket{110}}{\sqrt2}
+=\frac{\ket{100}+\ket{111}}{\sqrt2}.}
+I due rami hanno probabilità \(1/2\). Il bit t è ora correlato all’ingresso.
+
+\ExStep{Ripristinare}
+
+\ExEq{T\frac{\ket{100}+\ket{111}}{\sqrt2}
+&=\frac{\ket{100}+\ket{110}}{\sqrt2}
+=\frac{\ket{10}+\ket{11}}{\sqrt2}\otimes\ket0.}
+L’ausiliario è tornato a zero ed è separato dal registro degli ingressi.
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\node[exbox] (n0) at (0.0,0.0) {$100\mapsto100$};\node[exbox] (n1) at (3.6,0.0) {$110\mapsto111$};\draw[exother] (n0)--(n1);\node[exbox] (n2) at (7.2,0.0) {$T^2=I$};\draw[exother] (n1)--(n2);
+\end{tikzpicture}}{Azione sui due rami usati nell’esercizio e ripristino.}
+
+
+\ExInterpret{Conservare gli ingressi rende reversibile il calcolo della funzione. La linearità applica la stessa trasformazione coerentemente a tutti i rami, senza leggere i controlli.}
+
+\ExLab{Nella sezione 3.02 confrontare gli ingressi 11 e 10 con ausiliario zero. La seconda Toffoli deve ripristinare t. Usare la tabella completa per controllare anche gli ingressi con t inizialmente uno.}
+
+
+\end{minipage}

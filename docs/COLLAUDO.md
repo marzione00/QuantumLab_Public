@@ -1,4 +1,6 @@
-# Collaudo nel browser
+# Collaudo storico del modulo 1
+
+Per l'edizione corrente usare [corso/COLLAUDO.md](corso/COLLAUDO.md), che include tutti e quattro i moduli. Le prove seguenti conservano i controlli originari delle singole esperienze.
 
 Le verifiche automatiche coprono modelli, tipi, compilazione, contenuti iniziali e percorsi. Le prove seguenti riguardano l’esperienza interattiva e vanno effettuate nel browser del computer usato in aula, oltre che nella copia locale aperta da file.
 

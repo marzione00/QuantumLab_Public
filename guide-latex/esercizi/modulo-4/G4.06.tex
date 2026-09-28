@@ -1,0 +1,75 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G4.06}{Costruire una Fourier a quattro livelli}{Consolidamento}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Applicare la QFT positiva a due qubit nello stato \(\ket{01}\). Usare l’ordine dei bit \(q_0q_1\), con q0 più significativo. Ricostruire il risultato mediante matrice e circuito, poi applicare l’inversa.
+
+\ExTheory{\ExRef{c4-fourier}{4.09}; \ExRef{c4-qft}{4.10}}{La convenzione è \(F_4\ket x=\frac12\sum_{y=0}^3e^{2\pi ixy/4}\ket y\). La trasformata inversa usa il segno negativo. La misura delle sole probabilità finali può nascondere le fasi che distinguono le colonne di Fourier.}
+
+\ExPrediction{Per x=1 le quattro ampiezze dovrebbero percorrere i vertici di un quadrato nel piano complesso, tutte con modulo \(1/2\).}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-1.35,0)--(1.55,0) node[right] {$\operatorname{Re}$};\draw[exaxis] (0,-1.35)--(0,1.55) node[above] {$\operatorname{Im}$};\draw[->,Accent,line width=1.1pt] (0,0)--(1,0) node[anchor=south west] {$ 1 $};\draw[->,Secondary,line width=1.1pt] (0,0)--(0,1) node[anchor=south west] {$ i $};\draw[->,Accent,line width=1.1pt] (0,0)--(-1,0) node[anchor=south west] {$ -1 $};\draw[->,Secondary,line width=1.1pt] (0,0)--(0,-1) node[anchor=north west] {$ -i $};
+\end{tikzpicture}}{Radici quarte dell’unità; le ampiezze della QFT sono questi vettori divisi per due.}
+
+
+\begin{ExTasks}
+
+\item Scrivere F4 e selezionarne la colonna x=1.
+
+\item Seguire H su q0, fase controllata, H su q1 e SWAP.
+
+\item Fattorizzare lo stato finale.
+
+\item Calcolare tutte le quattro somme dell’inversa.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Costruire la matrice}
+
+\ExEq{F_4&=\frac12\begin{pmatrix}1&1&1&1\\1&i&-1&-i\\1&-1&1&-1\\1&-i&-1&i\end{pmatrix},\\
+F_4\ket1&=\frac12(1,i,-1,-i)^T.}
+I quattro moduli quadri sono \(1/4\).
+
+\ExStep{Applicare le prime due porte}
+
+\ExEq{\ket{01}&\xrightarrow{H_0}\frac{\ket{01}+\ket{11}}{\sqrt2}
+\xrightarrow{CP(\pi/2)}\frac{\ket{01}+i\ket{11}}{\sqrt2}.}
+La fase controllata moltiplica per i soltanto la componente 11.
+
+\ExStep{Completare il circuito}
+
+\ExEq{\frac{\ket{01}+i\ket{11}}{\sqrt2}
+&\xrightarrow{H_1}\frac{\ket{00}-\ket{01}+i\ket{10}-i\ket{11}}2\\
+&\xrightarrow{\mathrm{SWAP}}\frac{\ket{00}+i\ket{01}-\ket{10}-i\ket{11}}2.}
+Lo scambio finale ripristina l’ordine dei bit dichiarato.
+
+\ExStep{Leggere i due fattori}
+
+\ExEq{F_4\ket1&=\frac{\ket0-\ket1}{\sqrt2}\otimes\frac{\ket0+i\ket1}{\sqrt2}.}
+Il primo fattore ha fase relativa \(\pi\), il secondo \(\pi/2\). Lo stato è separabile per questo ingresso della base.
+
+\ExStep{Svolgere l’inversa}
+
+\ExEq{B(0)&=(1+i-1-i)/4=0,\\
+B(1)&=(1+1+1+1)/4=1,\\
+B(2)&=(1-i-1+i)/4=0,\\
+B(3)&=(1-1+1-1)/4=0.}
+Pertanto \(F_4^\dagger F_4\ket1=\ket1\). Ogni riga dell’inversa confronta la sequenza di fasi con una frequenza candidata.
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw (0,0)--(6.8,0);\draw (0,-1.4)--(6.8,-1.4);\node[left] at(0,0){$q_0$};\node[left] at(0,-1.4){$q_1$};\node[exbox,minimum width=7mm,text width=7mm] at(1,0){$H$};\fill (2.6,-1.4) circle(2pt);\draw (2.6,-1.4)--(2.6,0);\node[exbox,minimum width=10mm,text width=10mm] at(2.6,0){$P_{\pi/2}$};\node[exbox,minimum width=7mm,text width=7mm] at(4.2,-1.4){$H$};\draw (5.6,0)--(5.6,-1.4);\node at(5.6,0){$\times$};\node at(5.6,-1.4){$\times$};
+\end{tikzpicture}}{Circuito per la convenzione positiva e per l’ordine q0q1, inclusa l’inversione finale dei fili.}
+
+
+\ExInterpret{L’inversa distingue stati con identiche probabilità nella base computazionale attraverso l’allineamento dei fasori. Le cancellazioni delle somme rendono la frequenza un esito leggibile.}
+
+\ExLab{Nelle sezioni 4.09 e 4.10 selezionare QFT positiva su due qubit e ingresso 01. Verificare prima le ampiezze complesse, poi l’ordine dei bit e infine il ritorno con l’inversa.}
+
+
+\end{minipage}

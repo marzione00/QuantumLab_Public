@@ -35,12 +35,14 @@ const specific:Record<string,Record<string,string>>={
   'Ampiezza dell’onda B':'L’ampiezza è il massimo scostamento dall’equilibrio. L’onda A ha ampiezza 1: con B = 1 i contributi sono uguali, con B = 0 rimane soltanto A.',
  },
  fenditure:{
-  'Aperture':'Con una fenditura si osserva l’allargamento del profilo prodotto da una singola apertura. Con due fenditure si può studiare anche il confronto fra i due contributi.',
+  'Aperture':'Con una fenditura si osserva il profilo di diffrazione di una singola apertura, dal campo lontano all’impronta di campo vicino. Con due fenditure si può studiare anche il confronto fra i due contributi.',
   'Combinazione':'«Con interferenza» conserva la relazione di fase fra i contributi. «Somma dei profili» somma le probabilità dei due cammini, come nel caso in cui siano distinguibili. Con una sola apertura questa scelta non ha effetto.',
-  'Larghezza delle fenditure':'È l’ampiezza fisica di ciascuna apertura. Un micrometro (μm) è un millesimo di millimetro. Restringere l’apertura allarga il profilo sullo schermo.',
-  'Separazione delle fenditure':'È la distanza fra i centri delle due aperture. Interviene sulla distanza fra le frange chiare e scure; non modifica la larghezza di ciascuna apertura.',
+  'Larghezza delle fenditure':'È l’ampiezza fisica a di ciascuna apertura. Un micrometro (μm) è un millesimo di millimetro. Nel campo lontano, restringere a allarga il profilo sullo schermo. Nel regime geometrico, invece, la larghezza dell’impronta segue quella dell’apertura, con diffrazione ai bordi. I preset permettono di attraversare questi regimi.',
+  'Separazione delle fenditure':'È la distanza d fra i centri delle due aperture. Nel campo lontano determina la distanza approssimata λL/d fra le frange; nel campo vicino modifica la sovrapposizione dei contributi. Il numero di Fresnel dell’intero apparato usa l’estensione D=d+a.',
   'Lunghezza d’onda':'È la distanza fra due creste successive dell’onda. Un nanometro (nm) è un milionesimo di millimetro; per la luce visibile, lunghezze d’onda diverse corrispondono a colori diversi.',
-  'Distanza dello schermo':'Allontanare lo schermo dilata la figura. Nel disegno l’apparato rimane schematico: le distanze fisiche sono quelle impostate nei controlli.',
+  'Distanza dello schermo':'Nel campo lontano, aumentare L dilata la figura; attraversando il regime di Fresnel può cambiare anche la forma del profilo. Nel disegno l’apparato rimane schematico: le distanze fisiche sono quelle impostate nei controlli.',
+  'Semilarghezza dello schermo':'Seleziona la finestra visualizzata da −s a +s millimetri. Le probabilità sono condizionate agli arrivi in questa finestra. La risposta del rivelatore conserva il proprio supporto anche quando comprende punti esterni al ritaglio.',
+  'Risoluzione del rivelatore':'È la larghezza dell’intervallo sul quale si media l’intensità in ogni posizione. Il supporto applicato coincide con il valore richiesto; il passo numerico e il metodo di integrazione sono riportati nel profilo e nel CSV. Una risoluzione maggiore può attenuare le frange fini anche con una sorgente coerente.',
   'Coerenza dei due contributi':'La coerenza indica quanto viene mantenuta la relazione di fase. Con 1 il modello conserva tutta l’interferenza; con 0 rimane la somma dei profili. I valori intermedi riducono la differenza fra zone chiare e scure.',
  },
  polarizzazione:{

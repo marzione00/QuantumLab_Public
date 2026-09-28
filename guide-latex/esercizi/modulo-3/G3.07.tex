@@ -1,0 +1,72 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G3.07}{Applicare una porta al filo corretto}{Consolidamento}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Preparare \(\ket{01}\) nella base \((00,01,10,11)\). Confrontare \(H\otimes I\) e \(I\otimes H\), scrivendo matrici, vettori finali e distribuzioni. Il primo bit corrisponde al filo superiore.
+
+\ExTheory{\ExRef{c3-registro}{3.07}}{Per prodotti tensoriali, \((U\otimes V)(\ket a\otimes\ket b)=U\ket a\otimes V\ket b\). La base big-endian ordina i bit da quello più significativo; il vettore di \(\ket{01}\) è \((0,1,0,0)^T\).}
+
+\ExPrediction{H sul primo filo deve cambiare il primo bit mantenendo il secondo uguale a uno. H sul secondo filo deve conservare il primo bit uguale a zero.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[Ink] (0,1)--(4,1);\draw[Ink] (0,0)--(4,0);\node[left] at (0,1) {$\ket0$};\node[left] at (0,0) {$\ket1$};\node[draw=Accent,fill=white,minimum size=8mm] at (2,1) {$H$};\node[right] at (4,1) {$\ket+$};\node[right] at (4,0) {$\ket1$};
+\end{tikzpicture}}{Primo caso: la porta è sul fattore di sinistra.}
+
+
+\begin{ExTasks}
+
+\item Scrivere i due prodotti tensoriali a blocchi.
+
+\item Applicare la prima matrice a \(\ket{01}\).
+
+\item Applicare la seconda allo stesso ingresso.
+
+\item Calcolare le quattro probabilità di ciascun caso.
+
+\item Verificare quale etichetta rimane fissata.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Costruire le matrici}
+
+\ExEq{H\otimes I&=\frac1{\sqrt2}\begin{pmatrix}1&0&1&0\\0&1&0&1\\1&0&-1&0\\0&1&0&-1\end{pmatrix},\\
+I\otimes H&=\frac1{\sqrt2}\begin{pmatrix}1&1&0&0\\1&-1&0&0\\0&0&1&1\\0&0&1&-1\end{pmatrix}.}
+
+\ExStep{Agire sul primo filo}
+
+\ExEq{(H\otimes I)\colv{0\\1\\0\\0}
+&=\frac1{\sqrt2}\colv{0+0+0+0\\0+1+0+0\\0+0+0+0\\0+1+0+0}
+=\frac1{\sqrt2}\colv{0\\1\\0\\1}.}
+Lo stato è \((\ket{01}+\ket{11})/\sqrt2\).
+
+\ExStep{Agire sul secondo filo}
+
+\ExEq{(I\otimes H)\colv{0\\1\\0\\0}
+&=\frac1{\sqrt2}\colv{0+1+0+0\\0-1+0+0\\0+0+0+0\\0+0+0+0}
+=\frac1{\sqrt2}\colv{1\\-1\\0\\0}.}
+Lo stato è \((\ket{00}-\ket{01})/\sqrt2\).
+
+\ExStep{Calcolare le distribuzioni}
+
+Il primo caso dà \(P=(0,1/2,0,1/2)\); il secondo dà \(P=(1/2,1/2,0,0)\). In ciascuno la somma è uno. Il segno negativo del secondo caso resta necessario per prevedere altre porte, benché non cambi questa lettura.
+
+\ExStep{Leggere le marginali}
+
+Per \(H\otimes I\), il secondo bit vale uno con probabilità \(P(01)+P(11)=1\), mentre il primo è uniforme. Per \(I\otimes H\), il primo bit vale zero con probabilità \(P(00)+P(01)=1\), mentre il secondo è uniforme.
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[Ink] (0,1)--(4,1);\draw[Ink] (0,0)--(4,0);\node[left] at (0,1) {$\ket0$};\node[left] at (0,0) {$\ket1$};\node[draw=Accent,fill=white,minimum size=8mm] at (2,0) {$H$};\node[right] at (4,1) {$\ket0$};\node[right] at (4,0) {$\ket-$};
+\end{tikzpicture}}{Secondo caso: la porta è sul fattore di destra.}
+
+
+\ExInterpret{Il prodotto tensoriale associa la stessa porta a sottospazi diversi secondo il filo scelto. Il controllo delle marginali rivela un errore di ordinamento anche quando la norma totale è corretta.}
+
+\ExLab{Nella sezione 3.07 confrontare la porta locale sul secondo filo con le coppie di ampiezze aggiornate. Ricostruire le colonne delle due matrici usando i quattro ingressi di base; la colonna relativa a 01 coincide con ciascun risultato calcolato.}
+
+
+\end{minipage}

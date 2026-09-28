@@ -1,0 +1,72 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G1.11}{Preparare, introdurre una fase e ricombinare}{Collegamento}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Una preparazione \((1,0)^T\) attraversa un ricombinatore R, uno sfasatore F di \(90^\circ\) e un secondo R. Seguire le due ampiezze e confrontare con fase nulla e mezzo ciclo. R agisce come la porta Hadamard.
+
+\ExTheory{\ExRef{c1-calcolo}{1.06}}{Su una coppia di ampiezze, \(R(\alpha,\beta)^T=((\alpha+\beta)/\sqrt2,(\alpha-\beta)/\sqrt2)^T\). Lo sfasatore applica \(F_\varphi(\alpha,\beta)^T=(\alpha,e^{i\varphi}\beta)^T\). Il modulo quadro di ciascuna componente dà la probabilità.}
+
+\ExPrediction{Il primo R produce due contributi uguali. Con un quarto di ciclo, somma e differenza dei contributi hanno la stessa lunghezza; le due uscite finali dovrebbero essere equiprobabili.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\node[left] at (-.3,0) {$ \ket{0} $};\draw[Ink] (-.3,0)--(4.5,0);\node[draw=Accent,fill=white,minimum height=9mm,minimum width=10mm] at (0.5,0) {$ R $};\node[draw=Accent,fill=white,minimum height=9mm,minimum width=10mm] at (2.0,0) {$ F_{90^\circ} $};\node[draw=Accent,fill=white,minimum height=9mm,minimum width=10mm] at (3.5,0) {$ R $};\node[right] at (4.5,0) {$\ket{\psi_f}$};
+\end{tikzpicture}}{Tre trasformazioni consecutive, senza misura fra i blocchi.}
+
+
+\begin{ExTasks}
+
+\item Applicare il primo R.
+
+\item Moltiplicare la seconda ampiezza per \(i\).
+
+\item Calcolare somma e differenza nell’ultimo R.
+
+\item Calcolare i due moduli quadri.
+
+\item Ripetere per fase 0 e \(\pi\), poi discutere una misura intermedia.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Aprire le due componenti}
+
+\ExEq{R\colv{1\\0}&=\colv{(1+0)/\sqrt2\\(1-0)/\sqrt2}=\frac1{\sqrt2}\colv{1\\1}.}
+
+\ExStep{Introdurre un quarto di ciclo}
+
+\ExEq{F_{\pi/2}\frac1{\sqrt2}\colv{1\\1}&=\frac1{\sqrt2}\colv{1\\i}.}
+I due moduli quadri sono ancora \(1/2\).
+
+\ExStep{Ricombinare}
+
+\ExEq{R\frac1{\sqrt2}\colv{1\\i}&=\colv{(1/\sqrt2+i/\sqrt2)/\sqrt2\\(1/\sqrt2-i/\sqrt2)/\sqrt2}
+=\frac12\colv{1+i\\1-i}.}
+
+\ExStep{Calcolare i conteggi previsti}
+
+\ExEq{p_0&=\frac{(1-i)(1+i)}4=\frac{1+1}4=\frac12,\\p_1&=\frac{(1+i)(1-i)}4=\frac12.}
+Su 1000 ripetizioni i conteggi medi sono 500 e 500.
+
+\ExStep{Controllare gli altri due casi}
+
+Con fase nulla, il secondo R riceve \((1,1)^T/\sqrt2\) e produce \((1,0)^T\). Con fase \(\pi\), riceve \((1,-1)^T/\sqrt2\) e produce \((0,1)^T\). Le probabilità passano rispettivamente a \((1,0)\) e \((0,1)\).
+
+\ExStep{Inserire una misura intermedia}
+
+Una misura nella base 0/1 dopo il primo R produce ciascun esito con probabilità \(1/2\). Da \(\ket0\), l’ultimo R dà probabilità \((1/2,1/2)\); da \(\ket1\), anche. Mediando i due rami si ottiene \(p_0=(1/2)(1/2)+(1/2)(1/2)=1/2\), indipendentemente dalla fase. Si tratta di un esperimento differente dal percorso coerente.
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-0.35,0)--(1.55,0) node[right] {$\operatorname{Re}$};\draw[exaxis] (0,-1.35)--(0,1.55) node[above] {$\operatorname{Im}$};\draw[->,Secondary,line width=1.1pt] (0,0)--(1,0) node[anchor=south west] {$ 1 $};\draw[->,Secondary,line width=1.1pt] (0,0)--(0,1) node[anchor=south west] {$ i $};\draw[->,Accent,line width=1.1pt] (0,0)--(1,1) node[anchor=south west] {$ 2\alpha $};\draw[->,Ink,line width=1.1pt] (0,0)--(1,-1) node[anchor=north west] {$ 2\beta $};
+\end{tikzpicture}}{Le due diagonali hanno lunghezza \(\sqrt2\); dividendo per due e quadrando si ottiene \(1/2\).}
+
+
+\ExInterpret{La fase ha un effetto osservabile quando le componenti sono ricombinate. La misura intermedia elimina il termine incrociato nella media dei rami.}
+
+\ExLab{Nella sezione 1.06 caricare R–F–R e impostare la fase a \(90^\circ\). Confrontare poi «Fase nulla», «Mezzo ciclo» e «Misura prima dell’ultima R», seguendo gli stati intermedi senza confondere la loro visualizzazione con una misura.}
+
+
+\end{minipage}

@@ -1,0 +1,70 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G2.07}{Confrontare due ordini di composizione}{Consolidamento}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Siano \(A=\begin{pmatrix}0&-1\\1&0\end{pmatrix}\), \(B=\begin{pmatrix}1&1\\0&1\end{pmatrix}\) e \(u=(1,1)^T\). Calcolare AB, BA e le rispettive azioni. A è una rotazione di \(90^\circ\), B uno scorrimento orizzontale.
+
+\ExTheory{\ExRef{c2-composizione}{2.09}}{Nel prodotto AB, B agisce per prima sul vettore. Ogni elemento soddisfa \((AB)_{ij}=\sum_kA_{ik}B_{kj}\). La composizione dipende dall’ordine quando \(AB\ne BA\).}
+
+\ExPrediction{Lo scorrimento modifica la coordinata orizzontale usando quella verticale. La rotazione scambia il ruolo geometrico delle due coordinate: prevedere due percorsi differenti.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\node[exbox] (n0) at (0.0,0.0) {$u=(1,1)$};\node[exbox] (n1) at (3.6,0.0) {$Bu=(2,1)$};\draw[exother] (n0)--(n1);\node[exbox] (n2) at (7.2,0.0) {$ABu=(-1,2)$};\draw[exother] (n1)--(n2);
+\end{tikzpicture}}{Primo percorso: scorrimento seguito da rotazione.}
+
+
+\begin{ExTasks}
+
+\item Calcolare Bu e poi A(Bu).
+
+\item Calcolare Au e poi B(Au).
+
+\item Svolgere i quattro elementi di AB.
+
+\item Svolgere i quattro elementi di BA.
+
+\item Confrontare risultati, norme e commutatore applicato a u.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Eseguire prima lo scorrimento}
+
+\ExEq{Bu&=\colv{1+1\\1}=\colv{2\\1},\\A(Bu)&=\colv{0\cdot2-1\cdot1\\1\cdot2+0\cdot1}=\colv{-1\\2}.}
+
+\ExStep{Eseguire prima la rotazione}
+
+\ExEq{Au&=\colv{-1\\1},\\B(Au)&=\colv{-1+1\\1}=\colv{0\\1}.}
+
+\ExStep{Costruire AB}
+
+\ExEq{AB&=\begin{pmatrix}0\cdot1+(-1)0&0\cdot1+(-1)1\\1\cdot1+0\cdot0&1\cdot1+0\cdot1\end{pmatrix}
+=\begin{pmatrix}0&-1\\1&1\end{pmatrix}.}
+Il prodotto con u dà \((0-1,1+1)^T=(-1,2)^T\).
+
+\ExStep{Costruire BA}
+
+\ExEq{BA&=\begin{pmatrix}1\cdot0+1\cdot1&1(-1)+1\cdot0\\0\cdot0+1\cdot1&0(-1)+1\cdot0\end{pmatrix}
+=\begin{pmatrix}1&-1\\1&0\end{pmatrix}.}
+Il prodotto con u dà \((1-1,1+0)^T=(0,1)^T\).
+
+\ExStep{Quantificare la differenza}
+
+\ExEq{AB-BA&=\begin{pmatrix}-1&0\\0&1\end{pmatrix},\\(AB-BA)u&=\colv{-1\\1}.}
+Le norme finali sono \(\sqrt5\) e 1. A conserva le lunghezze; B può cambiarle, perché è uno scorrimento e non una matrice ortogonale.
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-1.35,0)--(1.55,0) node[right] {$x_1$};\draw[exaxis] (0,-0.35)--(0,2.55) node[above] {$x_2$};\draw[->,Ink,line width=1.1pt] (0,0)--(1,1) node[anchor=south west] {$ u $};\draw[->,Accent,line width=1.1pt] (0,0)--(-1,2) node[anchor=south west] {$ ABu $};\draw[->,Secondary,line width=1.1pt] (0,0)--(0,1) node[anchor=south west] {$ BAu $};
+\end{tikzpicture}}{I risultati dei due percorsi appartengono a direzioni e hanno lunghezze differenti.}
+
+
+\ExInterpret{L’ordine degli operatori ha un significato geometrico verificabile. La stessa regola di lettura dei prodotti verrà usata per le porte quantistiche, che soddisfano inoltre l’unitarietà.}
+
+\ExLab{Nella sezione 2.09 confrontare i due ordini nel diagramma di composizione. Se si usano le matrici dell’esercizio nello strumento delle matrici, conservare lo stesso ingresso u per entrambi i percorsi.}
+
+
+\end{minipage}

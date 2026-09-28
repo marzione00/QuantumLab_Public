@@ -1,0 +1,69 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G1.05}{Sommare due onde con fase assegnata}{Guida esplicita}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Due onde, osservate nello stesso punto, hanno ampiezza unitaria: \(s_A(t)=\cos\omega t\) e \(s_B(t)=\cos(\omega t+\varphi)\). Calcolare l’onda risultante per \(\varphi=0,\pi/2,\pi\) e rappresentare la somma dei contributi nel piano complesso.
+
+\ExTheory{\ExRef{c1-onde}{1.03}}{Il numero \(e^{i\varphi}=\cos\varphi+i\sin\varphi\) rappresenta un segmento unitario orientato di un angolo \(\varphi\). La parte reale di \((1+e^{i\varphi})e^{i\omega t}\) è l’onda osservata. La lunghezza \(|1+e^{i\varphi}|\) ne dà l’ampiezza.}
+
+\ExPrediction{Per contributi concordi prevedere una lunghezza doppia; per contributi opposti una cancellazione. Nel caso di un quarto di ciclo il segmento risultante è la diagonale di un quadrato.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-0.35,0)--(1.55,0) node[right] {$\operatorname{Re}$};\draw[exaxis] (0,-0.35)--(0,1.55) node[above] {$\operatorname{Im}$};\draw[->,Secondary,line width=1.1pt] (0,0)--(1,0) node[anchor=south west] {$ A $};\draw[->,Accent,line width=1.1pt] (0,0)--(0,1) node[anchor=south west] {$ B $};
+\end{tikzpicture}}{Piano dei fasori per un quarto di ciclo: i due contributi hanno uguale lunghezza.}
+
+
+\begin{ExTasks}
+
+\item Scrivere i due contributi per fase nulla.
+
+\item Costruire la somma per un quarto di ciclo.
+
+\item Calcolare modulo e argomento del risultato \(1+i\).
+
+\item Ripetere per mezzo ciclo.
+
+\item Controllare le tre onde all’istante \(t=0\) e distinguere valore istantaneo e ampiezza.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Fase nulla}
+
+\ExEq{e^{i0}&=1,\quad A_0=1+1=2,\\s(t)&=\operatorname{Re}(2e^{i\omega t})=2\cos\omega t.}
+L’ampiezza è 2 e la fase della somma è zero.
+
+\ExStep{Un quarto di ciclo}
+
+\ExEq{e^{i\pi/2}&=0+i\cdot1=i,\quad A_{\pi/2}=1+i,\\|A_{\pi/2}|^2&=(1-i)(1+i)=1+i-i-i^2=2.}
+Pertanto \(|A_{\pi/2}|=\sqrt2\).
+
+\ExStep{Ricavare la fase della somma}
+
+Le due componenti di \(1+i\) sono positive e uguali. L’angolo è \(\pi/4\), poiché \(\tan(\pi/4)=1\). Quindi
+\ExEq{1+i&=\sqrt2\,e^{i\pi/4},\\s(t)&=\sqrt2\cos(\omega t+\pi/4).}
+
+\ExStep{Mezzo ciclo}
+
+\ExEq{e^{i\pi}&=-1,\quad A_\pi=1-1=0,\quad s(t)=0.}
+Un vettore nullo non ha un argomento definito: la cancellazione completa elimina l’onda risultante in questo punto.
+
+\ExStep{Verificare un istante}
+
+Per \(t=0\) si hanno rispettivamente \(2\cos0=2\), \(\sqrt2\cos(\pi/4)=1\) e 0. Nel secondo caso il valore istantaneo è 1, mentre l’ampiezza massima è \(\sqrt2\). Il contributo B vale zero in quell’istante, pur avendo ampiezza unitaria.
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-0.35,0)--(1.55,0) node[right] {$\operatorname{Re}$};\draw[exaxis] (0,-0.35)--(0,1.55) node[above] {$\operatorname{Im}$};\draw[->,Secondary,line width=1.1pt] (0,0)--(1,0) node[anchor=south west] {$ 1 $};\draw[->,Secondary,line width=1.1pt] (0,0)--(0,1) node[anchor=south west] {$ i $};\draw[->,Accent,line width=1.1pt] (0,0)--(1,1) node[anchor=south west] {$ 1+i $};\draw[Ink!35,dashed] (1,0)--(1,1)--(0,1);
+\end{tikzpicture}}{La diagonale è la somma; i lati tratteggiati completano la costruzione punta-coda.}
+
+
+\ExInterpret{La fase relativa determina come si combinano le ampiezze. Il piano complesso organizza lunghezze e orientazioni dei contributi, mentre il segnale fisico è la loro parte reale variabile nel tempo.}
+
+\ExLab{Nella sezione 1.03 impostare ampiezza B uguale a quella di A. Confrontare «Insieme», «¼ di ciclo» e «½ ciclo». Seguire sia i fasori sia le onde nel tempo: il massimo del segnale e il suo valore nell’istante mostrato sono grandezze diverse.}
+
+
+\end{minipage}

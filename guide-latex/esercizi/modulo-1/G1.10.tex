@@ -1,0 +1,68 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G1.10}{Seguire una preparazione sulla sfera di Bloch}{Consolidamento}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Considerare la preparazione \(\ket\psi=(\sqrt3/2)\ket0+(1/2)\ket1\). Ricavarne la rappresentazione di Bloch e studiare l’effetto di una fase \(\pi/2\) sulla seconda componente. Confrontare l’angolo della polarizzazione lineare con quello sulla sfera.
+
+\ExTheory{\ExRef{c1-polarizzazione}{1.05}; \ExRef{c1-calcolo}{1.06}}{Lo stato ha componenti \(\alpha=\cos(\vartheta/2)\) e \(\beta=e^{i\varphi}\sin(\vartheta/2)\). Le coordinate di Bloch sono \(r_x=\sin\vartheta\cos\varphi\), \(r_y=\sin\vartheta\sin\varphi\), \(r_z=\cos\vartheta\). Le probabilità nella base scelta valgono \((1+r_z)/2\) e \((1-r_z)/2\).}
+
+\ExPrediction{La preparazione ha una probabilità maggiore per 0 e si trova nell’emisfero superiore. La variazione della fase descrive una rotazione attorno all’asse verticale, a quota costante.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel,scale=.7]
+\draw[Ink!25] (0,0) circle(2);\draw[exaxis] (-2.5,0)--(2.6,0) node[right] {$r_x$};\draw[exaxis] (0,-2.4)--(0,2.6) node[above] {$r_z$};\draw[exvec] (0,0)--(1.73205,1.00000) node[above right] {$ \mathbf r $};\draw[Secondary,->] (0,.7) arc(90:30:.7);\node[right] at (.6,.75) {$\vartheta=60^\circ$};
+\end{tikzpicture}}{Sezione meridiana della sfera di Bloch: l’angolo dal polo nord è \(60^\circ\), il doppio dell’angolo lineare della preparazione.}
+
+
+\begin{ExTasks}
+
+\item Controllare la norma e le probabilità.
+
+\item Ricavare \(\vartheta/2\) dalla prima componente.
+
+\item Calcolare le tre coordinate iniziali.
+
+\item Applicare la fase e ricavare le nuove coordinate.
+
+\item Confrontare angolo di polarizzazione, angolo di Bloch e probabilità finali.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Controllare la preparazione}
+
+\ExEq{\|\psi\|^2&=3/4+1/4=1,\quad p_0=3/4,\quad p_1=1/4.}
+
+\ExStep{Ricavare gli angoli}
+
+Poiché \(\cos(\vartheta/2)=\sqrt3/2\) e le due componenti sono positive, \(\vartheta/2=\pi/6\). Dunque \(\vartheta=\pi/3=60^\circ\), mentre \(\varphi=0\). La polarizzazione lineare nel piano H/V forma invece \(30^\circ\).
+
+\ExStep{Costruire il punto sulla sfera}
+
+\ExEq{r_x&=\sin60^\circ\cos0=\sqrt3/2,\\r_y&=\sin60^\circ\sin0=0,\\r_z&=\cos60^\circ=1/2.}
+Il controllo \(r_x^2+r_y^2+r_z^2=3/4+0+1/4=1\) colloca il punto sulla superficie unitaria.
+
+\ExStep{Ruotare la fase relativa}
+
+Moltiplicando la seconda componente per \(i\), si ottiene \(\ket{\psi'}=(\sqrt3/2)\ket0+(i/2)\ket1\). Gli angoli diventano \((\vartheta,\varphi)=(\pi/3,\pi/2)\):
+\ExEq{\mathbf r'&=(\sin60^\circ\cos90^\circ,\sin60^\circ\sin90^\circ,\cos60^\circ)\\&=(0,\sqrt3/2,1/2).}
+
+\ExStep{Verificare la lettura}
+
+\ExEq{p_0'&=(1+1/2)/2=3/4,\quad p_1'=(1-1/2)/2=1/4.}
+Il punto si è spostato sulla sfera, mentre la misura lungo z resta invariata. Un successivo ricombinatore può rendere osservabile la fase cambiata.
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-0.35,0)--(1.55,0) node[right] {$r_x$};\draw[exaxis] (0,-0.35)--(0,1.416025) node[above] {$r_y$};\draw[->,Secondary,line width=1.1pt] (0,0)--(0.866025,0) node[anchor=south west] {$ \varphi=0 $};\draw[->,Accent,line width=1.1pt] (0,0)--(0,0.866025) node[anchor=south west] {$ \varphi=\pi/2 $};\draw[Secondary,dashed] (0,0) circle(.866025);
+\end{tikzpicture}}{Proiezione sul piano equatoriale delle coordinate di Bloch; in entrambi i casi \(r_z=1/2\).}
+
+
+\ExInterpret{La sfera rappresenta stati del qubit e la loro distinguibilità nelle misure. Il raddoppio dell’angolo deriva dalla parametrizzazione con \(\vartheta/2\); non modifica l’orientazione fisica dell’analizzatore.}
+
+\ExLab{Nella sezione 1.05 scegliere orientazione iniziale \(30^\circ\), analizzatore orizzontale e fase V dapprima nulla, poi \(90^\circ\). Osservare la sfera e verificare la probabilità invariata in H/V. Ruotare l’analizzatore per esplorare la sensibilità alla fase.}
+
+
+\end{minipage}

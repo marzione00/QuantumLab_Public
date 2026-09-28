@@ -1,0 +1,81 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G4.03}{Stimare una sovrapposizione mediante SWAP test}{Guida esplicita}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Eseguire lo SWAP test per \(\ket\psi=\ket0\) e \(\ket\phi=\ket+=(\ket0+\ket1)/\sqrt2\). Calcolare lo stato complessivo, le probabilità del controllo e gli stati condizionati dei due dati. Confrontare stati uguali e ortogonali.
+
+\ExTheory{\ExRef{c4-swap}{4.04}}{Il circuito prepara il controllo con H, applica SWAP ai dati quando il controllo vale uno, poi applica H al controllo. Per stati puri normalizzati, \(P(0)=(1+|\langle\psi|\phi\rangle|^2)/2\). Tale formula va ricavata dalla norma dei due vettori simmetrizzati.}
+
+\ExPrediction{I due vettori prodotto \(\psi\otimes\phi\) e \(\phi\otimes\psi\) condividono il contributo 00. La somma dovrebbe avere norma maggiore della differenza.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\node[exbox] (n0) at (0.0,0.0) {$H$ sul controllo};\node[exbox] (n1) at (3.6,0.0) {SWAP controllato};\draw[exother] (n0)--(n1);\node[exbox] (n2) at (7.2,0.0) {$H$ e misura};\draw[exother] (n1)--(n2);
+\end{tikzpicture}}{La simmetria dei due dati diventa una probabilità sul controllo.}
+
+
+\begin{ExTasks}
+
+\item Scrivere i due stati prodotto.
+
+\item Seguire H e SWAP controllato.
+
+\item Applicare l’ultima H e raccogliere i rami.
+
+\item Calcolare e normalizzare ciascun ramo.
+
+\item Verificare la formula generale e i due casi limite.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Costruire i dati}
+
+\ExEq{\ket\psi\ket\phi&=(\ket{00}+\ket{01})/\sqrt2,\\
+\ket\phi\ket\psi&=(\ket{00}+\ket{10})/\sqrt2.}
+
+\ExStep{Controllare lo scambio}
+
+Dopo la prima H e la porta controllata,
+\ExEq{\ket{\Psi_1}&=\frac{\ket0\ket\psi\ket\phi+\ket1\ket\phi\ket\psi}{\sqrt2}.}
+Il controllo rimane coerente con i due ordini dei dati.
+
+\ExStep{Ricombinare il controllo}
+
+\ExEq{\ket{\Psi_f}&=\frac{\ket0(\ket\psi\ket\phi+\ket\phi\ket\psi)}2
++\frac{\ket1(\ket\psi\ket\phi-\ket\phi\ket\psi)}2.}
+Il ramo 0 dei dati è \((2\ket{00}+\ket{01}+\ket{10})/(2\sqrt2)\); il ramo 1 è \((\ket{01}-\ket{10})/(2\sqrt2)\).
+
+\ExStep{Calcolare i rami}
+
+\ExEq{P(0)&=(4+1+1)/8=3/4,\qquad P(1)=(1+1)/8=1/4.}
+Dividendo per le radici delle probabilità si ottengono gli stati condizionati
+\ExEq{\ket{\chi_0}&=(2\ket{00}+\ket{01}+\ket{10})/\sqrt6,\\
+\ket{\chi_1}&=(\ket{01}-\ket{10})/\sqrt2.}
+
+\ExStep{Ricavare il prodotto interno}
+
+Ponendo \(a=\psi\otimes\phi\), \(b=\phi\otimes\psi\), si ha
+\ExEq{\langle a|b\rangle&=\langle\psi|\phi\rangle\langle\phi|\psi\rangle
+=|\langle\psi|\phi\rangle|^2,\\
+\|a+b\|^2&=1+1+2|\langle\psi|\phi\rangle|^2.}
+La divisione per 4 dà la formula di \(P(0)\). Qui \(\langle0|+\rangle=1/\sqrt2\), quindi \(P(0)=(1+1/2)/2=3/4\).
+
+\ExStep{Controllare i limiti}
+
+Per stati uguali il modulo quadro del prodotto interno è uno: \(P(0)=1\). Per stati ortogonali è zero: \(P(0)=1/2\). Un esito 1 certifica che gli stati puri confrontati non coincidono a meno di fase globale; un solo esito 0 non certifica l’uguaglianza.
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-.6,0)--(2.2,0) node[right] {esito};\draw[exaxis] (-.6,0)--(-.6,3.6) node[above] {$p$};\node[left] at (-.6,3) {$ 1 $};\draw[Ink!15,dashed] (-.6,3)--(1.7000000000000002,3);\filldraw[fill=Accent!25,draw=Accent] (0.0,0) rectangle (0.65,2.25);\node[below] at (0.325,0) {$ 0 $};\node[above] at (0.325,2.25) {$ 0.75 $};\filldraw[fill=Accent!25,draw=Accent] (1.1,0) rectangle (1.75,0.75);\node[below] at (1.425,0) {$ 1 $};\node[above] at (1.425,0.75) {$ 0.25 $};
+\end{tikzpicture}}{Lettura del controllo per \(\ket0\) e \(\ket+\).}
+
+
+\ExInterpret{Il test misura una proprietà della coppia senza ricostruire tutte le ampiezze dei due stati. La derivazione mostra quali termini incrociati contengano la sovrapposizione.}
+
+\ExLab{Nella sezione 4.04 confrontare «Stati |0\(\rangle\) e |+\(\rangle\)», «Stati uguali» e «Stati ortogonali |0\(\rangle\) e |1\(\rangle\)». Controllare la marginale del controllo, sommando i rami dei dati.}
+
+
+\end{minipage}

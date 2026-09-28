@@ -1,0 +1,74 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G1.01}{Prevedere due moti dagli stessi dati di posizione}{Guida esplicita}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Due corpi hanno posizione iniziale \(x_0=2\,\mathrm m\). Nel moto A la velocità costante è \(v_A=3\,\mathrm{m/s}\); nel moto B è \(v_B=-1\,\mathrm{m/s}\). Calcolare le posizioni a \(t=0,1,2\,\mathrm s\) e stabilire quale informazione distingua le due previsioni.
+
+\ExTheory{\ExRef{c1-moto}{1.01}}{Nel moto rettilineo uniforme \(x(t)=x_0+vt\). La velocità è la pendenza \(\Delta x/\Delta t\) del grafico posizione-tempo. L’ipotesi di velocità costante esclude accelerazioni durante l’intervallo considerato.}
+
+\ExPrediction{Entrambe le rette attraversano \((0,2)\). Una velocità negativa produce una retta decrescente. Disegnare prima le direzioni delle due rette, poi collocare i punti numerici.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (0,0)--(4,0) node[right] {$t$ (s)};\draw[exaxis] (0,-.2)--(0,3.2) node[above] {$x$ (m)};\fill[Accent] (0,.7) circle(2pt);\node[left] at (0,.7) {$2$};\draw[exvec] (0,.7)--(1.5,2);\draw[exother] (0,.7)--(1.5,.25);
+\end{tikzpicture}}{Previsione qualitativa nel piano tempo-posizione: un punto iniziale comune e pendenze differenti.}
+
+
+\begin{ExTasks}
+
+\item Sostituire i dati nelle due leggi orarie.
+
+\item Calcolare separatamente le posizioni a un secondo.
+
+\item Calcolare le posizioni a due secondi.
+
+\item Ricavare le pendenze dai punti ottenuti.
+
+\item Calcolare la distanza fra i corpi a due secondi e interpretare il ruolo della velocità iniziale.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Scrivere le leggi orarie}
+
+Con \(t\) espresso in secondi e \(x\) in metri,
+\ExEq{x_A(t)&=2+3t,\qquad x_B(t)=2-t.}
+Per \(t=0\) si ottengono \(2+3\cdot0=2\) e \(2-0=2\). Il dato di posizione iniziale è comune.
+
+\ExStep{Calcolare il primo istante}
+
+A un secondo il prodotto \(vt\) è uno spostamento:
+\ExEq{x_A(1)&=2+3\cdot1=5\,\mathrm m,\\x_B(1)&=2-1\cdot1=1\,\mathrm m.}
+Le unità soddisfano \((\mathrm{m/s})\mathrm s=\mathrm m\).
+
+\ExStep{Calcolare il secondo istante}
+
+A due secondi,
+\ExEq{x_A(2)&=2+3\cdot2=8\,\mathrm m,\\x_B(2)&=2-1\cdot2=0\,\mathrm m.}
+Nel moto B si raggiunge l’origine; la velocità rimane negativa anche in quel punto.
+
+\ExStep{Verificare le pendenze}
+
+Dai punti iniziale e finale si ricava
+\ExEq{\frac{x_A(2)-x_A(0)}{2-0}&=\frac{8-2}{2}=3\,\mathrm{m/s},\\
+\frac{x_B(2)-x_B(0)}{2-0}&=\frac{0-2}{2}=-1\,\mathrm{m/s}.}
+Il grafico e la formula restituiscono le stesse velocità.
+
+\ExStep{Confrontare le previsioni}
+
+La separazione finale è \(|8-0|=8\,\mathrm m\). In generale \(x_A(t)-x_B(t)=(3-(-1))t=4t\). La sola posizione a \(t=0\) ammette entrambe le evoluzioni; assegnare anche la velocità determina la previsione entro il modello.
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (0,0)--(4.7,0) node[right] {$t$ (s)};\draw[exaxis] (0,-.2)--(0,3.6) node[above] {$x$ (m)};\draw[exvec] (0,.8)--(4,3.2) node[right] {$A$};\draw[exother] (0,.8)--(4,0) node[below right] {$B$};\foreach \x/\y/\txt in {0/.8/2,2/2/5,4/3.2/8,2/.4/1}{\fill (\x,\y) circle(1.5pt);\node[above left] at (\x,\y) {$\txt$};}\foreach \x/\t in {2/1,4/2}{\node[below] at (\x,0) {$\t$};}
+\end{tikzpicture}}{Dati calcolati. Le scale dei due assi sono differenti e le pendenze numeriche si leggono nelle rispettive unità.}
+
+
+\ExInterpret{La geometria delle rette rende visibile la dipendenza dai dati iniziali. Due descrizioni con la stessa posizione possono prevedere evoluzioni diverse quando differiscono le velocità.}
+
+\ExLab{Nella sezione 1.01 impostare posizione iniziale 2, velocità A 3 e velocità B \(-1\), con incertezza nulla. Avanzare mediante quattro passi di \(0{,}5\,\mathrm s\) e controllare le due posizioni finali. Cambiare soltanto \(v_B\) in 3: le traiettorie devono coincidere.}
+
+
+\end{minipage}

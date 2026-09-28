@@ -1,0 +1,88 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G4.09}{Dalle autofasi di Grover al conteggio}{Consolidamento}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Fra otto indici sono marcati 1 e 5. Costruire l’iteratore di Grover e stimarne le due fasi con quattro qubit di controllo. Convertire gli esiti 3 e 13 in stime della probabilità marcata e del numero di soluzioni.
+
+\ExTheory{\ExRef{c4-conteggio}{4.14}; \ExRef{c4-stima-ampiezze}{4.15}}{L’operazione fisica è definita dall’oracolo O e dalla diffusione D. Nel piano collettivo, l’iteratore ha autovalori \(e^{\pm2i\theta}\), con \(\sin^2\theta=M/N\). La stima di fase applicata alla sovrapposizione iniziale produce una miscela delle distribuzioni dei due autostati.}
+
+\ExPrediction{Le due fasi complementari dovrebbero produrre picchi simmetrici. Entrambe codificano lo stesso valore di \(\sin^2\theta\).}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-0.35,0)--(1.55,0) node[right] {$\operatorname{Re}$};\draw[exaxis] (0,-1.2160254037844385)--(0,1.4160254037844386) node[above] {$\operatorname{Im}$};\draw[->,Accent,line width=1.1pt] (0,0)--(0.5,0.8660254037844386) node[anchor=south west] {$ e^{i\pi/3} $};\draw[->,Secondary,line width=1.1pt] (0,0)--(0.5,-0.8660254037844386) node[anchor=north west] {$ e^{-i\pi/3} $};
+\end{tikzpicture}}{I due autovalori sono punti coniugati sulla circonferenza unitaria.}
+
+
+\begin{ExTasks}
+
+\item Definire le matrici operative senza usare M come parametro di ingresso.
+
+\item Diagonalizzare la restrizione al piano collettivo.
+
+\item Decomporre lo stato iniziale nei due autostati.
+
+\item Calcolare la distribuzione finita e convertire due letture.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Definire le operazioni}
+
+Nella base degli otto indici, O è diagonale: vale \(-1\) nelle posizioni 1 e 5, \(+1\) nelle altre. \(D=J_8/4-I_8\), con J matrice di tutti uno. Il circuito applica \(Q_G=DO\). Per l’analisi si definiscono b uniforme sui sei indici non marcati e g uniforme sui due marcati.
+
+\ExStep{Ricavare la rotazione}
+
+\ExEq{\ket s&=\frac{\sqrt3}2\ket b+\frac12\ket g,\qquad \theta=\pi/6,\\
+Q_G&=\begin{pmatrix}1/2&-\sqrt3/2\\\sqrt3/2&1/2\end{pmatrix}.}
+La moltiplicazione dà \(Q_G(1,-i)^T=e^{i\pi/3}(1,-i)^T\), poiché la prima componente è \(1/2+i\sqrt3/2\) e la seconda è \(\sqrt3/2-i/2=-i e^{i\pi/3}\). La coniugata fornisce l’altro autovettore.
+
+\ExStep{Decomporre la preparazione}
+
+\ExEq{\ket{u_+}&=(\ket b-i\ket g)/\sqrt2,\quad
+\ket{u_-}=(\ket b+i\ket g)/\sqrt2,\\
+\ket s&=\frac{e^{i\theta}}{\sqrt2}\ket{u_+}
++\frac{e^{-i\theta}}{\sqrt2}\ket{u_-}.}
+Infatti il coefficiente di b è \((e^{i\theta}+e^{-i\theta})/2=\cos\theta\), quello di g è \((-ie^{i\theta}+ie^{-i\theta})/2=\sin\theta\). Le fasi normalizzate sono \(1/6\) e \(5/6\), ciascuna con peso \(1/2\).
+
+\ExStep{Calcolare la distribuzione}
+
+Con R=16 definisco \(a_\phi(c)=16^{-1}\sum_{x=0}^{15}e^{2\pi ix(\phi-c/16)}\). Gli autostati sono ortogonali, quindi
+\ExEq{P(c)&=\frac12|a_{1/6}(c)|^2+\frac12|a_{5/6}(c)|^2,\\
+|a_\phi(c)|^2&=\frac{\sin^2(16\pi(\phi-c/16))}{256\sin^2(\pi(\phi-c/16))}.}
+La sostituzione dei sedici valori dà:\begin{center}\begin{tabular}{rrrr}\toprule c&P(c)&c&P(c)\\\midrule
+0&0.011719&8&0.003906\\
+1&0.017547&9&0.004225\\
+2&0.088307&10&0.005443\\
+3&0.344269&11&0.008959\\
+4&0.023437&12&0.023438\\
+5&0.008959&13&0.344269\\
+6&0.005443&14&0.088307\\
+7&0.004225&15&0.017547\\
+\bottomrule\end{tabular}\end{center}
+
+\ExStep{Convertire la lettura}
+
+\ExEq{\widehat p(3)&=\sin^2(3\pi/16)\simeq0.308658,\\
+\widehat p(13)&=\sin^2(13\pi/16)=\sin^2(3\pi/16),\\
+\widehat M&=8\widehat p\simeq2.469266.}
+La precisione finita non restituisce qui il conteggio esatto. Con fase esatta \(1/6\), si avrebbe \(p=\sin^2(\pi/6)=1/4\) e M=2. Arrotondare \(\widehat M\) a due richiede di dichiarare la regola e il rischio di errore.
+
+\ExStep{Contare le potenze}
+
+Le potenze controllate 1,2,4,8 richiedono 15 applicazioni di \(Q_G\), se costruite per ripetizione. Si aggiungono preparazione, inversa di Fourier e realizzazione dell’oracolo; il solo numero di qubit di controllo non esprime il costo totale.
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel,x=.63cm]
+\draw[exaxis] (-.6,0)--(17.6,0) node[right] {esito};\draw[exaxis] (-.6,0)--(-.6,3.6) node[above] {$p$};\node[left] at (-.6,3) {$ 0.4 $};\draw[Ink!15,dashed] (-.6,3)--(17.1,3);\filldraw[fill=Accent!25,draw=Accent] (0.0,0) rectangle (0.65,0.08789062500000017);\node[below] at (0.325,0) {$ 0 $};\filldraw[fill=Accent!25,draw=Accent] (1.1,0) rectangle (1.75,0.13160080920024084);\node[below] at (1.425,0) {$ 1 $};\filldraw[fill=Accent!25,draw=Accent] (2.2,0) rectangle (2.85,0.66230278470112);\node[below] at (2.5250000000000004,0) {$ 2 $};\filldraw[fill=Accent!25,draw=Accent] (3.3000000000000003,0) rectangle (3.95,2.582015829671138);\node[below] at (3.6250000000000004,0) {$ 3 $};\filldraw[fill=Accent!25,draw=Accent] (4.4,0) rectangle (5.050000000000001,0.17578124999999994);\node[below] at (4.7250000000000005,0) {$ 4 $};\filldraw[fill=Accent!25,draw=Accent] (5.5,0) rectangle (6.15,0.06719530913333883);\node[below] at (5.825,0) {$ 5 $};\filldraw[fill=Accent!25,draw=Accent] (6.6000000000000005,0) rectangle (7.250000000000001,0.040822215298880825);\node[below] at (6.925000000000001,0) {$ 6 $};\filldraw[fill=Accent!25,draw=Accent] (7.700000000000001,0) rectangle (8.350000000000001,0.031688051995280665);\node[below] at (8.025,0) {$ 7 $};\filldraw[fill=Accent!25,draw=Accent] (8.8,0) rectangle (9.450000000000001,0.029296874999999778);\node[below] at (9.125,0) {$ 8 $};\filldraw[fill=Accent!25,draw=Accent] (9.9,0) rectangle (10.55,0.031688051995280665);\node[below] at (10.225,0) {$ 9 $};\filldraw[fill=Accent!25,draw=Accent] (11.0,0) rectangle (11.65,0.04082221529888084);\node[below] at (11.325,0) {$ 10 $};\filldraw[fill=Accent!25,draw=Accent] (12.100000000000001,0) rectangle (12.750000000000002,0.06719530913333889);\node[below] at (12.425,0) {$ 11 $};\filldraw[fill=Accent!25,draw=Accent] (13.200000000000001,0) rectangle (13.850000000000001,0.17578125000000014);\node[below] at (13.525,0) {$ 12 $};\filldraw[fill=Accent!25,draw=Accent] (14.3,0) rectangle (14.950000000000001,2.5820158296711364);\node[below] at (14.625,0) {$ 13 $};\filldraw[fill=Accent!25,draw=Accent] (15.400000000000002,0) rectangle (16.05,0.6623027847011217);\node[below] at (15.725000000000001,0) {$ 14 $};\filldraw[fill=Accent!25,draw=Accent] (16.5,0) rectangle (17.15,0.13160080920024098);\node[below] at (16.825,0) {$ 15 $};
+\end{tikzpicture}}{I due picchi principali sono vicini a 16/6 e 80/6.}
+
+
+\ExInterpret{Il conteggio emerge dalla relazione tra una rotazione determinata dall’oracolo e la sua fase spettrale. La trasformazione \(\phi\mapsto\sin^2(\pi\phi)\) identifica le due fasi complementari.}
+
+\ExLab{Le sezioni 4.14 e 4.15 visualizzano il modello spettrale a partire dalla probabilità impostata. Questo esercizio esplicita anche la costruzione operativa da O e D; la visualizzazione del laboratorio non va interpretata come acquisizione autonoma di un conteggio ignoto.}
+
+
+\end{minipage}

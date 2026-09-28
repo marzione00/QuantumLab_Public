@@ -1,0 +1,69 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G1.12}{Ricavare marginali e correlazioni da una tabella congiunta}{Collegamento}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Una sorgente produce esiti binari A e B con probabilità \(P(00)=0{,}4\), \(P(01)=0{,}1\), \(P(10)=0{,}1\), \(P(11)=0{,}4\). Calcolare marginali, probabilità di accordo, correlazione dei valori \(\pm1\) e probabilità condizionata.
+
+\ExTheory{\ExRef{c1-coppie}{1.07}}{La marginale di A si ottiene sommando su B: \(P_A(a)=\sum_bP(a,b)\). Assegnando \(s(0)=+1\), \(s(1)=-1\), la correlazione è \(E=\sum_{a,b}s(a)s(b)P(a,b)\). Per un evento di condizionamento positivo, \(P(B=b\mid A=a)=P(a,b)/P_A(a)\).}
+
+\ExPrediction{Le celle diagonali sono più pesanti. Le due righe e le due colonne hanno la stessa somma: ciascun osservatore isolato vedrà esiti uniformi.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\foreach \x/\y/\v in {0/1/.4,1.5/1/.1,0/0/.1,1.5/0/.4}{\node[draw=Secondary,minimum width=15mm,minimum height=10mm] at (\x,\y) {$\v$};}\node at (0,1.9) {$B=0$};\node at (1.5,1.9) {$B=1$};\node[left] at (-1,1) {$A=0$};\node[left] at (-1,0) {$A=1$};
+\end{tikzpicture}}{Tabella congiunta. Le righe raggruppano gli esiti di A, le colonne quelli di B.}
+
+
+\begin{ExTasks}
+
+\item Controllare che la somma delle quattro celle sia uno.
+
+\item Sommare righe e colonne.
+
+\item Calcolare accordo e disaccordo.
+
+\item Attribuire i segni ai quattro termini di E.
+
+\item Calcolare \(P(B=0\mid A=0)\) e confrontare con una sorgente indipendente.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Normalizzare la tabella}
+
+\ExEq{0{,}4+0{,}1+0{,}1+0{,}4=1.}
+Tutte le celle sono non negative; la tabella definisce una distribuzione congiunta.
+
+\ExStep{Ricavare le marginali}
+
+\ExEq{P_A(0)&=0{,}4+0{,}1=0{,}5,\quad P_A(1)=0{,}1+0{,}4=0{,}5,\\P_B(0)&=0{,}4+0{,}1=0{,}5,\quad P_B(1)=0{,}1+0{,}4=0{,}5.}
+
+\ExStep{Confrontare coppie uguali e diverse}
+
+\ExEq{P(A=B)&=P(00)+P(11)=0{,}8,\\P(A\ne B)&=P(01)+P(10)=0{,}2.}
+Su 500 coppie si attendono in media 400 accordi e 100 disaccordi.
+
+\ExStep{Calcolare la correlazione}
+
+I prodotti dei segni sono \(+1,-1,-1,+1\). Pertanto
+\ExEq{E&=0{,}4-0{,}1-0{,}1+0{,}4=0{,}6\\&=P(A=B)-P(A\ne B)=0{,}8-0{,}2.}
+
+\ExStep{Condizionare e confrontare}
+
+\ExEq{P(B=0\mid A=0)&=\frac{0{,}4}{0{,}5}=0{,}8.}
+Per due esiti indipendenti con le stesse marginali, ciascuna cella varrebbe \(0{,}5\cdot0{,}5=0{,}25\), la probabilità di accordo sarebbe \(1/2\) ed E sarebbe zero. Le marginali coincidono nei due modelli, le correlazioni differiscono.
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-.6,0)--(4.4,0) node[right] {esito};\draw[exaxis] (-.6,0)--(-.6,3.6) node[above] {$p$};\node[left] at (-.6,3) {$ 1 $};\draw[Ink!15,dashed] (-.6,3)--(3.9000000000000004,3);\filldraw[fill=Accent!25,draw=Accent] (0.0,0) rectangle (0.65,1.2000000000000002);\node[below] at (0.325,0) {$ 00 $};\node[above] at (0.325,1.2000000000000002) {$ 0.4 $};\filldraw[fill=Accent!25,draw=Accent] (1.1,0) rectangle (1.75,0.30000000000000004);\node[below] at (1.425,0) {$ 01 $};\node[above] at (1.425,0.30000000000000004) {$ 0.1 $};\filldraw[fill=Accent!25,draw=Accent] (2.2,0) rectangle (2.85,0.30000000000000004);\node[below] at (2.5250000000000004,0) {$ 10 $};\node[above] at (2.5250000000000004,0.30000000000000004) {$ 0.1 $};\filldraw[fill=Accent!25,draw=Accent] (3.3000000000000003,0) rectangle (3.95,1.2000000000000002);\node[below] at (3.6250000000000004,0) {$ 11 $};\node[above] at (3.6250000000000004,1.2000000000000002) {$ 0.4 $};
+\end{tikzpicture}}{Le quattro probabilità prima di qualunque raggruppamento.}
+
+
+\ExInterpret{Una tabella in una sola base può essere riprodotta da una sorgente classica correlata. L’entanglement richiede informazioni ulteriori sulla preparazione e sulle misure in altre basi.}
+
+\ExLab{Nella sezione 1.07 confrontare «Indipendenti», «Concordi in H/V» e «Discordi in H/V», calcolando marginali ed E dalle rispettive tabelle. La distribuzione dell’esercizio è una miscela con peso \(0{,}6\) della sorgente concorde e peso \(0{,}4\) di quella indipendente: le celle diagonali sono \(0{,}6/2+0{,}4/4=0{,}4\), le altre \(0{,}4/4=0{,}1\).}
+
+
+\end{minipage}

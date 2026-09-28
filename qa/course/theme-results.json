@@ -1,7 +1,7 @@
 {
   "status": "PASS",
-  "checks": 5581,
-  "demonstrations": 28,
+  "checks": 29662,
+  "demonstrations": 81,
   "coverOnlyDecoration": true,
   "screenAndPrintPalette": true,
   "canvasTokenResolution": true,

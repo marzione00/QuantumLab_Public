@@ -1,0 +1,69 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G1.14}{Stabilire quali dati servano alla previsione successiva}{Collegamento}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Due archivi registrano soltanto le probabilità \((1/2,1/2)\) nella base 0/1. Le preparazioni originali erano \(\ket+=(\ket0+\ket1)/\sqrt2\) e \(\ket-=(\ket0-\ket1)/\sqrt2\). Stabilire se gli archivi consentano di prevedere una successiva Hadamard.
+
+\ExTheory{\ExRef{c1-informazione}{1.09}}{La regola di Born conserva il modulo di ogni ampiezza e perde la sua fase. La trasformazione H forma somma e differenza: \(H(\alpha,\beta)^T=((\alpha+\beta)/\sqrt2,(\alpha-\beta)/\sqrt2)^T\). Una fase globale comune non cambia una previsione di misura.}
+
+\ExPrediction{I vettori reali delle due preparazioni sono ortogonali, benché i quadrati delle componenti coincidano. La ricombinazione può separare le loro previsioni.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-0.35,0)--(1.55,0) node[right] {$x_1$};\draw[exaxis] (0,-1.0571)--(0,1.2570999999999999) node[above] {$x_2$};\draw[->,Accent,line width=1.1pt] (0,0)--(0.7071,0.7071) node[anchor=south west] {$ + $};\draw[->,Secondary,line width=1.1pt] (0,0)--(0.7071,-0.7071) node[anchor=north west] {$ - $};
+\end{tikzpicture}}{Piano reale delle ampiezze: i due vettori hanno componenti di uguale modulo e sono ortogonali.}
+
+
+\begin{ExTasks}
+
+\item Calcolare le probabilità dei due stati iniziali.
+
+\item Applicare H a \(\ket+\).
+
+\item Applicare H a \(\ket-\).
+
+\item Confrontare con una miscela equiprobabile delle due preparazioni.
+
+\item Indicare quali dati aggiuntivi rendano possibile la previsione.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Confrontare gli archivi}
+
+Per \(\ket+\), i quadrati sono \((1/\sqrt2)^2=1/2\) e \((1/\sqrt2)^2=1/2\). Per \(\ket-\), il secondo è \((-1/\sqrt2)^2=1/2\). I dati registrati coincidono.
+
+\ExStep{Trasformare la preparazione positiva}
+
+\ExEq{H\ket+&=\frac12\colv{1+1\\1-1}=\colv{1\\0}=\ket0.}
+La probabilità finale di zero è uno.
+
+\ExStep{Trasformare la preparazione negativa}
+
+\ExEq{H\ket-&=\frac12\colv{1-1\\1+1}=\colv{0\\1}=\ket1.}
+La probabilità finale di zero è nulla.
+
+\ExStep{Esaminare una ricostruzione possibile}
+
+Se si assumesse una miscela che sceglie \(\ket+\) e \(\ket-\) con uguale probabilità, la media dopo H sarebbe
+\ExEq{P(0)&=\tfrac12\cdot1+\tfrac12\cdot0=\tfrac12,\\P(1)&=\tfrac12\cdot0+\tfrac12\cdot1=\tfrac12.}
+Questa è una terza preparazione compatibile con i dati iniziali dell’archivio.
+
+\ExStep{Identificare l’informazione necessaria}
+
+Per uno stato puro normalizzato basterebbero le due probabilità e la fase relativa, che vale 0 nel primo caso e \(\pi\) nel secondo. Moltiplicare entrambe le componenti per lo stesso \(e^{i\chi}\) moltiplica anche lo stato finale per quel fattore e lascia invariati i moduli quadri.
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\node[exbox] (n0) at (0.0,0.0) {$\ket+\xrightarrow{H}\ket0$};\node[exbox] (n1) at (3.6,0.0) {$P(0)=1$};\draw[exother] (n0)--(n1);\node[exbox] (n2) at (7.2,0.0) {fase relativa $0$};\draw[exother] (n1)--(n2);\node[exbox] (n3) at (0.0,-1.6) {$\ket-\xrightarrow{H}\ket1$};\draw[exother] (n2.south)--++(0,-.4)-|(n3.north);\node[exbox] (n4) at (3.6,-1.6) {$P(0)=0$};\draw[exother] (n3)--(n4);\node[exbox] (n5) at (7.2,-1.6) {fase relativa $\pi$};\draw[exother] (n4)--(n5);
+\end{tikzpicture}}{Due previsioni incompatibili a partire dalle medesime probabilità iniziali.}
+
+
+\ExInterpret{L’archivio delle probabilità di una sola misura non determina in generale lo stato. Le fasi relative consentono di calcolare le interferenze successive; per preparazioni miste occorre una descrizione statistica più generale.}
+
+\ExLab{Nella sezione 1.09 confrontare «Diagonale · sole probabilità» e «Diagonale · stato completo». Registrare, chiudere e ricaricare lo stato, quindi applicare il ricombinatore. Confrontare la previsione ricaricata con quella della preparazione originale e leggere quale ricostruzione adotti l’archivio incompleto.}
+
+
+\end{minipage}

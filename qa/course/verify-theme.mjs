@@ -9,7 +9,7 @@ const views=JSON.parse(fs.readFileSync(path.join(root,'qa/course/views.json'),'u
 for(const view of views.views){assert.doesNotMatch(view.demo,/matrix-rain/);for(const token of view.demo.matchAll(/var\(--mq-([a-z-]+)\)/g)){assert.ok(palette.screen[token[1]],view.id+' '+token[1]);checks++;}}
 for(const cover of views.coverViews){assert.match(cover.html,/class="matrix-rain" aria-hidden="true"/);checks++;}
 assert.match(css,/@media print/);assert.match(css,/prefers-reduced-motion/);checks+=2;
-for(const name of ['index.html','capitolo-1.html','capitolo-2.html','guida-corso.html','guida-capitolo-1.html','guida-capitolo-2.html']){const html=fs.readFileSync(path.join(root,'dist',name),'utf8');assert.match(html,/--mq-bg:\s*#070e0b/);assert.match(html,/--mq-bg:\s*#fff(?:fff)?[;\s]/);checks+=2;}
+for(const name of ['index.html','guida-corso.html',...[1,2,3,4].flatMap(c=>['capitolo-'+c+'.html','capitolo-'+c+'-autonomo.html','guida-capitolo-'+c+'.html'])]){const html=fs.readFileSync(path.join(root,'dist',name),'utf8');assert.match(html,/--mq-bg:\s*#070e0b/);assert.match(html,/--mq-bg:\s*#fff(?:fff)?[;\s]/);checks+=2;}
 const target=path.join(root,'qa/course/theme-runtime.cjs');await build({entryPoints:[path.join(src,'lib/theme.ts')],bundle:true,platform:'node',format:'cjs',outfile:target,logLevel:'silent'});const {canvasColor,rgb}=createRequire(import.meta.url)(target);
 for(const mode of ['screen','print']){globalThis.getComputedStyle=()=>({getPropertyValue:key=>palette[mode][key.replace('--mq-','')]||''});for(const [name,hex] of Object.entries(palette[mode])){assert.equal(canvasColor('var(--mq-'+name+')',{}),hex);assert.deepEqual(rgb(hex),[1,3,5].map(i=>parseInt(hex.slice(i,i+2),16)));checks+=2;}}
 fs.unlinkSync(target);delete globalThis.getComputedStyle;

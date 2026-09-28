@@ -1,0 +1,71 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G2.15}{Distinguere stato prodotto ed entanglement}{Collegamento}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Confrontare \(\ket p=(\ket{00}+\ket{01}+i\ket{10}+i\ket{11})/2\) e \(\ket\Phi=(\ket{00}+\ket{11})/\sqrt2\). Stabilire quali stati siano prodotti, calcolare distribuzioni congiunte e marginali e seguire la misura del primo qubit.
+
+\ExTheory{\ExRef{c2-separabilita}{2.31}; \ExRef{c2-composti}{2.32}}{Per due qubit puri, la matrice dei coefficienti \(C=\begin{pmatrix}c_{00}&c_{01}\\c_{10}&c_{11}\end{pmatrix}\) ha rango uno se lo stato è prodotto. Infatti \(c_{jk}=a_jb_k\) implica \(c_{00}c_{11}-c_{01}c_{10}=0\). In dimensione due, per uno stato non nullo, il determinante nullo è anche sufficiente.}
+
+\ExPrediction{Nel primo stato le due righe sono proporzionali. Nel secondo ogni riga occupa una colonna differente. Prevedere se la misura del primo qubit possa lasciare sempre la stessa preparazione sul secondo.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-.6,0)--(4.4,0) node[right] {esito};\draw[exaxis] (-.6,0)--(-.6,3.6) node[above] {$p$};\node[left] at (-.6,3) {$ 1 $};\draw[Ink!15,dashed] (-.6,3)--(3.9000000000000004,3);\filldraw[fill=Accent!25,draw=Accent] (0.0,0) rectangle (0.65,0.75);\node[below] at (0.325,0) {$ 00 $};\node[above] at (0.325,0.75) {$ 0.25 $};\filldraw[fill=Accent!25,draw=Accent] (1.1,0) rectangle (1.75,0.75);\node[below] at (1.425,0) {$ 01 $};\node[above] at (1.425,0.75) {$ 0.25 $};\filldraw[fill=Accent!25,draw=Accent] (2.2,0) rectangle (2.85,0.75);\node[below] at (2.5250000000000004,0) {$ 10 $};\node[above] at (2.5250000000000004,0.75) {$ 0.25 $};\filldraw[fill=Accent!25,draw=Accent] (3.3000000000000003,0) rectangle (3.95,0.75);\node[below] at (3.6250000000000004,0) {$ 11 $};\node[above] at (3.6250000000000004,0.75) {$ 0.25 $};
+\end{tikzpicture}}{Distribuzione dello stato prodotto p.}
+
+
+\begin{ExTasks}
+
+\item Controllare le norme.
+
+\item Costruire le due matrici C e i determinanti.
+
+\item Fattorizzare esplicitamente lo stato prodotto.
+
+\item Calcolare tutte le probabilità e le marginali.
+
+\item Normalizzare i rami dopo la misura del primo qubit.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Controllare la normalizzazione}
+
+Per p, \(4\cdot(1/2)^2=1\). Per \(\Phi\), \(2\cdot(1/\sqrt2)^2=1\).
+
+\ExStep{Applicare il criterio di separabilità}
+
+\ExEq{C_p&=\tfrac12\begin{pmatrix}1&1\\i&i\end{pmatrix},\quad\det C_p=(i-i)/4=0,\\C_\Phi&=\tfrac1{\sqrt2}\begin{pmatrix}1&0\\0&1\end{pmatrix},\quad\det C_\Phi=1/2\ne0.}
+Il secondo stato è entangled.
+
+\ExStep{Esporre i fattori}
+
+\ExEq{\ket p&=\frac{\ket0+i\ket1}{\sqrt2}\otimes\frac{\ket0+\ket1}{\sqrt2}.}
+Sviluppando il prodotto si ritrovano esattamente i quattro coefficienti \((1,1,i,i)/2\).
+
+\ExStep{Calcolare le distribuzioni}
+
+Per p le quattro probabilità sono \(1/4\). Per \(\Phi\) sono \((1/2,0,0,1/2)\). In entrambi i casi ogni marginale vale \((1/2,1/2)\), perché si sommano righe o colonne. Tuttavia \(P_p(A=B)=1/2\), mentre \(P_\Phi(A=B)=1\).
+
+\ExStep{Condizionare lo stato prodotto}
+
+Se A=0, il vettore non normalizzato di B è \((1,1)^T/2\), di norma \(1/\sqrt2\). Dividendo si ottiene \(\ket+\). Se A=1, il vettore è \(i(1,1)^T/2\), che dà \(i\ket+\): la stessa preparazione fisica.
+
+\ExStep{Condizionare lo stato entangled}
+
+Se A=0, il vettore di B è \((1,0)^T/\sqrt2\); dopo normalizzazione è \(\ket0\). Se A=1, è \((0,1)^T/\sqrt2\), che dà \(\ket1\). Ignorando l’esito di A si ottiene una miscela equiprobabile dei due stati: il vettore di Bloch locale è il centro della sfera, mentre B nello stato p è sul punto puro \(+x\).
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-.6,0)--(4.4,0) node[right] {esito};\draw[exaxis] (-.6,0)--(-.6,3.6) node[above] {$p$};\node[left] at (-.6,3) {$ 1 $};\draw[Ink!15,dashed] (-.6,3)--(3.9000000000000004,3);\filldraw[fill=Accent!25,draw=Accent] (0.0,0) rectangle (0.65,1.5);\node[below] at (0.325,0) {$ 00 $};\node[above] at (0.325,1.5) {$ 0.5 $};\filldraw[fill=Accent!25,draw=Accent] (1.1,0) rectangle (1.75,0.0);\node[below] at (1.425,0) {$ 01 $};\node[above] at (1.425,0.0) {$ 0 $};\filldraw[fill=Accent!25,draw=Accent] (2.2,0) rectangle (2.85,0.0);\node[below] at (2.5250000000000004,0) {$ 10 $};\node[above] at (2.5250000000000004,0.0) {$ 0 $};\filldraw[fill=Accent!25,draw=Accent] (3.3000000000000003,0) rectangle (3.95,1.5);\node[below] at (3.6250000000000004,0) {$ 11 $};\node[above] at (3.6250000000000004,1.5) {$ 0.5 $};
+\end{tikzpicture}}{Distribuzione dello stato entangled \(\Phi\); le marginali coincidono con quelle della figura precedente.}
+
+
+\ExInterpret{Le marginali in una sola base non determinano lo stato congiunto. La separabilità del vettore puro e le preparazioni condizionate precisano il significato delle correlazioni.}
+
+\ExLab{Nelle sezioni 2.31–2.32 confrontare il determinante dei coefficienti e le tabelle congiunte. Nella sezione sulle coppie confrontare inoltre misure in basi differenti: una sola tabella diagonale non basta a distinguere Bell da una miscela classica concorde.}
+
+
+\end{minipage}

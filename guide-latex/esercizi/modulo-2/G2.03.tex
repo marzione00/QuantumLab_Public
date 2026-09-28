@@ -1,0 +1,68 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G2.03}{Ricostruire un vettore e normalizzarlo}{Guida esplicita}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Nello spazio \(\mathbb C^2\) con base canonica \(e_1=(1,0)^T\), \(e_2=(0,1)^T\), ricostruire il vettore \(v=(1+i)e_1+2e_2\), calcolarne la norma e normalizzarlo. Tenere distinti il vettore e i piani delle sue due componenti.
+
+\ExTheory{\ExRef{c2-basi}{2.03}; \ExRef{c2-norma}{2.04}}{Il prodotto interno coniuga il primo argomento: \(\langle v|w\rangle=\sum_jv_j^*w_j\). La norma è \(\sqrt{\langle v|v\rangle}\). Per \(v\ne0\), il vettore \(u=v/\|v\|\) ha norma uno.}
+
+\ExPrediction{La normalizzazione applica lo stesso fattore reale positivo a entrambe le componenti. Le loro fasi e il rapporto fra le loro lunghezze rimangono invariati.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-0.35,0)--(2.55,0) node[right] {$\operatorname{Re}$};\draw[exaxis] (0,-0.35)--(0,1.55) node[above] {$\operatorname{Im}$};\draw[->,Accent,line width=1.1pt] (0,0)--(1,1) node[anchor=south west] {$ v_1 $};\draw[->,Secondary,line width=1.1pt] (0,0)--(2,0) node[anchor=south west] {$ v_2 $};
+\end{tikzpicture}}{Confronto delle due componenti nello stesso riferimento complesso. Le frecce sono numeri diversi del vettore, non assi di \(\mathbb C^2\).}
+
+
+\begin{ExTasks}
+
+\item Svolgere i due prodotti scalare-vettore.
+
+\item Sommare le componenti e scrivere il coniugato trasposto.
+
+\item Calcolare la norma al quadrato.
+
+\item Dividere tutte le componenti per la norma.
+
+\item Controllare la norma finale e interpretare i quattro dati reali.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Ricostruire il vettore}
+
+\ExEq{(1+i)e_1&=\colv{1+i\\0},\quad2e_2=\colv{0\\2},\\v&=\colv{1+i+0\\0+2}=\colv{1+i\\2}.}
+
+\ExStep{Coniugare e trasporre}
+
+\ExEq{v^\dagger&=(1-i,\ 2).}
+Il coniugio cambia il segno della parte immaginaria e la trasposizione cambia la colonna in riga.
+
+\ExStep{Calcolare la norma}
+
+\ExEq{v^\dagger v&=(1-i)(1+i)+2\cdot2\\&=1+i-i-i^2+4=2+4=6,\\\|v\|&=\sqrt6.}
+
+\ExStep{Normalizzare entrambe le componenti}
+
+\ExEq{u&=\frac1{\sqrt6}\colv{1+i\\2}.}
+Le lunghezze delle componenti sono \(\sqrt2/\sqrt6=1/\sqrt3\) e \(2/\sqrt6=\sqrt{2/3}\).
+
+\ExStep{Verificare e interpretare}
+
+\ExEq{u^\dagger u&=\frac{(1-i)(1+i)+4}{6}=\frac26+\frac46=1.}
+Il vettore v richiede quattro coordinate reali, \((1,1,2,0)\); la sua norma è la radice di \(1^2+1^2+2^2+0^2=6\). Due piani complessi visualizzano le componenti separatamente; un singolo piano ordinario non rappresenta tutto \(\mathbb C^2\).
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-0.35,0)--(1.55,0) node[right] {$\operatorname{Re}$};\draw[exaxis] (0,-0.35)--(0,1.05) node[above] {$\operatorname{Im}$};\draw[->,Accent,line width=1.1pt] (0,0)--(0.408248,0.408248) node[anchor=south west] {$ u_1 $};\draw[->,Secondary,line width=1.1pt] (0,0)--(0.816497,0) node[anchor=south west] {$ u_2 $};
+\end{tikzpicture}}{Componenti dopo la divisione comune per \(\sqrt6\). Le due lunghezze quadrate sommano a uno.}
+
+
+\ExInterpret{La norma del vettore combina i moduli quadri di tutte le componenti. Questa normalizzazione prepara la descrizione degli stati che sarà introdotta nelle sezioni dedicate alla misura.}
+
+\ExLab{Nelle sezioni 2.03–2.04 confrontare ricostruzione e normalizzazione negli esempi, poi usare lo strumento di norma per le componenti \(1+i\) e 2. Verificare il caso nullo: la divisione per la norma richiede un vettore non nullo.}
+
+
+\end{minipage}

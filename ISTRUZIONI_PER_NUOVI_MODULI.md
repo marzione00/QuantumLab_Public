@@ -1,129 +1,139 @@
-# Quantum e post-quantum computing — continuità del progetto
+# Quantum e post-quantum computing · Continuità del progetto
 
-Edizione Matrix 3.0 · 19 settembre 2026
+Edizione Matrix 4.2 · 28 settembre 2026. Questo documento accompagna ogni ZIP. Leggere anche README.md, docs/corso/GUIDA_DOCENTE.md, MODELLI.md e i rapporti di verifica prima di intervenire.
 
-Questo file accompagna tutti i pacchetti del corso. Conserva le decisioni scientifiche, didattiche e grafiche necessarie per riprendere il lavoro in un nuovo progetto Work, in una chat o in un ambiente di sviluppo. I sorgenti completi si trovano nei pacchetti **GitHub** e **sorgenti**; i pacchetti **locale** contengono il corso già generato.
+## Richiesta iniziale per un futuro LLM
 
-## Testo da usare in un nuovo progetto
+> Ti allego i sorgenti più recenti del laboratorio «Quantum e post-quantum computing» e i nuovi materiali. Leggi le istruzioni di continuità, la guida docente, i modelli e i test. Identifica i file effettivamente disponibili. Proponi prima prerequisiti, sequenza, esempi, geometria, limiti scientifici e verifiche del nuovo modulo; attendi l'approvazione prima di implementarlo. Conserva i moduli esistenti, gli indirizzi, il tema Matrix del laboratorio e il tema Seminario delle slide. Rigenera dalla stessa revisione codice, guide, pacchetti e rapporti, indicando i limiti del collaudo.
 
-> Ti allego i sorgenti del corso «Quantum e post-quantum computing», edizione Matrix. Leggi prima ISTRUZIONI_PER_NUOVI_MODULI.md, README.md e docs/corso/GUIDA_DOCENTE.md, quindi esamina i sorgenti e i controlli automatici. Voglio aggiungere un capitolo utilizzando il materiale didattico che allego. Proponi la sequenza delle dimostrazioni, dichiarando quali conoscenze sono già state introdotte; attendi la mia approvazione prima di implementare il nuovo contenuto. Conserva il tema Matrix, le funzionalità dei capitoli esistenti e i loro indirizzi. Alla consegna rigenera il pacchetto GitHub, i sorgenti, il corso locale, le copie autonome dei capitoli, le guide e il rapporto delle verifiche. Inserisci questo file, aggiornato, in ogni ZIP.
+Lo ZIP locale serve a consultare il corso; per estenderlo allegare quello sorgenti o GitHub. Questo file non garantisce accesso a conversazioni, file precedenti o siti pubblicati. Non cercare materiali fuori da quelli autorizzati. L'implementazione di un nuovo modulo e la pubblicazione di un sito richiedono autorizzazioni distinte.
 
-Allegare lo ZIP **sorgenti** più recente e le nuove slide; se si desidera riprendere anche un sito già pubblicato, indicarne l'indirizzo e fornire l'accesso al progetto corrispondente. Il solo ZIP locale consente di consultare il laboratorio, ma non contiene i file TypeScript da estendere. Questo documento non sostituisce i sorgenti e non prova che un assistente abbia accesso al progetto precedente.
+## Stato da conservare
 
-## Il percorso da conservare
+| Modulo | Sezioni | Esempi nuovi |
+| --- | ---: | ---: |
+| 1 · Dal determinismo al calcolo quantistico | 10 | Esperienze originali conservate |
+| 2 · Geometria, algebra e misura | 32 | 65 |
+| 3 · Programmi e circuiti | 14 | 30 |
+| 4 · Algoritmi, aritmetica, RSA e Shor | 25 | 51 |
 
-Il problema iniziale è costruire una simulazione: quali informazioni descrivono la preparazione, come si trasformano e quali risultati permettono di prevedere. I concetti si introducono quando questo problema li rende necessari.
+Il filo conduttore è costruire una simulazione: preparazione, trasformazione, previsione e osservazione. Il pubblico è costituito da studenti di informatica, anche senza prerequisiti di fisica. Dal secondo modulo ogni passaggio algebrico deve avere una lettura geometrica e, quando pertinente, fisica. Le quattro presentazioni Seminario sono congelate; modificarle soltanto su richiesta esplicita.
 
-- **Capitolo 1 — Dal determinismo al calcolo quantistico:** dieci dimostrazioni. Moto; Loschmidt; onde; fenditure; polarizzazione; circuito; coppie; ambiente; informazione; confronto conclusivo.
-- **Capitolo 2 — Geometria del calcolo quantistico:** diciotto dimostrazioni. Complessi, basi, proiezioni, matrici, aggiunto, spettro, composizione, tensore, eventi, momenti, frequenze, condizionamento, stati, unitarie, Born, incompatibilità, sistemi composti ed esperimento completo.
-- I capitoli non realizzati rimangono indicati come **To be done**, senza pulsanti che promettano contenuti assenti.
+È stata preparata la proposta `docs/corso/PROPOSTA_ESERCIZI_GUIDATI.md`: 15 esercizi per modulo, con richiami teorici, percorso guidato e svolgimento completo. I 60 esercizi sono implementati e conservati nei sorgenti autorevoli della guida. La proposta contiene la mappa dei temi e dei prerequisiti e va mantenuta distinta dagli esempi già presenti.
 
-Il pubblico è costituito da studenti di informatica che possono non conoscere la fisica. Il primo capitolo sviluppa la geometria prima del formalismo. La sfera di Bloch permette di introdurre lo stato senza anticipare ket, bra o prodotti tensoriali. Le operazioni X, Y, Z, R e F vengono spiegate attraverso il loro effetto; i dispositivi ottici richiedono una spiegazione preliminare quando sono pertinenti. Il secondo capitolo esplicita la teoria e tutti i passaggi dei calcoli.
+## Contratto editoriale
 
-## Prosa e didattica
+Scrivere in italiano accademico, preciso e leggibile; usare periodi articolati quando chiariscono dipendenze e ipotesi. Evitare slogan, domande retoriche seriali, opposizioni automatiche «non X, ma Y» e formule generiche. Spiegare concretamente che cosa rappresentano le grandezze e perché ogni operazione sia ammessa.
 
-Scrivere in italiano accademico, preciso e leggibile, con periodi articolati quando il ragionamento lo richiede. Evitare formule pubblicitarie, domande retoriche ripetitive, frasi slogan, opposizioni meccaniche «non X, ma Y» e passaggi generici quali «è qui che entra in gioco». Ogni paragrafo deve spiegare un rapporto concreto fra preparazione, operazione, figura e risultato.
+Ogni sezione nuova comprende, nell'ordine:
 
-Ogni dimostrazione comprende:
+1. problema, prerequisiti e raccordo con la sezione precedente;
+2. teoria e definizioni prima dell'uso dei simboli;
+3. significato dello spazio rappresentato, assi, unità, convenzioni;
+4. almeno due esempi svolti, con dati espliciti e tutti i passaggi;
+5. figure geometriche collegate ai medesimi dati dei calcoli;
+6. confronto dei risultati, significato fisico e limiti del modello;
+7. eventuale esplorazione mediante comandi nominati e ripristinabili;
+8. passaggio motivato all'argomento successivo.
 
-1. il problema e le conoscenze già disponibili;
-2. la definizione delle grandezze e delle condizioni del modello;
-3. comandi che dichiarano che cosa modificano, l'intervallo ammesso e l'effetto sui dati già raccolti;
-4. una figura geometrica con assi, unità, legenda e interpretazione;
-5. un esempio iniziale significativo, modificabile e ripristinabile;
-6. passaggi di calcolo completi, aggiornati dagli stessi dati della figura;
-7. una lettura del risultato che distingua preparazione, previsione e osservazioni;
-8. un raccordo all'argomento seguente, motivato da ciò che è stato appena osservato.
+Tutti i passaggi restano leggibili. L'avanzamento degli stati è facoltativo e non produce una misura implicita. Evitare animazioni automatiche che sottraggano il tempo necessario alla lettura. Non introdurre quiz, sfide, punteggi o gamification. I casi speciali importanti richiedono esempi aggiuntivi: Deutsch ha quattro funzioni, il test SWAP tre confronti, la fase tre valori di riferimento.
 
-Non introdurre quiz, sfide, punteggi o obiettivi di gioco. La lunghezza delle spiegazioni è subordinata alla comprensione. Le didascalie devono permettere di leggere gli strumenti senza conoscenze esterne alle lezioni fornite.
+## Contratto scientifico
 
-## Contratti scientifici e funzionali
+- Il prodotto interno è coniugato nel primo argomento. I registri sono big-endian. La QFT usa exp(+2πixy/N), l'inversa il segno negativo.
+- Distinguere coordinate fisiche, ampiezze complesse, probabilità e sfera di Bloch. La sfera non è un disegno dell'apparato. Una descrizione ridotta mista può essere interna alla sfera.
+- Una fase globale comune non modifica le probabilità; una fase relativa può cambiare l'interferenza. Conservare segni, angoli negativi, fattore due fra angoli di stato e di Bloch.
+- Mostrare dati di ingresso, calcoli intermedi, risultati esatti e arrotondamenti. Gestire vettori nulli, basi dipendenti, matrici singolari, autovalori degeneri, eventi impossibili e raccolte vuote.
+- Lo stato congiunto mantiene l'informazione necessaria a descrivere correlazioni ed entanglement. Una dinamica reversibile globale non autorizza a cancellare arbitrariamente le ampiezze.
+- Le ancille devono essere inizializzate e, ove richiesto, ripulite; verificarle su tutta la base del piccolo circuito.
+- Le probabilità teoriche e le frequenze campionarie sono oggetti distinti. Se un esito viene selezionato per analizzare un ramo, dichiararlo.
+- Shor riceve N, a e la precisione, prepara |1⟩ e calcola le potenze modulari. Il periodo non deve essere fornito al circuito né usato per costruirne la distribuzione. La decomposizione in autostati è una spiegazione della preparazione operativa.
+- Verificare i denominatori delle frazioni continue; non chiamare periodo un denominatore parziale. Distinguere ordine corretto, radice ±1 e fattorizzazione riuscita.
+- Dichiarare risorse e astrazioni. Le reti modulari correnti, sintetizzate per mintermini, crescono esponenzialmente: servono a verificare esempi piccoli e non implementano l'aritmetica scalabile di Shor. L'esempio di logaritmo discreto con F6 non include sintesi binaria.
+- Nel modello delle fenditure usare Fresnel per attraversare i regimi. Il limite di Fraunhofer da solo non descrive una fenditura ampia in campo vicino. Confrontare l'ombra geometrica dopo la stessa media del rivelatore; dichiarare normalizzazione nella finestra, ipotesi paraxiale e discretizzazione.
 
-Non cambiare una convenzione locale senza controllare tutti i punti in cui compare: diagrammi, formule, parametri, esportazioni, guide e prove automatiche.
+Conservare anche i contratti delle esperienze originarie: Loschmidt con tempo sufficiente, ritorno ideale e perturbato; correlazioni e anticorrelazioni; impostazioni numeriche e trascinamenti coerenti; export CSV/HTML; ingrandimenti, tastiera e hash storici.
 
-- Conservare segni, ordine delle operazioni, convenzioni di fase e associazioni fra assi della sfera e stati. Dichiarare la differenza fra angolo della polarizzazione e angolo sulla sfera quando serve.
-- Separare vettore nello spazio fisico, ampiezze e punto sulla sfera. Nel capitolo 2 la notazione va definita prima dell'uso.
-- Distinguere stato puro, stato del sistema congiunto e descrizione ridotta. Un punto interno alla sfera non rappresenta uno stato puro isolato.
-- La perdita di coerenza del sottosistema dipende dall'informazione presente nell'ambiente; una dinamica congiunta reversibile non giustifica una cancellazione arbitraria dello stato globale.
-- Conservare correlazione e anticorrelazione, basi di misura e preparazioni che riproducono gli esempi delle slide.
-- L'inversione di Loschmidt deve avere durata sufficiente e confrontare il ritorno ideale con l'errore di inversione. Gli insiemi devono mantenere le numerosità utili a vedere le distribuzioni.
-- Tutti gli angoli previsti dal modello conservano anche valori negativi. I campi numerici e il trascinamento aggiornano gli stessi dati, compresi i risultati delle operazioni successive.
-- Il circuito deve mostrare l'intera sequenza e gli stati intermedi. La selezione di un blocco cambia il dettaglio visualizzato, senza effettuare implicitamente una misura.
-- Distinguere valori esatti, arrotondamenti, probabilità teoriche e frequenze campionarie. Gestire raccolte vuote, vettori nulli, basi dipendenti, matrici singolari e autovalori degeneri.
-- Conservare gli esportatori CSV e HTML, la navigazione da tastiera, il ripristino, gli ingrandimenti, i collegamenti alle slide e gli indirizzi preesistenti.
+## Tema e figure
 
-## Tema Matrix
+Matrix è il tema del laboratorio; Seminario è quello delle slide. **ArsClassica 01 · Classica è il modello definitivo della guida PDF**, scelto dall'utente: B5 176 × 250 mm; margini laterali 20 mm; testo Palatino 10,5/13,2 pt; matematica Euler; titoli Iwona; bordeaux #783E4D e blu #4A6F93. Conservare queste impostazioni per tutti i capitoli futuri. Il preambolo autorevole è `guide-latex/preambolo.tex`.
 
-La fonte dei colori è `src/course/matrix-palette.json`. Contiene palette per schermo e stampa. `scripts/generate-theme.mjs` genera `matrix-palette.css`; `matrix.css` applica il tema ai componenti. Non modificare a mano il CSS generato. `src/app/globals.css` importa gli stili di base e, per ultimo, il tema.
+Per il laboratorio la fonte cromatica è src/course/matrix-palette.json, con varianti schermo e stampa. generate-theme.mjs genera il CSS: non correggere a mano i file generati.
 
-- Sfondo verde quasi nero, pannelli distinti, accento verde fosforo. La prosa e i titoli rimangono in carattere serif; numeri, matrici e indicatori usano un carattere monospaziato.
-- I colori delle grandezze sono stabili fra i capitoli e hanno significato esplicito nelle legende. Blu, verde, corallo, viola e ambra restano distinguibili anche attraverso etichette, tratteggi e forme.
-- La pioggia di codice è statica, decorativa, esclusa dall'accessibilità e confinata alle copertine. Non sovrapporla a formule, grafici, dati o testi di spiegazione.
-- Usare i token `var(--mq-…)` per SVG e CSS. Il Canvas deve risolverli con `src/lib/theme.ts` prima di impostare colori o calcolare canali RGB. Il PDF risolve i medesimi token usando la palette di stampa.
-- In HTML i disegni sono SVG o Canvas nativi. TikZ resta appropriato per slide e documenti TeX; evitare raster quando la figura deve reagire ai comandi.
-- Le guide PDF usano la variante chiara, adatta alla stampa. Le guide HTML conservano il tema Matrix e la variante chiara nella stampa del browser.
-- Evitare bagliori sui paragrafi. Verificare il contrasto anche nei controlli selezionati, nelle finestre ingrandite e nei menu aperti fuori dal contenitore principale.
-- Il colore non deve essere l'unico mezzo per comunicare una selezione. I controlli mantengono nomi accessibili, stato selezionato e focus visibile. Rispettare la preferenza di movimento ridotto.
+Prosa serif, valori numerici e matrici monospaziati; pannelli distinti, accenti leggibili e focus visibile. La pioggia di codice rimane statica, decorativa, accessibilmente nascosta e confinata alle copertine. Rispettare il movimento ridotto. Colore, forma, etichetta e tratteggio cooperano; il colore da solo non deve comunicare uno stato.
 
-## Mappa dei sorgenti
+SVG e Canvas sono appropriati alle figure interattive. Usare TikZ nei sorgenti TeX, senza imporre immagini raster al laboratorio. I Canvas risolvono i token con src/lib/theme.ts. Le guide PDF usano formule LaTeX native e figure vettoriali TikZ; i dati geometrici provengono dalle stesse configurazioni del laboratorio. Figure, formule e didascalie devono restare leggibili anche nella stampa. `scripts/export-guide-latex.py` genera i capitoli; `guide-latex/compila.py` compila il volume e le edizioni autonome. I sorgenti generati si rigenerano: apportare le correzioni di contenuto alla fonte del corso.
 
-| File o cartella | Funzione |
+## Architettura
+
+| Percorso | Responsabilità |
 | --- | --- |
-| `src/course/app.tsx` | Indice, routing, copertine, collegamenti fra capitoli, selezione delle dimostrazioni |
-| `src/course/catalogue.ts` | Metadati del corso e del capitolo 2; capitoli futuri |
-| `src/course/chapter-one.tsx` | Integrazione delle dieci dimostrazioni del primo capitolo |
-| `src/components/lab-*.tsx`, `bloch-point.tsx`, `circuit-overview.tsx` | Strumenti e dimostrazioni del primo capitolo |
-| `src/course/demos/` | Le diciotto dimostrazioni del secondo capitolo |
-| `src/course/shared.tsx` | Teoria, controlli, piani, sfere, matrici, passaggi ed esportazione delle dimostrazioni |
-| `src/lib/`, `src/course/math/core.ts` | Modelli fisici, statistica e calcolo numerico |
-| `src/course/matrix-cover.tsx` | Disegno della copertina e decorazione delle copertine |
-| `src/course/course.css`, `src/app/base.css` | Struttura e impaginazione dei componenti esistenti |
-| `public/` | Presentazioni e guide generate distribuite con il corso |
-| `scripts/render-course.mjs` | Rendering statico delle dimostrazioni e guide HTML |
-| `scripts/generate-course-pdf.py` | Guida PDF, matematica e figure nella palette di stampa |
-| `scripts/export-offline.mjs` | HTML autonomi con JavaScript e CSS incorporati |
-| `scripts/package-release.py` | ZIP del corso, dei capitoli, dei sorgenti e di GitHub |
-| `qa/`, `qa/course/` | Controlli numerici, strutturali, editoriali e PDF |
-| `docs/corso/` | Guida docente, verifiche, collaudo e revisione |
+| src/course/registry.tsx | Registro, tipi di capitolo, elenco delle sezioni e renderer |
+| src/course/app.tsx | Navigazione, copertine, scope autonomo e hash |
+| src/course/book/chapter-two.ts, explanations.ts | Sezioni, teoria e calcoli del modulo 2 |
+| src/course/book/views.tsx, types.ts, book.css | Libro interattivo, esempi, figure, tabelle ed export |
+| src/course/book/geometry.tsx, m2-support.ts | Retta numerica, griglie, traiettorie di Bloch, piano di Grover; esempi progressivi del modulo 2 |
+| src/course/algorithms/catalogue.ts | Teoria, raccordi e casi dei moduli 3–4 |
+| src/course/algorithms/theories.ts | Definizioni preliminari e raccordi specifici delle 39 sezioni dei moduli 3–4 |
+| src/course/algorithms/examples.ts | Svolgimenti ricavati dai modelli |
+| src/course/algorithms/engine.ts, reversible.ts | Stati, porte, Fourier, aritmetica e reti elementari |
+| src/course/shared.tsx, math/core.ts | Componenti geometrici e algebra condivisa |
+| src/course/demos/, legacy-tools.tsx | Esplorazioni originali del modulo 2 |
+| src/components/, src/lib/ | Modulo 1; Fresnel in diffraction.ts |
+| src/course/slide-references.json | Pagine PDF verificate della versione Seminario |
+| scripts/ | Rendering HTML, PDF, build e confezionamento |
+| guide-latex/ | Standard ArsClassica 01, quattro capitoli, figure TikZ, font e compilazione |
+| qa/ | Test numerici, DOM, tema, struttura e PDF |
+| docs/corso/ | Istruzioni didattiche, verifiche e collaudo |
 
-I pacchetti autonomi hanno il prefisso `src/`. Un eventuale progetto Sites può collocare `course/`, `components/`, `lib/` e `app/` direttamente alla radice: leggere il progetto effettivo prima di copiare file. Conservare manifest e strumenti del servizio di hosting, senza trasferire credenziali negli ZIP.
+## Aggiungere un modulo
 
-## Aggiungere un capitolo
+1. Leggere i materiali forniti e proporre una sequenza con prerequisiti, casi risolti, geometria e collegamenti. Attendere approvazione.
+2. Separare modello numerico, esempi calcolati e presentazione. Non inserire risultati prefissati nella simulazione operativa.
+3. Aggiungere identificatori stabili e registrare componenti, parti e pagine PDF. Riutilizzare BookShell, Worked, BookDiagram e CircuitFigure dopo averne letto le firme.
+4. Estendere ChapterId, registro, routing, scope e copertine. Cercare con rg i limiti espliciti: [1,2,3,4], capitolo-4, initialChapter, scope e i conteggi di rilascio.
+5. Conservare gli hash esistenti. Nelle copie autonome presentare soltanto moduli inclusi; non inventare indirizzi online per contenuti non pubblicati.
+6. Estendere render-course.mjs, export-offline.mjs, generate-course-pdf.py, package-release.py e tutte le verifiche strutturali. Sincronizzare la mappa delle slide nei documenti.
+7. Aggiungere test con risultati indipendenti, casi esatti, degeneri e d'insuccesso. Confrontare la realizzazione circuitale con una formula indipendente su sistemi piccoli.
+8. Rigenerare le guide dalla stessa revisione degli esempi. Le tabelle complete possono essere estese: distinguerle nel progetto didattico dalle pagine da proiettare.
+9. Verificare layout, font, formule, grafici, tastiera, mobile, esportazioni e uso offline. Registrare separatamente ciò che è stato eseguito e ciò che resta da provare.
+10. Aggiornare questo documento, README, guida docente e rapporti; verificare integrità e contenuto di ogni ZIP.
 
-Il progetto attuale contiene **due capitoli espliciti**: inserire una voce nel catalogo non basta. Prima di intervenire, cercare con `rg` riferimenti a `chapterTwoComponents`, `courseChapters`, `parseRoute`, `scope`, `initialChapter`, `capitolo-2`, `[1,2]` e `0|1|2`.
+Le correzioni della versione 4.1 devono rimanere coperte dai test dedicati `verify-detector.mjs` e `verify-audit-revision.mjs`. Nel renderer un cambio di variante o un ripristino riporta il cursore alla preparazione; una sequenza accorciata lo limita all’ultimo stato disponibile. La figura finale, comprese le marginali decisionali, resta visibile e distinta dallo stato selezionato. Nel piano di Grover le coordinate si calcolano mediante prodotti interni con le direzioni collettive della preparazione, conservando il segno. Le traiettorie di Bloch seguono le porte e i loro angoli dichiarati. Un evento con probabilità positiva, per quanto piccola, conserva uno stato condizionato definito; gli zeri esatti vanno giustificati dal modello.
 
-1. Leggere le nuove slide e proporre un catalogo di dimostrazioni con prerequisiti, scopo, esempio iniziale, geometria e calcoli. Concordare tale catalogo con il docente.
-2. Implementare separatamente il modello numerico e i componenti. Riutilizzare `Lesson`, `Field`, `Plane`, `Sphere`, `Matrix` e gli esportatori quando appropriato; leggere prima le loro firme reali.
-3. Assegnare identificatori stabili, titoli, pagine delle slide e raccordi. Aggiornare il catalogo, il routing e il registro dei componenti in `app.tsx`. Quando si passa a tre o più capitoli conviene introdurre un registro indicizzato per ID, eliminando le selezioni binarie, dopo aver protetto con verifiche gli indirizzi esistenti.
-4. Estendere il tipo `Route`, `parseRoute`, `scope`, `initialChapter`, il titolo del documento, la navigazione precedente/successiva e i collegamenti fra capitoli. Conservare gli hash storici del primo capitolo e quelli del secondo.
-5. Aggiungere una copertina con un diagramma emblematico e una transizione motivata. Aggiornare solo il segnaposto corrispondente; i capitoli non disponibili restano «To be done».
-6. Inserire le slide in `public/` e dichiarare i collegamenti. Non inventare numeri di pagina se manca la presentazione definitiva.
-7. Estendere il rendering statico in `render-course.mjs`, le guide, l'esportazione autonoma in `export-offline.mjs` e l'elenco dei capitoli in `package-release.py`. Controllare anche gli alias delle guide del singolo capitolo. Nelle copie autonome gli altri capitoli si aprono online.
-8. Aggiornare i conteggi nel testo del corso, nella descrizione dell'HTML, nei README e nelle verifiche strutturali. I conteggi devono derivare dal catalogo ovunque sia possibile.
-9. Aggiungere prove numeriche sui casi scientificamente significativi e controllare a mano interazione, tastiera, finestre, scorrimento e aspetto sui dispositivi effettivi. Non considerare il rendering statico una verifica del trascinamento nel browser.
-10. Rigenerare tutti i materiali dalla stessa revisione. Aggiornare questo documento e il rapporto delle verifiche; consegnare i pacchetti soltanto dopo averne verificato integrità e contenuto.
+Le guide PDF organizzano espansioni e tabelle estese in appendici F, T e R con identificatore e collegamento bidirezionale. Il generatore verifica nel testo estratto tutte le righe e tutte le espansioni trasferite. Conservare questa verifica quando si modifica l’impaginazione; non troncare numeri, esponenti o tabelle per accorciare il volume.
 
-## Comandi e consegna
+## Comandi di rilascio
 
-Prerequisiti: Node 24, pnpm 11.25.0; per PDF e ZIP anche Python 3.10 o successivo con le dipendenze in `requirements-guides.txt`. I font della guida sono inclusi con le rispettive licenze. Non servono CDN o servizi esterni per le dimostrazioni locali.
+Requisiti: Node 24, pnpm 11.25.0, Python 3.10+, requirements-guides.txt, TeX Live completo o MiKTeX con pdfLaTeX, Poppler (`pdftotext`). Le dipendenze frontend sono bloccate dal lockfile.
 
 ```sh
 pnpm install --frozen-lockfile
 pnpm run check
-python3 -m venv .venv
-# Attivare .venv secondo il sistema operativo.
 python -m pip install -r requirements-guides.txt
 pnpm run generate:all
 ```
 
-`pnpm run check` verifica tipi, modelli, HTML generato e collegamenti. `pnpm run generate:all` rigenera guide HTML/PDF, ne verifica la struttura e produce gli ZIP in `release/`. Per una consegna completa eseguire entrambi: il secondo comando non sostituisce tutti i controlli del primo.
+check verifica tipi, modelli, build, struttura, tema e DOM. generate:all rigenera HTML/PDF, controlla i PDF, ricostruisce il corso e confeziona ZIP; non sostituisce i test numerici di check. Consegna standard richiesta dall’utente: esattamente tre ZIP, locale, sorgenti e GitHub. Il locale include le guide PDF; i sorgenti includono LaTeX, esercizi, diagrammi e verifiche; GitHub include anche dist/ e il workflow Pages. Tutti gli ZIP devono contenere queste istruzioni e AGENTS.md. Escludere dipendenze installate, credenziali, cache, anteprime e archivi di rilascio annidati.
 
-Per GitHub Pages usare il workflow incluso in `.github/workflows/deploy-pages.yml`, caricando **il contenuto** della cartella di progetto alla radice del repository e selezionando **GitHub Actions** nelle impostazioni Pages. La cartella pubblicata è `dist/`. Le guide PDF sono incluse: il workflow del sito non deve installare Python. Se cambia il contenuto didattico, rigenerare e includere le guide prima di pubblicare.
+Il workflow GitHub Pages pubblica dist/. Un progetto Sites, se autorizzato, richiede invece il proprio processo ufficiale; non trasferire credenziali. Non pubblicare senza richiesta.
 
-Se si aggiorna un sito già esistente, usare il suo progetto e il suo servizio di hosting, conservando indirizzo e visibilità. Per un progetto Sites seguire il flusso ufficiale di build, commit, push, salvataggio versione e pubblicazione; non includere negli ZIP identità riservate, token o credenziali.
+## Limiti del collaudo corrente
 
-Consegnare: ZIP GitHub; ZIP sorgenti; ZIP locale dell'intero corso; ZIP locali dei singoli capitoli; guida PDF; istruzioni aggiornate; rapporto con verifiche eseguite e limiti effettivi. Inserire `ISTRUZIONI_PER_NUOVI_MODULI.md` in ogni ZIP. Controllare che il corso locale si avvii da `index.html` dopo l'estrazione completa, conservando le risorse relative.
+Le suite numeriche, il rendering statico, i test React con jsdom e i controlli PDF sono ripetibili nei sorgenti. Nel test DOM il Canvas è simulato e il CSS non viene elaborato. Il browser disponibile non ha consentito l'apertura del pacchetto locale: puntatore, touch, layout mobile, stampa browser e file:// restano da provare. Non chiamare questi controlli «collaudo completo nel browser». Non è stata eseguita una sperimentazione didattica con studenti.
 
-## Stato del collaudo da non perdere
 
-La revisione Matrix conserva il modello numerico dei due capitoli. Le verifiche automatiche e la revisione delle figure/PDF sono riportate nel rapporto di rilascio. Il controllo interattivo completo in un browser richiede l'ambiente di anteprima e va dichiarato separatamente; se non è disponibile, documentare il limite e usare `docs/corso/COLLAUDO.md` per il controllo successivo. Non presentare controlli statici come prove di funzionamento di ogni gesto dell'utente.
+## Esercizi guidati implementati
+
+Sono presenti 60 esercizi, 15 per modulo, con 336 passaggi principali di soluzione e 120 diagrammi TikZ nuovi. Ogni esercizio integra richiami alla teoria, traccia e soluzione completa. I file guide-latex/esercizi/modulo-N/GN.xx.tex sono sorgenti autorevoli mantenuti a mano; scripts/export-guide-latex.py rigenera gli indici e la collocazione, preservando questi file. La mappa e le istruzioni sono in docs/corso/ESERCIZI_GUIDATI.md (incluso anche nel pacchetto LaTeX). Per i moduli futuri conservare gli ID, dichiarare prerequisiti e convenzioni e verificare i nuovi calcoli con procedure indipendenti.
+
+
+## Revisione 4.2: esperimenti modificabili e formule
+
+Le 39 sezioni dei moduli 3 e 4 hanno un’area «Esperimento: modifica i dati, calcola e misura». I 12 circuiti generali del modulo 3 permettono di modificare ampiezze, porte, controlli, ordine e basi di misura; le restanti sezioni espongono parametri specifici. Il calcolo si avvia esplicitamente e azzera le misure. Quando i dati cambiano, i risultati precedenti restano identificati e le nuove misure sono disabilitate fino al ricalcolo.
+
+La matematica sullo schermo usa MathML nativo incorporato nell’HTML. Le formule di partenza sono conservate per il generatore LaTeX e per le verifiche. La guida mantiene Palatino, Euler, Iwona e ArsClassica 01; le slide Seminario restano congelate. Simon presenta normalizzazione, interferenza, marginale e sistemi su F₂ in passaggi separati.
+
+I dettagli scientifici, i limiti e le prove eseguite sono in `docs/corso/REVISIONE_4_2.md`. Per continuare il lavoro leggere anche `src/course/algorithms/experiment-notes.ts`, `experiments.ts` e `src/course/book/experiment-panel.tsx`.
+
+Ogni consegna futura comprende tre archivi ZIP: locale, sorgenti e GitHub. Non pubblicare automaticamente un repository o un sito.

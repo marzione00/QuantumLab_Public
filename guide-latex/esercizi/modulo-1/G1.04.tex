@@ -1,0 +1,70 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G1.04}{Confrontare ritorno ideale e ritorno perturbato}{Guida esplicita}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Riprendere \(x_0=1\), \(v=2\), \(T=3\), nelle unità SI. All’inversione viene applicata la velocità \(-v+\varepsilon\), con \(\varepsilon=0{,}1\,\mathrm{m/s}\). Calcolare l’errore di ritorno. Estendere il confronto a tre corpi con posizioni iniziali \(-1,0,1\), stessa velocità 2 ed errori rispettivamente \(-0{,}1,0,0{,}1\).
+
+\ExTheory{\ExRef{c1-loschmidt}{1.02}}{L’errore additivo sulla velocità ha unità \(\mathrm{m/s}\). Dopo un tempo inverso \(T\), la posizione finale è \(x_0+vT+(-v+\varepsilon)T=x_0+\varepsilon T\). L’espressione riguarda corpi liberi.}
+
+\ExPrediction{La pendenza del ritorno perturbato è meno negativa per \(\varepsilon>0\); al tempo fissato il corpo si arresta nel calcolo a destra della posizione attesa. Per errori opposti, le posizioni esterne della terna si allontanano simmetricamente.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\node[exbox] (n0) at (0.0,0.0) {$v=2$};\node[exbox] (n1) at (3.6,0.0) {$v_R=-2+\varepsilon$};\draw[exother] (n0)--(n1);\node[exbox] (n2) at (7.2,0.0) {$\Delta x=\varepsilon T$};\draw[exother] (n1)--(n2);
+\end{tikzpicture}}{La perturbazione agisce sulla velocità di ritorno e si accumula durante la fase inversa.}
+
+
+\begin{ExTasks}
+
+\item Calcolare posizione e velocità all’inizio del ritorno.
+
+\item Propagare per tre secondi con la velocità perturbata.
+
+\item Ricavare l’errore simbolico \(\Delta x\).
+
+\item Calcolare le tre posizioni finali della terna.
+
+\item Confrontare centro e ampiezza dell’insieme e discutere il limite \(\varepsilon\to0\).
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Definire il ritorno perturbato}
+
+\ExEq{x(T)&=1+2\cdot3=7,\qquad v_R=-2+0{,}1=-1{,}9.}
+La posizione resta continua durante l’inversione.
+
+\ExStep{Calcolare il punto finale}
+
+\ExEq{x_R(3)&=7-1{,}9\cdot3=7-5{,}7=1{,}3\,\mathrm m,\\\Delta x&=1{,}3-1=0{,}3\,\mathrm m.}
+Il ritorno ideale avrebbe dato \(7-2\cdot3=1\).
+
+\ExStep{Generalizzare l’errore}
+
+\ExEq{\Delta x&=x_0+vT-vT+\varepsilon T-x_0=\varepsilon T.}
+Con \(T=6\) e lo stesso errore, \(\Delta x=0{,}6\,\mathrm m\). La crescita è lineare in questo modello libero; questo calcolo non stabilisce una legge per sistemi caotici.
+
+\ExStep{Propagare la terna}
+
+Per ciascun corpo si usa \(x_i'=x_i+3\varepsilon_i\):
+\ExEq{x_1'&=-1+3(-0{,}1)=-1{,}3,\\x_2'&=0+3\cdot0=0,\\x_3'&=1+3\cdot0{,}1=1{,}3.}
+Il centro è \((-1{,}3+0+1{,}3)/3=0\); la larghezza è \(1{,}3-(-1{,}3)=2{,}6\), contro 2 iniziale.
+
+\ExStep{Controllare il limite ideale}
+
+Se \(\varepsilon_i=0\) per tutti i corpi, ciascuna correzione \(3\varepsilon_i\) si annulla. Il centro uguale a zero, da solo, non certifica il ritorno della distribuzione: anche la terna allargata ha centro zero.
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\draw[exaxis] (-3.3,0)--(3.6,0) node[right] {$x$ (m)};\foreach \x in {-2,0,2}{\fill[Secondary] (\x,.5) circle(2pt);}\foreach \x in {-2.6,0,2.6}{\fill[Accent] (\x,-.5) circle(2pt);}\node[right] at (3,.5) {inizio};\node[right] at (3,-.5) {ritorno};\draw[->,Ink!40] (-2,.4)--(-2.6,-.4);\draw[->,Ink!40] (2,.4)--(2.6,-.4);\node[below] at (-2.6,-.6) {$-1{,}3$};\node[below] at (2.6,-.6) {$1{,}3$};
+\end{tikzpicture}}{Posizioni della terna prima dell’andata e dopo il ritorno perturbato. Le due righe separano i due istanti.}
+
+
+\ExInterpret{La distribuzione richiede più informazione del suo centro. La precisione dell’inversione e il tempo di ritorno contribuiscono entrambi all’errore finale.}
+
+\ExLab{Nella sezione 1.02 confrontare inversione ideale e inversione perturbata mantenendo uguale il tempo delle due fasi. Osservare particelle e densità, quindi aumentare l’imprecisione di registrazione. Il parametro angolare della simulazione è una perturbazione diversa dall’errore additivo del presente modello: confrontare il meccanismo e la tendenza, senza identificarne i valori numerici.}
+
+
+\end{minipage}

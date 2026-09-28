@@ -1,0 +1,85 @@
+% Authoritative exercise source. Preserve all derivations and diagrams.
+
+\ExerciseStart{G4.10}{Costruire RSA e recuperare la chiave dai fattori}{Consolidamento}
+
+\BookHeading{Problema, dati e obiettivo}
+
+Costruire un esempio RSA con \(p=5\), \(q=11\), \(N=55\), esponente pubblico e=3. Ricavare la chiave privata e cifrare/decifrare i messaggi 7 e 5, mostrando anche il caso non coprimo con N.
+
+\ExTheory{\ExRef{c4-aritmetica}{4.16}; \ExRef{c4-rsa}{4.17}; \ExRef{c4-ordine-fattori}{4.18}}{Per due primi distinti si può scegliere d con \(ed\equiv1\pmod{\lambda(N)}\), dove \(\lambda(N)=\operatorname{lcm}(p-1,q-1)\). Cifratura e decifratura sono \(c=m^e\bmod N\), \(m=c^d\bmod N\). La fattorizzazione permette di calcolare \(\lambda(N)\) e quindi d.}
+
+\ExPrediction{Il messaggio 5 è nullo modulo uno dei fattori. La verifica della decifratura dovrà trattare esplicitamente anche questo ramo.}
+
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\node[exbox] (n0) at (0.0,0.0) {$N=55$};\node[exbox] (n1) at (3.6,0.0) {$5\cdot11$};\draw[exother] (n0)--(n1);\node[exbox] (n2) at (7.2,0.0) {$\lambda=20$};\draw[exother] (n1)--(n2);\node[exbox] (n3) at (0.0,-1.6) {$e=3$};\draw[exother] (n2.south)--++(0,-.4)-|(n3.north);\node[exbox] (n4) at (3.6,-1.6) {$d=7$};\draw[exother] (n3)--(n4);\node[exbox] (n5) at (7.2,-1.6) {$c^7\bmod55$};\draw[exother] (n4)--(n5);
+\end{tikzpicture}}{Dai fattori si ricava l’esponente di decifratura.}
+
+
+\begin{ExTasks}
+
+\item Calcolare lambda e l’inverso di e.
+
+\item Cifrare e decifrare 7 mediante quadrati ripetuti.
+
+\item Ripetere il calcolo per 5.
+
+\item Ricostruire i risultati tramite i resti modulo 5 e 11.
+
+\item Spiegare quale informazione la fattorizzazione renda disponibile.
+
+\end{ExTasks}
+
+\ExSolution
+
+\ExStep{Ricavare la chiave}
+
+\ExEq{\lambda(55)&=\operatorname{lcm}(4,10)=20,\\
+20&=6\cdot3+2,\quad 3=1\cdot2+1,\\
+1&=3-(20-6\cdot3)=7\cdot3-20.}
+Dunque d=7 ed \(ed=21=1+20\).
+
+\ExStep{Cifrare 7}
+
+\ExEq{7^2&=49,\quad 7^3=343=6\cdot55+13.}
+Il cifrato è 13.
+
+\ExStep{Decifrare 13}
+
+\ExEq{13^2&=169=3\cdot55+4,\\
+13^4&\equiv4^2=16\pmod{55},\\
+13^7&\equiv16\cdot4\cdot13=832=15\cdot55+7.}
+La scomposizione \(7=4+2+1\) giustifica il prodotto delle tre potenze.
+
+\ExStep{Trattare un messaggio non coprimo}
+
+\ExEq{5^3&=125=2\cdot55+15,\\
+15^2&=225=4\cdot55+5,\\
+15^4&\equiv25,\quad
+15^7\equiv25\cdot5\cdot15=1875=34\cdot55+5.}
+Si recupera 5 benché \(\gcd(5,55)=5\).
+
+\ExStep{Controllare con i resti}
+
+Per il cifrato 13, modulo 5 si ha \(3^2=9\equiv4\), \(3^4\equiv1\), \(3^7\equiv1\cdot4\cdot3=12\equiv2\). Modulo 11, \(2^2=4\), \(2^4=16\equiv5\), \(2^7\equiv5\cdot4\cdot2=40\equiv7\). Quindi \(m=2+5t\) e \(5t\equiv5\pmod{11}\). Poiché \(5^{-1}\equiv9\), \(t\equiv45\equiv1\), da cui m=7.
+Per il cifrato 15, il resto modulo 5 è zero. Modulo 11, \(4^2\equiv5\), \(4^4\equiv3\), \(4^7\equiv3\cdot5\cdot4=60\equiv5\). Scrivendo \(m=5t\), si ricava ancora \(t\equiv1\pmod{11}\), dunque m=5.
+
+\ExStep{Giustificare la decifratura generale}
+
+Poiché ed=21, per un resto non nullo modulo 5 vale \(m^{21}=m(m^4)^5\equiv m\); modulo 11 vale \(m^{21}=m(m^{10})^2\equiv m\). Se un resto è zero, l’uguaglianza è immediata. Il teorema cinese dei resti identifica un unico messaggio modulo 55.
+
+\ExStep{Collegare RSA a Shor}
+
+Conoscendo i fattori di N si calcolano lambda e d con aritmetica classica. Shor fornisce una procedura quantistica di fattorizzazione, rendendo disponibile questa via di recupero della chiave privata. Questa implicazione è sufficiente per il collegamento; non richiede di affermare un’equivalenza generale fra inversione RSA e fattorizzazione. I numeri scelti sono esclusivamente didattici.
+
+\par\noindent\begin{minipage}{\linewidth}
+\ExFigure{\begin{tikzpicture}[>=Stealth,exlabel]
+\node[exbox] (a) at(0,0){$m\bmod55$};\node[exbox] (b) at(4,1){$m\bmod5$};\node[exbox] (c) at(4,-1){$m\bmod11$};\draw[exother] (a)--(b);\draw[exother] (a)--(c);\node at(4,-2){$7\longleftrightarrow(2,7)$};
+\end{tikzpicture}}{La coppia di resti determina un unico punto fra i 55 residui.}
+
+
+\ExInterpret{La struttura dei resti rende comprensibile la decifratura anche quando il messaggio non è invertibile. Il ruolo della fattorizzazione è rendere calcolabile l’esponente privato.}
+
+\ExLab{Nelle sezioni 4.16–4.18 confrontare i passaggi su esponenziazione, inverso modulare e RSA. Riprodurre i due messaggi di questo esercizio e controllare separatamente i resti modulo ciascun primo.}
+
+
+\end{minipage}
