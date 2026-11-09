@@ -1,19 +1,39 @@
-import fs from 'node:fs/promises';
+/** Deterministic static build. No packages, network, tokens or parent repository. */
+import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
-import {spawnSync} from 'node:child_process';
-
-const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const output = path.join(root, 'dist');
-// Elimina soltanto la cartella generata, per evitare risorse residue.
-await fs.rm(output, {recursive: true, force: true});
-const guides = spawnSync(process.execPath, [path.join(root, 'scripts/render-course.mjs')], {cwd:root,stdio:'inherit'});
-if(guides.error)throw guides.error;
-if(guides.status!==0)process.exit(guides.status??1);
-const result = spawnSync(process.execPath, [path.join(root, 'scripts/export-offline.mjs'), output], {
-  cwd: root, stdio: 'inherit'
-});
-if (result.error) throw result.error;
-if (result.status !== 0) process.exit(result.status ?? 1);
-await fs.writeFile(path.join(output, '.nojekyll'), '');
-console.log('Sito pronto in dist/index.html — Corso completo: GitHub Pages e uso locale.');
+import {createHash} from 'node:crypto';
+import {configuration} from './config.mjs';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const dist=path.join(root,'dist');
+const read=f=>fs.readFileSync(path.join(root,f));
+const json=f=>JSON.parse(read(f));
+const sha=b=>createHash('sha256').update(b).digest('hex');
+const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const data=json('content/catalogue.json'), pkg=json('package.json'), origin=json('vendor/origin.json');
+const config=configuration(json('config/site.json'),data,process.env);
+if(data.version!==pkg.version)throw Error('Versioni package/catalogo non coerenti.');
+if(sha(read('vendor/legacy-runtime.js'))!==origin.adaptedRuntimeSha256)throw Error('Runtime storico modificato: verificare la provenienza prima della build.');
+if(!data.modules.every(m=>m.activities.every(id=>data.activities.some(a=>a.id===id&&a.module===m.id))))throw Error('Catalogo incoerente.');
+fs.rmSync(dist,{recursive:true,force:true});fs.mkdirSync(path.join(dist,'assets'),{recursive:true});
+for(const file of ['app.js','models.js','lab.css','ambient.js'])fs.writeFileSync(path.join(dist,'assets',file),read('src/'+file));
+for(const file of ['legacy-runtime.js','legacy.css'])fs.writeFileSync(path.join(dist,'assets',file),read('vendor/'+file));
+fs.writeFileSync(path.join(dist,'assets/catalogue.js'),'globalThis.QuantumLabData='+JSON.stringify(data)+';\n');
+fs.writeFileSync(path.join(dist,'site-config.js'),'globalThis.QuantumLabConfig='+JSON.stringify(config)+';\n');
+let html=read('src/index.html').toString();
+html=html.replace('{{ROBOTS}}',config.siteUrl?'index,follow':'noindex,nofollow').replace('{{CANONICAL}}',config.siteUrl?`<link rel="canonical" href="${escape(config.siteUrl)}">`:'');
+fs.writeFileSync(path.join(dist,'index.html'),html);
+fs.writeFileSync(path.join(dist,'LICENSE.txt'),read('LICENSE'));
+fs.writeFileSync(path.join(dist,'LICENZE_COMPONENTI.txt'),read('vendor/LICENZE_COMPONENTI.txt'));
+fs.writeFileSync(path.join(dist,'THIRD_PARTY_NOTICES.txt'),read('THIRD_PARTY_NOTICES.md'));
+fs.writeFileSync(path.join(dist,'favicon.svg'),`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#080f0c"/><g fill="none" stroke="#91e6b2"><circle cx="32" cy="31" r="21" stroke-width="1.7"/><ellipse cx="32" cy="31" rx="21" ry="7" stroke-width="1"/><ellipse cx="32" cy="31" rx="9" ry="21" stroke-width="1"/><path d="M32 31 44 16M40 17l4-1-1 5" stroke-width="2"/></g><circle cx="32" cy="31" r="2" fill="#91e6b2"/></svg>`);
+fs.writeFileSync(path.join(dist,'.nojekyll'),'');
+const back=escape(config.siteUrl||'./');
+fs.writeFileSync(path.join(dist,'404.html'),`<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Pagina non trovata · Quantum Lab</title><main><h1>Il laboratorio usa collegamenti con #.</h1><p>Questo indirizzo non corrisponde a una pagina. Non sono stati persi dati sul server: i calcoli avvengono nel browser.</p><p><a href="${back}#indice">Apri l’indice di Quantum Lab</a></p></main></html>`);
+fs.writeFileSync(path.join(dist,'robots.txt'),config.siteUrl?`User-agent: *\nAllow: /\nSitemap: ${config.siteUrl}sitemap.xml\n`:'User-agent: *\nDisallow: /\n');
+if(config.siteUrl)fs.writeFileSync(path.join(dist,'sitemap.xml'),`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>${escape(config.siteUrl)}</loc></url></urlset>\n`);
+fs.writeFileSync(path.join(dist,'release.json'),JSON.stringify({version:data.version,modules:data.modules.length,activities:data.activities.length,legacyActivities:data.activities.filter(a=>a.kind==='legacy').length,sourceVersion:origin.sourceVersion,mode:'standalone-repository',license:'CC-BY-SA-4.0',siteUrl:config.siteUrl,notes:'No slide copies, font files, tracking, parent-site build or remote simulation. Ambient graphics are decorative.'},null,2)+'\n');
+function walk(dir,prefix=''){return fs.readdirSync(dir,{withFileTypes:true}).sort((a,b)=>a.name.localeCompare(b.name,'en')).flatMap(e=>e.isDirectory()?walk(path.join(dir,e.name),prefix+e.name+'/'):[prefix+e.name]);}
+const manifest=Object.fromEntries(walk(dist).map(f=>[f,sha(fs.readFileSync(path.join(dist,f)))]));
+fs.writeFileSync(path.join(dist,'manifest-sha256.json'),JSON.stringify(manifest,null,2)+'\n');
+console.log(`Quantum Lab ${pkg.version}: ${data.activities.length} attività, ${data.modules.length} moduli, repository autonoma. ${config.siteUrl||'Build locale: noindex, URL non inventato.'}`);

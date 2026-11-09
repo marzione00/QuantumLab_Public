@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "siteUrl": "",
+  "mainSiteUrl": "https://marzione00.github.io/Personal_web_page/",
+  "teachingPath": "didattica.html",
+  "coursePath": "corso-quantum-post-quantum-computing-2026-2027.html",
+  "slidesBaseUrl": "",
+  "slideLinks": "course",
+  "ambient": {
+    "defaultMode": "animated",
+    "maxFramesPerSecond": 20
+  },
+  "license": {
+    "id": "CC-BY-SA-4.0",
+    "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "authors": [
+    "Marzio De Corato",
+    "Danilo Bruschi"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "checks": 140,
+  "screenBins": 800,
+  "screenSamples": 6400,
+  "smallestFringeMm": 0.5,
+  "centralContrast": 0.979514248265524,
+  "tested": [
+    "fase effettiva",
+    "trascinamento sui due emisferi",
+    "camera indipendente",
+    "R–F–R e bypass",
+    "risoluzione delle frange",
+    "correlazione e anticorrelazione",
+    "fase a 90°",
+    "ambiente",
+    "archivi generici",
+    "diagnosi",
+    "interazione del gas indipendente da N"
+  ]
+}

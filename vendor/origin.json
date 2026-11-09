@@ -1,0 +1,7 @@
+{
+  "sourceArchiveSha256": "113419defe3e621c5a67bf24c4cac7bff56e7551c2143bda0a25d8acaaf3e82d",
+  "sourceVersion": "4.2.0",
+  "runtimeAdaptation": "Only final createRoot call replaced by explicit exports. Scientific implementation unchanged.",
+  "sourceRuntimeSha256": "10aaec9102655fb6446930b18acbd7de9426e5119c23cb9b21cadb92d5145947",
+  "adaptedRuntimeSha256": "7fb6dc9fcf72ef97200d06175f508973622b2cc6522f18838234d10bf3c79000"
+}

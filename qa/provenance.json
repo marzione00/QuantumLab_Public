@@ -1,0 +1,9 @@
+{
+  "baseline": "QuantumLab_5_0_RC1_Sorgenti.zip",
+  "baselineSha256": "723f1ed7a2036cc40834e6a003afab5777836376d851236bcb10e360523cd4a8",
+  "comparedFiles": 87,
+  "archivedScientificSourceFiles": 82,
+  "differences": [],
+  "catalogueOnlyVersionChanged": true,
+  "status": "PASS"
+}

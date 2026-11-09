@@ -1,0 +1,10 @@
+{
+  "status": "STATIC_PASS",
+  "yamlParsed": true,
+  "jobs": [
+    "verify-build",
+    "deploy"
+  ],
+  "deployNeeds": "verify-build",
+  "remoteRunPerformed": false
+}

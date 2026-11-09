@@ -1,0 +1,1679 @@
+{
+  "1": [
+    {
+      "id": "moto",
+      "title": "Dati iniziali e previsione del moto",
+      "short": "Il moto",
+      "intro": "Due particelle partono dalla stessa posizione. Arriveranno nello stesso punto?",
+      "part": 0,
+      "pages": [
+        12
+      ],
+      "bridge": ""
+    },
+    {
+      "id": "loschmidt",
+      "title": "Reversibilità e inversione di Loschmidt",
+      "short": "Il gas e Loschmidt",
+      "intro": "Lasciamo espandere il gas. Poi invertiamo tutte le velocità.",
+      "part": 0,
+      "pages": [
+        50
+      ],
+      "bridge": ""
+    },
+    {
+      "id": "onde",
+      "title": "Sovrapposizione e fase relativa",
+      "short": "Onde e interferenza",
+      "intro": "Come cambia la sovrapposizione se ritardiamo una delle due onde?",
+      "part": 0,
+      "pages": [
+        92
+      ],
+      "bridge": ""
+    },
+    {
+      "id": "fenditure",
+      "title": "Dai singoli arrivi alla distribuzione",
+      "short": "Un arrivo alla volta",
+      "intro": "Quale distribuzione emerge dai singoli arrivi sullo schermo?",
+      "part": 0,
+      "pages": [
+        125
+      ],
+      "bridge": ""
+    },
+    {
+      "id": "polarizzazione",
+      "title": "Polarizzazione, misura e sfera di Bloch",
+      "short": "Polarizzazione e qubit",
+      "intro": "Le due diagonali danno gli stessi conteggi. Quale misura le distingue?",
+      "part": 0,
+      "pages": [
+        165
+      ],
+      "bridge": ""
+    },
+    {
+      "id": "calcolo",
+      "title": "Operazioni su un qubit",
+      "short": "Il calcolo quantistico",
+      "intro": "Come può una variazione di fase modificare gli esiti di un circuito?",
+      "part": 0,
+      "pages": [
+        222
+      ],
+      "bridge": ""
+    },
+    {
+      "id": "coppie",
+      "title": "Statistiche locali e correlazioni",
+      "short": "Due qubit",
+      "intro": "Le statistiche dei singoli qubit bastano a descrivere due qubit insieme?",
+      "part": 0,
+      "pages": [
+        246
+      ],
+      "bridge": ""
+    },
+    {
+      "id": "ambiente",
+      "title": "Una coppia entangled incontra l’ambiente",
+      "short": "Il ruolo dell’ambiente",
+      "intro": "Quali correlazioni cambiano quando la coppia perde coerenza?",
+      "part": 0,
+      "pages": [
+        277
+      ],
+      "bridge": ""
+    },
+    {
+      "id": "informazione",
+      "title": "Quali dati servono per continuare?",
+      "short": "Salvare una simulazione",
+      "intro": "Salviamo le probabilità 0/1: quali operazioni possiamo ancora prevedere?",
+      "part": 0,
+      "pages": [
+        300
+      ],
+      "bridge": ""
+    },
+    {
+      "id": "sintesi",
+      "title": "Stessi conteggi, cause differenti",
+      "short": "Distinguere le cause",
+      "intro": "Quale intervento distingue una fase instabile da una traccia dei cammini?",
+      "part": 0,
+      "pages": [
+        308
+      ],
+      "bridge": ""
+    }
+  ],
+  "2": [
+    {
+      "id": "complessi",
+      "title": "Componenti, modulo e fase",
+      "short": "Componenti, modulo e fase",
+      "part": 0,
+      "legacy": "complessi",
+      "intro": "Un’ampiezza deve conservare una grandezza e una fase. Due coordinate reali permettono di descriverle insieme.",
+      "definition": "z=x+iy; i²=−1; |z|=√(x²+y²); z=|z|e^(iφ).",
+      "space": "Le coordinate del piano sono parte reale e parte immaginaria di un singolo numero.",
+      "mode": "complessi",
+      "theory": [
+        "Un’ampiezza deve conservare una grandezza e una fase. Due coordinate reali permettono di descriverle insieme.",
+        "Il simbolo i soddisfa i²=−1. Scrivere z=x+iy significa raccogliere due coordinate in un unico oggetto algebrico. Il modulo misura la distanza della punta dall’origine, mentre l’argomento misura l’angolo orientato rispetto all’asse reale positivo. Gli angoli che differiscono di un giro descrivono lo stesso numero; per z=0 l’argomento è indefinito.",
+        "La forma polare z=ρ(cosφ+i sinφ) permette di ricostruire le coordinate attraverso x=ρ cosφ e y=ρ sinφ. La notazione e^(iφ)=cosφ+i sinφ abbrevia il fattore di modulo uno. Nei calcoli con π l’angolo è in radianti; quando compare ° è in gradi. Un giro corrisponde a 2π radianti o 360°.",
+        "Il coniugato z*=x−iy riflette il punto rispetto all’asse reale. Il suo modulo resta uguale a quello di z. Questa operazione sarà necessaria per costruire prodotti interni e norme nei vettori complessi; qui la riconosciamo dalle due coordinate."
+      ],
+      "bridge": "La rappresentazione cartesiana rende disponibili le componenti; sommandole e moltiplicandole potremo seguire cancellazioni, rotazioni e dilatazioni.",
+      "pages": [
+        11
+      ]
+    },
+    {
+      "id": "prodotto-complesso",
+      "title": "Sommare e moltiplicare ampiezze",
+      "short": "Sommare e moltiplicare ampiezze",
+      "part": 0,
+      "legacy": "complessi",
+      "intro": "La somma combina contributi; la moltiplicazione può ruotare e dilatare il piano. Seguiamo separatamente queste due operazioni.",
+      "definition": "(x+iy)(u+iv)=(xu−yv)+i(xv+yu).",
+      "space": "Piano complesso; gli angoli sono fasi orientate.",
+      "mode": "prodotto-complesso",
+      "theory": [
+        "La somma combina contributi; la moltiplicazione può ruotare e dilatare il piano. Seguiamo separatamente queste due operazioni.",
+        "Per sommare due numeri complessi si sommano separatamente le parti reali e immaginarie. La costruzione punta-coda rappresenta questa operazione perché la traslazione della seconda freccia conserva le sue componenti. Le fasi relative determinano quanto la risultante sia lunga: contributi opposti possono cancellarsi.",
+        "Nel prodotto si distribuiscono tutti i termini e si sostituisce i² con −1. In forma polare i moduli si moltiplicano e gli argomenti si sommano. Moltiplicare per i realizza quindi una rotazione di 90°, mentre moltiplicare per un reale positivo realizza una dilatazione."
+      ],
+      "bridge": "Le somme di contributi verranno ora generalizzate ai vettori: scegliere una base significa fissare le direzioni che ricostruiscono ogni ingresso.",
+      "pages": [
+        11
+      ]
+    },
+    {
+      "id": "basi",
+      "title": "Vettori, combinazioni e basi",
+      "short": "Vettori, combinazioni e basi",
+      "part": 0,
+      "legacy": "basi",
+      "intro": "Le coordinate indicano i coefficienti con cui una base ricostruisce il vettore. La scelta di assi obliqui rende visibile questa dipendenza.",
+      "definition": "v=c₁b₁+c₂b₂=Bc; le colonne di B sono b₁,b₂.",
+      "space": "Piano reale R²; vettore e coordinate sono oggetti distinti.",
+      "mode": "basi",
+      "theory": [
+        "Le coordinate indicano i coefficienti con cui una base ricostruisce il vettore. La scelta di assi obliqui rende visibile questa dipendenza.",
+        "Una base del piano contiene due vettori linearmente indipendenti: nessuno è un multiplo dell’altro. Ogni vettore del piano ammette allora un’unica espressione come loro combinazione. Le coordinate sono i coefficienti di quella combinazione; la freccia geometrica è ricostruita sommando i due contributi.",
+        "La matrice B è qui una tabella che raccoglie i vettori della base come colonne. Scrivere Bc=v abbrevia la combinazione delle colonne con coefficienti c₁,c₂. Per B=[[a,b],[c,d]], il determinante è ad−bc; misura l’area orientata del parallelogramma delle due colonne. Se è diverso da zero esse sono indipendenti. Se è zero, alcuni vettori possono risultare irraggiungibili e quelli raggiungibili possono avere più descrizioni."
+      ],
+      "bridge": "Una base assegna coordinate a un vettore. Per confrontarne le lunghezze occorre specificare la norma, che resta indipendente dalla particolare scrittura in una base.",
+      "pages": [
+        33
+      ]
+    },
+    {
+      "id": "norma",
+      "title": "Lunghezza e normalizzazione",
+      "short": "Lunghezza e normalizzazione",
+      "part": 0,
+      "legacy": "proiezioni",
+      "intro": "Prima di usare un vettore come direzione unitaria ne calcoliamo la norma. Dividere per la lunghezza conserva la direzione.",
+      "definition": "‖v‖²=Σⱼ|vⱼ|²; u=v/‖v‖ per v≠0.",
+      "space": "Vettori reali nel primo esempio, componenti complesse nel secondo.",
+      "mode": "norma",
+      "theory": [
+        "Prima di usare un vettore come direzione unitaria ne calcoliamo la norma. Dividere per la lunghezza conserva la direzione.",
+        "La norma euclidea estende il teorema di Pitagora a un numero arbitrario di componenti. Per una componente complessa x+iy il contributo è x²+y², ossia il modulo quadro. Sommando questi contributi si ottiene un numero reale non negativo.",
+        "La divisione per la norma moltiplica tutte le componenti per lo stesso fattore positivo. La direzione e le proporzioni interne rimangono invariate. Il vettore nullo richiede un trattamento separato, poiché la sua norma è zero e non permette di costruire una direzione unitaria."
+      ],
+      "bridge": "La somma dei moduli quadri calcola una lunghezza. Il prodotto interno estenderà lo stesso coniugio al confronto fra due vettori e riconoscerà l’ortogonalità.",
+      "pages": [
+        45
+      ]
+    },
+    {
+      "id": "prodotto-interno",
+      "title": "Prodotto interno e ortogonalità",
+      "short": "Prodotto interno e ortogonalità",
+      "part": 0,
+      "legacy": "proiezioni",
+      "intro": "Il prodotto interno misura il contributo di una direzione lungo un’altra. Nei complessi il coniugio rende la norma reale e positiva.",
+      "definition": "⟨u,v⟩=Σⱼuⱼ* vⱼ; u⊥v quando ⟨u,v⟩=0.",
+      "space": "Ogni piano complesso rappresenta una componente; l’ortogonalità si verifica nello spazio dei vettori.",
+      "mode": "prodotto-interno",
+      "theory": [
+        "Il prodotto interno misura il contributo di una direzione lungo un’altra. Nei complessi il coniugio rende la norma reale e positiva.",
+        "Nel caso reale il prodotto interno è la somma dei prodotti delle componenti. Nel caso complesso si coniuga il primo vettore, così che ⟨v,v⟩ sia la somma dei moduli quadri. La convenzione adottata rende il prodotto lineare nel secondo argomento e coniugato-lineare nel primo.",
+        "Quando u è unitario, il numero ⟨u,v⟩ è il coefficiente della componente di v lungo u. Il vettore proiettato è u⟨u,v⟩. L’annullamento del prodotto interno esprime l’ortogonalità, anche quando le singole componenti sono complesse e richiedono più piani per essere visualizzate."
+      ],
+      "bridge": "Il coefficiente ottenuto dal prodotto interno permette di sottrarre una componente parallela; applicheremo questa idea per costruire una base ortonormale.",
+      "pages": [
+        45
+      ]
+    },
+    {
+      "id": "proiezioni",
+      "title": "Costruire direzioni ortonormali",
+      "short": "Costruire direzioni ortonormali",
+      "part": 0,
+      "legacy": "proiezioni",
+      "intro": "Sottraendo la proiezione lungo una direzione già nota otteniamo il residuo ortogonale. Questa costruzione conduce a Gram–Schmidt.",
+      "definition": "e₁=u/‖u‖; α=⟨e₁,v⟩; w=v−αe₁; e₂=w/‖w‖.",
+      "space": "Piano reale con proiezione parallela e residuo ortogonale.",
+      "mode": "proiezioni",
+      "theory": [
+        "Sottraendo la proiezione lungo una direzione già nota otteniamo il residuo ortogonale. Questa costruzione conduce a Gram–Schmidt.",
+        "Si costruisce dapprima un asse unitario e si calcola il contributo del vettore successivo lungo quell’asse. Sottraendo tale contributo si ottiene un residuo w con prodotto interno nullo rispetto al primo asse: la sottrazione ha eliminato precisamente la parte parallela.",
+        "Se il residuo è non nullo, la sua normalizzazione fornisce un secondo asse unitario. Se è nullo, il vettore aggiunto appartiene già allo spazio generato dal primo. La stessa procedura può proseguire in dimensioni maggiori sottraendo tutte le proiezioni già disponibili."
+      ],
+      "bridge": "Le proiezioni hanno mostrato come costruire direzioni utili. Descriveremo ora una trasformazione indicando dove manda i vettori di una base.",
+      "pages": [
+        45
+      ]
+    },
+    {
+      "id": "matrici",
+      "title": "La matrice attraverso le sue colonne",
+      "short": "La matrice attraverso le sue colonne",
+      "part": 1,
+      "legacy": "matrici",
+      "intro": "Una trasformazione lineare è determinata dall’immagine dei vettori della base. Il prodotto riga per colonna ricostruisce la stessa trasformazione.",
+      "definition": "Av=v₁Ae₁+v₂Ae₂.",
+      "space": "Piano reale: la figura confronta il vettore e la sua immagine sulla medesima scala.",
+      "mode": "matrici",
+      "theory": [
+        "Una trasformazione lineare è determinata dall’immagine dei vettori della base. Il prodotto riga per colonna ricostruisce la stessa trasformazione.",
+        "La linearità richiede A(αu+βv)=αAu+βAv. Scrivendo un vettore come combinazione dei vettori canonici, questa proprietà mostra che bastano le immagini della base per determinare ogni risultato. Tali immagini compaiono nelle colonne della matrice.",
+        "Il prodotto riga per colonna e la combinazione delle colonne sono due letture dello stesso calcolo. La figura confronta ingresso e uscita sulla stessa scala, così che una variazione della lunghezza o dell’angolo rimanga riconoscibile. Una trasformazione lineare manda sempre l’origine nell’origine."
+      ],
+      "bridge": "Le colonne determinano tutte le uscite. Studiare quali loro combinazioni si annullano permetterà di identificare nucleo e perdita di informazione.",
+      "pages": [
+        76
+      ]
+    },
+    {
+      "id": "nucleo",
+      "title": "Informazione perduta: nucleo e immagine",
+      "short": "Informazione perduta: nucleo e immagine",
+      "part": 1,
+      "legacy": "matrici",
+      "intro": "Quando due direzioni vengono mandate sulla stessa retta, alcune differenze fra ingressi scompaiono. Il nucleo raccoglie precisamente queste differenze.",
+      "definition": "ker A={v:Av=0}; im A={Av}; dim ker A+rango A=numero di colonne.",
+      "space": "Piano reale con una direzione annullata dalla trasformazione.",
+      "mode": "nucleo",
+      "theory": [
+        "Quando due direzioni vengono mandate sulla stessa retta, alcune differenze fra ingressi scompaiono. Il nucleo raccoglie precisamente queste differenze.",
+        "Due ingressi u e v hanno la stessa immagine quando A(u−v)=0. Il nucleo contiene quindi le differenze che la trasformazione rende indistinguibili. Per determinarlo si risolve il sistema omogeneo Ax=0, esprimendo le variabili pivot attraverso quelle libere.",
+        "L’immagine è generata dalle colonne della matrice. Le colonne indipendenti ne determinano la dimensione, chiamata rango. Nel piano, una matrice di rango uno produce risultati su una retta; una matrice nulla produce soltanto l’origine. Il teorema rango-nullità conta insieme direzioni conservate e annullate."
+      ],
+      "bridge": "Dopo aver distinto direzioni conservate e annullate, seguiremo due trasformazioni consecutive per verificare come l’ordine ne cambi l’effetto.",
+      "pages": [
+        160
+      ]
+    },
+    {
+      "id": "composizione",
+      "title": "Seguire l’ordine delle operazioni",
+      "short": "Seguire l’ordine delle operazioni",
+      "part": 1,
+      "legacy": "composizione",
+      "intro": "Il risultato della prima trasformazione diventa l’ingresso della seconda. Scriviamo ogni stato intermedio prima di raccogliere le operazioni in un prodotto.",
+      "definition": "Prima B, poi A: v↦Bv↦A(Bv)=(AB)v.",
+      "space": "Piano reale; le frecce mostrano risultati successivi riferiti alla stessa origine.",
+      "mode": "composizione",
+      "theory": [
+        "Il risultato della prima trasformazione diventa l’ingresso della seconda. Scriviamo ogni stato intermedio prima di raccogliere le operazioni in un prodotto.",
+        "Una composizione viene letta a partire dall’ingresso: se si applica B e poi A, il primo risultato è Bv e il secondo è A(Bv). La notazione AB raccoglie questa successione mantenendo il fattore che agisce per primo a destra.",
+        "Il confronto con BA deve usare lo stesso vettore iniziale. Due trasformazioni possono dare risultati diversi quando vengono scambiate; il commutatore [A,B]=AB−BA quantifica questa differenza. Conservare i risultati intermedi permette di riconoscere quale operazione produce ciascun cambiamento."
+      ],
+      "bridge": "La composizione consente anche di convertire coordinate, applicare un operatore e riconvertire l’uscita. Questa successione costruirà la matrice in una nuova base.",
+      "pages": [
+        138
+      ]
+    },
+    {
+      "id": "cambio-base",
+      "title": "Descrivere una trasformazione in un’altra base",
+      "short": "Descrivere una trasformazione in un’altra base",
+      "part": 1,
+      "legacy": "composizione",
+      "intro": "Il vettore fisso può avere coordinate differenti. Una matrice descritta nella nuova base deve convertire le coordinate all’ingresso e all’uscita.",
+      "definition": "[A]B=B⁻¹AB.",
+      "space": "Piano reale; il cambio di coordinate conserva il vettore geometrico.",
+      "mode": "cambio-base",
+      "theory": [
+        "Il vettore fisso può avere coordinate differenti. Una matrice descritta nella nuova base deve convertire le coordinate all’ingresso e all’uscita.",
+        "La matrice B converte coordinate nella nuova base in coordinate canoniche. La sua inversa B⁻¹ soddisfa B⁻¹B=BB⁻¹=I, dove I conserva ogni vettore. Per B=[[a,b],[c,d]] con ad−bc≠0, B⁻¹=(1/(ad−bc))[[d,−b],[−c,a]]. Una base dipendente non possiede questa conversione inversa.",
+        "Per descrivere A nella nuova base si converte l’ingresso con B, si applica A e si riporta l’uscita nella nuova base mediante B⁻¹. Il prodotto [A]B=B⁻¹AB conserva l’azione geometrica di A e cambia i numeri che la descrivono. Per leggere la lunghezza in una base obliqua si può sempre ricostruire Bc e calcolarne la norma canonica; la norma delle sole coordinate c non coincide generalmente con quella di Bc."
+      ],
+      "bridge": "Il cambio di base ha richiesto l’inversa. L’aggiunto è un’operazione differente, costruita per trasferire una matrice fra i due argomenti del prodotto interno.",
+      "pages": [
+        138
+      ]
+    },
+    {
+      "id": "aggiunto",
+      "title": "Aggiunto e conservazione della norma",
+      "short": "Aggiunto e conservazione della norma",
+      "part": 1,
+      "legacy": "aggiunto",
+      "intro": "Trasporre e coniugare permette di trasferire una matrice nel prodotto interno. La condizione U†U=I esprime la conservazione di tutti i prodotti interni.",
+      "definition": "A†=(A*)ᵀ; U unitario ⇔ U†U=I.",
+      "space": "Componenti complesse e norme; una matrice hermitiana può anche essere unitaria.",
+      "mode": "aggiunto",
+      "theory": [
+        "Trasporre e coniugare permette di trasferire una matrice nel prodotto interno. La condizione U†U=I esprime la conservazione di tutti i prodotti interni.",
+        "L’aggiunto A† si ottiene trasponendo A, cioè scambiandone righe e colonne, e coniugando ogni elemento: (A†)ij=(Aji)*. Questa costruzione soddisfa ⟨u,Av⟩=⟨A†u,v⟩. Infatti ⟨u,Av⟩=Σij uᵢ* Aij vⱼ, mentre la componente j di A†u è Σi Aij* uᵢ; coniugandola nel prodotto interno si recupera la stessa somma.",
+        "Una matrice hermitiana soddisfa A†=A; una matrice unitaria soddisfa U†U=I. Nel secondo caso ⟨Uu,Uv⟩=u†U†Uv=u†v=⟨u,v⟩, perciò norme e ortogonalità sono conservate. Le condizioni sono diverse: diag(2,1) è hermitiana e cambia alcune norme; diag(1,i) è unitaria e differisce dal proprio aggiunto. Gli esempi mostrano separatamente la necessità della trasposizione, del coniugio e del controllo U†U."
+      ],
+      "bridge": "Hermitianità e unitarietà sono state distinte attraverso i loro prodotti. Per comprendere le direzioni su cui un operatore agisce con un solo fattore cercheremo gli autovettori.",
+      "pages": [
+        89
+      ]
+    },
+    {
+      "id": "spettro",
+      "title": "Riconoscere un’autodirezione",
+      "short": "Riconoscere un’autodirezione",
+      "part": 2,
+      "legacy": "spettro",
+      "intro": "Cerchiamo vettori la cui immagine rimanga sulla stessa retta. Il fattore che li moltiplica è l’autovalore.",
+      "definition": "Av=λv con v≠0; det(A−λI)=0.",
+      "space": "Piano reale; vettori opposti appartengono alla stessa retta.",
+      "mode": "spettro",
+      "theory": [
+        "Cerchiamo vettori la cui immagine rimanga sulla stessa retta. Il fattore che li moltiplica è l’autovalore.",
+        "L’equazione Av=λv richiede un vettore non nullo: il vettore nullo soddisferebbe l’identità per qualunque λ senza individuare una direzione. Riscrivendo (A−λI)v=0 si vede che A−λI deve essere singolare. Il determinante permette quindi di trovare gli autovalori.",
+        "Gli esempi utilizzano matrici simmetriche reali, che possiedono autovalori reali e autovettori ortogonali per autovalori distinti. Un autovalore negativo inverte il verso del vettore; la retta che esso genera rimane invariata. Per matrici generali possono essere necessarie componenti complesse."
+      ],
+      "bridge": "Le rette proprie possono diventare assi di coordinate. Normalizzeremo gli autovettori e ricostruiremo un ingresso mediante le sue componenti proprie.",
+      "pages": [
+        101
+      ]
+    },
+    {
+      "id": "base-propria",
+      "title": "Costruire una base di autovettori",
+      "short": "Costruire una base di autovettori",
+      "part": 2,
+      "legacy": "spettro",
+      "intro": "Dopo gli autovalori risolviamo i sistemi omogenei e normalizziamo le soluzioni. Le coordinate nella base propria separano i contributi.",
+      "definition": "v=Σⱼ⟨uⱼ,v⟩uⱼ per una base ortonormale {uⱼ}.",
+      "space": "Autovettori reali ortogonali; i coefficienti sono proiezioni.",
+      "mode": "base-propria",
+      "theory": [
+        "Dopo gli autovalori risolviamo i sistemi omogenei e normalizziamo le soluzioni. Le coordinate nella base propria separano i contributi.",
+        "Dopo aver trovato un autovalore, si risolve il corrispondente sistema omogeneo. Una componente può essere scelta liberamente; le altre vengono ricavate dalle equazioni. La soluzione viene poi divisa per la propria norma.",
+        "Per una matrice hermitiana è possibile scegliere una base ortonormale di autovettori. Le coordinate di v in quella base sono i prodotti interni ⟨uⱼ,v⟩. In presenza di un autovalore degenere, le equazioni individuano un intero autospazio, all’interno del quale si può scegliere una base ortonormale."
+      ],
+      "bridge": "I coefficienti propri ricostruiscono il vettore. I prodotti esterni degli assi unitari permetteranno di calcolare ogni componente mediante una matrice proiettore.",
+      "pages": [
+        113
+      ]
+    },
+    {
+      "id": "proiettori",
+      "title": "Separare e ricomporre le componenti",
+      "short": "Separare e ricomporre le componenti",
+      "part": 2,
+      "legacy": "spettro",
+      "intro": "Il proiettore conserva la componente lungo una direzione unitaria. La somma dei proiettori di una base completa restituisce il vettore iniziale.",
+      "definition": "Pⱼ=uⱼuⱼ†; Pⱼ²=Pⱼ; ΣⱼPⱼ=I.",
+      "space": "Proiezioni nel piano reale; l’operazione modifica il vettore.",
+      "mode": "proiettori",
+      "theory": [
+        "Il proiettore conserva la componente lungo una direzione unitaria. La somma dei proiettori di una base completa restituisce il vettore iniziale.",
+        "Per una direzione unitaria u, il prodotto esterno uu† è una matrice. Applicandola a v si ottiene u(u†v), ossia il vettore lungo u con il coefficiente di proiezione corretto. Il risultato resta invariato se si applica nuovamente lo stesso proiettore.",
+        "Proiettori su direzioni ortogonali hanno prodotto nullo. Quando le direzioni formano una base completa, la loro somma è l’identità e le componenti proiettate ricostruiscono il vettore iniziale. La successiva interpretazione come misura richiederà anche probabilità e rinormalizzazione del ramo selezionato."
+      ],
+      "bridge": "La somma dei proiettori pesati dagli autovalori ricostruisce A. Sostituire una funzione agli autovalori permetterà di ottenere potenze ed esponenziali.",
+      "pages": [
+        113
+      ]
+    },
+    {
+      "id": "funzioni-matrice",
+      "title": "Calcolare con la decomposizione spettrale",
+      "short": "Calcolare con la decomposizione spettrale",
+      "part": 2,
+      "legacy": "spettro",
+      "intro": "Nella base propria una funzione della matrice agisce separatamente su ciascun autovalore. Possiamo poi ricostruire il risultato nella base iniziale.",
+      "definition": "A=ΣⱼλⱼPⱼ; f(A)=Σⱼf(λⱼ)Pⱼ.",
+      "space": "Direzioni proprie e fattori di scala; le potenze conservano gli autovettori.",
+      "mode": "funzioni-matrice",
+      "theory": [
+        "Nella base propria una funzione della matrice agisce separatamente su ciascun autovalore. Possiamo poi ricostruire il risultato nella base iniziale.",
+        "La decomposizione spettrale A=ΣⱼλⱼPⱼ separa i sottospazi sui quali la matrice agisce con un semplice fattore. Poiché PⱼPₖ=0 per j≠k e Pⱼ²=Pⱼ, il prodotto di due decomposizioni dà A²=Σⱼλⱼ²Pⱼ. Ripetendo il prodotto si ottiene Aⁿ=ΣⱼλⱼⁿPⱼ, con A⁰=I.",
+        "Si definisce f(A)=Σⱼf(λⱼ)Pⱼ. Per l’esponenziale la definizione coincide con la serie e^(−itA)=Σₙ₌₀∞(−it)ⁿAⁿ/n!: inserendo la formula per Aⁿ si riconosce, su ciascun autospazio, la serie scalare e^(−itλⱼ). Per una matrice hermitiana gli autovalori sono reali e questi fattori hanno modulo uno; U†U=Σⱼ|e^(−itλⱼ)|²Pⱼ=I.",
+        "I due esempi conservano la famiglia di matrici già diagonalizzata e aggiungono operazioni nuove: il quadrato moltiplica le componenti proprie per gli autovalori al quadrato, mentre l’esponenziale ne ruota le fasi. Qui t è un parametro adimensionale. Nel modulo 3 questa famiglia di operatori diventerà un modello di evoluzione con un generatore dichiarato. In caso degenere si usa un proiettore per l’intero autospazio: per A=2I, f(A)=f(2)I."
+      ],
+      "bridge": "L’esponenziale immaginario conserva la norma e preparerà le evoluzioni del modulo 3. Prima di interpretare le proiezioni come esiti di misura, costruiamo il linguaggio degli eventi e delle probabilità.",
+      "pages": [
+        180
+      ]
+    },
+    {
+      "id": "eventi",
+      "title": "Dagli esiti agli eventi",
+      "short": "Dagli esiti agli eventi",
+      "part": 3,
+      "legacy": "eventi",
+      "intro": "Un evento è un insieme di esiti. La sua probabilità si ottiene sommando i pesi degli esiti che lo compongono.",
+      "definition": "P(A)=Σω∈A pω; P(A∪B)=P(A)+P(B)−P(A∩B).",
+      "space": "Barre di probabilità: lunghezza proporzionale al peso, etichette discrete.",
+      "mode": "eventi",
+      "theory": [
+        "Un evento è un insieme di esiti. La sua probabilità si ottiene sommando i pesi degli esiti che lo compongono.",
+        "Lo spazio degli esiti elenca le alternative elementari dell’esperimento. A ciascuna alternativa è assegnata una probabilità non negativa, e la somma su tutte le alternative vale uno. Un evento può comprendere una sola alternativa, più alternative oppure nessuna.",
+        "Le probabilità degli esiti distinti si sommano perché gli esiti sono mutuamente esclusivi. Nel calcolo dell’unione di due eventi, l’intersezione verrebbe contata due volte; sottrarla restituisce il peso corretto. L’evento impossibile ha probabilità zero e quello certo probabilità uno."
+      ],
+      "bridge": "Un evento raccoglie etichette. Una variabile raggrupperà gli stessi esiti secondo i valori assegnati, producendo una nuova distribuzione.",
+      "pages": [
+        217
+      ]
+    },
+    {
+      "id": "distribuzioni",
+      "title": "Normalizzare e raggruppare i pesi",
+      "short": "Normalizzare e raggruppare i pesi",
+      "part": 3,
+      "legacy": "eventi",
+      "intro": "I pesi positivi diventano probabilità dopo averne calcolato il totale. Una variabile associa un numero a ciascun esito e può riunire più esiti nello stesso valore.",
+      "definition": "pⱼ=wⱼ/Σₖwₖ; P(X=x)=Σⱼ:Xⱼ=x pⱼ.",
+      "space": "Distribuzione discreta, con somma delle probabilità uguale a uno.",
+      "mode": "distribuzioni",
+      "theory": [
+        "I pesi positivi diventano probabilità dopo averne calcolato il totale. Una variabile associa un numero a ciascun esito e può riunire più esiti nello stesso valore.",
+        "Un insieme di pesi positivi può descrivere frequenze grezze, conteggi o intensità relative. Dividendo ciascun peso per il totale si ottiene una distribuzione di probabilità. Moltiplicare tutti i pesi per lo stesso fattore positivo conserva la distribuzione.",
+        "Una variabile aleatoria assegna un valore a ciascun esito. Se più esiti ricevono lo stesso valore, le loro probabilità vengono riunite. Occorre quindi distinguere l’etichetta dell’esito dal valore della variabile: questa distinzione permette di interpretare correttamente grafici e medie."
+      ],
+      "bridge": "Dopo aver normalizzato e raggruppato i pesi, li useremo per calcolare il baricentro dei valori e la dispersione intorno a esso.",
+      "pages": [
+        223
+      ]
+    },
+    {
+      "id": "momenti",
+      "title": "Media e dispersione",
+      "short": "Media e dispersione",
+      "part": 3,
+      "legacy": "momenti",
+      "intro": "La media è il baricentro della distribuzione. La varianza pesa i quadrati degli scarti, così che gli scarti di segno opposto contribuiscano entrambi.",
+      "definition": "E[X]=Σx p(x); Var(X)=Σp(x)(x−E[X])²=E[X²]−E[X]².",
+      "space": "Asse dei valori e pesi discreti; la media può cadere fra gli esiti.",
+      "mode": "momenti",
+      "theory": [
+        "La media è il baricentro della distribuzione. La varianza pesa i quadrati degli scarti, così che gli scarti di segno opposto contribuiscano entrambi.",
+        "Il valore atteso pesa ogni valore con la sua probabilità. È il risultato verso cui tende la media di molte prove nelle condizioni della legge dei grandi numeri; può differire da ciascuno degli esiti possibili di una singola prova.",
+        "La varianza pesa gli scarti quadratici rispetto alla media. Sviluppando (x−μ)² e usando Σp=1 ed E[X]=μ si ricava E[X²]−μ². La varianza ha unità di misura al quadrato; la deviazione standard, ottenuta estraendo la radice, ha le stesse unità della variabile."
+      ],
+      "bridge": "Media e varianza descrivono una distribuzione teorica. Le raccolte di prove produrranno conteggi e frequenze che fluttuano intorno a queste previsioni.",
+      "pages": [
+        229
+      ]
+    },
+    {
+      "id": "frequenze",
+      "title": "Ripetizioni, conteggi e frequenze",
+      "short": "Ripetizioni, conteggi e frequenze",
+      "part": 3,
+      "legacy": "frequenze",
+      "intro": "Ripetiamo prove indipendenti con identica probabilità. La frequenza cambia da una raccolta all’altra; la distribuzione binomiale descrive queste fluttuazioni.",
+      "definition": "P(K=k)=C(n,k)pᵏ(1−p)^(n−k); E[K]=np; Var(K)=np(1−p).",
+      "space": "Asse discreto del conteggio K; le barre sono probabilità teoriche.",
+      "mode": "frequenze",
+      "theory": [
+        "Ripetiamo prove indipendenti con identica probabilità. La frequenza cambia da una raccolta all’altra; la distribuzione binomiale descrive queste fluttuazioni.",
+        "Una sequenza di n prove indipendenti con k successi ha probabilità pᵏ(1−p)^(n−k). Il numero di sequenze che contengono esattamente k successi è n!/[k!(n−k)!]. Il prodotto di queste due quantità dà la distribuzione binomiale.",
+        "Il conteggio K ha media np e varianza np(1−p). Dividendo per n si ottiene la frequenza K/n, con media p e varianza p(1−p)/n. Aumentare il numero di prove restringe la distribuzione delle frequenze, pur lasciando casuale ogni raccolta finita."
+      ],
+      "bridge": "Le frequenze distinguono dati osservati e modello. Le tabelle congiunte permetteranno ora di aggiornare la distribuzione quando un risultato parziale è noto.",
+      "pages": [
+        242
+      ]
+    },
+    {
+      "id": "condizionamento",
+      "title": "Selezionare un’informazione",
+      "short": "Selezionare un’informazione",
+      "part": 3,
+      "legacy": "condizionamento",
+      "intro": "Una tabella congiunta permette di distinguere i dati completi dalle marginali. Quando selezioniamo un evento di probabilità positiva, rinormalizziamo i pesi rimasti.",
+      "definition": "P(A|B)=P(A∩B)/P(B), se P(B)>0.",
+      "space": "Quattro esiti congiunti; il condizionamento cambia l’insieme di riferimento.",
+      "mode": "condizionamento",
+      "theory": [
+        "Una tabella congiunta permette di distinguere i dati completi dalle marginali. Quando selezioniamo un evento di probabilità positiva, rinormalizziamo i pesi rimasti.",
+        "La probabilità condizionata usa come nuovo insieme di riferimento gli esiti compatibili con l’informazione B. Il peso di A∩B viene diviso per P(B), che è il totale degli esiti rimasti. Se P(B)=0, questa formula non definisce una distribuzione condizionata.",
+        "Da P(A∩B)=P(A|B)P(B)=P(B|A)P(A) si ricava la regola di Bayes. Una tabella congiunta permette di leggere tutte queste quantità e le marginali. Il condizionamento descrive un aggiornamento dell’informazione; un rapporto causale richiede ipotesi ulteriori."
+      ],
+      "bridge": "La selezione di un evento richiede un peso positivo. Nella misura quantistica ritroveremo questa rinormalizzazione dopo aver costruito le ampiezze dello stato.",
+      "pages": [
+        264
+      ]
+    },
+    {
+      "id": "stati",
+      "title": "Preparare un vettore di stato",
+      "short": "Preparare un vettore di stato",
+      "part": 4,
+      "legacy": "stati",
+      "intro": "Le due ampiezze di un qubit devono avere norma quadra totale uno. La normalizzazione permette di usare i loro moduli quadri come probabilità nella base assegnata.",
+      "definition": "|ψ⟩=α|0⟩+β|1⟩; |α|²+|β|²=1.",
+      "space": "Due piani complessi per le componenti di C²; nessun piano coincide con lo spazio fisico.",
+      "mode": "stati",
+      "theory": [
+        "Le due ampiezze di un qubit devono avere norma quadra totale uno. La normalizzazione permette di usare i loro moduli quadri come probabilità nella base assegnata.",
+        "Fissiamo la base ortonormale |0⟩=(1,0)ᵀ e |1⟩=(0,1)ᵀ. La scrittura |ψ⟩, detta ket, indica il vettore colonna ψ=α|0⟩+β|1⟩ in C². Un qubit puro richiede |α|²+|β|²=1; nella misura di questa base i moduli quadri danno le probabilità di 0 e 1. Una fase globale e^(iγ) comune alle due componenti lascia invariata la preparazione fisica.",
+        "Per costruire la sfera di Bloch usiamo tre quantità invarianti sotto quella fase comune: rₓ=2Re(α*β), rᵧ=2Im(α*β), r𝓏=|α|²−|β|². La loro norma quadra è 4|α|²|β|²+(|α|²−|β|²)²=(|α|²+|β|²)²=1. Si ottiene quindi un punto della sfera unitaria. Gli assi sono coordinate adimensionali dello stato: +Z e −Z rappresentano |0⟩ e |1⟩, +X rappresenta (1,1)/√2 e +Y rappresenta (1,i)/√2. La sfera non raffigura l’apparato nello spazio fisico.",
+        "Dopo aver eliminato la fase globale, si può scrivere α=cos(θ/2), β=e^(iφ)sin(θ/2), con 0≤θ≤π. Infatti r𝓏=cos²(θ/2)−sin²(θ/2)=cosθ e α*β=(1/2)e^(iφ)sinθ, perciò r=(sinθ cosφ,sinθ sinφ,cosθ). L’angolo polare di Bloch è θ; la fase relativa è φ. Ai poli φ è irrilevante. Il mezzo angolo nasce dalle identità dei quadrati di seno e coseno.",
+        "Lo stato χ=(−β*,α*)ᵀ è normalizzato e ortogonale a ψ, poiché ⟨ψ,χ⟩=−α*β*+β*α*=0. Inserendone le componenti nella stessa mappa si trova rχ=−rψ: gli stati ortogonali sono antipodali. Il valore P(0)=|α|²=(1+r𝓏)/2 si legge direttamente dalla coordinata verticale. Un angolo retto fra due punti di Bloch avrà invece probabilità di sovrapposizione 1/2, come verrà ricavato nella misura proiettiva."
+      ],
+      "bridge": "Le componenti normalizzate e la loro mappa di Bloch descrivono un qubit puro. Il passaggio dal ket al bra renderà espliciti i prodotti interni con altre preparazioni.",
+      "pages": [
+        319
+      ]
+    },
+    {
+      "id": "bra",
+      "title": "Dal ket al bra",
+      "short": "Dal ket al bra",
+      "part": 4,
+      "legacy": "stati",
+      "intro": "Il bra è il vettore riga coniugato del ket. Questa operazione rende esplicito il prodotto interno necessario per calcolare ampiezze di misura.",
+      "definition": "(α,β)ᵀ ↦ (α*,β*); ⟨ψ|ψ⟩=|α|²+|β|².",
+      "space": "Componenti complesse; il coniugio cambia il segno della parte immaginaria.",
+      "mode": "bra",
+      "theory": [
+        "Il bra è il vettore riga coniugato del ket. Questa operazione rende esplicito il prodotto interno necessario per calcolare ampiezze di misura.",
+        "Il ket è scritto come vettore colonna. Il bra corrispondente è la riga trasposta e coniugata: ciascun termine x+iy diventa x−iy. La moltiplicazione riga-colonna produce uno scalare complesso, che è il prodotto interno.",
+        "Il prodotto ⟨ψ|ψ⟩ restituisce la norma quadra. Il prodotto nell’ordine opposto, |ψ⟩⟨ψ|, è una matrice e descrive un proiettore quando ψ è normalizzato. La posizione dei simboli rende quindi leggibile anche il tipo dell’oggetto ottenuto dal calcolo."
+      ],
+      "bridge": "Il bra calcola coefficienti rispetto a una direzione. Nelle basi X e Z useremo questi coefficienti per rendere visibile il ruolo della fase relativa.",
+      "pages": [
+        331
+      ]
+    },
+    {
+      "id": "fase",
+      "title": "Fase relativa e interferenza",
+      "short": "Fase relativa e interferenza",
+      "part": 4,
+      "legacy": "stati",
+      "intro": "Una fase relativa modifica il modo in cui le ampiezze si sommano in un’altra base. Confrontiamo la misura Z con la ricombinazione nella base X.",
+      "definition": "|ψφ⟩=(|0⟩+e^(iφ)|1⟩)/√2; ⟨±|ψφ⟩=(1±e^(iφ))/2.",
+      "space": "Due componenti complesse; sulla sfera di Bloch r=(cosφ,sinφ,0).",
+      "mode": "fase",
+      "theory": [
+        "Una fase relativa modifica il modo in cui le ampiezze si sommano in un’altra base. Confrontiamo la misura Z con la ricombinazione nella base X.",
+        "Dichiariamo le basi che useremo: la base Z è {|0⟩,|1⟩}; la base X è {|+⟩,|−⟩}, con |+⟩=(|0⟩+|1⟩)/√2 e |−⟩=(|0⟩−|1⟩)/√2. La matrice H=(1/√2)[[1,1],[1,−1]], detta Hadamard, raccoglie questi ultimi vettori come colonne; H†=H e H†H=I. Le coordinate nella base X sono quindi H†ψ=Hψ.",
+        "Le matrici di Pauli sono X=[[0,1],[1,0]], Y=[[0,−i],[i,0]], Z=[[1,0],[0,−1]]. Sono hermitiane e hanno autovalori +1 e −1. Le basi proprie sono rispettivamente {|+⟩,|−⟩}, {(1,i)/√2,(1,−i)/√2} e {|0⟩,|1⟩}. Per esempio X(1,±1)ᵀ=±(1,±1)ᵀ e Z(1,0)ᵀ=(1,0)ᵀ. Le etichette delle basi vanno distinte dai valori ±1 degli esiti.",
+        "Nella famiglia ψφ=(1,e^(iφ))ᵀ/√2, i moduli delle componenti Z restano uguali al variare di φ. Nella base X il prodotto interno somma o sottrae le componenti: a±=(1±e^(iφ))/2. Sviluppandone il modulo quadro si ottiene p±=(1±cosφ)/2. I casi 90°, 180° e 0° mostrano rispettivamente pesi uguali, cancellazione della somma e cancellazione della differenza.",
+        "Moltiplicando entrambe le componenti per e^(iγ), ogni ampiezza di misura riceve lo stesso fattore di modulo uno e tutte le probabilità restano invariate. Nel disegno di Bloch questa fase globale è già eliminata, mentre la fase relativa determina la posizione r=(cosφ,sinφ,0) sull’equatore."
+      ],
+      "bridge": "La stessa preparazione può avere distribuzioni differenti in basi differenti. Formalizzeremo il calcolo delle probabilità e degli stati condizionati attraverso i proiettori.",
+      "pages": [
+        319
+      ]
+    },
+    {
+      "id": "born",
+      "title": "Calcolare una misura proiettiva",
+      "short": "Calcolare una misura proiettiva",
+      "part": 4,
+      "legacy": "born",
+      "intro": "Dopo aver dichiarato la base di misura calcoliamo i prodotti interni. Il modulo quadro fornisce la probabilità; la proiezione normalizzata descrive lo stato condizionato.",
+      "definition": "aⱼ=⟨uⱼ|ψ⟩; pⱼ=|aⱼ|²; ψⱼ=Pⱼψ/√pⱼ per pⱼ>0.",
+      "space": "Ampiezze complesse nella base dichiarata e probabilità degli esiti.",
+      "mode": "born",
+      "theory": [
+        "Dopo aver dichiarato la base di misura calcoliamo i prodotti interni. Il modulo quadro fornisce la probabilità; la proiezione normalizzata descrive lo stato condizionato.",
+        "Una misura proiettiva viene specificata attraverso sottospazi ortogonali e valori associati. Nel caso non degenere, ogni sottospazio è generato da un vettore unitario uⱼ. La componente aⱼ=⟨uⱼ|ψ⟩ è un’ampiezza; il suo modulo quadro pⱼ=|aⱼ|² è la probabilità dell’esito. Per una base completa ΣⱼPⱼ=I e quindi Σⱼpⱼ=⟨ψ|I|ψ⟩=1.",
+        "Il proiettore Pⱼ applicato a ψ produce un vettore con norma quadra pⱼ. Dividendo per √pⱼ si ottiene lo stato condizionato quando pⱼ>0. Se pⱼ=0 esatto, la proiezione è nulla e il ramo non possiede uno stato condizionato. Un numero positivo arrotondato a zero sullo schermo conserva invece il significato di probabilità positiva. In caso di degenerazione si proietta sull’intero autospazio, conservando la componente che vi appartiene.",
+        "La geometria di Bloch si collega a Born con un calcolo: per u=(a,b) e ψ=(α,β), |⟨u|ψ⟩|²=|a|²|α|²+|b|²|β|²+2Re(a*b αβ*). Sostituendo nelle due mappe di Bloch si riconosce p=(1+n·r)/2, dove n è il punto di u e r quello di ψ. Essendo vettori unitari, n·r=cosβ, con β angolo fra i punti della sfera: p=cos²(β/2). Coincidenza, angolo retto e antipodalità danno rispettivamente probabilità 1, 1/2 e 0. L’angolo di Bloch e il prodotto interno in C² sono così collegati, senza identificarli."
+      ],
+      "bridge": "La misura separa rami e richiede un aggiornamento condizionato. Studieremo ora trasformazioni unitarie che conservano insieme tutte le ampiezze e la norma.",
+      "pages": [
+        396
+      ]
+    },
+    {
+      "id": "unitarie",
+      "title": "Trasformare le ampiezze",
+      "short": "Trasformare le ampiezze",
+      "part": 4,
+      "legacy": "unitarie",
+      "intro": "Una porta unitaria opera linearmente sulle ampiezze. Calcoliamo ogni componente in uscita e verifichiamo che la norma resti uno.",
+      "definition": "ψ′=Uψ; ‖ψ′‖²=⟨ψ|U†U|ψ⟩=1.",
+      "space": "Piani delle componenti; l’unitarietà conserva la norma nello spazio complesso.",
+      "mode": "unitarie",
+      "theory": [
+        "Una porta unitaria opera linearmente sulle ampiezze. Calcoliamo ogni componente in uscita e verifichiamo che la norma resti uno.",
+        "Una trasformazione unitaria descrive un’evoluzione ideale reversibile del sistema considerato. La relazione U†U=I garantisce la conservazione di tutti i prodotti interni, e quindi della normalizzazione e della distinguibilità fra stati ortogonali.",
+        "Il prodotto matrice-vettore deve essere sviluppato sulle ampiezze complesse. Cambi di segno e fattori immaginari possono lasciare invariati alcuni moduli e modificare le interferenze successive. Per questo conserviamo le componenti complete anche quando mostriamo un grafico delle probabilità."
+      ],
+      "bridge": "Le trasformazioni unitarie cambiano la preparazione. Un’osservabile assegnerà valori numerici reali agli esiti e permetterà di calcolarne media e varianza.",
+      "pages": [
+        354
+      ]
+    },
+    {
+      "id": "osservabili",
+      "title": "Esiti, valore medio e varianza",
+      "short": "Esiti, valore medio e varianza",
+      "part": 4,
+      "legacy": "incompatibilita",
+      "intro": "Un’osservabile associa valori reali ai propri autospazi. Le probabilità dipendono dalla preparazione, mentre gli autovalori definiscono gli esiti possibili.",
+      "definition": "⟨A⟩=⟨ψ|A|ψ⟩; Var(A)=⟨A²⟩−⟨A⟩².",
+      "space": "Barre degli esiti; dispersione su copie identicamente preparate.",
+      "mode": "osservabili",
+      "theory": [
+        "Un’osservabile associa valori reali ai propri autospazi. Le probabilità dipendono dalla preparazione, mentre gli autovalori definiscono gli esiti possibili.",
+        "Gli autovalori di un’osservabile hermitiana sono i valori che una misura ideale può registrare. La preparazione determina il peso di ciascun autospazio. Ripetendo la misura su copie identiche si ottiene una distribuzione dalla quale si calcolano media e dispersione.",
+        "Il valore atteso ⟨ψ|A|ψ⟩ coincide con la somma degli autovalori pesati dalle probabilità. Il secondo momento usa A². Una preparazione in un autostato ha dispersione nulla per quella osservabile; per un’altra osservabile può produrre più esiti."
+      ],
+      "bridge": "La distribuzione di una singola osservabile è determinata. Per due misure successive servirà invece seguire lo stato condizionato in ciascun ramo e confrontare entrambi gli ordini.",
+      "pages": [
+        424
+      ]
+    },
+    {
+      "id": "incompatibilita",
+      "title": "Due misure in successione",
+      "short": "Due misure in successione",
+      "part": 4,
+      "legacy": "incompatibilita",
+      "intro": "La prima misura seleziona uno stato condizionato. Per prevedere la seconda occorre usare quello stato in ciascun ramo e pesare il ramo con la sua probabilità.",
+      "definition": "P(j,k)=P(j)P(k|j).",
+      "space": "Albero dei rami descritto da una distribuzione congiunta; esiti nulli non vengono normalizzati.",
+      "mode": "incompatibilita",
+      "theory": [
+        "La prima misura seleziona uno stato condizionato. Per prevedere la seconda occorre usare quello stato in ciascun ramo e pesare il ramo con la sua probabilità.",
+        "Per una sequenza di misure si costruisce un ramo per ciascun primo esito. La seconda misura usa lo stato normalizzato di quel ramo; moltiplicando per la probabilità del primo esito si ottiene la distribuzione congiunta della sequenza. L’ordine delle misure può quindi modificare le statistiche.",
+        "Le dispersioni di due osservabili sulla preparazione iniziale si riferiscono invece a raccolte di copie identiche. La disuguaglianza di Robertson collega tali dispersioni al valore atteso del commutatore. Questa proprietà può essere presente anche in una descrizione ideale dell’apparato."
+      ],
+      "bridge": "L’ordine delle misure e le dispersioni su copie hanno ruoli distinti. Riuniremo i calcoli in un esperimento con un’osservabile complessa esplicitamente dichiarata.",
+      "pages": [
+        433
+      ]
+    },
+    {
+      "id": "esperimento",
+      "title": "Un esperimento completo",
+      "short": "Un esperimento completo",
+      "part": 5,
+      "legacy": "esperimento",
+      "intro": "Riuniamo normalizzazione, base propria, proiezioni, media e varianza in un unico calcolo. Ogni risultato viene controllato attraverso una seconda identità.",
+      "definition": "A=A†; A=ΣλⱼPⱼ; pⱼ=⟨ψ|Pⱼ|ψ⟩.",
+      "space": "Autospazi di C² e distribuzione degli autovalori; le ampiezze conservano le fasi.",
+      "mode": "esperimento",
+      "theory": [
+        "Riuniamo normalizzazione, base propria, proiezioni, media e varianza in un unico calcolo. Ogni risultato viene controllato attraverso una seconda identità.",
+        "Il calcolo completo inizia controllando i dati: lo stato deve essere normalizzato e l’operatore deve essere hermitiano. Si determinano poi gli autovalori, si risolvono i sistemi per gli autovettori e si controllano normalizzazione e ortogonalità.",
+        "I prodotti interni forniscono ampiezze e probabilità. Media e varianza vengono calcolate attraverso lo spettro e confrontate con le espressioni matriciali. Infine il proiettore del ramo scelto permette di ricavare lo stato successivo alla misura. Le frazioni esatte vengono mantenute accanto ai valori decimali."
+      ],
+      "bridge": "Il calcolo completo ha collegato stato, autospazi e risultati. Per estenderlo a due sistemi occorre costruire lo spazio congiunto mediante il prodotto tensoriale.",
+      "pages": [
+        488
+      ]
+    },
+    {
+      "id": "tensore",
+      "title": "Costruire le quattro ampiezze",
+      "short": "Costruire le quattro ampiezze",
+      "part": 5,
+      "legacy": "tensore",
+      "intro": "Per descrivere due sistemi associamo a ogni coppia di etichette il prodotto delle componenti locali. Fissiamo l’ordine prima di calcolare.",
+      "definition": "(a₀,a₁)ᵀ⊗(b₀,b₁)ᵀ=(a₀b₀,a₀b₁,a₁b₀,a₁b₁)ᵀ.",
+      "space": "Base composta 00,01,10,11; quattro piani di ampiezza.",
+      "mode": "tensore",
+      "theory": [
+        "Per descrivere due sistemi associamo a ogni coppia di etichette il prodotto delle componenti locali. Fissiamo l’ordine prima di calcolare.",
+        "Se il primo sistema ha due alternative e il secondo ne ha due, il sistema congiunto ha quattro etichette di base. La prima etichetta si riferisce sempre al primo sistema. Fissiamo l’ordine 00,01,10,11 prima di scrivere vettori e matrici.",
+        "Per una preparazione prodotto ogni ampiezza congiunta è il prodotto delle due ampiezze locali. Le norme si moltiplicano, così che due stati normalizzati producano uno stato congiunto normalizzato. Uno stato generale può richiedere quattro coefficienti che non ammettono questa fattorizzazione."
+      ],
+      "bridge": "Le quattro ampiezze conservano le due etichette locali. Le matrici X⊗I e I⊗X mostreranno come trasformare soltanto il sistema indicato.",
+      "pages": [
+        167
+      ]
+    },
+    {
+      "id": "porte-locali",
+      "title": "Agire su un solo sistema",
+      "short": "Agire su un solo sistema",
+      "part": 5,
+      "legacy": "tensore",
+      "intro": "Una porta locale modifica il qubit scelto e conserva l’etichetta dell’altro. La matrice prodotto tensoriale rende esplicita questa regola.",
+      "definition": "(U⊗I)(a⊗b)=(Ua)⊗b.",
+      "space": "Ampiezze congiunte in ordine 00,01,10,11.",
+      "mode": "porte-locali",
+      "theory": [
+        "Una porta locale modifica il qubit scelto e conserva l’etichetta dell’altro. La matrice prodotto tensoriale rende esplicita questa regola.",
+        "Una porta sul primo sistema agisce su tutte le ampiezze che condividono l’etichetta del secondo. Per ogni etichetta fissata del secondo qubit si applica la stessa matrice a due componenti. L’identità sul secondo fattore esprime precisamente questa conservazione.",
+        "Scrivere U⊗I permette di verificare l’ordine dei fili e delle componenti. Una porta sul secondo sistema è invece I⊗U. Le due azioni possono essere confrontate su una preparazione prodotto e successivamente su uno stato entangled, mantenendo la descrizione congiunta."
+      ],
+      "bridge": "Le porte locali agiscono sui fattori quando una preparazione è prodotto. Verificheremo ora quando quattro ampiezze ammettano effettivamente due fattori locali.",
+      "pages": [
+        167
+      ]
+    },
+    {
+      "id": "separabilita",
+      "title": "Riconoscere uno stato prodotto",
+      "short": "Riconoscere uno stato prodotto",
+      "part": 5,
+      "legacy": "composti",
+      "intro": "Le quattro ampiezze possono richiedere una descrizione congiunta. Per uno stato puro di due qubit il determinante della matrice dei coefficienti riconosce la separabilità.",
+      "definition": "C=[[c₀₀,c₀₁],[c₁₀,c₁₁]]; stato prodotto ⇔ det C=0.",
+      "space": "Matrice delle ampiezze; il criterio riguarda stati puri normalizzati.",
+      "mode": "separabilita",
+      "theory": [
+        "Le quattro ampiezze possono richiedere una descrizione congiunta. Per uno stato puro di due qubit il determinante della matrice dei coefficienti riconosce la separabilità.",
+        "Organizziamo le quattro ampiezze pure in una matrice C, con righe riferite al primo qubit e colonne al secondo. Se lo stato è un prodotto, C è un prodotto esterno di due vettori e ha rango uno. Il suo determinante è quindi nullo.",
+        "Viceversa, una matrice non nulla 2×2 con determinante zero ha rango uno e può essere fattorizzata. Questo criterio riguarda uno stato puro. Una miscela richiede una matrice densità e criteri differenti; le sole probabilità nella base Z non bastano a ricostruire tutte le fasi della preparazione."
+      ],
+      "bridge": "La fattorizzazione riguarda le ampiezze pure. Le probabilità congiunte permetteranno di vedere come preparazioni con le stesse statistiche locali possano avere correlazioni differenti.",
+      "pages": [
+        449
+      ]
+    },
+    {
+      "id": "composti",
+      "title": "Misure congiunte e correlazioni",
+      "short": "Misure congiunte e correlazioni",
+      "part": 5,
+      "legacy": "composti",
+      "intro": "Le marginali descrivono i singoli sistemi, mentre la tabella congiunta conserva le correlazioni. Preparazioni diverse possono avere le stesse marginali.",
+      "definition": "P(A=a)=Σb P(a,b); P(B=b|A=a)=P(a,b)/P(A=a).",
+      "space": "Tabella degli esiti 00,01,10,11 e distribuzioni condizionate.",
+      "mode": "composti",
+      "theory": [
+        "Le marginali descrivono i singoli sistemi, mentre la tabella congiunta conserva le correlazioni. Preparazioni diverse possono avere le stesse marginali.",
+        "Una distribuzione congiunta assegna un peso a ogni coppia di esiti. Sommando su una delle etichette si ottiene la marginale dell’altro sistema. Distribuzioni congiunte differenti possono condividere le stesse marginali e differire nelle correlazioni.",
+        "Il condizionamento seleziona le coppie compatibili con un esito locale e rinormalizza i pesi. Nel caso quantistico le probabilità dipendono anche dalle basi di misura. La descrizione congiunta permette di prevedere tali correlazioni, mentre le statistiche locali da sole possono lasciare indistinguibili preparazioni diverse."
+      ],
+      "bridge": "Nel modulo 3 le basi tensoriali diventeranno registri, le matrici unitarie diventeranno porte e i prodotti ordinati diventeranno programmi. I proiettori già costruiti forniranno la lettura finale e gli eventuali rami condizionati.",
+      "pages": [
+        449
+      ]
+    }
+  ],
+  "3": [
+    {
+      "id": "programma",
+      "title": "Leggere un circuito",
+      "short": "Leggere un circuito",
+      "part": 0,
+      "examples": [
+        "H su (2,−1)/√5",
+        "H e Z su (1,i)/√2"
+      ],
+      "slideChapter": 1,
+      "intro": "Nel modulo precedente uno stato era un vettore normalizzato e una trasformazione reversibile era una matrice unitaria. Un circuito organizza questi oggetti in un programma: preparazione dell’ingresso, trasformazioni in ordine temporale e misura dell’uscita.",
+      "theory": [
+        "Un qubit ha stato |ψ⟩=α|0⟩+β|1⟩, con α e β complessi e |α|²+|β|²=1. Una porta U sostituisce il vettore colonna ψ con Uψ. La porta Hadamard H=1/√2 [[1,1],[1,−1]] calcola somma e differenza delle ampiezze; la porta Z=diag(1,−1) cambia il segno della seconda.",
+        "Nel disegno il tempo procede da sinistra a destra. Se U₁ agisce prima di U₂, il vettore finale è U₂U₁ψ: il fattore più a destra agisce per primo. I fili sono ordinati dall’alto con q₀ più significativo; per n qubit la parola x₀…xₙ₋₁ denota x=Σⱼxⱼ2^(n−1−j). Questa è la convenzione big-endian.",
+        "La misura nella base computazionale produce l’etichetta x con probabilità P(x)=|⟨x|ψ⟩|². Il simulatore calcola queste probabilità teoriche. Selezionare una porta permette di ispezionare il vettore intermedio senza misurarlo e senza eliminare componenti."
+      ],
+      "definition": "ψⱼ₊₁=Uⱼψⱼ; ψfinale=Uₖ⋯U₂U₁ψ₀; P(x)=|⟨x|ψfinale⟩|².",
+      "space": "Il circuito mostra fili logici e successione di operazioni. Ogni piano complesso ha assi Re e Im di un’ampiezza, senza unità fisiche; le barre mostrano probabilità fra 0 e 1. Nessuna di queste coordinate indica la posizione del qubit nello spazio.",
+      "bridge": "L’unitarietà conserva il prodotto interno e rende invertibile il programma. Per incorporare una funzione classica come AND dobbiamo quindi conservare l’informazione che una sua uscita, da sola, perderebbe.",
+      "pages": [
+        7
+      ]
+    },
+    {
+      "id": "reversibilita",
+      "title": "Conservare l’informazione",
+      "short": "Conservare l’informazione",
+      "part": 0,
+      "examples": [
+        "AND con ingresso 11",
+        "AND con ingresso 10"
+      ],
+      "slideChapter": 2,
+      "intro": "AND associa tre ingressi distinti all’uscita zero, perciò il risultato non basta a ricostruire l’ingresso. Un calcolo reversibile conserva gli ingressi e scrive la funzione in un registro aggiuntivo.",
+      "theory": [
+        "Per bit a,b,t∈{0,1}, il prodotto ab è AND e il simbolo ⊕ indica XOR, cioè somma modulo due. La porta Toffoli, detta anche CCX, cambia il bersaglio t soltanto quando entrambi i controlli a e b valgono uno: (a,b,t)↦(a,b,t⊕ab).",
+        "Applicando due volte la stessa porta si ottiene t⊕ab⊕ab=t. La mappa è quindi una permutazione degli otto vettori della base e la sua matrice è unitaria. Per linearità la stessa operazione agisce sulle sovrapposizioni, trasportando ciascuna ampiezza senza alterarne la fase.",
+        "Un bersaglio iniziale t=0 restituisce ab; con t=1 restituisce 1⊕ab. Specificare l’inizializzazione dell’ausiliario fa dunque parte del programma. La conservazione degli ingressi non autorizza a copiare uno stato quantistico arbitrario: qui si definisce una trasformazione delle etichette di base."
+      ],
+      "definition": "CCX|a,b,t⟩=|a,b,t⊕ab⟩; CCX²=I.",
+      "space": "Le parole 000,…,111 etichettano la base di C⁸. Le frecce indicano una permutazione di etichette, non traiettorie fisiche; le ampiezze complesse rimangono associate ai rami del registro.",
+      "bridge": "Le permutazioni reversibili sono un primo esempio di unitarie. Le porte di un qubit estendono la costruzione a combinazioni lineari e fasi, che non si descrivono soltanto spostando bit.",
+      "pages": [
+        22
+      ]
+    },
+    {
+      "id": "porte",
+      "title": "Operazioni su un qubit",
+      "short": "Operazioni su un qubit",
+      "part": 0,
+      "examples": [
+        "Sequenza X, Y, Z su |+⟩",
+        "Rᵧ(60°) e Rz(90°)"
+      ],
+      "slideChapter": 3,
+      "intro": "Una porta su un qubit è una matrice 2×2 nella base ordinata |0⟩,|1⟩. Per capire il programma seguiamo sia le due ampiezze complesse sia il punto di Bloch che rappresenta il loro stato fisico.",
+      "theory": [
+        "Le matrici di Pauli sono X=[[0,1],[1,0]], Y=[[0,−i],[i,0]], Z=[[1,0],[0,−1]]. X scambia le ampiezze, Z introduce un segno relativo e Y combina scambio e fasi. Nel primo esempio X, Y e Z agiscono in sequenza sul medesimo stato |+⟩=(|0⟩+|1⟩)/√2.",
+        "Per un asse k∈{x,y,z} definiamo Rₖ(θ)=exp(−iθσₖ/2), dove σₖ è la corrispondente matrice di Pauli e θ è in radianti. Poiché σₖ²=I, separare i termini pari e dispari della serie esponenziale dà Rₖ(θ)=cos(θ/2)I−i sin(θ/2)σₖ. Le etichette delle porte esprimono lo stesso angolo in gradi.",
+        "Per ψ=(α,β), il punto di Bloch ha coordinate (2Re(ᾱβ),2Im(ᾱβ),|α|²−|β|²). Da Rᵧ(θ)|0⟩=(cos(θ/2),sin(θ/2)) segue Bloch=(sinθ,0,cosθ): le ampiezze contengono il mezzo angolo, mentre sulla sfera la rotazione è θ. La fase P(φ)=diag(1,exp(iφ)) equivale a Rz(φ) a meno del fattore globale exp(iφ/2)."
+      ],
+      "definition": "Rᵧ(θ)=[[cos(θ/2),−sin(θ/2)],[sin(θ/2),cos(θ/2)]].",
+      "space": "Le ampiezze appartengono a C²; la sfera di Bloch ha coordinate reali adimensionali e raggio uno per uno stato puro. I suoi assi rappresentano valori attesi di X,Y,Z, non direzioni di moto dell’apparato.",
+      "bridge": "Una rotazione Rᵧ fissa i moduli delle due ampiezze e una porta P ne fissa la fase relativa. Questa separazione consente di costruire una preparazione assegnata.",
+      "pages": [
+        35
+      ]
+    },
+    {
+      "id": "preparazione",
+      "title": "Preparare uno stato assegnato",
+      "short": "Preparare uno stato assegnato",
+      "part": 0,
+      "examples": [
+        "Preparare (2,i)/√5",
+        "Preparare (1,−1)/√2"
+      ],
+      "slideChapter": 4,
+      "intro": "Dato uno stato normalizzato α|0⟩+β|1⟩, cerchiamo porte che lo preparino da |0⟩. I due dati fisicamente rilevanti sono il peso di |1⟩ e la fase relativa fra le componenti.",
+      "theory": [
+        "Se entrambe le componenti sono non nulle, togliamo il fattore globale exp(i argα) e scriviamo lo stato come |α||0⟩+exp(iφ)|β||1⟩, con φ=argβ−argα. Ponendo θ=2 arccos|α|, la normalizzazione dà sin(θ/2)=|β|. Quindi P(φ)Rᵧ(θ)|0⟩ realizza lo stato richiesto a meno di quella fase globale.",
+        "Ai poli una delle componenti è zero e il suo argomento non è definito: per |0⟩ basta θ=0, per |1⟩ basta θ=π; possiamo scegliere φ=0 perché la fase della sola componente presente è globale. Nei due esempi α è già reale positivo, quindi la costruzione coincide anche con la convenzione di fase del vettore dato.",
+        "La prima porta porta Bloch dal polo nord al meridiano y=0. La fase P ruota le coordinate x,y attorno a z e conserva le probabilità nella base computazionale. I punti successivi della sfera vanno letti insieme alle ampiezze dopo ciascuna porta."
+      ],
+      "definition": "P(φ)Rᵧ(θ)|0⟩=cos(θ/2)|0⟩+exp(iφ) sin(θ/2)|1⟩.",
+      "space": "I piani Re/Im conservano la convenzione di fase del vettore; Bloch identifica vettori che differiscono solo per fase globale. I punti selezionati mostrano gli stati dopo le porte, senza implicare una misura intermedia.",
+      "bridge": "Conosciuta la sequenza che prepara lo stato, possiamo percorrerla all’indietro. L’ordine delle inverse è essenziale quanto gli angoli delle porte.",
+      "pages": [
+        60
+      ]
+    },
+    {
+      "id": "inversa",
+      "title": "Comporre e invertire un programma",
+      "short": "Comporre e invertire un programma",
+      "part": 0,
+      "examples": [
+        "H, P(60°), P(−60°), H",
+        "Rᵧ(90°), Z, Z, Rᵧ(−90°)"
+      ],
+      "slideChapter": 5,
+      "intro": "La preparazione precedente è una trasformazione reversibile. Per ricostruire l’ingresso annulliamo prima l’ultima operazione e proseguiamo nell’ordine opposto.",
+      "theory": [
+        "L’aggiunto U† è la trasposta coniugata: si scambiano righe e colonne e si coniugano gli elementi. Una matrice unitaria soddisfa U†U=I, quindi U⁻¹=U†. Per U=U₃U₂U₁, il prodotto U₁†U₂†U₃†U cancella le coppie adiacenti cominciando da U₃.",
+        "H, X e Z sono auto-inverse. Per le porte dipendenti da un angolo si cambia il segno: P(φ)†=P(−φ), Rᵧ(θ)†=Rᵧ(−θ). L’uguaglianza dei soli moduli quadrati non verifica l’inversione: occorre recuperare anche le fasi relative del vettore iniziale."
+      ],
+      "definition": "(U₃U₂U₁)⁻¹=U₁†U₂†U₃†; U†Uψ=ψ.",
+      "space": "La successione di punti su Bloch segue andata e ritorno dello stato puro. I piani complessi permettono di controllare le componenti anche quando uno stesso punto di Bloch corrisponde a vettori con fase globale diversa.",
+      "bridge": "L’ultima H di un interferometro può annullare la prima H solo se tra le due non cambia la fase relativa. Inserendo P osserviamo come una fase diventa una probabilità misurabile.",
+      "pages": [
+        86
+      ]
+    },
+    {
+      "id": "interferometro",
+      "title": "Rendere osservabile una fase",
+      "short": "Rendere osservabile una fase",
+      "part": 0,
+      "examples": [
+        "Fase di 90°",
+        "Fase di 180°"
+      ],
+      "slideChapter": 6,
+      "intro": "La porta P modifica una fase relativa senza cambiare i moduli delle ampiezze. Il circuito H–P–H ricombina le componenti e rende questa variazione leggibile nella misura.",
+      "theory": [
+        "Da |0⟩ la prima Hadamard produce (|0⟩+|1⟩)/√2. Dopo P(φ) il vettore è (1,exp(iφ))/√2. L’ultima H dà le ampiezze (1+exp(iφ))/2 e (1−exp(iφ))/2; per ottenere probabilità si calcola il modulo quadrato di ciascuna somma.",
+        "Poiché |1+exp(iφ)|²=(1+exp(iφ))(1+exp(−iφ))=2+2cosφ, P(0)=(1+cosφ)/2 e P(1)=(1−cosφ)/2. A 0° il risultato è 0 con certezza, a 180° è 1 con certezza, a 90° i due risultati hanno probabilità 1/2. Una fase globale moltiplicherebbe entrambe le ampiezze e non produrrebbe questo confronto."
+      ],
+      "definition": "HP(φ)H|0⟩=[(1+exp(iφ))|0⟩+(1−exp(iφ))|1⟩]/2.",
+      "space": "Le frecce complesse si sommano nel piano Re/Im. L’angolo φ è una fase, espressa in gradi nei comandi e in radianti negli esponenziali; le barre sono probabilità teoriche, senza campionamento.",
+      "bridge": "La ricombinazione funziona anche dentro un registro composto. Occorre però conservare le ampiezze congiunte: una porta controllata può collegare i qubit in modo che non abbiano più stati puri separati.",
+      "pages": [
+        108
+      ]
+    },
+    {
+      "id": "registro",
+      "title": "Operare su un registro",
+      "short": "Operare su un registro",
+      "part": 1,
+      "examples": [
+        "CNOT su (3,0,−1,2i)/√14",
+        "Porta H locale prima della CNOT"
+      ],
+      "slideChapter": 7,
+      "intro": "Due qubit hanno uno stato congiunto in C²⊗C², di dimensione quattro. Il prodotto tensoriale del modulo 2 diventa qui la regola per assegnare matrici ai fili del circuito.",
+      "theory": [
+        "Usiamo la base |00⟩,|01⟩,|10⟩,|11⟩ e scriviamo ψ=(c₀₀,c₀₁,c₁₀,c₁₁)ᵀ, con Σ|cₐᵦ|²=1. Una porta U sul primo filo è U⊗I; sul secondo è I⊗U. Un controllo è coerente: in una sovrapposizione ciascun ramo segue la regola senza leggere classicamente il controllo.",
+        "CNOT, o CX, agisce come |a,b⟩↦|a,b⊕a⟩. La sua matrice è [[1,0,0,0],[0,1,0,0],[0,0,0,1],[0,0,1,0]], quindi scambia c₁₀ e c₁₁, comprese le rispettive fasi. La probabilità di leggere solo il primo bit a si ottiene sommando |cₐ₀|²+|cₐ₁|²."
+      ],
+      "definition": "CX(c₀₀,c₀₁,c₁₀,c₁₁)ᵀ=(c₀₀,c₀₁,c₁₁,c₁₀)ᵀ.",
+      "space": "I quattro piani complessi rappresentano coordinate dello stesso vettore congiunto. I fili sono sottosistemi logici; i valori 00,…,11 sono etichette binarie. Le marginali sommano probabilità di rami ortogonali.",
+      "bridge": "Applicando CNOT a un controllo in sovrapposizione possiamo ottenere un vettore che non si fattorizza. Gli stati di Bell permettono di riconoscere questa proprietà attraverso misure in più basi.",
+      "pages": [
+        138
+      ]
+    },
+    {
+      "id": "bell",
+      "title": "Costruire e misurare entanglement",
+      "short": "Costruire e misurare entanglement",
+      "part": 1,
+      "examples": [
+        "Bell misurato in Z,Z",
+        "Bell misurato in X,X"
+      ],
+      "slideChapter": 8,
+      "intro": "H sul primo qubit e CNOT preparano lo stato di Bell |Φ+⟩=(|00⟩+|11⟩)/√2. Questo stato è entangled: nessun prodotto di due vettori di un qubit riproduce le sue quattro ampiezze.",
+      "theory": [
+        "Misurando in Z,Z, gli unici esiti possibili sono 00 e 11, ciascuno con probabilità 1/2. Per ogni qubit separato P(0)=P(1)=1/2. La matrice ridotta, ottenuta sommando sul secondo indice, è ρA=diag(1/2,1/2)=I/2; la stessa relazione vale per B. Il centro di Bloch rappresenta questa descrizione mista.",
+        "La base X è formata da |+⟩ e |−⟩. Applicare H prima della misura Z realizza una misura X, perché H|+⟩=|0⟩ e H|−⟩=|1⟩. Siccome (H⊗H)|Φ+⟩=|Φ+⟩, anche X,X dà risultati uguali con probabilità 1/2 per ciascuna coppia.",
+        "Una miscela classica di |00⟩ e |11⟩ con pesi 1/2 riproduce Z,Z, ma dopo H⊗H dà quattro esiti equiprobabili. Il confronto fra i due esempi distingue quindi la coerenza dello stato Bell da una sola correlazione classica. Se si cambia soltanto la base di B, (I⊗H)|Φ+⟩=(|00⟩+|01⟩+|10⟩−|11⟩)/2: in Z,X la distribuzione è uniforme."
+      ],
+      "definition": "ρA(a,a′)=Σᵦcₐᵦc̄ₐ′ᵦ; per |Φ+⟩, ρA=ρB=I/2.",
+      "space": "Lo stato congiunto usa quattro ampiezze; le barre delle misure riportano etichette nella base scelta. Una marginale mista non viene sostituita da un vettore puro locale arbitrario.",
+      "bridge": "Un registro di lavoro può rimanere correlato ai dati proprio come il secondo qubit di Bell. Per usarlo temporaneamente e recuperare l’interferenza dobbiamo ripristinarlo dopo il calcolo.",
+      "pages": [
+        164
+      ]
+    },
+    {
+      "id": "ausiliari",
+      "title": "Calcolare, marcare e ripristinare",
+      "short": "Calcolare, marcare e ripristinare",
+      "part": 1,
+      "examples": [
+        "Marcatura con ripristino",
+        "Informazione residua senza ripristino"
+      ],
+      "slideChapter": 9,
+      "intro": "Un’ancilla è un qubit ausiliario preparato in uno stato noto, qui |0⟩. La usiamo per calcolare una funzione, applicare una fase dipendente dal risultato e restituire il registro di lavoro allo stato iniziale.",
+      "theory": [
+        "L’oracolo reversibile di una funzione booleana f è U_f|x,t⟩=|x,t⊕f(x)⟩. Per f(a,b)=ab è una Toffoli. Partendo da Σₓcₓ|x⟩|0⟩, il calcolo dà Σₓcₓ|x⟩|f(x)⟩; Z sull’ancilla moltiplica ogni ramo per (−1)^(f(x)).",
+        "La seconda applicazione di U_f, uguale alla sua inversa, riporta l’ancilla a zero: Σₓ(−1)^(f(x))cₓ|x⟩|0⟩. La fase resta nei dati. Se omettiamo il ripristino, rami con valori diversi di f conservano ancille ortogonali; ignorare l’ancilla fa perdere i termini di coerenza fra quei gruppi."
+      ],
+      "definition": "U_f†(I⊗Z)U_f|x,0⟩=(−1)^(f(x))|x,0⟩.",
+      "space": "Le otto ampiezze descrivono due qubit dati e un ausiliario. Pulire il lavoro significa riportarlo a |0⟩ su tutti i rami, non azzerare arbitrariamente componenti del vettore.",
+      "bridge": "Il blocco calcolo–fase–ripristino è una porta composta. Per sostituirlo, o sostituire altre porte, con operazioni elementari dobbiamo verificare l’intera trasformazione lineare.",
+      "pages": [
+        196
+      ]
+    },
+    {
+      "id": "sintesi",
+      "title": "Costruire una porta composta",
+      "short": "Costruire una porta composta",
+      "part": 1,
+      "examples": [
+        "Decomposizione su |10⟩",
+        "Decomposizione su una sovrapposizione"
+      ],
+      "slideChapter": 10,
+      "intro": "Sintetizzare una porta significa realizzare la sua matrice mediante un prodotto di porte disponibili. Una verifica su tutti i vettori della base dimostra l’identità anche sulle sovrapposizioni.",
+      "theory": [
+        "CZ è la porta controllata Z: nella base 00,01,10,11 ha diagonale (1,1,1,−1). La relazione HZH=X segue moltiplicando le tre matrici 2×2. Quando il controllo vale 0, due Hadamard sul bersaglio danno H²=I; quando vale 1, il bersaglio riceve HZH=X.",
+        "Ne segue CX=(I⊗H)CZ(I⊗H). Provare soltanto le probabilità finali non basta: due circuiti potrebbero introdurre fasi relative diverse. I vettori completi e il caso in sovrapposizione verificano anche questo aspetto. Una fase globale comune è fisicamente equivalente per la porta isolata, ma richiede attenzione quando la porta viene controllata."
+      ],
+      "definition": "CZ=diag(1,1,1,−1); CX=(I⊗H)CZ(I⊗H).",
+      "space": "Le matrici 4×4 agiscono nello spazio delle ampiezze dei due qubit. Le porte del circuito rappresentano fattori ordinati del prodotto; i piani Re/Im mostrano le fasi degli stati intermedi.",
+      "bridge": "Hadamard converte una fase in un cambiamento di etichetta. Deutsch usa la stessa idea insieme a un oracolo di funzione per estrarre una proprietà globale con una sola interrogazione.",
+      "pages": [
+        230
+      ]
+    },
+    {
+      "id": "deutsch",
+      "title": "Deutsch e il ritorno di fase",
+      "short": "Deutsch e il ritorno di fase",
+      "part": 2,
+      "examples": [
+        "Funzione costante f=1",
+        "Funzione bilanciata f(x)=x",
+        "Funzione costante f=0",
+        "Funzione bilanciata f(x)=1⊕x"
+      ],
+      "slideChapter": 11,
+      "intro": "Data f:{0,1}→{0,1}, vogliamo sapere se f(0)=f(1), caso costante, oppure f(0)≠f(1), caso bilanciato. Gli esempi coprono tutte e quattro le funzioni.",
+      "theory": [
+        "Prepariamo il registro dati in |+⟩=(|0⟩+|1⟩)/√2 e il bersaglio in |−⟩=(|0⟩−|1⟩)/√2. Poiché X|−⟩=−|−⟩, l’oracolo U_f|x,t⟩=|x,t⊕f(x)⟩ agisce come U_f|x⟩|−⟩=(−1)^(f(x))|x⟩|−⟩. Questo trasferimento della fase al controllo è il ritorno di fase, o phase kickback.",
+        "La H finale sul registro dati produce ampiezza [(−1)^(f(0))+(−1)^(f(1))]/2 per 0 e [(−1)^(f(0))−(−1)^(f(1))]/2 per 1. Segni uguali concentrano la probabilità su 0; segni opposti su 1. Il bersaglio rimane |−⟩ e non contiene l’uscita decisionale.",
+        "Per leggere soltanto il dato sommiamo le probabilità congiunte sui due valori del bersaglio: P(dato=0)=P(00)+P(01). L’eventuale segno globale delle ampiezze distingue le convenzioni dei quattro casi, senza cambiare questa decisione."
+      ],
+      "definition": "P(dato=0)=1 per f costante; P(dato=1)=1 per f bilanciata.",
+      "space": "Il vettore vive in C⁴, ma il risultato dell’algoritmo è la marginale di un solo qubit. Le somme e differenze sono interferenza di ampiezze; le somme sui valori del bersaglio sono marginalizzazione di probabilità.",
+      "bridge": "Deutsch usa una marcatura di fase per distinguere due proprietà. Nella ricerca di Grover marchiamo la soluzione e scegliamo una seconda riflessione che ne aumenta la probabilità.",
+      "pages": [
+        344
+      ]
+    },
+    {
+      "id": "grover-primo",
+      "title": "Una ricerca fra quattro alternative",
+      "short": "Una ricerca fra quattro alternative",
+      "part": 2,
+      "examples": [
+        "Soluzione 11",
+        "Soluzione 01"
+      ],
+      "slideChapter": 12,
+      "intro": "Cerchiamo una sola parola marcata w fra N=4 etichette. L’oracolo di fase O cambia il segno di |w⟩; una seconda riflessione D, costruita dalla preparazione uniforme, rende certa la soluzione dopo una iterazione.",
+      "theory": [
+        "Poniamo |g⟩=|w⟩ e |b⟩=Σₓ≠w|x⟩/√3. Questi vettori normalizzati sono ortogonali perché hanno supporti disgiunti. Lo stato uniforme |s⟩=Σₓ|x⟩/2 ha coordinate (√3/2,1/2) nella base ordinata (|b⟩,|g⟩); scriviamo quindi |s⟩=cosθ|b⟩+sinθ|g⟩ con θ=π/6.",
+        "Dal proiettore P_s=|s⟩⟨s| del modulo 2 otteniamo la riflessione D=2P_s−I: la componente lungo |s⟩ resta invariata e quella ortogonale cambia segno. Nel piano (b,g), O=diag(1,−1) e D=[[1/2,√3/2],[√3/2,−1/2]]. Quindi O(√3/2,1/2)=(√3/2,−1/2) e DO(√3/2,1/2)=(0,1).",
+        "Sulle quattro ampiezze la stessa D dà c′ₓ=2μ−cₓ, dove μ=Σₓcₓ/4 è la media dopo l’oracolo. Il risultato geometrico e il calcolo sulle ampiezze descrivono la stessa operazione; l’indice marcato cambia |g⟩, ma non l’angolo iniziale."
+      ],
+      "definition": "O=I−2|g⟩⟨g|; D=2|s⟩⟨s|−I; Q=DO; Q|s⟩=|g⟩ per N=4,M=1.",
+      "space": "Gli assi b e g sono coordinate reali rispetto a due vettori dello spazio C⁴. Una freccia nel piano riassume ampiezze collettive; la probabilità buona è il quadrato della coordinata g. Il piano non è lo spazio fisico e non è la sfera di Bloch del registro.",
+      "bridge": "Una sequenza discreta di porte realizza qui una rotazione. Possiamo anche partire da un generatore continuo e costruire una sequenza di piccole rotazioni che ne approssimi l’evoluzione.",
+      "pages": [
+        368
+      ]
+    },
+    {
+      "id": "evoluzione",
+      "title": "Simulare un’evoluzione",
+      "short": "Simulare un’evoluzione",
+      "part": 2,
+      "examples": [
+        "Due passi a t=0,5",
+        "Otto passi a t=0,5"
+      ],
+      "slideChapter": 13,
+      "intro": "Le funzioni di matrice del modulo 2 permettono di trasformare un generatore hermitiano K in una famiglia unitaria U(t)=exp(−itK). Qui K=X+Z; la lettera H rimane riservata alla porta Hadamard.",
+      "theory": [
+        "Il parametro t è un tempo adimensionale: abbiamo assorbito la scala energetica e la costante fisica ℏ nelle unità del modello. K descrive due contributi alla dinamica di un qubit. Per una matrice hermitiana l’esponenziale ha autovalori di modulo uno e conserva la norma.",
+        "Poiché X²=Z²=I e XZ+ZX=0, K²=2I. I suoi autovalori sono ±√2 e i proiettori sono P±=(I±K/√2)/2. La formula spettrale dà U(t)=exp(−i√2 t) P₊+exp(i√2 t) P₋=cos(√2t)I−i sin(√2t)K/√2. Si ottiene la stessa identità separando potenze pari e dispari nella serie esponenziale.",
+        "Dividiamo t in r passi Δt=t/r. Per un passo, exp(−iΔt Z) exp(−iΔt X)=I−iΔt(X+Z)+O(Δt²), lo stesso termine di primo ordine di exp(−iΔt K). Il termine quadratico differisce di −(Δt²/2)[Z,X], dove [Z,X]=ZX−XZ: la non commutatività produce l’errore. A t fissato la ripetizione di r passi ha errore di ordine t²/r.",
+        "Ogni fattore exp(−iΔt X) è Rx(2Δt), e analogamente per Z; per questo gli angoli sono 2t/r radianti, convertiti in gradi nelle porte. Il prodotto applica X prima di Z e richiede 2r rotazioni. Il confronto usa la norma euclidea dei vettori con fase fissata; tale norma non è una distanza fisica invariante rispetto alla fase globale."
+      ],
+      "definition": "U(t)=cos(√2t)I−i sin(√2t)(X+Z)/√2; Uᵣ(t)=[Rz(2t/r)Rx(2t/r)]ʳ.",
+      "space": "Le matrici 2×2 agiscono sulle ampiezze; Bloch rappresenta lo stato del qubit. t è adimensionale, gli angoli della teoria sono in radianti e quelli delle porte in gradi. I due esempi confrontano accuratezza e numero di operazioni sullo stesso ingresso.",
+      "bridge": "Il confronto fra prodotto di porte e matrice complessiva è anche un metodo di verifica. Lo usiamo nel programma conclusivo, dove preparazione, controllo e cambio di base devono produrre un’unica distribuzione coerente.",
+      "pages": [
+        377
+      ]
+    },
+    {
+      "id": "programma-completo",
+      "title": "Verificare un programma completo",
+      "short": "Verificare un programma completo",
+      "part": 2,
+      "examples": [
+        "Programma con S",
+        "Variante con S†"
+      ],
+      "slideChapter": 14,
+      "intro": "Riuniamo preparazione complessa, porte locali, CNOT e lettura in basi diverse. Il programma è definito dall’ingresso, dall’ordine delle porte e dalla base della misura, non soltanto dalla lista dei loro nomi.",
+      "theory": [
+        "Il primo qubit parte da (2|0⟩+i|1⟩)/√5 e il secondo da |0⟩: il tensore dà ψ₀=(2,0,i,0)ᵀ/√5 nella base 00,01,10,11. Usiamo S=P(π/2)=diag(1,i), oppure S†=diag(1,−i) nella variante; seguono H sul primo filo e CNOT dal primo al secondo.",
+        "La misura richiesta è Z sul qubit A e X sul qubit B. La realizziamo con una H sul secondo filo prima della lettura computazionale. Il bit letto su B etichetta quindi |+⟩ o |−⟩ della base X. Le probabilità congiunte sono i moduli quadrati delle quattro ampiezze finali; ogni marginale si ottiene sommando sui valori dell’altro bit.",
+        "Per la variante S le probabilità attese sono (1/20,1/20,9/20,9/20). La variante S† cambia le interferenze e permette di verificare il ruolo della fase prima della CNOT. Il registro completo mantiene le correlazioni necessarie a ricostruire tutte le letture."
+      ],
+      "definition": "ψfinale=(I⊗H)CX(H⊗I)(S⊗I)ψ₀; P(a,b)=|⟨a,b|ψfinale⟩|².",
+      "space": "Le quattro componenti appartengono allo stato congiunto. Le barre finali usano etichette Z,X secondo il cambio di base dichiarato; il simulatore mostra probabilità teoriche, senza estrarre una sequenza di misure.",
+      "bridge": "Il modulo 4 riutilizza preparazione, oracolo reversibile e interferenza su registri più grandi. Deutsch–Jozsa generalizza la somma di segni di Deutsch a tutte le parole di n bit.",
+      "pages": [
+        405
+      ]
+    }
+  ],
+  "4": [
+    {
+      "id": "deutsch-jozsa",
+      "title": "Deutsch–Jozsa",
+      "short": "Deutsch–Jozsa",
+      "part": 0,
+      "examples": [
+        "Costante su tre bit",
+        "Bilanciata non affine su tre bit"
+      ],
+      "slideChapter": 2,
+      "intro": "L’ingresso è un oracolo per f:{0,1}ⁿ→{0,1}, con la promessa che f sia costante oppure bilanciata, cioè uguale a uno su esattamente metà delle N=2ⁿ parole. L’obiettivo è distinguere i due casi.",
+      "theory": [
+        "Prepariamo |s⟩=Σₓ|x⟩/√N applicando H a ciascuno degli n qubit. Come in Deutsch, il bersaglio |−⟩ converte U_f in una marcatura O_f|x⟩=(−1)^(f(x))|x⟩. La seconda H⊗n usa H⊗n|x⟩=Σᵧ(−1)^(x·y)|y⟩/√N, dove x·y=⊕ⱼxⱼyⱼ è il prodotto binario modulo due.",
+        "L’ampiezza della parola nulla è la media dei segni (−1)^(f(x)). Una funzione costante dà ampiezza +1 oppure −1 e probabilità uno; una bilanciata ha tanti +1 quanti −1 e dà probabilità zero. Sotto la promessa, leggere qualunque parola non nulla certifica il caso bilanciato. Fuori dalla promessa questa regola non decide la classe.",
+        "Gli esempi calcolano direttamente lo stato dopo l’oracolo di fase e applicano Hadamard: il bersaglio separabile |−⟩ è eliminato algebricamente. Si verifica la distribuzione dell’oracolo assegnato, senza sintetizzare una rete elementare per U_f."
+      ],
+      "definition": "a(y)=2^(−n)Σₓ(−1)^(f(x)+x·y); P(0…0)=1 se costante, 0 se bilanciata.",
+      "space": "Le stringhe x,y etichettano la base di C^(2ⁿ). Il prodotto x·y è binario; la somma delle ampiezze è invece una somma reale con segno. Le barre mostrano probabilità teoriche.",
+      "bridge": "La cancellazione dipende dalla struttura dei segni. Se f nasconde una stringa attraverso un prodotto binario, come in Bernstein–Vazirani, la stessa trasformazione concentra l’uscita proprio su quella stringa.",
+      "pages": [
+        23
+      ]
+    },
+    {
+      "id": "bernstein-vazirani",
+      "title": "Bernstein–Vazirani",
+      "short": "Bernstein–Vazirani",
+      "part": 0,
+      "examples": [
+        "Stringa 101",
+        "Stringa 011 con termine affine"
+      ],
+      "slideChapter": 3,
+      "intro": "La promessa è f(x)=s·x⊕b, con x,s∈{0,1}ⁿ e b∈{0,1}. La stringa s è ignota; b è un termine costante. Per b=0 la funzione è lineare, mentre con b=1 è affine.",
+      "theory": [
+        "Dopo preparazione uniforme, oracolo di fase e Hadamard, l’ampiezza di y è 2^(−n)Σₓ(−1)^(s·x+b+x·y). Poiché ogni bit xⱼ viene sommato indipendentemente su 0 e 1, la somma si fattorizza in (−1)^b2^(−n)∏ⱼ[1+(−1)^(sⱼ+yⱼ)].",
+        "Se yⱼ≠sⱼ per almeno un bit, quel fattore è 1−1=0. Se y=s, tutti i fattori sono due e compensano 2^(−n). Quindi il vettore finale è (−1)^b|s⟩: la lettura restituisce s con certezza in entrambi i casi, mentre b cambia soltanto la fase globale.",
+        "Come in Deutsch–Jozsa il modello usa direttamente la marcatura di fase; l’ancilla |−⟩ e la sintesi elementare di U_f non vengono simulate qui. Il caso affine mantiene il segno nelle ampiezze anche se non cambia le probabilità."
+      ],
+      "definition": "a(y)=(−1)^b2^(−n)∏ⱼ[1+(−1)^(sⱼ+yⱼ)]=(−1)^bδᵧ,ₛ.",
+      "space": "I fattori sono somme sui singoli bit nello spazio binario; δᵧ,ₛ vale uno quando y=s e zero altrimenti. Le coordinate finali sono ampiezze reali con segno, le barre sono i loro quadrati.",
+      "bridge": "Bernstein–Vazirani legge s in una sola uscita perché tutta la struttura è lineare. In Simon la stringa compare invece come simmetria XOR: ogni misura fornisce un vincolo e serve combinare più equazioni.",
+      "pages": [
+        51
+      ]
+    },
+    {
+      "id": "simon",
+      "title": "Simon e le equazioni binarie",
+      "short": "Simon e le equazioni binarie",
+      "part": 0,
+      "examples": [
+        "Segreto 101: equazioni indipendenti",
+        "Segreto 110: equazioni ripetute"
+      ],
+      "slideChapter": 4,
+      "intro": "Consideriamo f:{0,1}ⁿ→{0,1}ⁿ con una stringa segreta non nulla s≠0. La promessa completa è f(x)=f(x′) se e soltanto se x′=x oppure x′=x⊕s. Ogni valore raggiunto ha quindi esattamente due preimmagini, e l’obiettivo è ricostruire s.",
+      "theory": [
+        "Il circuito ideale prepara Σₓ|x⟩|f(x)⟩/√(2ⁿ) usando un oracolo reversibile. Condizionare sul valore f(x₀) del secondo registro lascia (|x₀⟩+|x₀⊕s⟩)/√2 nel primo. La sola invarianza f(x)=f(x⊕s) sarebbe insufficiente: per n>1 una funzione costante la soddisfa, ma ha fibre più grandi di due e viola la promessa.",
+        "Dopo H⊗n, l’ampiezza di y è (−1)^(x₀·y)[1+(−1)^(s·y)]/√(2^(n+1)). Se s·y=1 i termini si cancellano; se s·y=0 il modulo quadrato vale 2/2ⁿ. Per n=3 ci sono quattro y ammessi, ciascuno con probabilità 1/4, indipendentemente dal ramo f(x₀).",
+        "Le uscite danno equazioni y·s=0 su F₂, il campo dei bit con somma XOR. Per isolare lo spazio delle soluzioni {0,s} servono n−1 righe linearmente indipendenti; la promessa s≠0 seleziona poi s. Misure eseguite su nuove preparazioni sono probabilisticamente indipendenti, ma possono dare righe ripetute o la riga nulla, che non aumentano il rango.",
+        "Il modello costruisce la tabella di f e ne raggruppa le fibre: non sintetizza l’oracolo porta per porta. Le sequenze degli esempi sono uscite ammesse prefissate per mostrare l’eliminazione, non estrazioni casuali. Il caso s=0 corrisponderebbe alla promessa iniettiva e richiederebbe un problema distinto; qui è escluso fin dall’inizio."
+      ],
+      "definition": "f(x)=f(x′) ⇔ (x′=x oppure x′=x⊕s), s≠0; P(y)=2^(1−n) se y·s=0, altrimenti 0.",
+      "space": "XOR e prodotto binario operano sulle stringhe; il rango è calcolato modulo due. Il registro quantistico usa ampiezze complesse, mentre la tabella di eliminazione è un calcolo classico esatto sui bit.",
+      "bridge": "Negli oracoli la struttura della funzione determina quali ampiezze interferiscono. Il test SWAP usa invece uno scambio controllato per trasformare la sovrapposizione di due preparazioni in una probabilità leggibile.",
+      "pages": [
+        76
+      ]
+    },
+    {
+      "id": "swap",
+      "title": "SWAP test",
+      "short": "SWAP test",
+      "part": 0,
+      "examples": [
+        "Stati uguali",
+        "Stati |0⟩ e |+⟩",
+        "Stati ortogonali |0⟩ e |1⟩"
+      ],
+      "slideChapter": 5,
+      "intro": "Dati due stati puri normalizzati |u⟩ e |v⟩, vogliamo conoscere |⟨u|v⟩|² senza misurare separatamente tutte le loro ampiezze. Un qubit ausiliario controlla lo scambio dei registri che li contengono.",
+      "theory": [
+        "Da |0⟩|u⟩|v⟩, una H sull’ausiliario e lo SWAP controllato producono (|0⟩|u⟩|v⟩+|1⟩|v⟩|u⟩)/√2. La H finale porta nel ramo ausiliario zero il vettore (|u⟩|v⟩+|v⟩|u⟩)/2.",
+        "La norma quadrata di questo ramo è [1+1+⟨u|v⟩⟨v|u⟩+⟨v|u⟩⟨u|v⟩]/4=(1+|⟨u|v⟩|²)/2. La marginale si ottiene sommando le probabilità congiunte sui due registri bersaglio. Gli esempi danno rispettivamente P(0)=1,3/4,1/2 per stati uguali, sovrapposti e ortogonali.",
+        "Il valore teorico P(0) determina il modulo quadro del prodotto interno tramite 2P(0)−1. In un esperimento occorrerebbero misure ripetute per stimarlo da frequenze; qui sono calcolate le probabilità esatte del modello. Il test non determina la fase del prodotto interno."
+      ],
+      "definition": "P(ausiliario=0)=(1+|⟨u|v⟩|²)/2; P(1)=1−P(0).",
+      "space": "I due stati di un qubit e l’ausiliario formano otto ampiezze congiunte. Le due barre marginali descrivono soltanto l’ausiliario. Il prodotto interno misura la sovrapposizione nello spazio degli stati, senza una distanza spaziale fra apparati.",
+      "bridge": "Il prodotto interno quantifica anche la componente di uno stato lungo una direzione assegnata. Grover usa proiezioni e riflessioni per accrescere la componente nello spazio delle soluzioni.",
+      "pages": [
+        115
+      ]
+    },
+    {
+      "id": "grover",
+      "title": "Grover: iterazioni e sovrarotazione",
+      "short": "Grover: iterazioni e sovrarotazione",
+      "part": 0,
+      "examples": [
+        "N=8, una soluzione, due iterazioni",
+        "N=8, due soluzioni, due iterazioni"
+      ],
+      "slideChapter": 6,
+      "intro": "Sia G l’insieme delle M soluzioni fra N etichette, con 0<M<N. La ricerca mantiene lo stato in un piano di dimensione due, anche quando il registro completo possiede N ampiezze.",
+      "theory": [
+        "Definiamo |g⟩=Σₓ∈G|x⟩/√M e |b⟩=Σₓ∉G|x⟩/√(N−M). I supporti disgiunti e le normalizzazioni li rendono ortonormali. Lo stato uniforme è |s⟩=√(1−M/N)|b⟩+√(M/N)|g⟩. Scegliamo θ∈(0,π/2) con sin²θ=M/N: le sue coordinate sono (cosθ,sinθ).",
+        "Il proiettore sui marcati è ΠG=Σₓ∈G|x⟩⟨x|. L’oracolo O=I−2ΠG ha matrice diag(1,−1) nel piano. La diffusione D=2|s⟩⟨s|−I ha matrice [[cos2θ,sin2θ],[sin2θ,−cos2θ]]. Moltiplicando nell’ordine Q=DO otteniamo [[cos2θ,−sin2θ],[sin2θ,cos2θ]], una rotazione di 2θ.",
+        "Dopo k iterazioni le coordinate diventano (cos((2k+1)θ),sin((2k+1)θ)). Il successo cresce fino alla zona dell’asse g e poi diminuisce: il numero di iterazioni deve essere scelto in funzione di θ. In termini di query all’oracolo, per M piccolo rispetto a N servono circa (π/4)√(N/M) iterazioni; il costo per costruire un oracolo è una questione separata.",
+        "Se M=0 manca la direzione g e la probabilità buona è sempre zero; se M=N manca b e vale già uno. Questi casi non richiedono la base bidimensionale. Il primo Grover del modulo 3 è il caso θ=π/6: dopo una iterazione (2k+1)θ=π/2."
+      ],
+      "definition": "Q|s⟩=cos3θ|b⟩+sin3θ|g⟩; Psuccesso(k)=sin²((2k+1)θ).",
+      "space": "Il piano usa assi ortonormali b e g e coordinate di ampiezza reali adimensionali. La riflessione dell’oracolo attraversa l’asse b; quella della diffusione attraversa la retta di |s⟩. I quadrati delle proiezioni danno le probabilità dei due gruppi.",
+      "bridge": "La scelta di k richiede una stima di M. Se M è ignoto, possiamo variare il numero di iterazioni fra i tentativi e verificare ciascun candidato con l’oracolo.",
+      "pages": [
+        132
+      ]
+    },
+    {
+      "id": "ricerca-ignota",
+      "title": "Ricerca con numero ignoto di soluzioni",
+      "short": "Ricerca con numero ignoto di soluzioni",
+      "part": 0,
+      "examples": [
+        "Otto elementi, una soluzione",
+        "Otto elementi, nessuna soluzione"
+      ],
+      "slideChapter": 8,
+      "advanced": true,
+      "intro": "Quando il numero M di soluzioni è ignoto, una scelta fissa di k può oltrepassare il massimo di Grover. Usiamo tentativi indipendenti con un numero casuale di iterazioni scelto entro una finestra crescente.",
+      "theory": [
+        "Poniamo inizialmente m=1. A ogni tentativo scegliamo uniformemente j fra 0,…,⌈m⌉−1, riprepariamo lo stato uniforme, eseguiamo j iterazioni e leggiamo un candidato x. Il simbolo ⌈m⌉ è il più piccolo intero almeno pari a m; m può essere non intero.",
+        "La verifica f(x)=1 decide il successo. Se fallisce, aggiorniamo m←min(6m/5,√N) e ripetiamo entro un budget dichiarato. Nel conteggio didattico un tentativo costa j interrogazioni per le iterazioni e una per verificare x. Per M=0 ogni verifica fallisce: l’esaurimento del budget non dimostra l’assenza di soluzioni.",
+        "La tabella separa finestra m, iterazioni j, candidato osservato, probabilità teorica buona e costo. Qui una traiettoria è effettivamente campionata con un generatore pseudocasuale e seme dichiarato, così che si possa riprodurre lo stesso esempio; la probabilità del tentativo rimane distinta dall’esito estratto."
+      ],
+      "definition": "j uniforme in {0,…,⌈m⌉−1}; costo del tentativo=j+1; m←min(6m/5,√N).",
+      "space": "Le righe sono tentativi successivi, non stati coerenti dello stesso registro. Le probabilità sono quelle previste dal modello e gli indici estratti sono dati classici. Il costo conta interrogazioni, non secondi di esecuzione.",
+      "bridge": "Finora la preparazione è uniforme. La stessa coppia di riflessioni amplifica anche una distribuzione iniziale assegnata, purché possiamo applicare la preparazione A e la sua inversa.",
+      "pages": [
+        187
+      ]
+    },
+    {
+      "id": "amplificazione",
+      "title": "Amplificare una preparazione assegnata",
+      "short": "Amplificare una preparazione assegnata",
+      "part": 0,
+      "examples": [
+        "Probabilità buona iniziale 1/10",
+        "Probabilità buona iniziale 1/4"
+      ],
+      "slideChapter": 9,
+      "advanced": true,
+      "intro": "Una matrice unitaria A prepara |a⟩=A|0⟩, con ampiezze anche non uniformi. Il proiettore ΠG seleziona il sottospazio buono e p=⟨a|ΠG|a⟩ è la probabilità iniziale di successo.",
+      "theory": [
+        "Per 0<p<1 costruiamo gli assi dalle proiezioni normalizzate: |g⟩=ΠG|a⟩/√p e |b⟩=(I−ΠG)|a⟩/√(1−p). Le componenti ereditano tutte le fasi della preparazione; in generale non sono somme uniformi di etichette. Rispetto a questi assi |a⟩=cosθ|b⟩+sinθ|g⟩, con sin²θ=p.",
+        "La riflessione D_A=2|a⟩⟨a|−I si costruisce come A(2|0⟩⟨0|−I)A†. Applicata a v, dà 2|a⟩⟨a|v⟩−v, con il prodotto interno coniugato nel primo argomento. Composta con O=I−2ΠG ha nel piano la stessa matrice di Grover e quindi lo stesso angolo 2θ.",
+        "Dopo k iterazioni la probabilità buona è sin²((2k+1)θ). Si amplifica il peso complessivo della componente buona mantenendone i rapporti interni; non si uniformano le ampiezze dei marcati. Per p=0 la preparazione non ha componente buona da amplificare, mentre per p=1 ha già successo certo. Negli esempi A è una preparazione assegnata come primitiva: D_A è applicata direttamente al vettore, senza sintetizzare una rete elementare per A e A†."
+      ],
+      "definition": "Q_A=D_AO; D_Av=2a⟨a|v⟩−v; p=‖ΠG a‖²=sin²θ.",
+      "space": "Il piano (b,g) ha coordinate reali perché gli assi incorporano le fasi della preparazione. Il registro completo conserva invece tutte le componenti complesse. Le due descrizioni coincidono nel sottospazio generato dalle proiezioni.",
+      "bridge": "La marcatura può dipendere da una proprietà aggiornata durante un algoritmo. Per cercare un minimo marchiamo gli indici il cui valore è inferiore alla migliore soglia trovata finora.",
+      "pages": [
+        216
+      ]
+    },
+    {
+      "id": "minimo",
+      "title": "Ricercare un minimo",
+      "short": "Ricercare un minimo",
+      "part": 0,
+      "examples": [
+        "Lista 9,4,7,1,6,3,8,2",
+        "Lista con due minimi uguali"
+      ],
+      "slideChapter": 10,
+      "advanced": true,
+      "intro": "Sia valore(x) una lista indicizzata da x=0,…,N−1. Una soglia corrente τ definisce un problema di ricerca: trovare un indice con valore(x)<τ. Ogni miglioramento verificato permette di abbassare τ.",
+      "theory": [
+        "L’oracolo fτ(x) vale uno precisamente quando il confronto è vero. Il numero dei marcati dipende dalla soglia ed è ignoto, quindi ciascuna ricerca interna usa la procedura a finestra crescente e un budget. Un candidato viene accettato solo dopo averne verificato il valore.",
+        "La sequenza delle soglie è strettamente decrescente quando ci sono miglioramenti. Se la lista contiene minimi uguali, uno qualsiasi dei loro indici è un risultato valido; il confronto stretto non tratta un valore uguale alla soglia come miglioramento.",
+        "Un tentativo fallito non certifica che la soglia sia minima. In questi piccoli esempi una scansione esaustiva finale confronta tutti i valori e certifica il risultato: il suo costo classico è dichiarato separatamente dalle interrogazioni della ricerca. La traccia con budget e questa verifica non costituiscono da sole una dimostrazione del costo asintotico dell’algoritmo generale."
+      ],
+      "definition": "fτ(x)=1 ⇔ valore(x)<τ; dopo un candidato verificato, τ←valore(x).",
+      "space": "La lista e la soglia sono dati classici. Gli insiemi marcati cambiano fra tentativi; le distribuzioni appartengono a preparazioni diverse. Il controllo finale è una scansione della lista, non una misura quantistica aggiuntiva.",
+      "bridge": "Le ricerche precedenti sfruttano interferenza in un piano. Fourier organizza invece le fasi di tutte le componenti per rendere leggibili periodicità e autovalori: sarà il secondo strumento del modulo.",
+      "pages": [
+        232
+      ]
+    },
+    {
+      "id": "fourier",
+      "title": "Sommare le fasi di Fourier",
+      "short": "Sommare le fasi di Fourier",
+      "part": 1,
+      "examples": [
+        "Stato |1⟩ su quattro elementi",
+        "Sovrapposizione periodica su otto elementi"
+      ],
+      "slideChapter": 11,
+      "intro": "La trasformata discreta di Fourier F_N agisce su N ampiezze complesse. Alla base |x⟩ associa una progressione di fasi lungo gli indici y=0,…,N−1; qui scegliamo sempre il segno positivo nell’esponente.",
+      "theory": [
+        "Definiamo ω=exp(2πi/N), una radice N-esima dell’unità, e (F_N)ᵧₓ=ω^(xy)/√N. Per un vettore v, l’uscita y è la somma degli N vettori ω^(xy)vₓ/√N nel piano complesso. L’inversa F_N† cambia il segno dell’esponente.",
+        "La cancellazione deriva dalla somma geometrica S=1+z+⋯+z^(N−1). Moltiplicando per z, tutti i termini intermedi si cancellano in S−zS=1−zᴺ. Per z≠1, S=(1−zᴺ)/(1−z); per z=1, S=N. Se zᴺ=1 e z≠1, la somma è zero.",
+        "Il prodotto interno fra le colonne x e x′ di F_N è (1/N)Σᵧω^((x′−x)y). Vale uno se x=x′ e zero altrimenti per la stessa identità: le colonne sono ortonormali, quindi F_N è unitaria. Una periodicità del vettore fa riapparire queste somme e concentra la probabilità su indici compatibili."
+      ],
+      "definition": "(F_Nv)ᵧ=(1/√N)Σₓexp(2πixy/N)vₓ; Σ(j=0,…,N−1) zʲ=0 se zᴺ=1 e z≠1.",
+      "space": "Il piano Re/Im mostra addendi e risultante di una singola ampiezza. x e y sono etichette discrete, non coordinate fisiche; le fasi sono angoli adimensionali. La trasformata non implica una misura: la misura successiva usa |(F_Nv)ᵧ|².",
+      "bridge": "Quando N=2ⁿ, la scrittura binaria separa la fase in n fattori. Questo permette di ricavare una rete di Hadamard e fasi controllate che realizza la stessa F_N.",
+      "pages": [
+        260
+      ]
+    },
+    {
+      "id": "qft",
+      "title": "Costruire il circuito QFT",
+      "short": "Costruire il circuito QFT",
+      "part": 1,
+      "examples": [
+        "QFT di |01⟩",
+        "QFT di |011⟩"
+      ],
+      "slideChapter": 12,
+      "intro": "La QFT è la trasformata F_(2ⁿ) realizzata su n qubit. Per costruirne il circuito partiamo dalla formula di Fourier e fattorizziamo lo stato in uscita usando i bit della parola, con il più significativo in alto.",
+      "theory": [
+        "Scriviamo x=Σ(j=0,…,n−1) xⱼ2^(n−1−j) e y=Σ(j=0,…,n−1) yⱼ2^(n−1−j). Allora exp(2πixy/2ⁿ)=∏ⱼexp(2πixyⱼ/2^(j+1)). La somma sui bit yⱼ si separa: F_(2ⁿ)|x⟩=⊗(j=0,…,n−1) [(|0⟩+exp(2πix/2^(j+1))|1⟩)/√2]. In ciascun fattore conta solo la parte frazionaria x/2^(j+1), perché i giri interi hanno fase uno.",
+        "Per due qubit x=2x₀+x₁, i fattori finali sono (|0⟩+e^(2πi·0.x₁)|1⟩)/√2 e (|0⟩+e^(2πi·0.x₀x₁)|1⟩)/√2, dove 0.x₀x₁=x₀/2+x₁/4. Per x=01 otteniamo (|0⟩−|1⟩)⊗(|0⟩+i|1⟩)/2=(|00⟩+i|01⟩−|10⟩−i|11⟩)/2.",
+        "La rete applica H a q₀: il suo |1⟩ acquista il segno (−1)^(x₀). Una P(π/2) su q₀ controllata da q₁ aggiunge i^(x₁), formando la fase 0.x₀x₁. Poi H su q₁ forma 0.x₁. Questi fattori sono nell’ordine opposto a quello dell’uscita Fourier, quindi uno SWAP finale li scambia.",
+        "In generale, dopo H sul filo qⱼ, il controllo qₖ con k>j aggiunge una fase π/2^(k−j) sul bersaglio qⱼ: per distanza uno è 90°, per distanza due 45°. Gli scambi finali invertono l’ordine dei fili. L’inversa percorre le porte nell’ordine opposto e cambia segno agli angoli. La fattorizzazione su |x⟩ dimostra la rete su tutta la base e dunque, per linearità, su ogni stato."
+      ],
+      "definition": "F_(2ⁿ)|x⟩=⊗(j=0,…,n−1) [(|0⟩+e^(2πix/2^(j+1))|1⟩)/√2]; q₀ è il bit più significativo.",
+      "space": "Il circuito usa fili logici big-endian e Fourier positiva. Le fasi binarie 0.x₀x₁… sono frazioni di giro; le porte riportano angoli in gradi. Gli scambi cambiano l’ordine dei fattori tensoriali, non il segno di Fourier.",
+      "bridge": "Le fasi controllate della QFT mostrano come un controllo coerente trasferisca informazione al registro di lettura. L’Hadamard test usa un solo controllo per leggere una componente di ⟨ψ|U|ψ⟩; QPE userà più controlli per stimare un’autofase.",
+      "pages": [
+        281
+      ]
+    },
+    {
+      "id": "hadamard-test",
+      "title": "Hadamard test",
+      "short": "Hadamard test",
+      "part": 1,
+      "examples": [
+        "Parte reale per P(90°)",
+        "Parte immaginaria per P(−90°)"
+      ],
+      "slideChapter": 13,
+      "intro": "Sia U una matrice unitaria sul registro bersaglio preparato nello stato normalizzato |ψ⟩. Il numero complesso z=⟨ψ|U|ψ⟩ confronta la preparazione con la sua trasformata; un qubit ausiliario permette di leggerne la parte reale o immaginaria.",
+      "theory": [
+        "Dopo H sull’ausiliario e U controllata, lo stato è (|0⟩|ψ⟩+|1⟩U|ψ⟩)/√2. Una seconda H produce nel ramo zero (|ψ⟩+U|ψ⟩)/2; la sua norma quadrata è (1+Re z)/2.",
+        "Per la parte immaginaria inseriamo S†=P(−π/2)=diag(1,−i) sull’ausiliario prima dell’ultima H. Il ramo zero diventa (|ψ⟩−iU|ψ⟩)/2 e la norma dà (1+Im z)/2. Il segno di S† è quindi parte del significato della misura.",
+        "Nei preset |ψ⟩=|+⟩ e U=P(φ). Allora z=(1+exp(iφ))/2. Il caso reale con φ=90° dà P(0)=3/4; quello immaginario con φ=−90° dà P(0)=1/4 e rende visibile il segno negativo della componente immaginaria. Per leggere l’ausiliario sommiamo sempre sui valori del bersaglio."
+      ],
+      "definition": "P(0)=[1+Re⟨ψ|U|ψ⟩]/2; con S† sull’ausiliario, P(0)=[1+Im⟨ψ|U|ψ⟩]/2.",
+      "space": "I piani complessi descrivono lo stato congiunto; le due barre marginali descrivono l’ausiliario letto. U è una trasformazione del bersaglio, mentre S† agisce sul controllo: sono porte con ruoli distinti.",
+      "bridge": "Se |ψ⟩ è autostato di U, il confronto contiene una sola fase e il bersaglio resta invariato a meno di quel fattore. Usando potenze controllate di U possiamo scrivere questa fase su più qubit e ricombinarla con Fourier inversa.",
+      "pages": [
+        303
+      ]
+    },
+    {
+      "id": "qpe-esatta",
+      "title": "Stima di fase esatta",
+      "short": "Stima di fase esatta",
+      "part": 1,
+      "examples": [
+        "Autofase 3/8",
+        "Sovrapposizione di autofasi 1/8 e 5/8"
+      ],
+      "slideChapter": 14,
+      "intro": "La stima di fase quantistica, QPE, riceve un’unitaria U e un suo autostato normalizzato |u⟩: U|u⟩=exp(2πiφ)|u⟩. L’autofase φ∈[0,1) è una frazione di giro, cioè un angolo 2πφ radianti; l’obiettivo è leggerne una rappresentazione binaria.",
+      "theory": [
+        "Il registro di lettura ha m qubit e Q=2ᵐ etichette. Prepariamo (1/√Q)Σₓ|x⟩|u⟩. In ordine big-endian il filo qⱼ ha peso 2^(m−1−j) e controlla U elevata a quella potenza: per m=3, dall’alto, U⁴,U²,U. Un ramo con etichetta x applica Uˣ e acquisisce exp(2πixφ), mentre il bersaglio rimane |u⟩.",
+        "Dopo Fourier inversa, l’ampiezza dell’esito c∈{0,…,Q−1} è aφ(c)=Q⁻¹Σₓexp(2πix(φ−c/Q)). Se φ=ℓ/Q per un intero ℓ, per c=ℓ tutti i termini valgono uno; per c≠ℓ la loro ragione z è una radice Q-esima diversa da uno. La somma geometrica di Fourier dà dunque aφ(c)=δc,ℓ. Per Q=8 e φ=3/8 la sola uscita è c=3, parola 011.",
+        "Per un bersaglio Σₛβₛ|uₛ⟩, gli |uₛ⟩ sono autostati ortonormali di U e βₛ sono ampiezze complesse con Σₛ|βₛ|²=1. Lo stato finale è Σc,s βₛaφₛ(c)|c⟩|uₛ⟩. La marginale somma probabilità di bersagli ortogonali: P(c)=Σₛ|βₛ|²|aφₛ(c)|². Le fasi dei βₛ restano invece nello stato condizionato.",
+        "Nei casi elementari si può scegliere U diagonale nella base |0⟩,|1⟩, assegnandone gli autovalori alle autofasi indicate. Lo stato preparato e i coefficienti βₛ sono esplicitati negli svolgimenti. Se P(c)=0 nel modello esatto, il ramo è impossibile e non ammette un bersaglio normalizzato."
+      ],
+      "definition": "aφ(c)=Q⁻¹Σ(x=0,…,Q−1) exp(2πix(φ−c/Q)); P(c)=Σₛ|βₛ|²|aφₛ(c)|²; Q=2ᵐ.",
+      "space": "Il registro di lettura contiene etichette intere c, interpretate come frazioni di giro c/Q. I poligoni nel piano Re/Im sommano le ampiezze di ciascun autostato separatamente; le barre della marginale sommano i loro moduli quadrati pesati.",
+      "bridge": "L’annullamento esatto richiede φ sulla griglia c/Q. Se la fase cade fra due punti della griglia, la stessa somma geometrica distribuisce la probabilità su più esiti e modifica il condizionamento del bersaglio.",
+      "pages": [
+        319
+      ]
+    },
+    {
+      "id": "qpe-approssimata",
+      "title": "Stima di fase a precisione finita",
+      "short": "Stima di fase a precisione finita",
+      "part": 1,
+      "examples": [
+        "Autofase 1/3 con tre bit",
+        "Due autostati con fasi 1/3 e 2/3"
+      ],
+      "slideChapter": 15,
+      "intro": "Manteniamo un’unitaria U con autostati ortonormali |uₛ⟩ e autofasi φₛ, ma queste frazioni di giro non sono rappresentabili esattamente con m bit. La lettura ha risoluzione 1/Q, dove Q=2ᵐ, e produce una distribuzione completa di stime c/Q.",
+      "theory": [
+        "Per un singolo autostato poniamo δ=φ−c/Q. Se δ non è intero, la somma geometrica dà aφ(c)=[1−exp(2πiQδ)]/[Q(1−exp(2πiδ))]. Passando ai moduli si ricava Pφ(c)=sin²(πQδ)/(Q²sin²(πδ)); per δ intero la somma originaria vale uno e si usa il limite. Gli esiti più vicini alla fase hanno in genere peso maggiore, ma la distribuzione non coincide con un arrotondamento deterministico.",
+        "Per il bersaglio Σₛβₛ|uₛ⟩ la marginale è P(c)=Σₛ|βₛ|²|aφₛ(c)|². Se P(c)>0, il bersaglio condizionato è Σₛβₛaφₛ(c)|uₛ⟩/√P(c). Più coefficienti possono restare non nulli: osservare c non seleziona necessariamente un singolo autostato.",
+        "La scelta di un esito nel laboratorio analizza quel ramo e non estrae una misura casuale. Il denominatore P(c) va verificato prima di normalizzare; uno zero teorico può apparire come un piccolo residuo numerico. Le fasi dei coefficienti complessi contano nel bersaglio, anche quando spariscono dalla marginale."
+      ],
+      "definition": "Pφ(c)=sin²(πQδ)/(Q²sin²(πδ)), δ=φ−c/Q; |ψc⟩=Σₛβₛaφₛ(c)|uₛ⟩/√P(c) se P(c)>0.",
+      "space": "Le barre hanno ascissa c e ordinata P(c); c/Q è una fase modulo un giro. I piani complessi dei diversi autostati vanno letti separatamente. Il bersaglio condizionato è uno stato coerente, mentre il registro non condizionato può avere una descrizione ridotta mista.",
+      "bridge": "QPE stima le autofasi di qualunque unitaria di cui sappiamo costruire le potenze controllate. L’iterazione di Grover ha autofasi legate all’angolo θ: ricavandole possiamo risalire al numero dei marcati.",
+      "pages": [
+        350
+      ]
+    },
+    {
+      "id": "conteggio",
+      "title": "Conteggio quantistico",
+      "short": "Conteggio quantistico",
+      "part": 1,
+      "examples": [
+        "Due soluzioni fra otto",
+        "Una soluzione fra otto"
+      ],
+      "slideChapter": 16,
+      "advanced": true,
+      "intro": "Per N etichette e M soluzioni, Grover ha preparazione |s⟩=cosθ|b⟩+sinθ|g⟩ con sin²θ=M/N. Il conteggio quantistico applica QPE all’unitaria Q_G=DO per stimare θ e quindi M.",
+      "theory": [
+        "Nella base (b,g), Q_G=[[cos2θ,−sin2θ],[sin2θ,cos2θ]]. Moltiplicando questa matrice per u₊=(b−ig)/√2 e u₋=(b+ig)/√2 si ottengono gli autovalori exp(+2iθ) ed exp(−2iθ). Le autofasi, espresse in giri, sono φ₊=θ/π e φ₋=1−θ/π.",
+        "La preparazione si decompone come |s⟩=exp(iθ)|u₊⟩/√2+exp(−iθ)|u₋⟩/√2. I due pesi sono quindi entrambi 1/2, mentre le ampiezze hanno fasi opposte. Per N=8,M=2, θ=π/6: le autofasi sono 1/6 e 5/6. La distribuzione QPE è la media delle due distribuzioni, e conserva entrambe le famiglie di picchi.",
+        "Dato un esito c su un registro di m qubit, con Q=2ᵐ qui inteso come dimensione della lettura, la stima è M̂=Nsin²(πc/Q). Le fasi coniugate producono lo stesso valore. A precisione finita M̂ può essere non intero e ogni ramo mantiene la propria probabilità.",
+        "Questa lezione usa un modello spettrale: il valore noto p=M/N costruisce θ, le due autofasi e la distribuzione. Gli svolgimenti dimostrano il legame con Q_G, ma non eseguono una rete controllata derivata da un oracolo ignoto. Il valore esatto serve sia a generare l’istanza sia a confrontare le stime."
+      ],
+      "definition": "Q_Gu±=e^(±2iθ)u±; β±=e^(±iθ)/√2; M̂(c)=Nsin²(πc/Q).",
+      "space": "Il piano (b,g) mostra ampiezze collettive reali della ricerca; gli autostati u± sono vettori complessi dello stesso sottospazio. Le barre mostrano la marginale QPE; c/Q è una frazione di giro, M̂ un conteggio stimato senza unità fisiche.",
+      "bridge": "Il calcolo dello spettro dipende dalle proiezioni della preparazione, non dalla sua uniformità. Sostituendo |s⟩ con A|0⟩ otteniamo una stima della probabilità buona p invece che del solo rapporto M/N.",
+      "pages": [
+        378
+      ]
+    },
+    {
+      "id": "stima-ampiezze",
+      "title": "Stimare una probabilità",
+      "short": "Stimare una probabilità",
+      "part": 1,
+      "examples": [
+        "Probabilità 1/4",
+        "Probabilità 1/10"
+      ],
+      "slideChapter": 17,
+      "advanced": true,
+      "intro": "Sia |a⟩=A|0⟩ una preparazione e ΠG il proiettore sull’esito considerato buono. Vogliamo stimare p=⟨a|ΠG|a⟩ attraverso le autofasi dell’operatore di amplificazione Q_A=(2|a⟩⟨a|−I)(I−2ΠG).",
+      "theory": [
+        "Per 0<p<1 definiamo |g⟩=ΠG|a⟩/√p e |b⟩=(I−ΠG)|a⟩/√(1−p). Ponendo sin²θ=p, nel piano (b,g) Q_A è la rotazione di 2θ già ricavata. Gli autostati (b∓ig)/√2 hanno autofasi ±θ/π modulo uno e la preparazione ha coefficienti e^(±iθ)/√2.",
+        "QPE su m qubit produce c con la somma pesata dei due rami spettrali. Con Q=2ᵐ, trasformiamo ciascun esito in p̂(c)=sin²(πc/Q). La probabilità p è un numero fra zero e uno: non è l’ampiezza √p né l’angolo θ. Le due autofasi coniugate restituiscono la stessa stima.",
+        "Anche qui il simulatore è un modello spettrale con p noto, da cui vengono costruiti θ e i rami QPE; non costruisce un circuito controllato di Q_A a partire da A e dall’oracolo. La distribuzione illustra la risoluzione della stima e il condizionamento coerente. Una procedura operativa dovrebbe ricevere A e ΠG, realizzarne le riflessioni e le potenze controllate senza ricevere p."
+      ],
+      "definition": "p=sin²θ; φ±=±θ/π mod 1; p̂(c)=sin²(πc/Q), Q=2ᵐ.",
+      "space": "Gli assi b,g sono proiezioni normalizzate della preparazione, comprensive delle sue fasi. La distribuzione è su etichette c; la mappa c/Q→p̂ converte una fase in probabilità e non in una posizione fisica.",
+      "bridge": "Fourier e QPE forniscono una lettura di fasi; per usarle su un problema aritmetico servono trasformazioni unitarie definite sugli interi modulari. Introduciamo prima gli strumenti classici per costruirle e verificarne gli esiti.",
+      "pages": [
+        399
+      ]
+    },
+    {
+      "id": "aritmetica",
+      "title": "Euclide, inversi e potenze modulari",
+      "short": "Euclide, inversi e potenze modulari",
+      "part": 2,
+      "examples": [
+        "Inverso di 7 modulo 40",
+        "Inverso di 5 modulo 12"
+      ],
+      "slideChapter": 18,
+      "intro": "L’aritmetica modulare identifica interi che hanno lo stesso resto nella divisione per un intero N≥2. Serve sia a costruire le operazioni reversibili sia a controllare classicamente le risposte degli algoritmi quantistici.",
+      "theory": [
+        "Scriviamo a≡b mod N quando N divide a−b, e scegliamo come residui le etichette 0,…,N−1. Il massimo comune divisore gcd(a,N) è il maggiore intero positivo che divide entrambi; a e N sono coprimi se gcd(a,N)=1. Euclide ripete divisioni rₖ₋₁=qₖrₖ+rₖ₊₁ finché il resto diventa zero: l’ultimo resto non nullo è il gcd.",
+        "L’algoritmo esteso mantiene ogni resto come combinazione lineare di a e N. Alla fine fornisce interi s,t con as+Nt=gcd(a,N), l’identità di Bézout. Se il gcd è uno, ridurre questa uguaglianza modulo N dà as≡1: s mod N è l’inverso moltiplicativo a⁻¹. Se il gcd non è uno, tale inverso non esiste.",
+        "Per una potenza aᵉ, scriviamo l’esponente non negativo e=Σⱼeⱼ2ʲ. Si formano a,a²,a⁴,… tramite quadrati successivi e si moltiplicano soltanto le potenze con eⱼ=1, riducendo modulo N a ogni passo. Il lavoro cresce con il numero di bit dell’esponente; non occorre formare prima l’enorme intero aᵉ."
+      ],
+      "definition": "as+Nt=gcd(a,N); a⁻¹=s mod N se gcd(a,N)=1; aᵉ≡∏ⱼ(a^(2^j))^(eⱼ) mod N.",
+      "space": "Le tabelle contengono interi esatti: quozienti, resti, coefficienti e bit. Le riduzioni modulari sono operazioni su etichette discrete, non riduzioni della norma di uno stato quantistico.",
+      "bridge": "L’inverso modulare permette di costruire la coppia di esponenti RSA. La fattorizzazione del modulo fornisce il numero rispetto al quale calcolare quell’inverso.",
+      "pages": [
+        421
+      ]
+    },
+    {
+      "id": "rsa",
+      "title": "RSA e recupero della chiave dai fattori",
+      "short": "RSA e recupero della chiave dai fattori",
+      "part": 2,
+      "examples": [
+        "N=55, e=3, messaggio 7",
+        "N=55, e=3, messaggio 5"
+      ],
+      "slideChapter": 19,
+      "intro": "RSA usa un modulo N=pq con p e q primi distinti. La chiave pubblica contiene N e un esponente e; conoscere i fattori permette di ricavare un esponente privato d. Usiamo interi piccoli per rendere visibile ogni passaggio.",
+      "theory": [
+        "Definiamo λ(N)=mcm(p−1,q−1), il minimo comune multiplo dei due numeri. Scegliamo e coprimo con λ(N) e calcoliamo d=e⁻¹ mod λ(N) mediante Euclide esteso. Per un messaggio intero 0≤m<N la primitiva cifra c=mᵉ mod N e decifra cᵈ mod N.",
+        "La correttezza si verifica separatamente modulo i primi. Il piccolo teorema di Fermat dice che m^(p−1)≡1 mod p quando m non è divisibile per p. Poiché ed−1 è multiplo di p−1, allora m^(ed)≡m mod p. Se m è divisibile per p, entrambi i membri sono zero; lo stesso ragionamento vale per q. Il teorema cinese del resto, CRT, garantisce un unico residuo modulo pq compatibile con i due risultati.",
+        "Negli esempi p=5,q=11,N=55, λ(N)=20, e=3 e d=7 perché 3·7=1+20. I messaggi 7 e 5 distinguono il caso coprimo dal caso divisibile per un primo. La ricomposizione CRT mostrata verifica la correttezza dai residui ottenuti; non è una distinta implementazione ottimizzata della decifratura.",
+        "Il collegamento è fattori → λ(N) → d → decifratura. Non assumiamo l’equivalenza generale fra inversione di RSA e fattorizzazione. Si studia la primitiva su interi, senza le codifiche OAEP o PSS di schemi completi; gli esempi Shor successivi usano N=15 e 21 e illustrano separatamente il passaggio della fattorizzazione."
+      ],
+      "definition": "λ(pq)=mcm(p−1,q−1); ed≡1 mod λ(N); c=mᵉ mod N; cᵈ≡m mod N.",
+      "space": "Messaggi, cifrati, esponenti e residui sono interi. Le tabelle mostrano divisioni e congruenze, senza ampiezze o probabilità. Le dimensioni ridotte servono al calcolo didattico e non rappresentano parametri di sicurezza.",
+      "bridge": "Per recuperare i fattori attraverso Shor cerchiamo una periodicità delle potenze modulari. Il passo classico seguente spiega quando conoscere l’ordine di a basta a ricavare divisori di N.",
+      "pages": [
+        445
+      ]
+    },
+    {
+      "id": "ordine-fattori",
+      "title": "Dall’ordine ai fattori",
+      "short": "Dall’ordine ai fattori",
+      "part": 2,
+      "examples": [
+        "N=15, a=2",
+        "N=21, a=5: tentativo non utile"
+      ],
+      "slideChapter": 20,
+      "intro": "Per un intero a coprimo con N, l’ordine r è il più piccolo intero positivo con aʳ≡1 mod N. Le potenze 1,a,a²,… formano un ciclo; da un ordine pari possiamo tentare di estrarre fattori di N.",
+      "theory": [
+        "Se r è pari, poniamo t=a^(r/2) mod N. Allora t²≡1 mod N e (t−1)(t+1) è divisibile per N. Se t non è congruo a ±1, i gcd di t−1 e t+1 con N forniscono divisori non banali, da verificare dividendo N.",
+        "Per un ordine minimo pari, t=1 è escluso perché produrrebbe un ritorno anticipato; t=−1 può invece verificarsi e rende il tentativo infruttuoso. Se si dispone soltanto di un periodo R verificato ma non minimo, si controllano entrambe le possibilità ±1. Un ordine dispari non consente di formare la potenza intera r/2 richiesta.",
+        "Prima di cercare l’ordine si calcola gcd(a,N): se è strettamente fra uno e N abbiamo già un fattore classico. Gli esempi qui enumerano l’orbita per spiegare l’implicazione ordine→fattori; questa enumerazione non costituisce il metodo quantistico per trovare un ordine ignoto."
+      ],
+      "definition": "r=min{k≥1:aᵏ≡1 mod N}; t=a^(r/2) mod N; fattori candidati gcd(t−1,N), gcd(t+1,N).",
+      "space": "I nodi dell’orbita sono residui modulari distinti fino al primo ritorno a uno. La loro disposizione circolare indica l’ordine delle transizioni; angoli e distanze nel disegno non rappresentano fasi quantistiche.",
+      "bridge": "Il circuito che stimerà l’ordine deve applicare moltiplicazioni modulari in sovrapposizione. Partiamo dalla somma reversibile, conservando ingressi e riporti per poter ripulire il lavoro.",
+      "pages": [
+        475
+      ]
+    },
+    {
+      "id": "somma",
+      "title": "Sommare conservando i riporti",
+      "short": "Sommare conservando i riporti",
+      "part": 2,
+      "examples": [
+        "Somma 3+2 su tre bit",
+        "Somma 5+5 su tre bit, con trabocco"
+      ],
+      "slideChapter": 21,
+      "intro": "Un sommatore reversibile conserva gli addendi e scrive il risultato in un registro inizialmente nullo. I riporti intermedi sono informazione di lavoro: dopo aver copiato il risultato occorre cancellarli invertendo il calcolo.",
+      "theory": [
+        "Nelle formule indichiamo con aᵢ e bᵢ i bit di peso 2ⁱ, quindi i=0 è il meno significativo. Il riporto in ingresso è cᵢ, con c₀=0. La somma nella colonna è sᵢ=aᵢ⊕bᵢ⊕cᵢ; il riporto successivo vale uno quando almeno due dei tre bit valgono uno.",
+        "La maggioranza si scrive cᵢ₊₁=aᵢbᵢ⊕aᵢcᵢ⊕bᵢcᵢ. Tre Toffoli aggiungono con XOR i tre prodotti a un’ancilla nulla. Tre CNOT copiano la parità nel bit sᵢ. Una volta scritti tutti i bit di somma, l’inversa delle Toffoli cancella i riporti usando gli addendi conservati.",
+        "La rete mostrata conserva la somma modulo 2ⁿ. Se A+B≥2ⁿ, il riporto finale segnala il trabocco durante il calcolo ma viene ripulito; per conservarlo come uscita bisogna copiarlo in un altro bit prima dell’inversione. La relazione intera rimane A+B=S+2ⁿcₙ."
+      ],
+      "definition": "cᵢ₊₁=aᵢbᵢ⊕aᵢcᵢ⊕bᵢcᵢ; sᵢ=aᵢ⊕bᵢ⊕cᵢ; S=(A+B) mod 2ⁿ.",
+      "space": "I bit nelle formule del riporto sono numerati dal meno significativo; le etichette dei registri esplicitano questa convenzione locale. Ogni riga della rete è una parola di base dopo una porta; la linearità estende la stessa rete alle sovrapposizioni.",
+      "bridge": "La somma modulo 2ⁿ non basta per un modulo generico N. Una moltiplicazione modulare accumula contributi controllati e deve ridurre modulo N; distinguiamo questa costruzione aritmetica dalla rete di verifica usata sui piccoli registri.",
+      "pages": [
+        494
+      ]
+    },
+    {
+      "id": "moltiplicazione",
+      "title": "Moltiplicare ed esponenziare modulo N",
+      "short": "Moltiplicare ed esponenziare modulo N",
+      "part": 2,
+      "examples": [
+        "2·7 modulo 15",
+        "5·8 modulo 21"
+      ],
+      "slideChapter": 22,
+      "intro": "Per x=Σⱼxⱼ2ʲ, il prodotto ax modulo N si ottiene sommando i contributi xⱼ(a·2ʲ mod N). Quando gcd(a,N)=1, la moltiplicazione per a permuta i residui e può quindi essere realizzata da un’unitaria.",
+      "theory": [
+        "Una costruzione aritmetica accumula una costante k=a·2ʲ mod N soltanto se xⱼ=1. Se accumulatore e k sono fra 0 e N−1, la somma è minore di 2N: basta confrontarla con N e sottrarre N quando necessario. Per rendere reversibile il blocco occorrono un flag del confronto, registri per somma e sottrazione e un ripristino coerente dei flag; il solo comando classico “mod N” non specifica queste porte.",
+        "Nei piccoli esempi il calcolo dell’accumulatore mostra i risultati aritmetici. La rete effettivamente eseguita è una costruzione alternativa: sintetizza mediante mintermini la tabella della permutazione P(y)=ay mod N per y<N e P(y)=y sulle parole N≤y<2ⁿ, con n=⌈log₂N⌉. Il costo di questa sintesi cresce esponenzialmente e non rappresenta un moltiplicatore scalabile ottenuto dal sommatore precedente.",
+        "L’inverso è P⁻¹(y)=a⁻¹y mod N nel dominio valido. Un oracolo XOR scrive P(x) in un registro nullo; dopo uno scambio, l’oracolo inverso cancella il vecchio ingresso: |x,0⟩→|x,P(x)⟩→|P(x),x⟩→|P(x),0⟩. Gli ausiliari sono verificati su tutta la base ammessa, anche con controllo esterno zero o uno.",
+        "Per esponenziare aˣ, il bit xⱼ controlla invece una moltiplicazione per a^(2^j) mod N. Queste costanti si ottengono per quadrati successivi senza conoscere l’ordine. Vanno distinte da a·2ʲ mod N, che erano gli addendi del prodotto ax."
+      ],
+      "definition": "ax mod N=Σⱼxⱼ(a·2ʲ mod N) mod N; aˣ mod N=∏ⱼ(a^(2^j) mod N)^(xⱼ) mod N.",
+      "space": "Le etichette del registro rappresentano residui o parole fuori dominio lasciate fisse. Le tabelle dell’accumulatore sono calcoli classici; le tracce elementari verificano la permutazione reversibile e il ritorno a zero degli ausiliari.",
+      "bridge": "La moltiplicazione per a è ora un’unitaria U_a definita senza ricevere l’ordine. Per capire che cosa QPE ne leggerà, analizziamo gli autostati sul ciclo che parte dal residuo uno.",
+      "pages": [
+        550
+      ]
+    },
+    {
+      "id": "autostati",
+      "title": "Autostati della moltiplicazione modulare",
+      "short": "Autostati della moltiplicazione modulare",
+      "part": 2,
+      "examples": [
+        "Orbita di 2 modulo 15",
+        "Orbita di 2 modulo 21"
+      ],
+      "slideChapter": 23,
+      "intro": "Sia U_a|y⟩=|ay mod N⟩ sui residui validi, estesa con identità fuori dominio, e sia gcd(a,N)=1. L’orbita di |1⟩ ha lunghezza r, l’ordine di a. Qui analizziamo il suo spettro; nell’esecuzione di Shor r non viene fornito al circuito.",
+      "theory": [
+        "Per s=0,…,r−1 definiamo |uₛ⟩=(1/√r)Σ(k=0,…,r−1) exp(−2πisk/r)|aᵏ mod N⟩. Il segno negativo nei coefficienti è scelto perché U_a sposta k in k+1. Sostituendo j=k+1 modulo r, il coefficiente diventa exp(−2πis(j−1)/r)=exp(2πis/r)exp(−2πisj/r): dunque U_a|uₛ⟩=exp(2πis/r)|uₛ⟩.",
+        "I residui dell’orbita sono distinti prima del ritorno, perciò ⟨uₛ|uₜ⟩=(1/r)Σₖexp(2πi(s−t)k/r). La somma geometrica vale uno per s=t e zero per s≠t: in quest’ultimo caso la ragione è una radice r-esima diversa da uno. Gli autostati costituiscono una base ortonormale del sottospazio dell’orbita.",
+        "Sommando gli autostati con coefficiente 1/√r, il coefficiente di |aᵏ⟩ è (1/r)Σₛexp(−2πisk/r): vale uno per k=0 e zero altrimenti. Ne segue |1⟩=Σₛ|uₛ⟩/√r. La preparazione operativa |1⟩ contiene quindi tutte le autofasi s/r con peso 1/r, senza dover costruire separatamente gli autostati."
+      ],
+      "definition": "|uₛ⟩=(1/√r)Σₖexp(−2πisk/r)|aᵏ mod N⟩; U_a|uₛ⟩=e^(2πis/r)|uₛ⟩; |1⟩=Σₛ|uₛ⟩/√r.",
+      "space": "L’orbita dispone residui discreti su un ciclo. Il piano complesso dei coefficienti descrive invece vere fasi di ampiezza; l’angolo geometrico di un nodo nel disegno dell’orbita non è la sua autofase. Gli autostati vivono nello spazio del registro dati.",
+      "bridge": "QPE applicata a |1⟩ fornirà approssimazioni di s/r. Il denominatore letto può essere ridotto quando s e r hanno un divisore comune: le frazioni continue generano candidati che devono essere verificati con aritmetica modulare.",
+      "pages": [
+        611
+      ]
+    },
+    {
+      "id": "frazioni-continue",
+      "title": "Ricostruire un denominatore",
+      "short": "Ricostruire un denominatore",
+      "part": 2,
+      "examples": [
+        "85/512 per N=21",
+        "171/512: denominatore parziale"
+      ],
+      "slideChapter": 24,
+      "intro": "Una lettura di fase c su Q=2ᵐ etichette suggerisce il rapporto c/Q≈s/r. Le frazioni continue costruiscono approssimazioni razionali dette convergenti; ciascun loro denominatore è soltanto un candidato da controllare.",
+      "theory": [
+        "Le divisioni euclidee di c e Q producono i quozienti parziali a₀,a₁,… della frazione continua. Poniamo p₋₂=0,p₋₁=1 e q₋₂=1,q₋₁=0. Le ricorrenze pⱼ=aⱼpⱼ₋₁+pⱼ₋₂ e qⱼ=aⱼqⱼ₋₁+qⱼ₋₂ danno il convergente pⱼ/qⱼ senza arrotondamenti.",
+        "Se s/r è ridotta e |c/Q−s/r|<1/(2r²), allora s/r compare fra i convergenti. La condizione è sufficiente, non una garanzia per ogni misura. Se gcd(s,r)>1, la frazione ridotta ha denominatore r/gcd(s,r), che può non essere un periodo di a.",
+        "Per ogni candidato R controlliamo aᴿ mod N. Il risultato uno verifica un periodo, quindi un multiplo dell’ordine; non dimostra da solo che R sia minimo. L’estrazione dei fattori richiede poi R pari, t=a^(R/2) diverso da ±1 e gcd non banali. Per N=21,a=2, il convergente 1/3 suggerito da 171/512 fallisce perché 2³≡8; 1/6 suggerito da 85/512 passa perché 2⁶≡1.",
+        "La sezione analizza rapporti assegnati. Nelle lezioni Shor il post-processing viene collegato soltanto a esiti di probabilità non nulla del circuito. Un rapporto formalmente vicino a s/r non certifica che una misura possa produrlo."
+      ],
+      "definition": "pⱼ=aⱼpⱼ₋₁+pⱼ₋₂; qⱼ=aⱼqⱼ₋₁+qⱼ₋₂; R candidato → verifica aᴿ≡1 mod N.",
+      "space": "Rapporti e convergenti sono numeri razionali esatti; gli errori assoluti hanno unità di frazione di giro. La tabella separa approssimazione razionale, periodo verificato e fattori utili.",
+      "bridge": "Abbiamo ora i tre passaggi di un tentativo Shor: esponenziazione modulare da N e a, lettura di fase e verifica dei convergenti. Li eseguiamo insieme iniziando da un modulo il cui ordine divide la griglia di lettura.",
+      "pages": [
+        635
+      ]
+    },
+    {
+      "id": "shor-15",
+      "title": "Shor completo: fattorizzare 15",
+      "short": "Shor completo: fattorizzare 15",
+      "part": 3,
+      "examples": [
+        "Base a=2",
+        "Base a=7"
+      ],
+      "slideChapter": 25,
+      "intro": "Costruiamo un tentativo completo di Shor per N=15, con base a=2 oppure a=7. Il circuito riceve N, a e la precisione m=8; l’ordine è un risultato da ricostruire e non un ingresso della simulazione.",
+      "theory": [
+        "Il registro di lettura ha Q=2ᵐ=256 etichette, con Q≥N²; il registro dati ha n=⌈log₂N⌉=4 qubit e parte da |1⟩. Le Hadamard preparano Σₓ|x⟩|1⟩/√Q. Le moltiplicazioni per a^(2^j) mod N, controllate dal bit di peso 2ʲ, producono Σₓ|x⟩|aˣ mod N⟩/√Q. Le costanti sono calcolate per quadrati successivi.",
+        "Fourier inversa sul registro di lettura dà ampiezza A(c,y)=Q⁻¹Σₓ:aˣ mod N=y exp(−2πicx/Q). Per leggere soltanto c sommiamo |A(c,y)|² sui valori ortogonali y del bersaglio. Se P(c)>0, il bersaglio condizionato ha coefficienti A(c,y)/√P(c); per P(c)=0 il ramo è impossibile.",
+        "Le frazioni continue di c/Q e i test modulari ricostruiscono un periodo candidato, poi i gcd estraggono divisori da verificare. La spiegazione in autostati mostra perché emergono rapporti s/r, ma la distribuzione operativa è costruita dalle potenze modulari effettive a partire da |1⟩.",
+        "“Completo” significa un tentativo sull’istanza scelta, inclusa la sua verifica classica. La selezione manuale di c analizza un ramo senza campionarlo; il programma non ripete automaticamente basi e misure fino al successo. Le reti elementari per mintermini verificano piccoli registri con costo esponenziale e non sono l’aritmetica scalabile di Shor."
+      ],
+      "definition": "|Ψ⟩=(1/√Q)Σₓ|x⟩|aˣ mod N⟩; P(c)=Σᵧ|A(c,y)|²; A(c,y)=Q⁻¹Σₓ:aˣ mod N=y e^(−2πicx/Q).",
+      "space": "Lo stato congiunto contiene Q·2ⁿ ampiezze. Le barre mostrano la marginale della lettura, l’indice c è un intero big-endian e c/Q una frazione di giro. I residui y sono etichette del registro dati; le loro probabilità si sommano senza interferenza reciproca.",
+      "bridge": "Per N=15 gli ordini dei preset dividono Q e la somma geometrica dà picchi esatti. Con N=21 incontriamo un ordine che non divide una potenza di due: la lettura si distribuisce e il post-processing può fallire anche su un esito possibile.",
+      "pages": [
+        666
+      ]
+    },
+    {
+      "id": "shor-21",
+      "title": "Shor completo: fattorizzare 21",
+      "short": "Shor completo: fattorizzare 21",
+      "part": 3,
+      "examples": [
+        "Base a=2",
+        "Base a=5"
+      ],
+      "slideChapter": 26,
+      "intro": "Ripetiamo il tentativo completo per N=21 con a=2 oppure a=5, precisione m=9 e Q=512≥21². In questi esempi l’ordine non divide Q: i picchi hanno larghezza finita e la lettura non restituisce esattamente ogni frazione s/r.",
+      "theory": [
+        "La preparazione e l’esponenziazione sono le stesse di Shor per 15, con n=⌈log₂21⌉=5 qubit dati. Il simulatore costruisce aˣ mod 21 dai bit dell’esponente e dalle costanti a^(2^j) mod 21, senza ricevere r. Fourier inversa viene applicata alle ampiezze congiunte e la marginale si ottiene sommando sui residui bersaglio.",
+        "Per a=2, l’analisi successiva verifica r=6. L’esito 85 dà 85/512≈1/6 e il denominatore 6 supera il test 2⁶≡1 mod 21. L’esito 171 suggerisce 1/3, ma 2³≡8: il denominatore parziale non è un periodo e va rifiutato. Un nuovo esito può fornire l’informazione mancante.",
+        "Per a=5, anche un ordine corretto può essere inutile ai fattori: r=6 dà 5³≡20≡−1 mod 21. I gcd producono soltanto divisori banali e occorre una nuova base. Sono tre controlli distinti: esito possibile, periodo verificato, fattorizzazione riuscita.",
+        "La distribuzione completa resta esposta mentre un esito selezionato determina i calcoli del ramo. La rete elementare rimane una verifica per piccoli registri a costo esponenziale; il tentativo non include una scelta automatica delle basi o una ripetizione fino al successo."
+      ],
+      "definition": "P(c)=Σᵧ|Q⁻¹Σₓ:aˣ mod N=y e^(−2πicx/Q)|²; c/Q → convergenti → periodo verificato → gcd.",
+      "space": "Il grafico mostra una distribuzione discreta a risoluzione 1/512 di giro. La larghezza dei picchi nasce dalla griglia finita, non da rumore aggiunto. I rami del bersaglio conservano ampiezze complesse anche dopo il condizionamento.",
+      "bridge": "Shor usa una periodicità di un solo esponente. Il logaritmo discreto nasconde invece una relazione fra due esponenti: una Fourier su ciascun registro trasforma questa relazione in congruenze classiche.",
+      "pages": [
+        689
+      ]
+    },
+    {
+      "id": "logaritmo",
+      "title": "Logaritmo discreto",
+      "short": "Logaritmo discreto",
+      "part": 3,
+      "examples": [
+        "Gruppo modulo 5, ordine 4",
+        "Gruppo modulo 7, ordine 6"
+      ],
+      "slideChapter": 29,
+      "intro": "In un gruppo moltiplicativo ciclico, g è un generatore di ordine r e h è un elemento noto della forma h=gᵈ. Il logaritmo discreto consiste nel ricostruire l’esponente d modulo r; gli esempi usano residui non nulli modulo un primo.",
+      "theory": [
+        "Prepariamo uniformemente a,b∈{0,…,r−1} e calcoliamo f(a,b)=gᵃh⁻ᵇ. Poiché h=gᵈ, vale f(a,b)=g^(a−db). Condizionare su un valore del registro funzione seleziona una classe a−db=t mod r, ossia le coppie (t+db,b) per tutti i b.",
+        "Applicando Fourier positiva a entrambi i registri, l’ampiezza dell’uscita (u,v) contiene la somma Σᵦexp(2πi[u(t+db)+vb]/r)=exp(2πiut/r)Σᵦexp(2πib(du+v)/r). Per la somma geometrica questa è nulla salvo du+v≡0 mod r. Una misura fornisce quindi una congruenza lineare sull’incognita d.",
+        "Se gcd(u,r)=1, l’inverso di u dà d≡−vu⁻¹ mod r. Se q=gcd(u,r)>1, esistono soluzioni solo quando q divide v; dividendo la congruenza per q si ottiene d modulo r/q e restano q candidati modulo r. Altre coppie ammesse o la verifica gᵈ=h permettono di selezionare il candidato corretto. Le coppie degli svolgimenti sono scelte per mostrare questi calcoli.",
+        "Il primo esempio usa r=4 e una Fourier binaria; il secondo usa r=6, con preparazione uniforme su sei livelli e F₆ astratta. Non viene fornita una sintesi binaria di questa trasformata né una rete reversibile completa dell’oracolo: la distribuzione è calcolata direttamente sulle classi della funzione."
+      ],
+      "definition": "du+v≡0 mod r; se gcd(u,r)=1, d≡−vu⁻¹ mod r; verificare gᵈ=h.",
+      "space": "Il reticolo rappresenta coppie di residui (a,b) oppure (u,v); le distanze geometriche non hanno significato fisico. La distribuzione vive su r² etichette e Fourier somma fasi nello spazio delle ampiezze.",
+      "bridge": "La costruzione conclude il percorso: una struttura classica definisce l’oracolo, l’interferenza la traduce in probabilità e la verifica aritmetica decide quali letture risolvono il problema. Le astrazioni dichiarate distinguono il principio dell’algoritmo dalla sintesi delle sue risorse.",
+      "pages": [
+        756
+      ]
+    }
+  ]
+}

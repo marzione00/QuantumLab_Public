@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "checks": 34890,
+  "scope": [
+    "phase: analytic cosine reference",
+    "Grover: all subsets N=4,8 and 0..16 reflections",
+    "superdense: all 4 messages and no-signalling marginals",
+    "repetition code: angles, phases, single/double X and Z",
+    "RSA: all 55 messages with coprime domain handling",
+    "BB84: reproducibility, sifting, sampling, noise and intercept-resend statistics",
+    "invalid inputs"
+  ],
+  "notClaimed": [
+    "full QKD security",
+    "hardware performance",
+    "formal proof"
+  ]
+}

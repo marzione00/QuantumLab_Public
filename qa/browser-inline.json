@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "checks": 311,
+  "activitiesMounted": 87,
+  "legacyActivities": 81,
+  "nativeActivities": 6,
+  "browser": "144.0.7559.96",
+  "viewportWidths": [
+    1920,
+    1600,
+    1440,
+    1200,
+    1199,
+    1024,
+    720,
+    390,
+    320
+  ],
+  "serving": "Monofile generated from the same build, Chromium set_content with actual inline-hash CSP. HTTP navigation blocked by environment policy; network serving, lazy loading and persistence reload not tested here.",
+  "projectSubpath": null,
+  "animation": [
+    "running desktop",
+    "static halts draw",
+    "off hides",
+    "preference selection",
+    "prefers-reduced-motion respected",
+    "no animation below 1200px",
+    "modal escape + focus return"
+  ],
+  "uncaughtErrors": [],
+  "missingAssets": [],
+  "consoleErrors": [],
+  "externalAutomaticRequests": [],
+  "notClaimed": [
+    "GitHub account deployment",
+    "WCAG certification",
+    "learning outcomes",
+    "remote parent site availability"
+  ]
+}

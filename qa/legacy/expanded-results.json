@@ -1,0 +1,50 @@
+{
+  "result": "PASS",
+  "cases": 282,
+  "timings": [
+    {
+      "model": "free",
+      "n": 1000,
+      "milliseconds": 41,
+      "returnRms": 2.3711077490591926e-12
+    },
+    {
+      "model": "free",
+      "n": 5000,
+      "milliseconds": 86,
+      "returnRms": 2.269145417775256e-12
+    },
+    {
+      "model": "free",
+      "n": 10000,
+      "milliseconds": 164,
+      "returnRms": 2.256569225392041e-12
+    },
+    {
+      "model": "hard-disks",
+      "n": 1000,
+      "milliseconds": 39,
+      "collisions": 376,
+      "returnRms": 2.8657949940489975e-10
+    },
+    {
+      "model": "hard-disks",
+      "n": 5000,
+      "milliseconds": 197,
+      "collisions": 1954,
+      "returnRms": 0.000013635337216363364
+    },
+    {
+      "model": "hard-disks",
+      "n": 10000,
+      "milliseconds": 649,
+      "collisions": 3882,
+      "returnRms": 0.0000405068504619634
+    }
+  ],
+  "oneMillionScreenDraws": {
+    "total": 1000000,
+    "totalVariation": 0.008393784872696394
+  },
+  "scope": "Numerical models. Does not replace interactive browser testing."
+}

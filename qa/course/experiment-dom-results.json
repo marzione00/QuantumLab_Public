@@ -1,7 +1,0 @@
-{
-  "status": "PASS",
-  "checks": 284,
-  "sections": 39,
-  "exports": 39,
-  "scope": "React events and MathML/SVG DOM under jsdom; no CSS or browser layout validation."
-}

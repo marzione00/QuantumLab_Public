@@ -1,0 +1,6 @@
+{
+  "status": "NOT_EXECUTED",
+  "reason": "Chromium navigation to local HTTP returned ERR_BLOCKED_BY_ADMINISTRATOR before loading. No browser policy was changed. The full browser regression was instead run on the generated monofile with its inline-hash CSP. HTTP regression is included in GitHub Actions for an unrestricted runner.",
+  "liveGitHubDeploymentTested": false,
+  "publicParentSiteChecked": false
+}

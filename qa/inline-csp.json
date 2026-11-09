@@ -1,0 +1,6 @@
+{
+  "status": "PASS",
+  "scripts": 6,
+  "allHashesMatch": true,
+  "networkPolicy": "connect-src 'none'"
+}

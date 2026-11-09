@@ -1,0 +1,9 @@
+import assert from 'node:assert/strict';import fs from 'node:fs';import {createHash} from 'node:crypto';
+const root=new URL('../',import.meta.url),D=JSON.parse(fs.readFileSync(new URL('content/catalogue.json',root))),old=JSON.parse(fs.readFileSync(new URL('content/legacy-catalogue.json',root)));let checks=0;const ok=(x,m)=>{assert.ok(x,m);checks++;};
+ok(D.modules.length===7,'seven modules');ok(new Set(D.activities.map(a=>a.id)).size===D.activities.length,'unique IDs');let mapped=[];
+for(const m of D.modules){ok(m.activities.length>0,'not empty');ok(m.slide.sha256.length===64,'slide provenance');for(const id of m.activities){const a=D.activities.find(a=>a.id===id);ok(a?.module===m.id,'correct module');mapped.push(id);if(a.slidePage)ok(a.slidePage>0&&a.slidePage<=m.slide.pages,'page range');}}
+ok(new Set(mapped).size===D.activities.length&&mapped.length===D.activities.length,'exactly one primary module');
+for(const [ch,list] of Object.entries(old))for(const entry of list){const key='capitolo-'+ch+'/'+entry.id,id=D.aliases[key];ok(!!id,key);const a=D.activities.find(a=>a.id===id);ok(a.legacy.chapter===Number(ch)&&a.legacy.id===entry.id,'alias targets original implementation');}
+for(const a of D.activities){ok(a.goal&&a.definition&&a.action&&a.observe&&a.contrast,'guidance complete');}
+const origin=JSON.parse(fs.readFileSync(new URL('vendor/origin.json',root))),runtime=fs.readFileSync(new URL('vendor/legacy-runtime.js',root));ok(createHash('sha256').update(runtime).digest('hex')===origin.adaptedRuntimeSha256,'pinned runtime');
+const report={status:'PASS',checks,modules:7,legacyActivities:81,nativeActivities:6,totalActivities:87,aliases:Object.keys(D.aliases).length};fs.mkdirSync(new URL('qa',root),{recursive:true});fs.writeFileSync(new URL('qa/catalogue.json',root),JSON.stringify(report,null,2));console.log(JSON.stringify(report));

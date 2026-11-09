@@ -1,0 +1,62 @@
+{
+  "status": "PASS",
+  "method": "Original archived assertions executed with TypeScript transpilation; course esbuild preambles adapted to direct imports. No scientific assertion modified. Not the entire historical DOM/typecheck suite.",
+  "reports": [
+    {
+      "script": "verify-models.mjs",
+      "sourceSha256": "949bfe87878d7b1273d8dcbedc0deb596933baff46e6115886fc2370803c6790",
+      "entryAdapted": false,
+      "status": "PASS",
+      "stdout": "{\n  \"checks\": 74,\n  \"returns\": [\n    {\n      \"particles\": 12,\n      \"idealError\": 4.1461052741510555e-12,\n      \"perturbedError\": 14.865770987150324\n    },\n    {\n      \"particles\": 24,\n      \"idealError\": 1.8755926669848933e-11,\n      \"perturbedError\": 10.511687472580217\n    },\n    {\n      \"particles\": 48,\n      \"idealError\": 1.1638913674455308e-8,\n      \"perturbedError\": 17.095636643797256\n    },\n    {\n      \"particles\": 72,\n      \"idealError\": 0.0000017693644413606088,\n      \"perturbedError\": 77.88048657195873\n    }\n  ],\n  \"result\": \"PASS\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "script": "verify-expanded.mjs",
+      "sourceSha256": "8551f5b4aeafe5de2361f7d0c00f35389c81198bca23c8a495536c086ab24e42",
+      "entryAdapted": false,
+      "status": "PASS",
+      "stdout": "{\n  \"result\": \"PASS\",\n  \"cases\": 282,\n  \"timings\": [\n    {\n      \"model\": \"free\",\n      \"n\": 1000,\n      \"milliseconds\": 41,\n      \"returnRms\": 2.3711077490591926e-12\n    },\n    {\n      \"model\": \"free\",\n      \"n\": 5000,\n      \"milliseconds\": 86,\n      \"returnRms\": 2.269145417775256e-12\n    },\n    {\n      \"model\": \"free\",\n      \"n\": 10000,\n      \"milliseconds\": 164,\n      \"returnRms\": 2.256569225392041e-12\n    },\n    {\n      \"model\": \"hard-disks\",\n      \"n\": 1000,\n      \"milliseconds\": 39,\n      \"collisions\": 376,\n      \"returnRms\": 2.8657949940489975e-10\n    },\n    {\n      \"model\": \"hard-disks\",\n      \"n\": 5000,\n      \"milliseconds\": 197,\n      \"collisions\": 1954,\n      \"returnRms\": 0.000013635337216363364\n    },\n    {\n      \"model\": \"hard-disks\",\n      \"n\": 10000,\n      \"milliseconds\": 649,\n      \"collisions\": 3882,\n      \"returnRms\": 0.0000405068504619634\n    }\n  ],\n  \"oneMillionScreenDraws\": {\n    \"total\": 1000000,\n    \"totalVariation\": 0.008393784872696394\n  },\n  \"scope\": \"Numerical models. Does not replace interactive browser testing.\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "script": "verify-quantum.mjs",
+      "sourceSha256": "ca1f1b3587193e6fd8641a85c1e61adc57420f03032110035708f4dd222c9378",
+      "entryAdapted": false,
+      "status": "PASS",
+      "stdout": "{\"result\":\"PASS\",\"checks\":9575,\"coverage\":[\"signed input and phase readouts\",\"X Y Z examples and double application\",\"geometric paths and inverse phase\",\"angle input and zero-delay invariance\",\"quarter/half-wave plates and optical rotation\",\"drag geometry and full-circuit propagation\",\"arbitrary retarders against Jones vectors\",\"independent block settings and bypass\",\"decoherence against partial trace\",\"slide sequences and order\",\"concordance and anticorrelation\",\"local marginals\",\"marker angle and inverse\",\"conditional groups\",\"archive ambiguity and exact extrema\",\"two causes and interventions\"]}\n",
+      "stderr": ""
+    },
+    {
+      "script": "verify-revision.mjs",
+      "sourceSha256": "9fa7294d4c56beafce492d9088f34de3141930d2a4eef55cbf7b2aba086777d5",
+      "entryAdapted": false,
+      "status": "PASS",
+      "stdout": "{\"status\":\"PASS\",\"checks\":140,\"screenBins\":800,\"screenSamples\":6400,\"smallestFringeMm\":0.5,\"centralContrast\":0.979514248265524,\"tested\":[\"fase effettiva\",\"trascinamento sui due emisferi\",\"camera indipendente\",\"R–F–R e bypass\",\"risoluzione delle frange\",\"correlazione e anticorrelazione\",\"fase a 90°\",\"ambiente\",\"archivi generici\",\"diagnosi\",\"interazione del gas indipendente da N\"]}\n",
+      "stderr": ""
+    },
+    {
+      "script": "course/verify-mathematics.mjs",
+      "sourceSha256": "17b165d9fa9d0f076fd4b9af04312462cc2ce315685501e2bca4cd9e1a5c67da",
+      "entryAdapted": true,
+      "status": "PASS",
+      "stdout": "{\"status\":\"PASS\",\"checks\":13607,\"randomHermitianCases\":250,\"binomialMaxN\":10000,\"reference\":{\"eigenvalues\":[2,-1],\"probabilities\":[0.8666666666666665,0.13333333333333328],\"mean\":1.5999999999999999,\"variance\":1.04},\"scope\":\"Verifiche numeriche indipendenti dei modelli; non certificano l’interazione nel browser.\"}\n",
+      "stderr": ""
+    },
+    {
+      "script": "course/verify-new.mjs",
+      "sourceSha256": "46db8c0fe82894699e65e4530ab1aa935fbd347414c9eba9016e40448f380b96",
+      "entryAdapted": true,
+      "status": "PASS",
+      "stdout": "{\"status\":\"PASS\",\"checks\":25816,\"modules\":[10,32,14,25],\"newWorkedExamples\":146,\"independentChecks\":[\"QFT matrix against gate network\",\"inverse Fourier\",\"ripple addition and clean carry history\",\"modular inverse and products\",\"RSA all 55 messages\",\"Shor full distributions against period-class sums\",\"Simon and discrete logarithm distributions\",\"Fresnel constants, symmetry, minima, geometric limit\"],\"browserInteractionTested\":false}\n",
+      "stderr": ""
+    },
+    {
+      "script": "course/verify-experiments.mjs",
+      "sourceSha256": "82376f25d8aedf00a753da053c63d783a0a59b18a29a583f90418e20ee658724",
+      "entryAdapted": true,
+      "status": "PASS",
+      "stdout": "{\"status\":\"PASS\",\"checks\":41012,\"sections\":39,\"checksInclude\":[\"Simon promise and distribution for every secret at n=2..5\",\"Simon measured recovery\",\"Grover zero/all solutions\",\"Operational counting and amplitude estimation versus spectral reference\",\"QPE mixture versus known grid\",\"Discrete logarithm groups 5,7,11,13\",\"Shor versus direct complex sums without supplied period\",\"Invalid inputs\",\"MathML structural rendering\"]}\n",
+      "stderr": ""
+    }
+  ]
+}

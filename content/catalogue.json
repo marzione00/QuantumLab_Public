@@ -1,0 +1,1956 @@
+{
+  "version": "5.1.0",
+  "baseVersion": "4.2.0",
+  "language": "it",
+  "authors": [
+    "Marzio De Corato",
+    "Danilo Bruschi"
+  ],
+  "modules": [
+    {
+      "id": 1,
+      "title": "Dai fenomeni al qubit",
+      "subtitle": "Fondamenti fisici e simulazione",
+      "question": "Quali informazioni servono per prevedere una misura?",
+      "goal": "Osserva un fenomeno, modifica una preparazione e confronta previsione e risultato.",
+      "prerequisites": [
+        "Nessun prerequisito di fisica.",
+        "Le grandezze e le unità sono introdotte in ogni attività."
+      ],
+      "path": "Parti dal moto: la stessa posizione non implica lo stesso futuro. Segui poi onde, qubit e sistemi composti.",
+      "slide": {
+        "file": "media/docs/quantum-2026-2027/UniMI_Quantum_PostQuantum_2026-2027_M01_fondamenti-fisici-e-simulazione.pdf",
+        "sha256": "6e8195ac7d3489792b72cb64f7ed2aab12e58d10438f185367958e3a574a4dac",
+        "pages": 519
+      },
+      "activities": [
+        "c1-moto",
+        "c1-loschmidt",
+        "c1-onde",
+        "c1-fenditure",
+        "c1-polarizzazione",
+        "c1-calcolo",
+        "c1-coppie",
+        "c1-ambiente",
+        "c1-informazione",
+        "c1-sintesi"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "La matematica prende forma",
+      "subtitle": "Algebra lineare, probabilità e misura",
+      "question": "Che cosa rappresentano i simboli del calcolo quantistico?",
+      "goal": "Costruisci gli strumenti matematici collegando coordinate, figure e passaggi numerici.",
+      "prerequisites": [
+        "Operazioni elementari con numeri reali.",
+        "I numeri complessi vengono introdotti nel percorso."
+      ],
+      "path": "Procedi da complessi e vettori a trasformazioni, probabilità e stati. Le sezioni successive richiamano gli strumenti precedenti.",
+      "slide": {
+        "file": "media/docs/quantum-2026-2027/UniMI_Quantum_PostQuantum_2026-2027_M02_fondamenti-matematici.pdf",
+        "sha256": "0add98ef269557c2df45a568e35aaed3f2192780eae013fe1d0b33fa954fd70b",
+        "pages": 514
+      },
+      "activities": [
+        "c2-complessi",
+        "c2-prodotto-complesso",
+        "c2-basi",
+        "c2-norma",
+        "c2-prodotto-interno",
+        "c2-proiezioni",
+        "c2-matrici",
+        "c2-nucleo",
+        "c2-composizione",
+        "c2-cambio-base",
+        "c2-aggiunto",
+        "c2-spettro",
+        "c2-base-propria",
+        "c2-proiettori",
+        "c2-funzioni-matrice",
+        "c2-eventi",
+        "c2-distribuzioni",
+        "c2-momenti",
+        "c2-frequenze",
+        "c2-condizionamento",
+        "c2-stati",
+        "c2-bra",
+        "c2-fase",
+        "c2-born",
+        "c2-unitarie",
+        "c2-osservabili",
+        "c2-incompatibilita",
+        "c2-esperimento",
+        "c2-tensore",
+        "c2-porte-locali",
+        "c2-separabilita",
+        "c2-composti"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Dal qubit al programma",
+      "subtitle": "Circuiti, reversibilità e Deutsch–Jozsa",
+      "question": "Come si legge un circuito, una porta alla volta?",
+      "goal": "Distingui preparazione, operazioni e misura. Segui lo stesso stato in formule, circuito e distribuzione.",
+      "prerequisites": [
+        "Ampiezze, basi e probabilità: modulo 2.",
+        "Le porte sono introdotte prima di usarle."
+      ],
+      "path": "Inizia dalla fase osservabile o dalle porte; affronta poi registri, reversibilità e algoritmi di Deutsch.",
+      "slide": {
+        "file": "media/docs/quantum-2026-2027/UniMI_Quantum_PostQuantum_2026-2027_M03_circuiti-quantistici-deutsch-jozsa.pdf",
+        "sha256": "fe92862c61fc686fcbb48c4b4cd5ba98d926510f3b679498fad11e163f5700c2",
+        "pages": 177
+      },
+      "activities": [
+        "fase-guidata",
+        "c3-programma",
+        "c3-reversibilita",
+        "c3-porte",
+        "c3-preparazione",
+        "c3-inversa",
+        "c3-interferometro",
+        "c3-registro",
+        "c3-bell",
+        "c3-ausiliari",
+        "c3-sintesi",
+        "c3-deutsch",
+        "c4-deutsch-jozsa",
+        "c3-evoluzione",
+        "c3-programma-completo"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Informazione nascosta",
+      "subtitle": "Bernstein–Vazirani e Simon",
+      "question": "Che cosa rivela una interrogazione quantistica?",
+      "goal": "Collega la promessa sulla funzione alle misure e alla successiva elaborazione classica.",
+      "prerequisites": [
+        "Circuiti e misura: modulo 3.",
+        "Per Simon servono somma binaria e sistemi su F₂, richiamati nella lezione."
+      ],
+      "path": "Confronta Bernstein–Vazirani con Simon: nel secondo caso una misura non è ancora la soluzione.",
+      "slide": {
+        "file": "media/docs/quantum-2026-2027/UniMI_Quantum_PostQuantum_2026-2027_M04_algoritmi-bernstein-vazirani-simon.pdf",
+        "sha256": "74434a59b39e81fac474189bdb7c672e3dcb9796406fcb0b7efb6b66e5fde0e9",
+        "pages": 179
+      },
+      "activities": [
+        "c4-bernstein-vazirani",
+        "c4-simon",
+        "c4-swap"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Dalla periodicità a Shor",
+      "subtitle": "Aritmetica modulare, RSA e Fourier",
+      "question": "Come diventa utile una periodicità?",
+      "goal": "Segui aritmetica, cifratura, fase e ricostruzione. Le dimostrazioni su registri piccoli dichiarano i propri limiti.",
+      "prerequisites": [
+        "Matrici e numeri complessi: modulo 2.",
+        "Registri e circuiti: modulo 3."
+      ],
+      "path": "Parti dal messaggio RSA e dall’aritmetica. Fourier e stima di fase preparano gli esempi di Shor; la fattorizzazione è un approfondimento distinto.",
+      "slide": {
+        "file": "media/docs/quantum-2026-2027/UniMI_Quantum_PostQuantum_2026-2027_M05_shor-aritmetica-rsa-fourier.pdf",
+        "sha256": "a67f88b1b35a44d892e4037a11cb2f5f69927dc3ce712d5363f9d7f8188ca053",
+        "pages": 208
+      },
+      "activities": [
+        "rsa-messaggio",
+        "c4-aritmetica",
+        "c4-rsa",
+        "c4-fourier",
+        "c4-qft",
+        "c4-qpe-esatta",
+        "c4-qpe-approssimata",
+        "c4-ordine-fattori",
+        "c4-frazioni-continue",
+        "c4-shor-15",
+        "c4-shor-21",
+        "c4-hadamard-test",
+        "c4-somma",
+        "c4-moltiplicazione",
+        "c4-autostati",
+        "c4-logaritmo"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Amplificare una possibilità",
+      "subtitle": "Grover e amplificazione di ampiezza",
+      "question": "Perché più iterazioni non significa sempre meglio?",
+      "goal": "Guarda ampiezze, probabilità e riflessioni come tre letture dello stesso processo.",
+      "prerequisites": [
+        "Stati e prodotto interno: modulo 2.",
+        "Porte e interferenza: modulo 3."
+      ],
+      "path": "Apri il percorso guidato con quattro candidati. Passa poi a più soluzioni e all’amplificazione di una preparazione non uniforme.",
+      "slide": {
+        "file": "media/docs/quantum-2026-2027/UniMI_Quantum_PostQuantum_2026-2027_M06_grover-amplificazione-ampiezza.pdf",
+        "sha256": "2ae75a422e4a3fb74013f765375cb17fe1c364e38739f4d66b183d93038c5b6d",
+        "pages": 253
+      },
+      "activities": [
+        "grover-guidato",
+        "c3-grover-primo",
+        "c4-grover",
+        "c4-amplificazione",
+        "c4-ricerca-ignota",
+        "c4-minimo",
+        "c4-conteggio",
+        "c4-stima-ampiezze"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Comunicare e proteggere",
+      "subtitle": "Protocolli quantistici",
+      "question": "Chi conosce che cosa, e in quale momento?",
+      "goal": "Segui risorse condivise, messaggi, misure e sindromi senza confondere una simulazione con un apparato reale.",
+      "prerequisites": [
+        "Sistemi composti e misura: moduli 2 e 3.",
+        "Le ipotesi dei protocolli sono sempre dichiarate."
+      ],
+      "path": "Confronta distribuzione della chiave, codifica superdensa e correzione di un errore. Sono tre compiti diversi, non tre varianti della stessa comunicazione.",
+      "slide": {
+        "file": "media/docs/quantum-2026-2027/UniMI_Quantum_PostQuantum_2026-2027_M07_protocolli-qkd-codifica-errori.pdf",
+        "sha256": "2286174d7bd022f26b5f8fe0c2f465906a5d0ba2c722ca197991dc2db2f81977",
+        "pages": 100
+      },
+      "activities": [
+        "bb84",
+        "superdensa",
+        "correzione"
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "c1-moto",
+      "slug": "moto",
+      "module": 1,
+      "title": "Dati iniziali e previsione del moto",
+      "short": "Il moto",
+      "goal": "Prevedere una posizione a partire da posizione e velocità iniziali.",
+      "definition": "Posizione: dove si trova il corpo. Velocità: quanto cambia la posizione per unità di tempo.",
+      "action": "Lascia uguali le posizioni iniziali. Confronta velocità uguali e diverse, poi avanza il tempo.",
+      "observe": "Il grafico posizione–tempo è una previsione; la fascia di incertezza rappresenta un intervallo di dati, non una nube di traiettorie misurate.",
+      "contrast": "Confronta due velocità uguali con due velocità di segno opposto.",
+      "legacy": {
+        "chapter": 1,
+        "id": "moto"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": 4
+    },
+    {
+      "id": "c1-loschmidt",
+      "slug": "loschmidt",
+      "module": 1,
+      "title": "Reversibilità e inversione di Loschmidt",
+      "short": "Il gas e Loschmidt",
+      "goal": "Distinguere reversibilità del modello e sensibilità alle perturbazioni.",
+      "definition": "Inversione delle velocità: ogni vettore cambia segno. Perturbazione: una piccola modifica dei dati.",
+      "action": "Lascia evolvere il gas, inverti le velocità e confronta il ritorno ideale con quello perturbato.",
+      "observe": "Il ritorno ricalcola gli urti: non è la riproduzione al contrario di un video.",
+      "contrast": "Confronta inversione esatta e perturbata mantenendo la stessa preparazione.",
+      "legacy": {
+        "chapter": 1,
+        "id": "loschmidt"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": 54
+    },
+    {
+      "id": "c1-onde",
+      "slug": "onde",
+      "module": 1,
+      "title": "Sovrapposizione e fase relativa",
+      "short": "Onde e interferenza",
+      "goal": "Collegare fase relativa e sovrapposizione.",
+      "definition": "Ampiezza: grandezza con segno. Fase: posizione nel ciclo. La figura delle ampiezze non è una traiettoria nello spazio fisico.",
+      "action": "Modifica la fase lasciando ferme le altre grandezze. Osserva le due onde e la loro somma.",
+      "observe": "Un annullamento della somma non richiede che le singole onde siano nulle.",
+      "contrast": "Confronta fase zero e mezzo giro.",
+      "legacy": {
+        "chapter": 1,
+        "id": "onde"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": 96
+    },
+    {
+      "id": "c1-fenditure",
+      "slug": "fenditure",
+      "module": 1,
+      "title": "Dai singoli arrivi alla distribuzione",
+      "short": "Un arrivo alla volta",
+      "goal": "Distinguere un evento singolo dal profilo che emerge da molti eventi.",
+      "definition": "Distribuzione: probabilità dei diversi intervalli di arrivo. Risoluzione: media spaziale del rivelatore.",
+      "action": "Scegli un’apertura, esegui pochi arrivi e poi molti. Varia una sola grandezza dell’apparato.",
+      "observe": "Il profilo teorico è normalizzato nella finestra osservata. Fresnel descrive la propagazione paraxiale; una regola del campo lontano non vale in ogni regime.",
+      "contrast": "Confronta una e due aperture e distingui la larghezza dell’apertura dalla distanza fra aperture.",
+      "legacy": {
+        "chapter": 1,
+        "id": "fenditure"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": 129
+    },
+    {
+      "id": "c1-polarizzazione",
+      "slug": "polarizzazione",
+      "module": 1,
+      "title": "Polarizzazione, misura e sfera di Bloch",
+      "short": "Polarizzazione e qubit",
+      "goal": "Mostrare perché la base della misura conta.",
+      "definition": "Una base di misura specifica le alternative distinguibili dall’apparato. La sfera rappresenta lo stato, non una pallina fisica.",
+      "action": "Confronta le due diagonali prima nella base orizzontale/verticale, poi in quella diagonale.",
+      "observe": "Gli stessi conteggi in una base non implicano lo stesso stato.",
+      "contrast": "Cerca una base nella quale gli esiti delle due preparazioni siano diversi.",
+      "legacy": {
+        "chapter": 1,
+        "id": "polarizzazione"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": 169
+    },
+    {
+      "id": "c1-calcolo",
+      "slug": "calcolo",
+      "module": 1,
+      "title": "Operazioni su un qubit",
+      "short": "Il calcolo quantistico",
+      "goal": "Seguire le trasformazioni delle ampiezze di un qubit.",
+      "definition": "Una porta unitaria cambia le ampiezze conservando la norma. Misurare produce un esito campionato.",
+      "action": "Prepara lo stato, applica una porta e confronta ampiezze e probabilità.",
+      "observe": "Una variazione di fase può restare invisibile finché non si cambia la lettura.",
+      "contrast": "Confronta le sequenze H–P e H–P–H.",
+      "legacy": {
+        "chapter": 1,
+        "id": "calcolo"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": 226
+    },
+    {
+      "id": "c1-coppie",
+      "slug": "coppie",
+      "module": 1,
+      "title": "Statistiche locali e correlazioni",
+      "short": "Due qubit",
+      "goal": "Distinguere statistiche locali e correlazioni congiunte.",
+      "definition": "Marginale: somma delle probabilità su un sottosistema. Congiunta: probabilità di una coppia di esiti.",
+      "action": "Confronta preparazioni e basi di misura; leggi prima le marginali e poi la tabella congiunta.",
+      "observe": "Marginali uguali non garantiscono uguali correlazioni.",
+      "contrast": "Confronta stati correlati, anticorrelati e indipendenti.",
+      "legacy": {
+        "chapter": 1,
+        "id": "coppie"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": 250
+    },
+    {
+      "id": "c1-ambiente",
+      "slug": "ambiente",
+      "module": 1,
+      "title": "Una coppia entangled incontra l’ambiente",
+      "short": "Il ruolo dell’ambiente",
+      "goal": "Capire come una correlazione con l’ambiente cambia ciò che è osservabile localmente.",
+      "definition": "Coerenza: termini che permettono interferenza. Stato locale: descrizione dopo aver ignorato l’ambiente.",
+      "action": "Varia l’accoppiamento e confronta basi di misura e correlazioni.",
+      "observe": "Le sfere condizionate non rappresentano automaticamente stati locali puri.",
+      "contrast": "Confronta ambiente indistinguibile e informazione di cammino distinguibile.",
+      "legacy": {
+        "chapter": 1,
+        "id": "ambiente"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": 281
+    },
+    {
+      "id": "c1-informazione",
+      "slug": "informazione",
+      "module": 1,
+      "title": "Quali dati servono per continuare?",
+      "short": "Salvare una simulazione",
+      "goal": "Capire quali dati deve conservare un simulatore.",
+      "definition": "Probabilità e ampiezze non contengono la stessa informazione; la fase relativa può servire per evoluzioni future.",
+      "action": "Confronta un archivio delle sole probabilità con uno che conserva lo stato e applica la stessa operazione.",
+      "observe": "Riprodurre una statistica presente non garantisce di prevedere tutte le statistiche future.",
+      "contrast": "Trova due stati con gli stessi conteggi iniziali e una diversa lettura successiva.",
+      "legacy": {
+        "chapter": 1,
+        "id": "informazione"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": 304
+    },
+    {
+      "id": "c1-sintesi",
+      "slug": "sintesi",
+      "module": 1,
+      "title": "Stessi conteggi, cause differenti",
+      "short": "Distinguere le cause",
+      "goal": "Distinguere spiegazioni diverse degli stessi conteggi.",
+      "definition": "Un modello è una preparazione, un’evoluzione e una regola di lettura. Un intervento cambia una di queste parti.",
+      "action": "Mantieni fisso il confronto iniziale e usa gli interventi disponibili.",
+      "observe": "Una sola distribuzione non identifica necessariamente una causa.",
+      "contrast": "Confronta instabilità della fase e marcatura del cammino.",
+      "legacy": {
+        "chapter": 1,
+        "id": "sintesi"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": 312
+    },
+    {
+      "id": "c2-complessi",
+      "slug": "complessi",
+      "module": 2,
+      "title": "Componenti, modulo e fase",
+      "short": "Componenti, modulo e fase",
+      "goal": "Leggere parte reale, parte immaginaria, modulo e fase.",
+      "definition": "Un numero complesso è rappresentato da due coordinate nel piano; il modulo è la distanza dall’origine.",
+      "action": "Modifica le coordinate e confronta il vettore con la forma algebrica.",
+      "observe": "Gli assi sono Re e Im: non due direzioni dello spazio fisico.",
+      "contrast": "Confronta numeri con lo stesso modulo e fase diversa.",
+      "legacy": {
+        "chapter": 2,
+        "id": "complessi"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": null
+    },
+    {
+      "id": "c2-prodotto-complesso",
+      "slug": "prodotto-complesso",
+      "module": 2,
+      "title": "Sommare e moltiplicare ampiezze",
+      "short": "Sommare e moltiplicare ampiezze",
+      "goal": "Vedere moltiplicazione come scala e rotazione nel piano complesso.",
+      "definition": "Nel prodotto i moduli si moltiplicano e gli argomenti si sommano, modulo un giro.",
+      "action": "Modifica i due fattori e segui prodotto e passaggi numerici.",
+      "observe": "Il prodotto non è la somma delle frecce.",
+      "contrast": "Confronta un fattore reale positivo e un fattore puramente immaginario.",
+      "legacy": {
+        "chapter": 2,
+        "id": "prodotto-complesso"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": null
+    },
+    {
+      "id": "c2-basi",
+      "slug": "basi",
+      "module": 2,
+      "title": "Vettori, combinazioni e basi",
+      "short": "Vettori, combinazioni e basi",
+      "goal": "Ricostruire un vettore a partire dalle coordinate.",
+      "definition": "Una base è un insieme di vettori indipendenti che permette una rappresentazione unica.",
+      "action": "Cambia le coordinate e leggi la combinazione lineare.",
+      "observe": "Le coordinate dipendono dalla base scelta.",
+      "contrast": "Confronta direzioni canoniche e combinazioni non banali.",
+      "legacy": {
+        "chapter": 2,
+        "id": "basi"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": null
+    },
+    {
+      "id": "c2-norma",
+      "slug": "norma",
+      "module": 2,
+      "title": "Lunghezza e normalizzazione",
+      "short": "Lunghezza e normalizzazione",
+      "goal": "Separare la direzione dalla lunghezza.",
+      "definition": "La norma quantifica la lunghezza; normalizzare divide un vettore non nullo per la propria norma.",
+      "action": "Modifica le componenti e confronta il vettore con la sua versione normalizzata.",
+      "observe": "Il vettore nullo non può essere normalizzato.",
+      "contrast": "Confronta un vettore unitario con un suo multiplo.",
+      "legacy": {
+        "chapter": 2,
+        "id": "norma"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": null
+    },
+    {
+      "id": "c2-prodotto-interno",
+      "slug": "prodotto-interno",
+      "module": 2,
+      "title": "Prodotto interno e ortogonalità",
+      "short": "Prodotto interno e ortogonalità",
+      "goal": "Interpretare il prodotto interno senza perdere il coniugio complesso.",
+      "definition": "Nel prodotto interno complesso il primo vettore viene coniugato.",
+      "action": "Cambia i vettori e segui ogni prodotto e la somma.",
+      "observe": "Il prodotto interno può essere complesso; la norma al quadrato è reale e non negativa.",
+      "contrast": "Confronta vettori paralleli e ortogonali.",
+      "legacy": {
+        "chapter": 2,
+        "id": "prodotto-interno"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": null
+    },
+    {
+      "id": "c2-proiezioni",
+      "slug": "proiezioni",
+      "module": 2,
+      "title": "Costruire direzioni ortonormali",
+      "short": "Costruire direzioni ortonormali",
+      "goal": "Separare un contributo lungo una direzione dal residuo.",
+      "definition": "Una proiezione ortogonale usa il prodotto interno con una direzione unitaria.",
+      "action": "Modifica vettore e direzione; confronta proiezione, residuo e ricostruzione.",
+      "observe": "Proiezione e residuo sommano al vettore iniziale.",
+      "contrast": "Confronta un vettore lungo l’asse con uno ortogonale.",
+      "legacy": {
+        "chapter": 2,
+        "id": "proiezioni"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": null
+    },
+    {
+      "id": "c2-matrici",
+      "slug": "matrici",
+      "module": 2,
+      "title": "La matrice attraverso le sue colonne",
+      "short": "La matrice attraverso le sue colonne",
+      "goal": "Leggere una matrice come trasformazione.",
+      "definition": "Le colonne della matrice indicano le immagini dei vettori della base canonica.",
+      "action": "Cambia il vettore e i coefficienti della matrice. Osserva prima e dopo.",
+      "observe": "La moltiplicazione coinvolge tutte le componenti richieste da ogni riga.",
+      "contrast": "Confronta identità e una trasformazione non banale.",
+      "legacy": {
+        "chapter": 2,
+        "id": "matrici"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": null
+    },
+    {
+      "id": "c2-nucleo",
+      "slug": "nucleo",
+      "module": 2,
+      "title": "Informazione perduta: nucleo e immagine",
+      "short": "Informazione perduta: nucleo e immagine",
+      "goal": "Distinguere vettori annullati e vettori raggiungibili.",
+      "definition": "Il nucleo contiene gli ingressi mandati a zero; l’immagine raccoglie tutte le uscite.",
+      "action": "Scegli le matrici predisposte e segui la riduzione e la parametrizzazione.",
+      "observe": "Nucleo e immagine appartengono rispettivamente allo spazio di ingresso e di uscita.",
+      "contrast": "Confronta rango pieno e rango ridotto.",
+      "legacy": {
+        "chapter": 2,
+        "id": "nucleo"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": null
+    },
+    {
+      "id": "c2-composizione",
+      "slug": "composizione",
+      "module": 2,
+      "title": "Seguire l’ordine delle operazioni",
+      "short": "Seguire l’ordine delle operazioni",
+      "goal": "Capire l’ordine di due trasformazioni.",
+      "definition": "ABv significa applicare prima B e poi A.",
+      "action": "Confronta i due ordini mantenendo identiche matrici e ingresso.",
+      "observe": "AB e BA non sono in generale uguali.",
+      "contrast": "Confronta un caso commutante con uno non commutante.",
+      "legacy": {
+        "chapter": 2,
+        "id": "composizione"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": null
+    },
+    {
+      "id": "c2-cambio-base",
+      "slug": "cambio-base",
+      "module": 2,
+      "title": "Descrivere una trasformazione in un’altra base",
+      "short": "Descrivere una trasformazione in un’altra base",
+      "goal": "Distinguere un vettore dalle sue coordinate.",
+      "definition": "La matrice di cambio di base collega due descrizioni dello stesso oggetto.",
+      "action": "Ricostruisci il vettore nella prima base e poi nella seconda.",
+      "observe": "La geometria non cambia soltanto perché cambiano i numeri delle coordinate.",
+      "contrast": "Confronta la base canonica e una base obliqua.",
+      "legacy": {
+        "chapter": 2,
+        "id": "cambio-base"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": null
+    },
+    {
+      "id": "c2-aggiunto",
+      "slug": "aggiunto",
+      "module": 2,
+      "title": "Aggiunto e conservazione della norma",
+      "short": "Aggiunto e conservazione della norma",
+      "goal": "Riconoscere trasposizione e coniugio.",
+      "definition": "L’aggiunto scambia righe e colonne e coniuga gli elementi complessi.",
+      "action": "Leggi separatamente i due passaggi e verifica l’identità del prodotto interno.",
+      "observe": "Su matrici reali simmetriche i due passaggi possono restare invisibili.",
+      "contrast": "Usa anche un caso complesso non simmetrico.",
+      "legacy": {
+        "chapter": 2,
+        "id": "aggiunto"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": null
+    },
+    {
+      "id": "c2-spettro",
+      "slug": "spettro",
+      "module": 2,
+      "title": "Riconoscere un’autodirezione",
+      "short": "Riconoscere un’autodirezione",
+      "goal": "Trovare direzioni trasformate soltanto da un fattore.",
+      "definition": "Av=λv definisce un autovettore non nullo e il relativo autovalore.",
+      "action": "Segui equazione caratteristica, nucleo di A−λI e normalizzazione.",
+      "observe": "L’autovettore nullo non definisce una direzione.",
+      "contrast": "Confronta autovettori e un vettore generico.",
+      "legacy": {
+        "chapter": 2,
+        "id": "spettro"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": null
+    },
+    {
+      "id": "c2-base-propria",
+      "slug": "base-propria",
+      "module": 2,
+      "title": "Costruire una base di autovettori",
+      "short": "Costruire una base di autovettori",
+      "goal": "Descrivere una trasformazione nelle sue autodirezioni.",
+      "definition": "Una base propria usa autovettori indipendenti; per osservabili hermitiane può essere ortonormale.",
+      "action": "Scomponi il vettore nella base propria e ricostruisci il risultato.",
+      "observe": "Diagonalizzare non significa cambiare l’operatore fisico.",
+      "contrast": "Confronta coordinate canoniche e proprie.",
+      "legacy": {
+        "chapter": 2,
+        "id": "base-propria"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": null
+    },
+    {
+      "id": "c2-proiettori",
+      "slug": "proiettori",
+      "module": 2,
+      "title": "Separare e ricomporre le componenti",
+      "short": "Separare e ricomporre le componenti",
+      "goal": "Ricostruire contributi spettrali.",
+      "definition": "Un proiettore ortogonale soddisfa P²=P e P†=P.",
+      "action": "Applica i proiettori ai casi predisposti e somma i contributi.",
+      "observe": "Il proiettore seleziona un sottospazio, non assegna da solo una frequenza sperimentale.",
+      "contrast": "Confronta vettori dentro e fuori dal sottospazio.",
+      "legacy": {
+        "chapter": 2,
+        "id": "proiettori"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": null
+    },
+    {
+      "id": "c2-funzioni-matrice",
+      "slug": "funzioni-matrice",
+      "module": 2,
+      "title": "Calcolare con la decomposizione spettrale",
+      "short": "Calcolare con la decomposizione spettrale",
+      "goal": "Calcolare una funzione dell’operatore attraverso lo spettro.",
+      "definition": "f(A) agisce sugli autovalori mantenendo i proiettori spettrali.",
+      "action": "Confronta A, A² e i contributi delle autodirezioni.",
+      "observe": "Applicare una funzione agli elementi separatamente è in generale un’operazione diversa.",
+      "contrast": "Confronta f(λ)=λ e f(λ)=λ².",
+      "legacy": {
+        "chapter": 2,
+        "id": "funzioni-matrice"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": null
+    },
+    {
+      "id": "c2-eventi",
+      "slug": "eventi",
+      "module": 2,
+      "title": "Dagli esiti agli eventi",
+      "short": "Dagli esiti agli eventi",
+      "goal": "Definire esiti ed eventi prima di sommare probabilità.",
+      "definition": "Un evento è un insieme di esiti; l’evento vuoto ha probabilità zero.",
+      "action": "Seleziona gli esiti e segui l’evento costruito.",
+      "observe": "Unione e intersezione richiedono attenzione agli esiti comuni.",
+      "contrast": "Confronta eventi disgiunti e sovrapposti.",
+      "legacy": {
+        "chapter": 2,
+        "id": "eventi"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": null
+    },
+    {
+      "id": "c2-distribuzioni",
+      "slug": "distribuzioni",
+      "module": 2,
+      "title": "Normalizzare e raggruppare i pesi",
+      "short": "Normalizzare e raggruppare i pesi",
+      "goal": "Leggere una distribuzione normalizzata.",
+      "definition": "Le probabilità sono non negative e la loro somma è uno.",
+      "action": "Modifica i pesi e osserva la normalizzazione.",
+      "observe": "Un peso non normalizzato non è già una probabilità.",
+      "contrast": "Confronta distribuzione uniforme e concentrata.",
+      "legacy": {
+        "chapter": 2,
+        "id": "distribuzioni"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": null
+    },
+    {
+      "id": "c2-momenti",
+      "slug": "momenti",
+      "module": 2,
+      "title": "Media e dispersione",
+      "short": "Media e dispersione",
+      "goal": "Distinguere media e dispersione.",
+      "definition": "La media è la somma dei valori pesati; la varianza misura la dispersione quadratica.",
+      "action": "Cambia la distribuzione e ricostruisci media e varianza.",
+      "observe": "Distribuzioni differenti possono condividere la stessa media.",
+      "contrast": "Confronta distribuzioni con media uguale e dispersione diversa.",
+      "legacy": {
+        "chapter": 2,
+        "id": "momenti"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": null
+    },
+    {
+      "id": "c2-frequenze",
+      "slug": "frequenze",
+      "module": 2,
+      "title": "Ripetizioni, conteggi e frequenze",
+      "short": "Ripetizioni, conteggi e frequenze",
+      "goal": "Distinguere modello teorico e conteggi.",
+      "definition": "La frequenza relativa è il rapporto fra conteggio di un evento e numero di prove.",
+      "action": "Aumenta il numero di prove e confronta frequenze e probabilità.",
+      "observe": "Un campione piccolo non deve coincidere esattamente con l’attesa.",
+      "contrast": "Confronta poche e molte prove senza cambiare il modello.",
+      "legacy": {
+        "chapter": 2,
+        "id": "frequenze"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": null
+    },
+    {
+      "id": "c2-condizionamento",
+      "slug": "condizionamento",
+      "module": 2,
+      "title": "Selezionare un’informazione",
+      "short": "Selezionare un’informazione",
+      "goal": "Ricalcolare probabilità quando è noto un evento.",
+      "definition": "P(A|B)=P(A∩B)/P(B), per P(B)>0.",
+      "action": "Seleziona l’evento noto e ricostruisci numeratore e denominatore.",
+      "observe": "Un evento di probabilità zero non permette questo condizionamento.",
+      "contrast": "Confronta indipendenza e dipendenza.",
+      "legacy": {
+        "chapter": 2,
+        "id": "condizionamento"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": null
+    },
+    {
+      "id": "c2-stati",
+      "slug": "stati",
+      "module": 2,
+      "title": "Preparare un vettore di stato",
+      "short": "Preparare un vettore di stato",
+      "goal": "Associare ampiezze normalizzate a uno stato.",
+      "definition": "I moduli quadri delle ampiezze danno le probabilità nella base dichiarata.",
+      "action": "Cambia le ampiezze e segui normalizzazione e grafici.",
+      "observe": "Le ampiezze sono in generale complesse.",
+      "contrast": "Confronta uno stato di base e una sovrapposizione.",
+      "legacy": {
+        "chapter": 2,
+        "id": "stati"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": null
+    },
+    {
+      "id": "c2-bra",
+      "slug": "bra",
+      "module": 2,
+      "title": "Dal ket al bra",
+      "short": "Dal ket al bra",
+      "goal": "Passare dal ket al bra e al prodotto interno.",
+      "definition": "Il bra si ottiene trasponendo e coniugando il ket.",
+      "action": "Ricostruisci il prodotto riga per colonna con tutti i coniugi.",
+      "observe": "La sola trasposizione non basta per coefficienti complessi.",
+      "contrast": "Confronta coefficienti reali e immaginari.",
+      "legacy": {
+        "chapter": 2,
+        "id": "bra"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": null
+    },
+    {
+      "id": "c2-fase",
+      "slug": "fase",
+      "module": 2,
+      "title": "Fase relativa e interferenza",
+      "short": "Fase relativa e interferenza",
+      "goal": "Distinguere fase globale e relativa.",
+      "definition": "Una fase globale moltiplica tutte le ampiezze; una fase relativa cambia il rapporto fra componenti.",
+      "action": "Confronta le probabilità prima e dopo un cambio di base.",
+      "observe": "Una fase relativa può diventare osservabile attraverso interferenza.",
+      "contrast": "Confronta una fase globale e una modifica di una sola componente.",
+      "legacy": {
+        "chapter": 2,
+        "id": "fase"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": null
+    },
+    {
+      "id": "c2-born",
+      "slug": "born",
+      "module": 2,
+      "title": "Calcolare una misura proiettiva",
+      "short": "Calcolare una misura proiettiva",
+      "goal": "Calcolare le probabilità nella base scelta.",
+      "definition": "La probabilità è il modulo quadro della proiezione dello stato sul vettore di lettura.",
+      "action": "Cambia lo stato o la base, non entrambi insieme al primo confronto.",
+      "observe": "Una diversa base cambia le domande poste alla preparazione.",
+      "contrast": "Confronta esito certo, esito impossibile e caso intermedio.",
+      "legacy": {
+        "chapter": 2,
+        "id": "born"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": null
+    },
+    {
+      "id": "c2-unitarie",
+      "slug": "unitarie",
+      "module": 2,
+      "title": "Trasformare le ampiezze",
+      "short": "Trasformare le ampiezze",
+      "goal": "Verificare conservazione della norma e reversibilità.",
+      "definition": "U†U=I; l’inversa è U†.",
+      "action": "Applica una trasformazione e poi la sua inversa.",
+      "observe": "La conservazione della norma va distinta dalla conservazione delle probabilità in una base fissa.",
+      "contrast": "Confronta identità e rotazione non banale.",
+      "legacy": {
+        "chapter": 2,
+        "id": "unitarie"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": null
+    },
+    {
+      "id": "c2-osservabili",
+      "slug": "osservabili",
+      "module": 2,
+      "title": "Esiti, valore medio e varianza",
+      "short": "Esiti, valore medio e varianza",
+      "goal": "Collegare spettro e risultati della misura.",
+      "definition": "Un’osservabile hermitiana associa autovalori ai sottospazi di misura.",
+      "action": "Calcola probabilità, valore atteso e stato condizionato.",
+      "observe": "Il valore atteso non è necessariamente un esito singolo.",
+      "contrast": "Confronta un autostato e una sovrapposizione di autostati.",
+      "legacy": {
+        "chapter": 2,
+        "id": "osservabili"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": null
+    },
+    {
+      "id": "c2-incompatibilita",
+      "slug": "incompatibilita",
+      "module": 2,
+      "title": "Due misure in successione",
+      "short": "Due misure in successione",
+      "goal": "Capire perché l’ordine delle misure può contare.",
+      "definition": "Due osservabili non commutanti possono produrre statistiche diverse nelle due sequenze.",
+      "action": "Confronta A poi B con B poi A, partendo dalla stessa preparazione.",
+      "observe": "Ogni seconda misura usa lo stato condizionato dalla prima.",
+      "contrast": "Confronta osservabili compatibili e incompatibili.",
+      "legacy": {
+        "chapter": 2,
+        "id": "incompatibilita"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": null
+    },
+    {
+      "id": "c2-esperimento",
+      "slug": "esperimento",
+      "module": 2,
+      "title": "Un esperimento completo",
+      "short": "Un esperimento completo",
+      "goal": "Ricostruire una misura dall’inizio alla fine.",
+      "definition": "Preparazione, osservabile e regola di Born definiscono il modello.",
+      "action": "Segui dati, spettro, probabilità, media e stato condizionato.",
+      "observe": "Distinguere risultato selezionato, risultato campionato e previsione.",
+      "contrast": "Confronta i due casi complessi predisposti.",
+      "legacy": {
+        "chapter": 2,
+        "id": "esperimento"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": null
+    },
+    {
+      "id": "c2-tensore",
+      "slug": "tensore",
+      "module": 2,
+      "title": "Costruire le quattro ampiezze",
+      "short": "Costruire le quattro ampiezze",
+      "goal": "Costruire le coordinate di un sistema composto.",
+      "definition": "Il prodotto tensoriale combina le componenti seguendo l’ordine dei registri dichiarato.",
+      "action": "Espandi ogni coefficiente e confronta prodotto prima e dopo le operazioni locali.",
+      "observe": "L’ordine dei fattori non può essere cambiato senza aggiornare la base.",
+      "contrast": "Confronta due prodotti diversi.",
+      "legacy": {
+        "chapter": 2,
+        "id": "tensore"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": null
+    },
+    {
+      "id": "c2-porte-locali",
+      "slug": "porte-locali",
+      "module": 2,
+      "title": "Agire su un solo sistema",
+      "short": "Agire su un solo sistema",
+      "goal": "Applicare una porta a un sottosistema.",
+      "definition": "A⊗B descrive due operazioni locali su registri ordinati.",
+      "action": "Segui i prodotti intermedi sulle stesse componenti.",
+      "observe": "Una porta locale non è una porta controllata.",
+      "contrast": "Confronta A⊗I e I⊗A.",
+      "legacy": {
+        "chapter": 2,
+        "id": "porte-locali"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": null
+    },
+    {
+      "id": "c2-separabilita",
+      "slug": "separabilita",
+      "module": 2,
+      "title": "Riconoscere uno stato prodotto",
+      "short": "Riconoscere uno stato prodotto",
+      "goal": "Verificare se lo stato è un prodotto.",
+      "definition": "Uno stato puro separabile può essere scritto come prodotto di stati dei sottosistemi.",
+      "action": "Confronta i coefficienti e il criterio di separabilità usato nell’esempio.",
+      "observe": "Statistiche marginali non determinano da sole lo stato congiunto.",
+      "contrast": "Confronta prodotto e stato di Bell.",
+      "legacy": {
+        "chapter": 2,
+        "id": "separabilita"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": null
+    },
+    {
+      "id": "c2-composti",
+      "slug": "composti",
+      "module": 2,
+      "title": "Misure congiunte e correlazioni",
+      "short": "Misure congiunte e correlazioni",
+      "goal": "Leggere la distribuzione congiunta e le marginali.",
+      "definition": "Una marginale somma su tutte le alternative del registro non letto.",
+      "action": "Somma esplicitamente le righe pertinenti.",
+      "observe": "Una sfera di stato puro non descrive un qubit locale misto.",
+      "contrast": "Confronta probabilità locali e correlazioni di due preparazioni.",
+      "legacy": {
+        "chapter": 2,
+        "id": "composti"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": null
+    },
+    {
+      "id": "c3-programma",
+      "slug": "programma",
+      "module": 3,
+      "title": "Leggere un circuito",
+      "short": "Leggere un circuito",
+      "goal": "Leggere un circuito come una sequenza.",
+      "definition": "Il registro iniziale e l’ordine delle porte sono dati del programma.",
+      "action": "Seleziona una porta e confronta lo stato prima e dopo.",
+      "observe": "La misura non è una ulteriore porta unitaria.",
+      "contrast": "Confronta due programmi con le stesse porte in ordine diverso.",
+      "legacy": {
+        "chapter": 3,
+        "id": "programma"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": null
+    },
+    {
+      "id": "c3-reversibilita",
+      "slug": "reversibilita",
+      "module": 3,
+      "title": "Conservare l’informazione",
+      "short": "Conservare l’informazione",
+      "goal": "Conservare l’informazione necessaria all’inversione.",
+      "definition": "Una funzione reversibile è biunivoca sul suo dominio.",
+      "action": "Confronta ingressi, uscite e registri ausiliari.",
+      "observe": "Cancellare un ingresso può rendere impossibile l’inversione.",
+      "contrast": "Confronta calcolo con ingresso conservato e mappa molti-a-uno.",
+      "legacy": {
+        "chapter": 3,
+        "id": "reversibilita"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": null
+    },
+    {
+      "id": "c3-porte",
+      "slug": "porte",
+      "module": 3,
+      "title": "Operazioni su un qubit",
+      "short": "Operazioni su un qubit",
+      "goal": "Collegare porta, matrice e trasformazione.",
+      "definition": "La porta agisce sulle ampiezze, non direttamente sui conteggi.",
+      "action": "Applica una porta alla volta e leggi i coefficienti.",
+      "observe": "Gli angoli e le convenzioni sono parte della porta.",
+      "contrast": "Confronta H, X e una porta di fase.",
+      "legacy": {
+        "chapter": 3,
+        "id": "porte"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": null
+    },
+    {
+      "id": "c3-preparazione",
+      "slug": "preparazione",
+      "module": 3,
+      "title": "Preparare uno stato assegnato",
+      "short": "Preparare uno stato assegnato",
+      "goal": "Costruire uno stato con operazioni dichiarate.",
+      "definition": "Preparare significa trasformare uno stato iniziale noto.",
+      "action": "Varia gli angoli e segui le ampiezze del qubit.",
+      "observe": "La sfera non cambia il modello: rappresenta lo stesso stato.",
+      "contrast": "Confronta stati di base e sovrapposizioni.",
+      "legacy": {
+        "chapter": 3,
+        "id": "preparazione"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": null
+    },
+    {
+      "id": "c3-inversa",
+      "slug": "inversa",
+      "module": 3,
+      "title": "Comporre e invertire un programma",
+      "short": "Comporre e invertire un programma",
+      "goal": "Tornare alla preparazione invertendo ordine e porte.",
+      "definition": "L’inversa di un prodotto applica le inverse nell’ordine opposto.",
+      "action": "Esegui il programma e la sequenza inversa.",
+      "observe": "Invertire soltanto l’ordine non basta quando le porte non sono auto-inverse.",
+      "contrast": "Confronta il ritorno corretto e un ordine errato.",
+      "legacy": {
+        "chapter": 3,
+        "id": "inversa"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": null
+    },
+    {
+      "id": "c3-interferometro",
+      "slug": "interferometro",
+      "module": 3,
+      "title": "Rendere osservabile una fase",
+      "short": "Rendere osservabile una fase",
+      "goal": "Trasformare una fase relativa in una probabilità osservabile.",
+      "definition": "Il circuito H–P(φ)–H ricombina le ampiezze.",
+      "action": "Cambia la fase e confronta lo stato dopo P con quello dopo l’ultima H.",
+      "observe": "La fase può non cambiare le probabilità intermedie.",
+      "contrast": "Confronta 0°, 90° e 180°.",
+      "legacy": {
+        "chapter": 3,
+        "id": "interferometro"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": 36
+    },
+    {
+      "id": "c3-registro",
+      "slug": "registro",
+      "module": 3,
+      "title": "Operare su un registro",
+      "short": "Operare su un registro",
+      "goal": "Seguire uno stato su più qubit.",
+      "definition": "Un registro di n qubit ha 2ⁿ coefficienti nella base computazionale.",
+      "action": "Identifica prima l’ordine dei bit e poi seleziona le porte.",
+      "observe": "Il numero di coefficienti non significa che siano tutti leggibili in una misura.",
+      "contrast": "Confronta un prodotto e uno stato correlato.",
+      "legacy": {
+        "chapter": 3,
+        "id": "registro"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": null
+    },
+    {
+      "id": "c3-bell",
+      "slug": "bell",
+      "module": 3,
+      "title": "Costruire e misurare entanglement",
+      "short": "Costruire e misurare entanglement",
+      "goal": "Preparare correlazioni non descrivibili come prodotto puro.",
+      "definition": "H e CNOT preparano uno stato di Bell da |00⟩.",
+      "action": "Segui prima la preparazione, poi la tabella congiunta.",
+      "observe": "Gli esiti locali possono essere casuali anche con correlazione perfetta.",
+      "contrast": "Confronta letture nelle basi Z e X.",
+      "legacy": {
+        "chapter": 3,
+        "id": "bell"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": null
+    },
+    {
+      "id": "c3-ausiliari",
+      "slug": "ausiliari",
+      "module": 3,
+      "title": "Calcolare, marcare e ripristinare",
+      "short": "Calcolare, marcare e ripristinare",
+      "goal": "Usare e ripristinare registri di lavoro.",
+      "definition": "Un’ancilla è un qubit aggiuntivo il cui stato iniziale viene dichiarato.",
+      "action": "Segui la scrittura dell’informazione e l’uncomputation.",
+      "observe": "Un’ancilla non ripulita può restare correlata al risultato.",
+      "contrast": "Confronta il registro prima e dopo il ripristino.",
+      "legacy": {
+        "chapter": 3,
+        "id": "ausiliari"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": null
+    },
+    {
+      "id": "c3-sintesi",
+      "slug": "sintesi-circuiti",
+      "module": 3,
+      "title": "Costruire una porta composta",
+      "short": "Costruire una porta composta",
+      "goal": "Costruire operazioni composte da porte elementari.",
+      "definition": "La sintesi confronta l’operatore richiesto con una sequenza di porte.",
+      "action": "Segui ogni stato intermedio e confronta l’uscita con l’operatore obiettivo.",
+      "observe": "L’equivalenza deve valere sul dominio dichiarato.",
+      "contrast": "Confronta le due decomposizioni predisposte.",
+      "legacy": {
+        "chapter": 3,
+        "id": "sintesi"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": null
+    },
+    {
+      "id": "c3-deutsch",
+      "slug": "deutsch",
+      "module": 3,
+      "title": "Deutsch e il ritorno di fase",
+      "short": "Deutsch e il ritorno di fase",
+      "goal": "Determinare una proprietà della funzione, non tutta la sua tabella.",
+      "definition": "La funzione binaria è costante o bilanciata. L’oracolo conserva l’ingresso.",
+      "action": "Scegli uno dei quattro casi, calcola e leggi la marginale del qubit di decisione.",
+      "observe": "La distribuzione congiunta va distinta dall’uscita effettivamente letta.",
+      "contrast": "Confronta i due casi costanti e i due bilanciati.",
+      "legacy": {
+        "chapter": 3,
+        "id": "deutsch"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": 94
+    },
+    {
+      "id": "c3-grover-primo",
+      "slug": "grover-primo",
+      "module": 6,
+      "title": "Una ricerca fra quattro alternative",
+      "short": "Una ricerca fra quattro alternative",
+      "goal": "Riconoscere la marcatura e la ricombinazione nel caso minimo.",
+      "definition": "La soluzione viene marcata con una fase; il diffusore modifica le ampiezze.",
+      "action": "Avanza una porta alla volta nel circuito predisposto.",
+      "observe": "La marcatura da sola non aumenta la probabilità di misura.",
+      "contrast": "Confronta prima e dopo il diffusore.",
+      "legacy": {
+        "chapter": 3,
+        "id": "grover-primo"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": null
+    },
+    {
+      "id": "c3-evoluzione",
+      "slug": "evoluzione",
+      "module": 3,
+      "title": "Simulare un’evoluzione",
+      "short": "Simulare un’evoluzione",
+      "goal": "Collegare esponenziale di matrice e sequenza di porte",
+      "definition": "Unità, intervallo temporale e angoli sono dichiarati.",
+      "action": "Confronta evoluzione di riferimento e approssimazione con più passi.",
+      "observe": "La discrepanza numerica non è automaticamente rumore fisico.",
+      "contrast": "Confronta le due configurazioni svolte prima di modificare ulteriormente i dati.",
+      "legacy": {
+        "chapter": 3,
+        "id": "evoluzione"
+      },
+      "kind": "legacy",
+      "advanced": true,
+      "slidePage": null
+    },
+    {
+      "id": "c3-programma-completo",
+      "slug": "programma-completo",
+      "module": 3,
+      "title": "Verificare un programma completo",
+      "short": "Verificare un programma completo",
+      "goal": "Seguire un programma dall’ingresso alla misura",
+      "definition": "Preparazione, porte, registri e lettura definiscono un’unica configurazione.",
+      "action": "Controlla la norma agli stati intermedi e la distribuzione finale.",
+      "observe": "Un singolo esito non mostra tutte le ampiezze del registro.",
+      "contrast": "Confronta le due configurazioni svolte prima di modificare ulteriormente i dati.",
+      "legacy": {
+        "chapter": 3,
+        "id": "programma-completo"
+      },
+      "kind": "legacy",
+      "advanced": true,
+      "slidePage": null
+    },
+    {
+      "id": "c4-deutsch-jozsa",
+      "slug": "deutsch-jozsa",
+      "module": 3,
+      "title": "Deutsch–Jozsa",
+      "short": "Deutsch–Jozsa",
+      "goal": "Usare l’interferenza sotto una promessa sulla funzione.",
+      "definition": "La promessa ammette solo funzione costante o esattamente bilanciata.",
+      "action": "Confronta un oracolo costante con uno bilanciato.",
+      "observe": "Senza promessa, la stessa regola di decisione non risolve il problema dichiarato.",
+      "contrast": "Leggi il significato dell’esito tutto zero.",
+      "legacy": {
+        "chapter": 4,
+        "id": "deutsch-jozsa"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": 119
+    },
+    {
+      "id": "c4-bernstein-vazirani",
+      "slug": "bernstein-vazirani",
+      "module": 4,
+      "title": "Bernstein–Vazirani",
+      "short": "Bernstein–Vazirani",
+      "goal": "Ricostruire una stringa nascosta tramite un oracolo lineare.",
+      "definition": "f(x)=s·x⊕b usa prodotto e somma binaria.",
+      "action": "Modifica la stringa e il bit affine; ricalcola prima di misurare.",
+      "observe": "Il termine b modifica una fase globale, non la stringa letta.",
+      "contrast": "Confronta b=0 e b=1 a stringa s fissa.",
+      "legacy": {
+        "chapter": 4,
+        "id": "bernstein-vazirani"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": 3
+    },
+    {
+      "id": "c4-simon",
+      "slug": "simon",
+      "module": 4,
+      "title": "Simon e le equazioni binarie",
+      "short": "Simon e le equazioni binarie",
+      "goal": "Passare da misure quantistiche a vincoli lineari.",
+      "definition": "La promessa è f(x)=f(y) se e solo se y=x oppure y=x⊕s, con s non nullo.",
+      "action": "Modifica s, calcola e raccogli le misure. Segui il rango e i candidati.",
+      "observe": "Ripetere la stessa equazione non aumenta il rango. La promessa non vale per una funzione costante.",
+      "contrast": "Confronta misure ripetute ed equazioni indipendenti.",
+      "legacy": {
+        "chapter": 4,
+        "id": "simon"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": 60
+    },
+    {
+      "id": "c4-swap",
+      "slug": "swap",
+      "module": 4,
+      "title": "SWAP test",
+      "short": "SWAP test",
+      "goal": "Stimare una sovrapposizione usando un’ancilla.",
+      "definition": "Il test collega la probabilità dell’ancilla a |⟨ψ|φ⟩|².",
+      "action": "Confronta gli stati e leggi la marginale dell’ancilla.",
+      "observe": "La misura congiunta completa non è necessaria per la decisione.",
+      "contrast": "Confronta stati uguali e ortogonali.",
+      "legacy": {
+        "chapter": 4,
+        "id": "swap"
+      },
+      "kind": "legacy",
+      "advanced": true,
+      "slidePage": null
+    },
+    {
+      "id": "c4-grover",
+      "slug": "grover",
+      "module": 6,
+      "title": "Grover: iterazioni e sovrarotazione",
+      "short": "Grover: iterazioni e sovrarotazione",
+      "goal": "Capire come cambia il successo al variare delle iterazioni.",
+      "definition": "La riflessione nell’oracolo e quella nel diffusore formano una rotazione nel piano collettivo.",
+      "action": "Modifica insieme marcato e iterazioni; poi calcola e misura.",
+      "observe": "Il numero di iterazioni ottimale dipende dalla frazione di soluzioni.",
+      "contrast": "Confronta una iterazione utile e un eccesso di iterazioni.",
+      "legacy": {
+        "chapter": 4,
+        "id": "grover"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": 61
+    },
+    {
+      "id": "c4-ricerca-ignota",
+      "slug": "ricerca-ignota",
+      "module": 6,
+      "title": "Ricerca con numero ignoto di soluzioni",
+      "short": "Ricerca con numero ignoto di soluzioni",
+      "goal": "Ricerca con numero di soluzioni ignoto",
+      "definition": "Finestra, iterazioni, esito e costo sono grandezze distinte.",
+      "action": "Segui ogni tentativo e controlla la soluzione candidata.",
+      "observe": "Il costo cumulato include la verifica classica del candidato.",
+      "contrast": "Confronta le due configurazioni svolte prima di modificare ulteriormente i dati.",
+      "legacy": {
+        "chapter": 4,
+        "id": "ricerca-ignota"
+      },
+      "kind": "legacy",
+      "advanced": true,
+      "slidePage": null
+    },
+    {
+      "id": "c4-amplificazione",
+      "slug": "amplificazione",
+      "module": 6,
+      "title": "Amplificare una preparazione assegnata",
+      "short": "Amplificare una preparazione assegnata",
+      "goal": "Amplificare una preparazione non necessariamente uniforme.",
+      "definition": "La probabilità iniziale di successo definisce le componenti buona e restante.",
+      "action": "Varia probabilità iniziale e numero di iterazioni.",
+      "observe": "Le coordinate collettive sono proiezioni, non etichette di singoli bit.",
+      "contrast": "Confronta p=0, p=1 e un valore intermedio.",
+      "legacy": {
+        "chapter": 4,
+        "id": "amplificazione"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": 210
+    },
+    {
+      "id": "c4-minimo",
+      "slug": "minimo",
+      "module": 6,
+      "title": "Ricercare un minimo",
+      "short": "Ricercare un minimo",
+      "goal": "Ricerca di un minimo su un insieme piccolo",
+      "definition": "La soglia viene aggiornata quando si trova un candidato migliore.",
+      "action": "Confronta i candidati accettati e il costo dei tentativi.",
+      "observe": "La verifica finale classica è esplicita; non va confusa con un risultato hardware.",
+      "contrast": "Confronta le due configurazioni svolte prima di modificare ulteriormente i dati.",
+      "legacy": {
+        "chapter": 4,
+        "id": "minimo"
+      },
+      "kind": "legacy",
+      "advanced": true,
+      "slidePage": null
+    },
+    {
+      "id": "c4-fourier",
+      "slug": "fourier",
+      "module": 5,
+      "title": "Sommare le fasi di Fourier",
+      "short": "Sommare le fasi di Fourier",
+      "goal": "Vedere come le fasi si sommano nella trasformata discreta.",
+      "definition": "Le radici dell’unità sono direzioni equispaziate sul piano complesso.",
+      "action": "Confronta ciascuna somma di contributi e il suo modulo quadro.",
+      "observe": "Somma di ampiezze e somma di probabilità sono operazioni diverse.",
+      "contrast": "Confronta cancellazione e somma costruttiva.",
+      "legacy": {
+        "chapter": 4,
+        "id": "fourier"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": 137
+    },
+    {
+      "id": "c4-qft",
+      "slug": "qft",
+      "module": 5,
+      "title": "Costruire il circuito QFT",
+      "short": "Costruire il circuito QFT",
+      "goal": "Ricostruire la trasformata di Fourier come circuito.",
+      "definition": "Le fasi controllate dipendono dai bit; gli scambi finali fissano l’ordine dell’uscita.",
+      "action": "Segui fattorizzazione, porte e stato finale.",
+      "observe": "L’ordine dei qubit dichiarato fa parte del risultato.",
+      "contrast": "Confronta due ingressi della base.",
+      "legacy": {
+        "chapter": 4,
+        "id": "qft"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": 137
+    },
+    {
+      "id": "c4-hadamard-test",
+      "slug": "hadamard-test",
+      "module": 5,
+      "title": "Hadamard test",
+      "short": "Hadamard test",
+      "goal": "Stimare parte reale e immaginaria di un valore di aspettazione",
+      "definition": "La preparazione dell’ancilla distingue lettura reale e immaginaria.",
+      "action": "Leggi la marginale dell’ancilla e ricostruisci il valore stimato.",
+      "observe": "Le frequenze finite non coincidono sempre con le probabilità.",
+      "contrast": "Confronta le due configurazioni svolte prima di modificare ulteriormente i dati.",
+      "legacy": {
+        "chapter": 4,
+        "id": "hadamard-test"
+      },
+      "kind": "legacy",
+      "advanced": true,
+      "slidePage": null
+    },
+    {
+      "id": "c4-qpe-esatta",
+      "slug": "qpe-esatta",
+      "module": 5,
+      "title": "Stima di fase esatta",
+      "short": "Stima di fase esatta",
+      "goal": "Leggere una fase rappresentabile esattamente nel registro di controllo.",
+      "definition": "L’autostato del registro bersaglio determina la fase codificata dai controlli.",
+      "action": "Segui le potenze controllate e la trasformata inversa.",
+      "observe": "Una selezione di esito a probabilità zero non è una misura ottenibile.",
+      "contrast": "Confronta un solo autostato e una sovrapposizione.",
+      "legacy": {
+        "chapter": 4,
+        "id": "qpe-esatta"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": null
+    },
+    {
+      "id": "c4-qpe-approssimata",
+      "slug": "qpe-approssimata",
+      "module": 5,
+      "title": "Stima di fase a precisione finita",
+      "short": "Stima di fase a precisione finita",
+      "goal": "Leggere una fase che non coincide con una frazione binaria esatta.",
+      "definition": "Il registro finito produce una distribuzione di stime.",
+      "action": "Confronta il valore assegnato e la distribuzione degli esiti.",
+      "observe": "Il picco più vicino non significa certezza.",
+      "contrast": "Confronta fase esatta e approssimata.",
+      "legacy": {
+        "chapter": 4,
+        "id": "qpe-approssimata"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": null
+    },
+    {
+      "id": "c4-conteggio",
+      "slug": "conteggio",
+      "module": 6,
+      "title": "Conteggio quantistico",
+      "short": "Conteggio quantistico",
+      "goal": "Stimare quante alternative sono marcate",
+      "definition": "La rappresentazione spettrale usa le autofasi della rotazione di Grover.",
+      "action": "Confronta distribuzione delle fasi e numero di soluzioni stimato.",
+      "observe": "Il modello spettrale conosce la preparazione: non è una scatola nera operativa.",
+      "contrast": "Confronta le due configurazioni svolte prima di modificare ulteriormente i dati.",
+      "legacy": {
+        "chapter": 4,
+        "id": "conteggio"
+      },
+      "kind": "legacy",
+      "advanced": true,
+      "slidePage": null
+    },
+    {
+      "id": "c4-stima-ampiezze",
+      "slug": "stima-ampiezze",
+      "module": 6,
+      "title": "Stimare una probabilità",
+      "short": "Stimare una probabilità",
+      "goal": "Stimare una probabilità attraverso una fase",
+      "definition": "Il legame fra probabilità iniziale e angolo viene dichiarato.",
+      "action": "Confronta fase stimata e probabilità ricostruita.",
+      "observe": "Le probabilità assegnate servono a costruire questo modello didattico.",
+      "contrast": "Confronta le due configurazioni svolte prima di modificare ulteriormente i dati.",
+      "legacy": {
+        "chapter": 4,
+        "id": "stima-ampiezze"
+      },
+      "kind": "legacy",
+      "advanced": true,
+      "slidePage": null
+    },
+    {
+      "id": "c4-aritmetica",
+      "slug": "aritmetica",
+      "module": 5,
+      "title": "Euclide, inversi e potenze modulari",
+      "short": "Euclide, inversi e potenze modulari",
+      "goal": "Calcolare resti e inversi senza una scatola nera.",
+      "definition": "Il resto modulo N identifica una classe; l’inverso esiste soltanto per elementi coprimi con N.",
+      "action": "Modifica i dati e segui algoritmo di Euclide e potenze successive.",
+      "observe": "Una divisione reale non è un’inversione modulare.",
+      "contrast": "Confronta un elemento invertibile e uno non invertibile.",
+      "legacy": {
+        "chapter": 4,
+        "id": "aritmetica"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": null
+    },
+    {
+      "id": "c4-rsa",
+      "slug": "rsa",
+      "module": 5,
+      "title": "RSA e recupero della chiave dai fattori",
+      "short": "RSA e recupero della chiave dai fattori",
+      "goal": "Ricostruire cifratura e decifratura con aritmetica modulare.",
+      "definition": "Le chiavi e la condizione di invertibilità sono dati espliciti del modello.",
+      "action": "Segui Euclide, potenze modulari e verifica del messaggio.",
+      "observe": "Gli interi piccoli servono a studiare il procedimento, non a proteggere dati.",
+      "contrast": "Confronta messaggio coprimo e non coprimo con N.",
+      "legacy": {
+        "chapter": 4,
+        "id": "rsa"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": 82
+    },
+    {
+      "id": "c4-ordine-fattori",
+      "slug": "ordine-fattori",
+      "module": 5,
+      "title": "Dall’ordine ai fattori",
+      "short": "Dall’ordine ai fattori",
+      "goal": "Distinguere ricerca dell’ordine ed estrazione dei fattori.",
+      "definition": "L’ordine è il più piccolo r positivo con aʳ≡1 mod N.",
+      "action": "Verifica ordine, parità e massimi comuni divisori.",
+      "observe": "Un ordine trovato può non produrre fattori utili.",
+      "contrast": "Confronta una base utile e una con a^(r/2)≡−1.",
+      "legacy": {
+        "chapter": 4,
+        "id": "ordine-fattori"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": null
+    },
+    {
+      "id": "c4-somma",
+      "slug": "somma",
+      "module": 5,
+      "title": "Sommare conservando i riporti",
+      "short": "Sommare conservando i riporti",
+      "goal": "Seguire una somma reversibile",
+      "definition": "Ingressi e registri di lavoro sono conservati nel dominio dichiarato.",
+      "action": "Confronta bit, riporti e ausiliari prima e dopo.",
+      "observe": "Il dominio e il numero di bit limitano gli interi rappresentabili.",
+      "contrast": "Confronta le due configurazioni svolte prima di modificare ulteriormente i dati.",
+      "legacy": {
+        "chapter": 4,
+        "id": "somma"
+      },
+      "kind": "legacy",
+      "advanced": true,
+      "slidePage": null
+    },
+    {
+      "id": "c4-moltiplicazione",
+      "slug": "moltiplicazione",
+      "module": 5,
+      "title": "Moltiplicare ed esponenziare modulo N",
+      "short": "Moltiplicare ed esponenziare modulo N",
+      "goal": "Verificare una moltiplicazione modulare su piccoli registri",
+      "definition": "La rete a mintermini è un verificatore esatto per dimensioni piccole.",
+      "action": "Segui controllo, permutazione e ripristino degli ausiliari.",
+      "observe": "Questa sintesi cresce esponenzialmente e non è l’aritmetica scalabile di Shor.",
+      "contrast": "Confronta le due configurazioni svolte prima di modificare ulteriormente i dati.",
+      "legacy": {
+        "chapter": 4,
+        "id": "moltiplicazione"
+      },
+      "kind": "legacy",
+      "advanced": true,
+      "slidePage": null
+    },
+    {
+      "id": "c4-autostati",
+      "slug": "autostati",
+      "module": 5,
+      "title": "Autostati della moltiplicazione modulare",
+      "short": "Autostati della moltiplicazione modulare",
+      "goal": "Collegare orbita modulare e autovalore",
+      "definition": "Gli stati dell’orbita sono etichette discrete; le fasi sono coefficienti complessi.",
+      "action": "Segui la permutazione dei residui e il fattore di fase.",
+      "observe": "Le distanze nel disegno dell’orbita non rappresentano distanze fisiche.",
+      "contrast": "Confronta le due configurazioni svolte prima di modificare ulteriormente i dati.",
+      "legacy": {
+        "chapter": 4,
+        "id": "autostati"
+      },
+      "kind": "legacy",
+      "advanced": true,
+      "slidePage": null
+    },
+    {
+      "id": "c4-frazioni-continue",
+      "slug": "frazioni-continue",
+      "module": 5,
+      "title": "Ricostruire un denominatore",
+      "short": "Ricostruire un denominatore",
+      "goal": "Ricostruire candidati razionali da una misura.",
+      "definition": "I convergenti approssimano c/Q; un denominatore è ancora un candidato da verificare.",
+      "action": "Seleziona l’esito e controlla i convergenti e la verifica modulare.",
+      "observe": "Un esito impossibile resta un’analisi controfattuale, non un ramo osservato.",
+      "contrast": "Confronta un denominatore corretto e uno parziale.",
+      "legacy": {
+        "chapter": 4,
+        "id": "frazioni-continue"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": null
+    },
+    {
+      "id": "c4-shor-15",
+      "slug": "shor-15",
+      "module": 5,
+      "title": "Shor completo: fattorizzare 15",
+      "short": "Shor completo: fattorizzare 15",
+      "goal": "Separare simulazione quantistica e post-elaborazione classica.",
+      "definition": "I registri conservano la correlazione fra esponente e potenza modulare.",
+      "action": "Calcola, misura e segui convergenti e verifica dei fattori.",
+      "observe": "Il modello è esatto per un registro piccolo; non dimostra scalabilità hardware.",
+      "contrast": "Confronta esito informativo e esito che richiede una nuova prova.",
+      "legacy": {
+        "chapter": 4,
+        "id": "shor-15"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": 201
+    },
+    {
+      "id": "c4-shor-21",
+      "slug": "shor-21",
+      "module": 5,
+      "title": "Shor completo: fattorizzare 21",
+      "short": "Shor completo: fattorizzare 21",
+      "goal": "Capire perché non ogni base o misura produce fattori.",
+      "definition": "La ricerca dell’ordine e i controlli finali sono passaggi distinti.",
+      "action": "Confronta le basi predisposte e tutti i rami possibili.",
+      "observe": "Un fallimento dichiarato è un risultato del procedimento, non un errore nascosto.",
+      "contrast": "Confronta a=2 e a=5.",
+      "legacy": {
+        "chapter": 4,
+        "id": "shor-21"
+      },
+      "kind": "legacy",
+      "advanced": false,
+      "slidePage": 201
+    },
+    {
+      "id": "c4-logaritmo",
+      "slug": "logaritmo",
+      "module": 5,
+      "title": "Logaritmo discreto",
+      "short": "Logaritmo discreto",
+      "goal": "Ricostruire un candidato da vincoli modulari",
+      "definition": "Una coppia di esiti può lasciare più candidati.",
+      "action": "Interseca i candidati e verifica il risultato nell’istanza.",
+      "observe": "La trasformata F₆ è astratta e non comprende una sintesi binaria.",
+      "contrast": "Confronta le due configurazioni svolte prima di modificare ulteriormente i dati.",
+      "legacy": {
+        "chapter": 4,
+        "id": "logaritmo"
+      },
+      "kind": "legacy",
+      "advanced": true,
+      "slidePage": null
+    },
+    {
+      "id": "fase-guidata",
+      "slug": "fase-guidata",
+      "module": 3,
+      "title": "Quando una fase diventa osservabile",
+      "short": "Fase e interferenza",
+      "goal": "Trasformare una fase relativa in una diversa probabilità di lettura.",
+      "definition": "La fase è l’angolo relativo fra due ampiezze. Il circuito prepara, cambia la fase e può ricombinare.",
+      "action": "Confronta 0°, 90° e 180°, prima con misura diretta e poi con ricombinazione.",
+      "observe": "Probabilità e conteggi sono mostrati separatamente. Lo stato si prepara nuovamente a ogni prova.",
+      "contrast": "Togli l’ultima H: la stessa fase non modifica più le probabilità nella base Z.",
+      "kind": "native",
+      "advanced": false,
+      "slidePage": 36
+    },
+    {
+      "id": "grover-guidato",
+      "slug": "grover-guidato",
+      "module": 6,
+      "title": "Perché fermarsi al momento giusto",
+      "short": "Grover passo per passo",
+      "goal": "Distinguere marcatura, diffusione e misura.",
+      "definition": "Le ampiezze possono cambiare segno; le probabilità sono i loro quadrati e restano non negative.",
+      "action": "Scegli quattro candidati e una soluzione. Esegui una riflessione alla volta.",
+      "observe": "La marcatura da sola non aumenta il successo; il diffusore ricombina le ampiezze.",
+      "contrast": "Confronta una iterazione completa con due e tre iterazioni.",
+      "kind": "native",
+      "advanced": false,
+      "slidePage": 61
+    },
+    {
+      "id": "rsa-messaggio",
+      "slug": "rsa-messaggio",
+      "module": 5,
+      "title": "Dal periodo del cifrato al messaggio",
+      "short": "RSA e periodicità",
+      "goal": "Capire perché la periodicità può consentire di recuperare un messaggio nel caso coprimo.",
+      "definition": "L’ordine di c modulo N è il primo r positivo per cui cʳ≡1. Non è il messaggio né il numero dei fattori.",
+      "action": "Cifra un messaggio con N=55 ed e=3. Costruisci l’orbita e verifica un candidato r.",
+      "observe": "Questa attività calcola l’orbita classicamente: prepara il passaggio a Fourier e non simula da sola Shor.",
+      "contrast": "Confronta m=2 e m=5. Il metodo basato sull’ordine moltiplicativo non si applica al secondo.",
+      "kind": "native",
+      "advanced": false,
+      "slidePage": 115
+    },
+    {
+      "id": "bb84",
+      "slug": "bb84",
+      "module": 7,
+      "title": "Dai segnali a una chiave candidata",
+      "short": "BB84 e controllo del canale",
+      "goal": "Distinguere basi, bit mantenuti, campione pubblico e dati ancora privati.",
+      "definition": "Alice prepara nelle basi Z o X; Bob misura in una base scelta indipendentemente. Il confronto delle basi avviene su un canale classico autenticato.",
+      "action": "Esegui prima la trasmissione, poi confronta le basi e infine apri il campione di controllo.",
+      "observe": "Il campione pubblicato viene eliminato dai dati candidati. Il tasso di errori non identifica da solo un attaccante.",
+      "contrast": "Confronta canale ideale, intercettazione e rumore senza intercettazione.",
+      "kind": "native",
+      "advanced": false,
+      "slidePage": 10
+    },
+    {
+      "id": "superdensa",
+      "slug": "superdensa",
+      "module": 7,
+      "title": "Due bit con una risorsa condivisa",
+      "short": "Codifica superdensa",
+      "goal": "Seguire preparazione condivisa, codifica locale, invio e decodifica.",
+      "definition": "Alice e Bob possiedono inizialmente una coppia di Bell. Un qubit viene poi trasmesso da Alice a Bob.",
+      "action": "Scegli i due bit e avanza lungo il protocollo. Confronta le quattro codifiche.",
+      "observe": "Prima dell’invio Bob vede la stessa marginale per tutti i messaggi; non riceve informazione istantanea.",
+      "contrast": "Confronta 00 e 11 osservando sia lo stato congiunto sia la marginale di Bob.",
+      "kind": "native",
+      "advanced": false,
+      "slidePage": 46
+    },
+    {
+      "id": "correzione",
+      "slug": "correzione",
+      "module": 7,
+      "title": "Leggere una sindrome senza leggere il messaggio",
+      "short": "Correzione degli errori",
+      "goal": "Capire che cosa rivela la sindrome del codice a tre qubit.",
+      "definition": "Il codice mappa α|0⟩+β|1⟩ in α|000⟩+β|111⟩. Non crea tre copie indipendenti dello stato.",
+      "action": "Scegli la preparazione, inietta un errore e segui sindrome e correzione.",
+      "observe": "Il codice corregge un singolo errore X nel modello dichiarato. Non corregge ogni errore quantistico.",
+      "contrast": "Confronta un errore X, due errori X e un errore Z.",
+      "kind": "native",
+      "advanced": false,
+      "slidePage": 57
+    }
+  ],
+  "aliases": {
+    "capitolo-1/moto": "c1-moto",
+    "capitolo-1/loschmidt": "c1-loschmidt",
+    "capitolo-1/onde": "c1-onde",
+    "capitolo-1/fenditure": "c1-fenditure",
+    "capitolo-1/polarizzazione": "c1-polarizzazione",
+    "capitolo-1/calcolo": "c1-calcolo",
+    "capitolo-1/coppie": "c1-coppie",
+    "capitolo-1/ambiente": "c1-ambiente",
+    "capitolo-1/informazione": "c1-informazione",
+    "capitolo-1/sintesi": "c1-sintesi",
+    "capitolo-2/complessi": "c2-complessi",
+    "capitolo-2/prodotto-complesso": "c2-prodotto-complesso",
+    "capitolo-2/basi": "c2-basi",
+    "capitolo-2/norma": "c2-norma",
+    "capitolo-2/prodotto-interno": "c2-prodotto-interno",
+    "capitolo-2/proiezioni": "c2-proiezioni",
+    "capitolo-2/matrici": "c2-matrici",
+    "capitolo-2/nucleo": "c2-nucleo",
+    "capitolo-2/composizione": "c2-composizione",
+    "capitolo-2/cambio-base": "c2-cambio-base",
+    "capitolo-2/aggiunto": "c2-aggiunto",
+    "capitolo-2/spettro": "c2-spettro",
+    "capitolo-2/base-propria": "c2-base-propria",
+    "capitolo-2/proiettori": "c2-proiettori",
+    "capitolo-2/funzioni-matrice": "c2-funzioni-matrice",
+    "capitolo-2/eventi": "c2-eventi",
+    "capitolo-2/distribuzioni": "c2-distribuzioni",
+    "capitolo-2/momenti": "c2-momenti",
+    "capitolo-2/frequenze": "c2-frequenze",
+    "capitolo-2/condizionamento": "c2-condizionamento",
+    "capitolo-2/stati": "c2-stati",
+    "capitolo-2/bra": "c2-bra",
+    "capitolo-2/fase": "c2-fase",
+    "capitolo-2/born": "c2-born",
+    "capitolo-2/unitarie": "c2-unitarie",
+    "capitolo-2/osservabili": "c2-osservabili",
+    "capitolo-2/incompatibilita": "c2-incompatibilita",
+    "capitolo-2/esperimento": "c2-esperimento",
+    "capitolo-2/tensore": "c2-tensore",
+    "capitolo-2/porte-locali": "c2-porte-locali",
+    "capitolo-2/separabilita": "c2-separabilita",
+    "capitolo-2/composti": "c2-composti",
+    "capitolo-3/programma": "c3-programma",
+    "capitolo-3/reversibilita": "c3-reversibilita",
+    "capitolo-3/porte": "c3-porte",
+    "capitolo-3/preparazione": "c3-preparazione",
+    "capitolo-3/inversa": "c3-inversa",
+    "capitolo-3/interferometro": "c3-interferometro",
+    "capitolo-3/registro": "c3-registro",
+    "capitolo-3/bell": "c3-bell",
+    "capitolo-3/ausiliari": "c3-ausiliari",
+    "capitolo-3/sintesi": "c3-sintesi",
+    "capitolo-3/deutsch": "c3-deutsch",
+    "capitolo-3/grover-primo": "c3-grover-primo",
+    "capitolo-3/evoluzione": "c3-evoluzione",
+    "capitolo-3/programma-completo": "c3-programma-completo",
+    "capitolo-4/deutsch-jozsa": "c4-deutsch-jozsa",
+    "capitolo-4/bernstein-vazirani": "c4-bernstein-vazirani",
+    "capitolo-4/simon": "c4-simon",
+    "capitolo-4/swap": "c4-swap",
+    "capitolo-4/grover": "c4-grover",
+    "capitolo-4/ricerca-ignota": "c4-ricerca-ignota",
+    "capitolo-4/amplificazione": "c4-amplificazione",
+    "capitolo-4/minimo": "c4-minimo",
+    "capitolo-4/fourier": "c4-fourier",
+    "capitolo-4/qft": "c4-qft",
+    "capitolo-4/hadamard-test": "c4-hadamard-test",
+    "capitolo-4/qpe-esatta": "c4-qpe-esatta",
+    "capitolo-4/qpe-approssimata": "c4-qpe-approssimata",
+    "capitolo-4/conteggio": "c4-conteggio",
+    "capitolo-4/stima-ampiezze": "c4-stima-ampiezze",
+    "capitolo-4/aritmetica": "c4-aritmetica",
+    "capitolo-4/rsa": "c4-rsa",
+    "capitolo-4/ordine-fattori": "c4-ordine-fattori",
+    "capitolo-4/somma": "c4-somma",
+    "capitolo-4/moltiplicazione": "c4-moltiplicazione",
+    "capitolo-4/autostati": "c4-autostati",
+    "capitolo-4/frazioni-continue": "c4-frazioni-continue",
+    "capitolo-4/shor-15": "c4-shor-15",
+    "capitolo-4/shor-21": "c4-shor-21",
+    "capitolo-4/logaritmo": "c4-logaritmo",
+    "moto": "c1-moto",
+    "loschmidt": "c1-loschmidt",
+    "onde": "c1-onde",
+    "fenditure": "c1-fenditure",
+    "polarizzazione": "c1-polarizzazione",
+    "calcolo": "c1-calcolo",
+    "coppie": "c1-coppie",
+    "ambiente": "c1-ambiente",
+    "informazione": "c1-informazione",
+    "sintesi": "c1-sintesi"
+  },
+  "scope": "Laboratorio interattivo; nessuna modifica alle slide. La revisione delle attività storiche è progressiva, i motori restano quelli della 4.2."
+}

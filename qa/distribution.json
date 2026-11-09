@@ -1,0 +1,6 @@
+{
+  "status": "PASS",
+  "checks": 63,
+  "assets": 17,
+  "productionPathTested": "/a-different-repository/"
+}

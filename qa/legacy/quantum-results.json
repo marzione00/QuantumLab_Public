@@ -1,0 +1,22 @@
+{
+  "result": "PASS",
+  "checks": 9575,
+  "coverage": [
+    "signed input and phase readouts",
+    "X Y Z examples and double application",
+    "geometric paths and inverse phase",
+    "angle input and zero-delay invariance",
+    "quarter/half-wave plates and optical rotation",
+    "drag geometry and full-circuit propagation",
+    "arbitrary retarders against Jones vectors",
+    "independent block settings and bypass",
+    "decoherence against partial trace",
+    "slide sequences and order",
+    "concordance and anticorrelation",
+    "local marginals",
+    "marker angle and inverse",
+    "conditional groups",
+    "archive ambiguity and exact extrema",
+    "two causes and interventions"
+  ]
+}

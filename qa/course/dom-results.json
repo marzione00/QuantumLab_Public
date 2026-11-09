@@ -1,8 +1,0 @@
-{
-  "status": "PASS",
-  "checks": 197,
-  "routes": 81,
-  "exports": 2,
-  "interactionScope": "React events and DOM under jsdom; Canvas is stubbed and production CSS is excluded from jsdom. This does not verify browser rendering, pointer geometry, mobile layout or file:// behavior.",
-  "browserInteractionTested": false
-}
