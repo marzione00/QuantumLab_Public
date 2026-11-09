@@ -18,6 +18,8 @@ Sostituire utente e nome repository. Questi comandi non sono stati eseguiti sul 
 
 In GitHub: **Settings → Pages → Source → GitHub Actions**. Il workflow `Verify and publish Quantum Lab` valida e costruisce l’applicazione. Il job di deploy dipende dalla riuscita del job di verifica; le pull request non pubblicano. Non inserire token o password nei sorgenti. Gli aggiornamenti successivi del laboratorio interessano questa sola repository.
 
+**Risoluzione CI (9 novembre 2026):** il workflow usa `ubuntu-24.04` sia nel job di verifica sia nel job di pubblicazione, con `actions/setup-python@v6` e Python 3.12. È una scelta intenzionale per Playwright `1.57.0`: `ubuntu-latest` è in migrazione a Ubuntu 26.04, su cui quella versione di Playwright non installa Chromium. Quando i sorgenti sono già su GitHub, aggiornare soltanto `.github/workflows/pages.yml` e fare un nuovo commit: un semplice rerun del vecchio commit può riprodurre l'errore. Successivamente verificare che il job `verify-build` completi anche lo step Chromium e che `deploy` parta soltanto dopo l'esito positivo. Non è stata eseguita alcuna pubblicazione remota durante questa correzione.
+
 Il workflow usa le azioni ufficiali documentate consultate il 9 novembre 2026: checkout/setup-node v7, configure-pages v5, upload-pages-artifact v4, deploy-pages v4. Dependabot è configurato per proporre aggiornamenti delle azioni, non per applicarli automaticamente. I riferimenti per major tag sono una scelta operativa; per un ambiente soggetto a policy restrittive fissarli a commit verificati secondo la policy dell’organizzazione.
 
 ## Un semplice link nel sito principale

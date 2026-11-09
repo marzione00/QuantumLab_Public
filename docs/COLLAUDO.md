@@ -35,7 +35,9 @@ Nel campione eseguito: **nessun errore JavaScript non gestito, nessun errore con
 
 ## Workflow
 
-Il file YAML è stato analizzato e controllato: separazione verifica/deploy, permessi limitati, solo `dist/` pubblicata, niente deploy di pull request, dipendenza del deploy dal job di verifica. Il workflow nel tuo account **non è stato eseguito** e non è stato effettuato alcun deploy.
+Il file YAML è stato analizzato e controllato: separazione verifica/deploy, permessi limitati, solo `dist/` pubblicata, niente deploy di pull request, dipendenza del deploy dal job di verifica. **Correzione CI 9 novembre 2026:** il primo run su `ubuntu-latest` è fallito nello step di installazione Chromium con Playwright 1.57.0 su Ubuntu 26.04 (segnalazione tramite screenshot dell'utente). Il workflow è stato aggiornato fissando `ubuntu-24.04` in entrambi i job e Python 3.12 mediante `setup-python@v6`. La compatibilità di questa scelta è supportata dalla documentazione GitHub e Playwright. Il nuovo workflow è stato verificato staticamente e la build/test in ambiente locale, ma non è stato rieseguito su GitHub.
+
+La **versione corretta** del workflow nel tuo account **non è stata ancora eseguita** e non è stato effettuato alcun deploy.
 
 ## Riproduzione
 
